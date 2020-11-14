@@ -2,6 +2,8 @@
 
 # Dime.Scheduler .NET REST SDK 
 
+[![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master)](https://dev.azure.com/dimenicsbe/Utilities/_build/latest?definitionId=175&branchName=master)
+
 This repository contains the .NET SDK for Dime.Scheduler's RESTful API services.
 
 ## Installation
