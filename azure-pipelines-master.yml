@@ -1,0 +1,35 @@
+trigger:
+  - master
+pool:
+  vmImage: "windows-latest"
+
+variables:
+  BuildConfiguration: "Release"
+  BuildPlatform: "Any CPU"
+
+steps:
+  - task: NuGetToolInstaller@1
+    displayName: "Use NuGet 5.x"
+    inputs:
+      versionSpec: 5.x
+      checkLatest: true
+
+  - task: NuGetCommand@2
+    displayName: "NuGet Restore"
+    inputs:
+      restoreSolution: "**/*.sln"
+      feedsToUse: config
+
+  - task: DotNetCoreCLI@2
+    displayName: "dotnet restore"
+    inputs:
+      command: restore
+      projects: "**/*.sln"
+      feedsToUse: config
+
+  - task: MSBuild@1
+    displayName: "Build solution"
+    inputs:
+      solution: "**/*.sln"
+      platform: "$(BuildPlatform)"
+      configuration: "$(BuildConfiguration)"
