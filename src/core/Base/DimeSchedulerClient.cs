@@ -6,9 +6,9 @@ namespace Dime.Scheduler.Sdk
 {
     public class DimeSchedulerClient
     {
-        public string Uri { get; }
+        public string Uri { get; private set; }
         public bool Authenticated => !string.IsNullOrEmpty(AuthenticationToken);
-        private string AuthenticationToken { get; set; }
+        public string AuthenticationToken { get; private set; }
 
         public DimeSchedulerClient(string uri)
         {
@@ -23,8 +23,8 @@ namespace Dime.Scheduler.Sdk
         /// <returns></returns>
         public async Task Authenticate(string userName, string password)
         {
-            RestClient client = new RestClient(Path.Combine(Uri, "token"));
-            RestRequest request = new RestRequest(Method.POST);
+            RestClient client = new(Path.Combine(Uri, "token"));
+            RestRequest request = new(Method.POST);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
             request.AddHeader("accept-encoding", "gzip, deflate");
@@ -36,6 +36,6 @@ namespace Dime.Scheduler.Sdk
             AuthenticationToken = response.Data?.access_token;
         }
 
-        public T CreateEndpointService<T>() where T : class, IEndpointService, new() => new T();
+        public T CreateEndpointService<T>() where T : class, IEndpointService, new() => new();
     }
 }

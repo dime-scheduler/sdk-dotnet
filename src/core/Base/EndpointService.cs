@@ -20,8 +20,8 @@ namespace Dime.Scheduler.Sdk
         /// <returns></returns>
         protected async Task<IRestResponse> Execute(string endpoint, Method method, TRequest requestParameters)
         {
-            RestClient client = new RestClient(Path.Combine(requestParameters.Uri, endpoint));
-            RestRequest request = new RestRequest(method);
+            RestClient client = new(Path.Combine(requestParameters.Uri, endpoint));
+            RestRequest request = new(method);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
             request.AddHeader("accept-encoding", "gzip, deflate");
