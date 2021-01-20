@@ -10,9 +10,9 @@ namespace Dime.Scheduler.Sdk.Samples
         {
             try
             {
-                string uri = "http://localhost:53006/";
+                string uri = DimeSchedulerCredentials.Uri;
                 DimeSchedulerClient client = new(uri);
-                await client.Authenticate("hendrik.bulens@gmail.com", "Password123");
+                await client.Authenticate(DimeSchedulerCredentials.User, DimeSchedulerCredentials.Password);
 
                 ImportRequest importRequest = new(
                     "mboc_upsertExchangeAppointment",

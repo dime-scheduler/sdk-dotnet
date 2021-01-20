@@ -9,7 +9,10 @@ namespace Dime.Scheduler.Sdk.Samples
     {
         public static async Task Main(string[] args)
         {
-            ImportRequestSample sample = new ImportRequestSample();
+            ResourcesRequestSample resourcesRequestSample = new();
+            await resourcesRequestSample.Execute();
+
+            ImportRequestSample sample = new();
             await sample.Execute();
 
             Console.ReadLine();
