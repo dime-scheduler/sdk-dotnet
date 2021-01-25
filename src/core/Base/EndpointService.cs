@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -21,7 +22,10 @@ namespace Dime.Scheduler.Sdk
         /// <returns></returns>
         protected async Task<IRestResponse> Execute(string endpoint, Method method, TRequest requestParameters)
         {
-            RestClient client = new(Path.Combine(requestParameters.Uri, endpoint));
+            Uri baseUri = new Uri(requestParameters.Uri);
+            Uri endpointUri = new Uri(baseUri, endpoint);
+
+            RestClient client = new(endpointUri);
             RestRequest request = new(method);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
@@ -47,7 +51,10 @@ namespace Dime.Scheduler.Sdk
         /// <returns></returns>
         protected async Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
         {
-            RestClient client = new(Path.Combine(requestParameters.Uri, endpoint));
+            Uri baseUri = new Uri(requestParameters.Uri);
+            Uri endpointUri = new Uri(baseUri, endpoint);
+
+            RestClient client = new(endpointUri);
             RestRequest request = new(method);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
