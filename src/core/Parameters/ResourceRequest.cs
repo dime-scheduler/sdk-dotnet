@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public class ResourceRequest : BaseRequest
+    public class ResourceRequest
     {
         public int page { get; set; } = 1;
         public int start { get; set; } = 100;

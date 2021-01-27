@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public class CategoryRequest : BaseRequest
+    public class CategoryRequest
     {
     }
 }

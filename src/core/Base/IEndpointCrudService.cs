@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Sdk
 {
-    public interface IEndpointService<in T> : IEndpointService where T : IRequestParameter
+    public interface IEndpointCrudService<in T> : IEndpointService where T : class
     {
         /// <summary>
         ///

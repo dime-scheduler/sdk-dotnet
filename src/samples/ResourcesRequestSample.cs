@@ -10,12 +10,15 @@ namespace Dime.Scheduler.Sdk.Samples
         {
             try
             {
-                string uri = DimeSchedulerCredentials.Uri;
-                DimeSchedulerClient client = new(uri);
-                await client.Authenticate(DimeSchedulerCredentials.User, DimeSchedulerCredentials.Password);
-                
-                ResourcesEndpointService svc = client.CreateEndpointService<ResourcesEndpointService>();
-                IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest { Uri = uri, AuthenticationToken = client.AuthenticationToken });
+                IAuthenticator authenticator = new FormsAuthenticator
+                  (DimeSchedulerCredentials.Uri,
+                  DimeSchedulerCredentials.User,
+                  DimeSchedulerCredentials.Password);
+
+                DimeSchedulerClient client = new(DimeSchedulerCredentials.Uri, authenticator);
+
+                IResourceEndpointService svc = await client.Resources.Request();
+                IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest());
 
                 foreach (Resource resource in resources)
                     Console.WriteLine(resource.Email);

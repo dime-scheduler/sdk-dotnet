@@ -1,41 +1,39 @@
-﻿using System.IO;
-using System.Threading.Tasks;
-using RestSharp;
+﻿using System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk
 {
+
+    public abstract class EndpointServiceBuilder<T>
+    {
+        private readonly IAuthenticator _authn;
+        private readonly string _uri;
+
+        public EndpointServiceBuilder(string uri, IAuthenticator authn)
+        {
+            _uri = uri;
+            _authn = authn;
+        }
+
+        protected abstract T Create(AuthenticationOptions opts);
+
+        internal async Task<T> Create()
+        {
+            string authenticationToken = await _authn.AuthenticateAsync();
+            return Create(new AuthenticationOptions { AuthenticationToken = authenticationToken, Uri = _uri });
+        }
+    }
+
     public class DimeSchedulerClient
     {
-        public string Uri { get; private set; }
-        public bool Authenticated => !string.IsNullOrEmpty(AuthenticationToken);
-        public string AuthenticationToken { get; private set; }
+        public IImportEndpointServiceBuilder Import { get; }
+        public IResourceEndpointServiceBuilder Resources { get; }
+        public ICategoryEndpointServiceBuilder Categories { get; }
 
-        public DimeSchedulerClient(string uri)
+        public DimeSchedulerClient(string uri, IAuthenticator authenticator)
         {
-            Uri = uri;
+            Import = new ImportEndpointServiceBuilder(uri, authenticator);
+            Resources = new ResourcesEndpointServiceBuilder(uri, authenticator);
+            Categories = new CategoriesEndpointServiceBuilder(uri, authenticator);
         }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        public async Task Authenticate(string userName, string password)
-        {
-            RestClient client = new(Path.Combine(Uri, "token"));
-            RestRequest request = new(Method.POST);
-            request.AddHeader("cache-control", "no-cache");
-            request.AddHeader("Connection", "keep-alive");
-            request.AddHeader("accept-encoding", "gzip, deflate");
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-            request.AddParameter("undefined", "grant_type=password&username=" + userName + "&password=" + password + "", ParameterType.RequestBody);
-
-            IRestResponse<TokenResponse> response = await client.ExecuteAsync<TokenResponse>(request);
-            AuthenticationToken = response.Data?.access_token;
-        }
-
-        public T CreateEndpointService<T>() where T : class, IEndpointService, new() => new();
     }
 }

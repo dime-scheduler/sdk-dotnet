@@ -16,21 +16,38 @@ Use the package manager NuGet to install the base library of the SDK:
 
 ## Usage
 
+This example adds or updates categories in Dime.Scheduler.
 
 ```csharp
-DimeSchedulerClient client = new DimeSchedulerClient("http://mydimescheduler.com");
-await client.Authenticate("administrator@mycompany.com", "myadministratorpassword");
+string uri = "http://mydimescheduler.com";
+IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
 
- ImportRequest importRequest = new ImportRequest(
-    "mboc_upsertCategory",
-    new List<string> { "Name", "Color" }.ToArray(),
-    new List<string> { "Category #1","#6e62b5" }.ToArray()
+DimeSchedulerClient client = new(uri, authenticator);
+
+ImportRequest importRequest = new ImportRequest(
+  "mboc_upsertCategory",
+  new List<string> { "Name", "Color" }.ToArray(),
+  new List<string> { "Category #1","#6e62b5" }.ToArray()
 );
 
-ImportEndpointService importEndpoint = client.CreateEndpointService<ImportEndpointService>(); 
-await importEndpoint.Create(importRequest);
+IImportEndpointService importEndpoint = await client.Import.Request();
+await importEndpoint.InsertData(importRequest);
 ```
 
+The example below fetches the resources available in Dime.Scheduler.
+
+```csharp
+string uri = "http://mydimescheduler.com";
+IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
+
+DimeSchedulerClient client = new(uri, authenticator);
+
+IResourceEndpointService svc = await client.Resources.Request();
+IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest());
+
+foreach (Resource resource in resources)
+    Console.WriteLine(resource.Email);
+```
 
 ## Contributing
 

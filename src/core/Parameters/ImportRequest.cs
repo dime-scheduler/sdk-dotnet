@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public class ImportRequest : BaseRequest
+    public class ImportRequest
     {
         #region Constructor
 

@@ -10,9 +10,12 @@ namespace Dime.Scheduler.Sdk.Samples
         {
             try
             {
-                string uri = DimeSchedulerCredentials.Uri;
-                DimeSchedulerClient client = new(uri);
-                await client.Authenticate(DimeSchedulerCredentials.User, DimeSchedulerCredentials.Password);
+                IAuthenticator authenticator = new FormsAuthenticator
+                    (DimeSchedulerCredentials.Uri,
+                    DimeSchedulerCredentials.User,
+                    DimeSchedulerCredentials.Password);
+
+                DimeSchedulerClient client = new(DimeSchedulerCredentials.Uri, authenticator);
 
                 ImportRequest importRequest = new(
                     "mboc_upsertExchangeAppointment",
@@ -29,19 +32,15 @@ namespace Dime.Scheduler.Sdk.Samples
                     new List<string>
                     {
                         "0",
-                        new DateTime(2021,1,15, 10, 0,0).ToString("s") + "",
-                        new DateTime(2021,1,15, 12, 0,0).ToString("s") + "",
+                        new DateTime(2021,1,15, 13, 0,0).ToString("s") + "",
+                        new DateTime(2021,1,15, 14, 0,0).ToString("s") + "",
                         "Hello world",
                         "Lorem ipsum",
                         "0",
                         "hendrik.bulens@dimenics.com"
-                    }.ToArray())
-                {
-                    Uri = uri,
-                    AuthenticationToken = client.AuthenticationToken
-                };
+                    }.ToArray());
 
-                ImportEndpointService importEndpoint = client.CreateEndpointService<ImportEndpointService>();
+                IImportEndpointService importEndpoint = await client.Import.Request();
                 await importEndpoint.InsertData(importRequest);
             }
             catch (Exception ex)
@@ -54,9 +53,12 @@ namespace Dime.Scheduler.Sdk.Samples
         {
             try
             {
-                string uri = DimeSchedulerCredentials.Uri;
-                DimeSchedulerClient client = new(uri);
-                await client.Authenticate(DimeSchedulerCredentials.User, DimeSchedulerCredentials.Password);
+                IAuthenticator authenticator = new FormsAuthenticator
+                   (DimeSchedulerCredentials.Uri,
+                   DimeSchedulerCredentials.User,
+                   DimeSchedulerCredentials.Password);
+
+                DimeSchedulerClient client = new(DimeSchedulerCredentials.Uri, authenticator);
 
                 ImportRequest importRequest = new(
                     "mboc_upsertExchangeAppointment",
@@ -75,19 +77,15 @@ namespace Dime.Scheduler.Sdk.Samples
                     {
                         "0",
                         Guid.NewGuid().ToString(),
-                        new DateTime(2021,1,15, 10, 0,0).ToString("s") + "",
-                        new DateTime(2021,1,15, 12, 0,0).ToString("s") + "",
+                        new DateTime(2021,1,15, 15, 0,0).ToString("s") + "",
+                        new DateTime(2021,1,15, 17, 0,0).ToString("s") + "",
                         "Hello world",
                         "Lorem ipsum",
                         "0",
                         "hendrik.bulens@dimenics.com"
-                    }.ToArray())
-                {
-                    Uri = uri,
-                    AuthenticationToken = client.AuthenticationToken
-                };
+                    }.ToArray());
 
-                ImportEndpointService importEndpoint = client.CreateEndpointService<ImportEndpointService>();
+                IImportEndpointService importEndpoint = await client.Import.Request();
                 return await importEndpoint.Insert(importRequest);
             }
             catch (Exception ex)

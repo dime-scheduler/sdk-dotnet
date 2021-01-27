@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -7,10 +6,13 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public abstract class EndpointService<TRequest> where TRequest : IRequestParameter
+    public abstract class EndpointService<TRequest> where TRequest : class
     {
-        protected EndpointService()
+        private readonly AuthenticationOptions _opts;
+
+        protected EndpointService(AuthenticationOptions opts)
         {
+            _opts = opts;
         }
 
         /// <summary>
@@ -22,7 +24,7 @@ namespace Dime.Scheduler.Sdk
         /// <returns></returns>
         protected async Task<IRestResponse> Execute(string endpoint, Method method, TRequest requestParameters)
         {
-            Uri baseUri = new Uri(requestParameters.Uri);
+            Uri baseUri = new Uri(_opts.Uri);
             Uri endpointUri = new Uri(baseUri, endpoint);
 
             RestClient client = new(endpointUri);
@@ -32,7 +34,7 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("authorization", "Bearer " + requestParameters.AuthenticationToken);
+            request.AddHeader("authorization", "Bearer " + _opts.AuthenticationToken);
             request.AddJsonBody(requestParameters);
 
             IRestResponse response = await client.ExecuteAsync(request);
@@ -51,7 +53,7 @@ namespace Dime.Scheduler.Sdk
         /// <returns></returns>
         protected async Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
         {
-            Uri baseUri = new Uri(requestParameters.Uri);
+            Uri baseUri = new Uri(_opts.Uri);
             Uri endpointUri = new Uri(baseUri, endpoint);
 
             RestClient client = new(endpointUri);
@@ -61,7 +63,7 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("authorization", "Bearer " + requestParameters.AuthenticationToken);
+            request.AddHeader("authorization", "Bearer " + _opts.AuthenticationToken);
 
             if (method != Method.GET)
                 request.AddJsonBody(requestParameters);

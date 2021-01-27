@@ -6,8 +6,13 @@ namespace Dime.Scheduler.Sdk
     /// <summary>
     ///
     /// </summary>
-    public class CategoriesEndpointService : EndpointService<CategoryRequest>, IEndpointService<CategoryRequest>
+    public class CategoriesEndpointService : EndpointService<CategoryRequest>, IEndpointCrudService<CategoryRequest>
     {
+        public CategoriesEndpointService(AuthenticationOptions opts)
+            : base(opts)
+        {
+        }
+
         public Task Create(CategoryRequest requestParameters)
             => Execute("api/Categories/Create", Method.POST, requestParameters);
 
