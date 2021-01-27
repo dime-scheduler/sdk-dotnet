@@ -15,13 +15,6 @@ namespace Dime.Scheduler.Sdk
             _opts = opts;
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="method"></param>
-        /// <param name="requestParameters"></param>
-        /// <returns></returns>
         protected async Task<IRestResponse> Execute(string endpoint, Method method, TRequest requestParameters)
         {
             Uri baseUri = new Uri(_opts.Uri);
@@ -38,19 +31,9 @@ namespace Dime.Scheduler.Sdk
             request.AddJsonBody(requestParameters);
 
             IRestResponse response = await client.ExecuteAsync(request);
-            if (!response.IsSuccessful)
-                throw new WebException(response.ErrorMessage, response.ErrorException);
-
-            return response;
+            return response.IsSuccessful ? response : throw new WebException(response.ErrorMessage, response.ErrorException);
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="endpoint"></param>
-        /// <param name="method"></param>
-        /// <param name="requestParameters"></param>
-        /// <returns></returns>
         protected async Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
         {
             Uri baseUri = new Uri(_opts.Uri);
@@ -72,10 +55,7 @@ namespace Dime.Scheduler.Sdk
                     request.AddParameter(prop.Name, prop.GetValue(requestParameters, null)?.ToString() ?? "");
 
             IRestResponse<T> response = await client.ExecuteAsync<T>(request);
-            if (!response.IsSuccessful)
-                throw new WebException(response.ErrorMessage, response.ErrorException);
-
-            return response.Data;
+            return response.IsSuccessful ? response.Data : throw new WebException(response.ErrorMessage, response.ErrorException);
         }
     }
 }

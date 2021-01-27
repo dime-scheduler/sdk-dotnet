@@ -14,17 +14,11 @@ namespace Dime.Scheduler.Sdk
 
         public FormsAuthenticator(string uri, string userName, string password)
         {
-            _uri = uri;
+            _uri = uri.EnsureTrailingSlash();
             _userName = userName;
             _password = password;
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
         public async Task<string> AuthenticateAsync()
         {
             RestClient client = new(Path.Combine(_uri, "token"));
@@ -40,7 +34,7 @@ namespace Dime.Scheduler.Sdk
 
             return response.StatusCode != HttpStatusCode.OK
                 ? throw new Exception(response.Content)
-                : (response.Data?.access_token);
+                : response.Data?.access_token;
         }
     }
 }

@@ -13,28 +13,8 @@ namespace Dime.Scheduler.Sdk
 
         public async Task<IEnumerable<Resource>> GetAsync(ResourceRequest request)
         {
-            Page<Resource> data = await Execute<Page<Resource>>("api/Resources/Get", Method.GET, request);
+            Page<Resource> data = await Execute<Page<Resource>>(Routes.Resources.Get, Method.GET, request);
             return data.Data;
-        }
-
-        public Task<IEnumerable<Y>> GetAsync<Y>(ResourceRequest request)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task Create(ResourceRequest requestParameters)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task Update(ResourceRequest requestParameters)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task Delete(ResourceRequest requestParameters)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

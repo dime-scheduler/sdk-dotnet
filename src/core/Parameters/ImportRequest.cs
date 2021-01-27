@@ -2,8 +2,6 @@
 {
     public class ImportRequest
     {
-        #region Constructor
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportRequest"/> class
         /// </summary>
@@ -20,8 +18,6 @@
             ParameterNames = parameterNames;
             ParameterValues = parameterValues;
         }
-
-        #endregion Constructor
 
         /// <summary>
         /// The name of the stored procedure to execute
