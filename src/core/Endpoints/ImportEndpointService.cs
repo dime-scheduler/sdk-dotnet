@@ -6,15 +6,12 @@ namespace Dime.Scheduler.Sdk
     /// <summary>
     ///
     /// </summary>
-    public class ImportEndpointService : EndpointService<ImportRequest>, IEndpointService<ImportRequest>
+    public class ImportEndpointService : EndpointService<ImportRequest>, IEndpointService
     {
-        public Task Create(ImportRequest requestParameters)
+        public Task InsertData(ImportRequest requestParameters)
             => Execute("api/Import/InsertData", Method.POST, requestParameters);
 
-        public Task Update(ImportRequest requestParameters)
-            => Execute("api/Import/InsertData", Method.POST, requestParameters);
-
-        public Task Delete(ImportRequest requestParameters)
-            => Execute("api/Import/InsertData", Method.POST, requestParameters);
+        public Task<ImportSet> Insert(ImportRequest requestParameters)
+            => Execute<ImportSet>("api/Import/Insert", Method.POST, requestParameters);
     }
 }

@@ -13,7 +13,7 @@ namespace Dime.Scheduler.Sdk.Samples
             await resourcesRequestSample.Execute();
 
             ImportRequestSample sample = new();
-            await sample.Execute();
+            ImportSet set = await sample.ExecuteWithResult();
 
             Console.ReadLine();
         }
