@@ -38,8 +38,8 @@ namespace Dime.Scheduler.Sdk
 
             IRestResponse<TokenResponse> response = await client.ExecuteAsync<TokenResponse>(request);
 
-            return response.StatusCode != HttpStatusCode.OK 
-                ? throw new Exception(response.Content) 
+            return response.StatusCode != HttpStatusCode.OK
+                ? throw new Exception(response.Content)
                 : (response.Data?.access_token);
         }
     }

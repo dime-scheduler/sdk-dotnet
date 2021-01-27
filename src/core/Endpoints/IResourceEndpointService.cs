@@ -2,6 +2,5 @@
 {
     public interface IResourceEndpointService : IReadService<ResourceRequest, Resource>, IEndpointCrudService<ResourceRequest>
     {
-
     }
 }

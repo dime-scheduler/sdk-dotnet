@@ -2,7 +2,6 @@
 
 namespace Dime.Scheduler.Sdk
 {
-
     public abstract class EndpointServiceBuilder<T>
     {
         private readonly IAuthenticator _authn;

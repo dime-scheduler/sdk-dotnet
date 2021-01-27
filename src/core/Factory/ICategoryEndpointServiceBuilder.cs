@@ -2,6 +2,5 @@
 {
     public interface ICategoryEndpointServiceBuilder : IEndpointServiceBuilder<IEndpointCrudService<CategoryRequest>>
     {
-
     }
 }

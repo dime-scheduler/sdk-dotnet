@@ -3,7 +3,6 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-
     /// <summary>
     ///
     /// </summary>
