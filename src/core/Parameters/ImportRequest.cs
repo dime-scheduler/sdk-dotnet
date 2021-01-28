@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public class ImportRequest
+    public class ImportRequest : IImportRequestable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportRequest"/> class
@@ -33,5 +33,7 @@
         /// The collection of values to pass to the stored procedure
         /// </summary>
         public string[] ParameterValues { get; set; }
+
+        public ImportRequest ToImportRequest() => this;
     }
 }

@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/connect.png?raw=true" width="350" alt="Logo provided by Flaticon"></p>
 
-# Dime.Scheduler .NET REST SDK 
+# Dime.Scheduler .NET REST SDK
 
 [![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master)](https://dev.azure.com/dimenicsbe/Utilities/_build/latest?definitionId=175&branchName=master)
 
@@ -16,25 +16,20 @@ Use the package manager NuGet to install the base library of the SDK:
 
 ## Usage
 
-This example adds or updates categories in Dime.Scheduler.
+This example adds or updates categories in Dime.Scheduler through the import pipeline.
 
 ```csharp
 string uri = "http://mydimescheduler.com";
-IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
+IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
 
 DimeSchedulerClient client = new(uri, authenticator);
 
-ImportRequest importRequest = new ImportRequest(
-  "mboc_upsertCategory",
-  new List<string> { "Name", "Color" }.ToArray(),
-  new List<string> { "Category #1","#6e62b5" }.ToArray()
-);
-
+CategoryImportRequest importRequest = new("Category #1", "#6e62b5");
 IImportEndpointService importEndpoint = await client.Import.Request();
-await importEndpoint.InsertData(importRequest);
+await importEndpoint.RunAsync(importRequest);
 ```
 
-The example below fetches the resources available in Dime.Scheduler.
+The example below fetches the resources available in Dime.Scheduler:
 
 ```csharp
 string uri = "http://mydimescheduler.com";

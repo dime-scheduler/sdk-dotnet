@@ -10,10 +10,10 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        public Task InsertData(ImportRequest requestParameters)
-            => Execute(Routes.Import.InsertData, Method.POST, requestParameters);
+        public Task RunAsync(IImportRequestable requestParameters)
+            => Execute(Routes.Import.InsertData, Method.POST, requestParameters.ToImportRequest());
 
-        public Task<ImportSet> Insert(ImportRequest requestParameters)
-            => Execute<ImportSet>(Routes.Import.Insert, Method.POST, requestParameters);
+        public Task<ImportSet> ProcessAsync(IImportRequestable requestParameters)
+            => Execute<ImportSet>(Routes.Import.Insert, Method.POST, requestParameters.ToImportRequest());
     }
 }

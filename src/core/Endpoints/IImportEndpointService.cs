@@ -4,8 +4,8 @@ namespace Dime.Scheduler.Sdk
 {
     public interface IImportEndpointService : IEndpointService
     {
-        Task InsertData(ImportRequest requestParameters);
+        Task RunAsync(IImportRequestable requestParameters);
 
-        Task<ImportSet> Insert(ImportRequest requestParameters);
+        Task<ImportSet> ProcessAsync(IImportRequestable requestParameters);
     }
 }
