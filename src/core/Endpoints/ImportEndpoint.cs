@@ -3,9 +3,9 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class ImportEndpointService : EndpointService<ImportRequest>, IImportEndpointService
+    public class ImportEndpoint : Endpoint<ImportRequest>, IImportEndpoint
     {
-        public ImportEndpointService(AuthenticationOptions opts)
+        public ImportEndpoint(AuthenticationOptions opts)
             : base(opts)
         {
         }

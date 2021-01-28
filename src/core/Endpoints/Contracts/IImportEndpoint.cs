@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Sdk
 {
-    public interface IImportEndpointService : IEndpointService
+    public interface IImportEndpoint : IEndpoint
     {
         Task RunAsync(IImportRequestable requestParameters);
 

@@ -5,13 +5,13 @@
         public DimeSchedulerClient(string uri, IAuthenticator authenticator)
         {
             string baseUrl = uri.EnsureTrailingSlash();
-            Import = new ImportEndpointServiceBuilder(baseUrl, authenticator);
-            Resources = new ResourcesEndpointServiceBuilder(baseUrl, authenticator);
-            Categories = new CategoriesEndpointServiceBuilder(baseUrl, authenticator);
+            Import = new ImportEndpointBuilder(baseUrl, authenticator);
+            Resources = new ResourcesEndpointBuilder(baseUrl, authenticator);
+            Categories = new CategoriesEndpointBuilder(baseUrl, authenticator);
         }
 
-        public IImportEndpointServiceBuilder Import { get; }
-        public IResourceEndpointServiceBuilder Resources { get; }
-        public ICategoryEndpointServiceBuilder Categories { get; }
+        public IImportEndpointBuilder Import { get; }
+        public IResourceEndpointBuilder Resources { get; }
+        public ICategoryEndpointBuilder Categories { get; }
     }
 }

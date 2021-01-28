@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Sdk
 {
-    public interface IEndpointCrudService<in T> : IEndpointService where T : class
+    public interface ICrudEndpoint<in T> : IEndpoint where T : class
     {
         Task Create(T requestParameters);
 

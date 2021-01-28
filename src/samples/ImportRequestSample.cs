@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk.Samples
@@ -28,7 +27,7 @@ namespace Dime.Scheduler.Sdk.Samples
                     ResourceEmail = "hendrik.bulens@dimenics.com"
                 };
 
-                IImportEndpointService importEndpoint = await client.Import.Request();
+                IImportEndpoint importEndpoint = await client.Import.Request();
                 await importEndpoint.ProcessAsync(importRequest);
             }
             catch (Exception ex)
@@ -59,7 +58,7 @@ namespace Dime.Scheduler.Sdk.Samples
                     ResourceEmail = "hendrik.bulens@dimenics.com"
                 };
 
-                IImportEndpointService importEndpoint = await client.Import.Request();
+                IImportEndpoint importEndpoint = await client.Import.Request();
                 return await importEndpoint.ProcessAsync(importRequest);
             }
             catch (Exception ex)

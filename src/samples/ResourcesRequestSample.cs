@@ -17,7 +17,7 @@ namespace Dime.Scheduler.Sdk.Samples
 
                 DimeSchedulerClient client = new(DimeSchedulerCredentials.Uri, authenticator);
 
-                IResourceEndpointService svc = await client.Resources.Request();
+                IResourceEndpoint svc = await client.Resources.Request();
                 IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest());
 
                 foreach (Resource resource in resources)

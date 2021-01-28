@@ -3,9 +3,9 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class CategoriesEndpointService : EndpointService<CategoryRequest>, IEndpointCrudService<CategoryRequest>
+    public class CategoriesEndpoint : Endpoint<CategoryRequest>, ICrudEndpoint<CategoryRequest>
     {
-        public CategoriesEndpointService(AuthenticationOptions opts)
+        public CategoriesEndpoint(AuthenticationOptions opts)
             : base(opts)
         {
         }

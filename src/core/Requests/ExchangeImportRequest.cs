@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Dime.Scheduler.Sdk
 {
-
     public class ExchangeImportRequest : IImportRequestable
     {
         public long AppointmentId { get; set; }
@@ -32,7 +31,7 @@ namespace Dime.Scheduler.Sdk
                     "Body",
                     "Importance",
                     "ResourceEmail"
-                    }.ToArray(),
+                }.ToArray(),
                 new List<string>
                 {
                     AppointmentId.ToString(),

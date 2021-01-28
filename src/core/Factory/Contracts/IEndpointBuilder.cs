@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Sdk
 {
-    public interface IEndpointServiceBuilder<T> where T : IEndpointService
+    public interface IEndpointBuilder<T> where T : IEndpoint
     {
         Task<T> Request();
     }

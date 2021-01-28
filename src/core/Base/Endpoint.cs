@@ -6,11 +6,11 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public abstract class EndpointService<TRequest> where TRequest : class
+    public abstract class Endpoint<TRequest> where TRequest : class
     {
         private readonly AuthenticationOptions _opts;
 
-        protected EndpointService(AuthenticationOptions opts)
+        protected Endpoint(AuthenticationOptions opts)
         {
             _opts = opts;
         }

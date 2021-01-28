@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public interface IEndpointService
+    public interface IEndpoint
     {
     }
 }

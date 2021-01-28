@@ -25,7 +25,7 @@ IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
 DimeSchedulerClient client = new(uri, authenticator);
 
 CategoryImportRequest importRequest = new("Category #1", "#6e62b5");
-IImportEndpointService importEndpoint = await client.Import.Request();
+IImportEndpoint importEndpoint = await client.Import.Request();
 await importEndpoint.RunAsync(importRequest);
 ```
 
@@ -37,7 +37,7 @@ IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
 
 DimeSchedulerClient client = new(uri, authenticator);
 
-IResourceEndpointService svc = await client.Resources.Request();
+IResourceEndpoint svc = await client.Resources.Request();
 IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest());
 
 foreach (Resource resource in resources)

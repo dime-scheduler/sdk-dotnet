@@ -4,9 +4,9 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class ResourcesEndpointService : EndpointService<ResourceRequest>, IResourceEndpointService
+    public class ResourcesEndpoint : Endpoint<ResourceRequest>, IResourceEndpoint
     {
-        public ResourcesEndpointService(AuthenticationOptions opts)
+        public ResourcesEndpoint(AuthenticationOptions opts)
             : base(opts)
         {
         }

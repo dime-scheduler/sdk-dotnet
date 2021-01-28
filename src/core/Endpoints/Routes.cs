@@ -18,7 +18,6 @@
             private static string _endpoint = "Resources";
 
             internal static string Get = $"{_api}/{_endpoint}/Get";
-
         }
 
         internal static class Import

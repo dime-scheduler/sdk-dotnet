@@ -6,6 +6,7 @@
     <Product>Dime.Scheduler</Product>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://github.com/dimenics/dimenics/blob/master/assets/dimenicslogo.png?raw=true</PackageIconUrl>
@@ -14,7 +15,7 @@
     <PackageProjectUrl>https://github.com/dimenics/ds-sdk</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>.NET SDK for Dime.Scheduler</Description>
-    <Version>0.0.1-alpha.10</Version>
+    <Version>0.0.1-alpha.11</Version>
     <Authors>Dimenics</Authors>
     <AssemblyVersion>0.0.1.0</AssemblyVersion>
     <FileVersion>0.0.1.0</FileVersion>
