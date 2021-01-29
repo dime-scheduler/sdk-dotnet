@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/connect.png?raw=true" width="350" alt="Logo provided by Flaticon"></p>
 
-# Dime.Scheduler .NET REST SDK
+# Dime.Scheduler .NET SDK
 
 [![Build Status](https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master)](https://dev.azure.com/dimenicsbe/Utilities/_build/latest?definitionId=175&branchName=master)
 
@@ -43,6 +43,38 @@ IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest());
 foreach (Resource resource in resources)
     Console.WriteLine(resource.Email);
 ```
+
+## Supported import endpoints
+
+| Endpoint                      | Create/Update | Delete |
+| ----------------------------- | ------------- | ------ |
+| Task                          | ❌            | ❌     |
+| Task container                | ❌            | ❌     |
+| Task filter value             | ❌            | ❌     |
+| Task locked                   | ❌            | ❌     |
+| Time marker                   | ❌            | ❌     |
+| Appointment                   | ❌            | ❌     |
+| Appointment category          | ❌            | ❌     |
+| Appointment importance        | ❌            | ❌     |
+| Appointment locked            | ❌            | ❌     |
+| Appointment planning quantity | ❌            | ❌     |
+| Appointment URL               | ❌            | ❌     |
+| Exchange Appointment          | ✅            | ✅     |
+| Action URL                    | ❌            | ❌     |
+| Caption                       | ❌            | ❌     |
+| Category                      | ❌            | ❌     |
+| Filter Group                  | ❌            | ❌     |
+| Filter Value                  | ❌            | ❌     |
+| Job                           | ❌            | ❌     |
+| Notification                  | ❌            | ❌     |
+| Pin                           | ❌            | ❌     |
+| Resource                      | ❌            | ❌     |
+| Resource Calendar             | ❌            | ❌     |
+| Resource Capacity             | ❌            | ❌     |
+| Resource Certificate          | ❌            | ❌     |
+| Resource Filter Value         | ❌            | ❌     |
+| Resource GPS Tracking         | ❌            | ❌     |
+| Resource URL                  | ❌            | ❌     |
 
 ## Contributing
 
