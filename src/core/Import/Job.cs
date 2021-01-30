@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler.Sdk.Import
 {
-    public class JobImportRequest : IImportRequestable
+    public class Job : IImportRequestable
     {
         public string SourceApp { get; set; }
         public string SourceType { get; set; }

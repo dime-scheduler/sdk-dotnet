@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler.Sdk.Import
 {
-    public class TaskImportRequest : IImportRequestable
+    public class Task : IImportRequestable
     {
         public string SourceApp { get; set; }
         public string SourceType { get; set; }

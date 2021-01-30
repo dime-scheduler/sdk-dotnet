@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Threading.Tasks;
+using Dime.Scheduler.Sdk.Import;
+using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk.Samples
 {
     public class ImportRequestSample
     {
-        public async Task Execute()
+        public async t.Task Execute()
         {
             try
             {
@@ -16,7 +17,7 @@ namespace Dime.Scheduler.Sdk.Samples
 
                 DimeSchedulerClient client = new(DimeSchedulerCredentials.Uri, authenticator);
 
-                ExchangeImportRequest importRequest = new()
+                ExchangeAppointment importRequest = new()
                 {
                     AppointmentId = 0,
                     Start = new DateTime(2021, 1, 15, 13, 0, 0),
@@ -36,7 +37,7 @@ namespace Dime.Scheduler.Sdk.Samples
             }
         }
 
-        public async Task<ImportSet> ExecuteWithResult()
+        public async t.Task<ImportSet> ExecuteWithResult()
         {
             try
             {
@@ -47,7 +48,7 @@ namespace Dime.Scheduler.Sdk.Samples
 
                 DimeSchedulerClient client = new(DimeSchedulerCredentials.Uri, authenticator);
 
-                ExchangeImportRequest importRequest = new()
+                ExchangeAppointment importRequest = new()
                 {
                     AppointmentId = 0,
                     Start = new DateTime(2021, 1, 15, 13, 0, 0),

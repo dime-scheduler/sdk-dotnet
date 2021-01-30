@@ -52,7 +52,6 @@ foreach (Resource resource in resources)
 | Task container                | ❌            | ❌     |
 | Task filter value             | ❌            | ❌     |
 | Task locked                   | ❌            | ❌     |
-| Time marker                   | ❌            | ❌     |
 | Appointment                   | ❌            | ❌     |
 | Appointment category          | ❌            | ❌     |
 | Appointment importance        | ❌            | ❌     |
@@ -60,14 +59,15 @@ foreach (Resource resource in resources)
 | Appointment planning quantity | ❌            | ❌     |
 | Appointment URL               | ❌            | ❌     |
 | Exchange Appointment          | ✅            | ✅     |
-| Action URL                    | ❌            | ❌     |
+| Action URL                    | ✅            | ❌     |
 | Caption                       | ❌            | ❌     |
-| Category                      | ❌            | ❌     |
-| Filter Group                  | ❌            | ❌     |
-| Filter Value                  | ❌            | ❌     |
+| Category                      | ✅            | ❌     |
+| Time marker                   | ✅            | ❌     |
+| Pin                           | ✅            | ❌     |
+| Filter Group                  | ✅            | ❌     |
+| Filter Value                  | ✅            | ❌     |
 | Job                           | ❌            | ❌     |
 | Notification                  | ❌            | ❌     |
-| Pin                           | ❌            | ❌     |
 | Resource                      | ❌            | ❌     |
 | Resource Calendar             | ❌            | ❌     |
 | Resource Capacity             | ❌            | ❌     |

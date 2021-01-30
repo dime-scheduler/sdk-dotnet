@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler.Sdk.Import
 {
-    public class CategoryImportRequest : IImportRequestable
+    public class Category : IImportRequestable
     {
-        public CategoryImportRequest()
+        public Category()
         {
         }
 
-        public CategoryImportRequest(string name, string color)
+        public Category(string name, string color)
         {
             Name = name;
             Color = color;
@@ -21,7 +21,7 @@ namespace Dime.Scheduler.Sdk
         public ImportRequest ToImportRequest()
           => new ImportRequest(
                 "mboc_upsertCategory",
-                new List<string> { "Name", "Color" }.ToArray(),
-                new List<string> { Name, Color }.ToArray());
+                new List<string> { "CategoryName", "DisplayName", "CategoryHexColor" }.ToArray(),
+                new List<string> { Name, Name, Color }.ToArray());
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler.Sdk.Import
 {
-    public class ExchangeImportRequest : IImportRequestable
+    public class ExchangeAppointment : IImportRequestable
     {
         public long AppointmentId { get; set; }
 
@@ -43,7 +43,7 @@ namespace Dime.Scheduler.Sdk
                     ResourceEmail
                 }.ToArray());
 
-        public static implicit operator ImportRequest(ExchangeImportRequest request)
-            => request.ToImportRequest();
+        public static implicit operator ImportRequest(ExchangeAppointment model)
+            => model.ToImportRequest();
     }
 }

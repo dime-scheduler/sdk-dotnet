@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using t = System.Threading.Tasks;
+using Dime.Scheduler.Sdk.Import;
 
 namespace Dime.Scheduler.Sdk
 {
     public interface IImportEndpoint : IEndpoint
     {
-        Task RunAsync(IImportRequestable requestParameters);
+        t.Task RunAsync(IImportRequestable requestParameters);
 
-        Task<ImportSet> ProcessAsync(IImportRequestable requestParameters);
+        t.Task<ImportSet> ProcessAsync(IImportRequestable requestParameters);
     }
 }

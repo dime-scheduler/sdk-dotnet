@@ -1,4 +1,4 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler.Sdk.Import
 {
     public class ImportRequest : IImportRequestable
     {
