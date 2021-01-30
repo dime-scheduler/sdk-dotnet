@@ -60,16 +60,16 @@ foreach (Resource resource in resources)
 | Appointment URL               | ❌            | ❌     |
 | Exchange Appointment          | ✅            | ✅     |
 | Action URL                    | ✅            | ❌     |
-| Caption                       | ❌            | ❌     |
+| Caption                       | ✅            | ❌     |
 | Category                      | ✅            | ❌     |
 | Time marker                   | ✅            | ❌     |
 | Pin                           | ✅            | ❌     |
 | Filter Group                  | ✅            | ❌     |
 | Filter Value                  | ✅            | ❌     |
-| Job                           | ❌            | ❌     |
-| Notification                  | ❌            | ❌     |
+| Job                           | ✅            | ❌     |
+| Notification                  | ✅            | ❌     |
 | Resource                      | ❌            | ❌     |
-| Resource Calendar             | ❌            | ❌     |
+| Resource Calendar             | ✅            | ❌     |
 | Resource Capacity             | ❌            | ❌     |
 | Resource Certificate          | ❌            | ❌     |
 | Resource Filter Value         | ❌            | ❌     |
