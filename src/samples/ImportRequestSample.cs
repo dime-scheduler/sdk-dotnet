@@ -29,7 +29,7 @@ namespace Dime.Scheduler.Sdk.Samples
                 };
 
                 IImportEndpoint importEndpoint = await client.Import.Request();
-                await importEndpoint.ProcessAsync(importRequest);
+                await importEndpoint.ProcessAsync(importRequest, TransactionType.Append);
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace Dime.Scheduler.Sdk.Samples
                 };
 
                 IImportEndpoint importEndpoint = await client.Import.Request();
-                return await importEndpoint.ProcessAsync(importRequest);
+                return await importEndpoint.ProcessAsync(importRequest, TransactionType.Append);
             }
             catch (Exception ex)
             {

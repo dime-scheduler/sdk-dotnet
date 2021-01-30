@@ -14,7 +14,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         public string Text { get; set; }
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => new ImportRequest(
                 "mboc_upsertCaption",
                 new List<string> { "Context", "SourceTable", "FieldName", "Language", "Caption" }.ToArray(),

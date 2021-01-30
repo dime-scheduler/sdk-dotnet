@@ -34,6 +34,6 @@
         /// </summary>
         public string[] ParameterValues { get; set; }
 
-        public ImportRequest ToImportRequest() => this;
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType) => this;
     }
 }

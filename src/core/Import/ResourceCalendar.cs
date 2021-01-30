@@ -15,7 +15,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         public DateTime EndDate { get; set; }
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => new ImportRequest(
                 "mboc_upsertFilterGroup",
                 new List<string> { "ResourceCalendarCode", "ResourceNo", "CalendarCode", "StartDate", "EndDate" }.ToArray(),

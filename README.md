@@ -24,9 +24,9 @@ IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
 
 DimeSchedulerClient client = new(uri, authenticator);
 
-CategoryImportRequest importRequest = new("Category #1", "#6e62b5");
+Category importRequest = new("Category #1", "#6e62b5");
 IImportEndpoint importEndpoint = await client.Import.Request();
-await importEndpoint.RunAsync(importRequest);
+await importEndpoint.RunAsync(importRequest, TransactionType.Append);
 ```
 
 The example below fetches the resources available in Dime.Scheduler:
@@ -61,11 +61,11 @@ foreach (Resource resource in resources)
 | Exchange Appointment          | ✅            | ✅     |
 | Action URL                    | ✅            | ❌     |
 | Caption                       | ✅            | ❌     |
-| Category                      | ✅            | ❌     |
-| Time marker                   | ✅            | ❌     |
-| Pin                           | ✅            | ❌     |
-| Filter Group                  | ✅            | ❌     |
-| Filter Value                  | ✅            | ❌     |
+| Category                      | ✅            | ✅     |
+| Time marker                   | ✅            | ✅     |
+| Pin                           | ✅            | ✅     |
+| Filter Group                  | ✅            | ✅     |
+| Filter Value                  | ✅            | ✅     |
 | Job                           | ✅            | ❌     |
 | Notification                  | ✅            | ❌     |
 | Resource                      | ❌            | ❌     |

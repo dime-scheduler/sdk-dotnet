@@ -135,7 +135,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string ContainerIndex { get; set; }
 
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
         => new(
             "mboc_upsertTask",
             new List<string>

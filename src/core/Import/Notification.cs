@@ -29,7 +29,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         public bool SentFromBackOffice { get; set; }
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => new ImportRequest(
                 "mboc_upsertNotification",
                 new List<string> {

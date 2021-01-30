@@ -16,7 +16,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         public bool TransferToTemp { get; set; }
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => new ImportRequest(
                 "mboc_upsertResourceFilterValue",
                 new List<string> { "SourceApp", "SourceType", "ResourceNo", "FilterGroup", "FilterValue", "TransferToTemp" }.ToArray(),

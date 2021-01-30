@@ -2,6 +2,6 @@
 {
     public interface IImportRequestable
     {
-        ImportRequest ToImportRequest();
+        ImportRequest ToImportRequest(TransactionType transactionType);
     }
 }

@@ -11,7 +11,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string Description { get; set; }
         public bool Default { get; set; }
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
          => new ImportRequest(
                 "mboc_upsertActionUrl",
                 new List<string> { "SourceApp", "SourceType", "UrlType", "Url", "UrlDesc", "DefaultUrl" }.ToArray(),

@@ -4,7 +4,7 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class AppointmentPlanningQuantity : IImportRequestable
     {
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
         {
             throw new NotImplementedException();
         }

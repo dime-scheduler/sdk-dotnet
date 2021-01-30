@@ -116,7 +116,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string Note { get; set; }
         public bool OverRuleGanttPlanning { get; set; }
 
-        public ImportRequest ToImportRequest()
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
         => new ImportRequest(
             "mboc_upsertJob",
             new List<string>

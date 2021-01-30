@@ -18,10 +18,21 @@ namespace Dime.Scheduler.Sdk.Import
 
         public string Color { get; set; }
 
-        public ImportRequest ToImportRequest()
-          => new ImportRequest(
+        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+            => transactionType == TransactionType.Append
+                ? CreateAppendRequest()
+                : CreateDeleteRequest();
+
+        private ImportRequest CreateAppendRequest()
+            => new ImportRequest(
                 "mboc_upsertCategory",
                 new List<string> { "CategoryName", "DisplayName", "CategoryHexColor" }.ToArray(),
                 new List<string> { Name, Name, Color }.ToArray());
+
+        private ImportRequest CreateDeleteRequest()
+            => new ImportRequest(
+                "mboc_deleteCategory",
+                new List<string> { "CategoryName" }.ToArray(),
+                new List<string> { Name }.ToArray());
     }
 }
