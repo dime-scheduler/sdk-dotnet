@@ -7,6 +7,8 @@ namespace Dime.Scheduler.Sdk.Import
     {
         public long AppointmentId { get; set; }
 
+        public Guid? AppointmentGuid { get; set; }
+
         public DateTime Start { get; set; }
 
         public DateTime End { get; set; }
@@ -20,11 +22,17 @@ namespace Dime.Scheduler.Sdk.Import
         public string ResourceEmail { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+            => transactionType == TransactionType.Append
+                ? CreateAppendRequest()
+                : CreateDeleteRequest();
+
+        private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertExchangeAppointment",
                 new List<string>
                 {
                     "AppointmentId",
+                    "AppointmentGuid",
                     "Start",
                     "End",
                     "Subject",
@@ -35,6 +43,33 @@ namespace Dime.Scheduler.Sdk.Import
                 new List<string>
                 {
                     AppointmentId.ToString(),
+                    AppointmentGuid?.ToString(),
+                    Start.ToString("s") + "",
+                    End.ToString("s") + "",
+                    Subject,
+                    Body,
+                    Importance,
+                    ResourceEmail
+                }.ToArray());
+
+        private ImportRequest CreateDeleteRequest()
+            => new ImportRequest(
+                "mboc_deleteExchangeAppointment",
+                new List<string>
+                {
+                    "AppointmentId",
+                    "AppointmentGuid",
+                    "Start",
+                    "End",
+                    "Subject",
+                    "Body",
+                    "Importance",
+                    "ResourceEmail"
+                }.ToArray(),
+                new List<string>
+                {
+                    AppointmentId.ToString(),
+                    AppointmentGuid?.ToString(),
                     Start.ToString("s") + "",
                     End.ToString("s") + "",
                     Subject,

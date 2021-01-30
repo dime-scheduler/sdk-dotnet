@@ -49,32 +49,32 @@ foreach (Resource resource in resources)
 | Endpoint                      | Create/Update | Delete |
 | ----------------------------- | ------------- | ------ |
 | Task                          | ❌            | ❌     |
-| Task container                | ❌            | ❌     |
-| Task filter value             | ❌            | ❌     |
-| Task locked                   | ❌            | ❌     |
+| Task container                | ✅            | ✅     |
+| Task filter value             | ✅            | ✅     |
+| Task locked                   | ✅            | N/A    |
 | Appointment                   | ❌            | ❌     |
-| Appointment category          | ❌            | ❌     |
-| Appointment importance        | ❌            | ❌     |
-| Appointment locked            | ❌            | ❌     |
-| Appointment planning quantity | ❌            | ❌     |
-| Appointment URL               | ❌            | ❌     |
+| Appointment category          | ❌            | N/A    |
+| Appointment importance        | ❌            | N/A    |
+| Appointment locked            | ❌            | N/A    |
+| Appointment planning quantity | ❌            | N/A    |
+| Appointment URL               | ❌            | N/A    |
 | Exchange Appointment          | ✅            | ✅     |
-| Action URL                    | ✅            | ❌     |
-| Caption                       | ✅            | ❌     |
+| Action URL                    | ✅            | N/A    |
+| Caption                       | ✅            | N/A    |
 | Category                      | ✅            | ✅     |
 | Time marker                   | ✅            | ✅     |
 | Pin                           | ✅            | ✅     |
 | Filter Group                  | ✅            | ✅     |
 | Filter Value                  | ✅            | ✅     |
 | Job                           | ✅            | ❌     |
-| Notification                  | ✅            | ❌     |
-| Resource                      | ❌            | ❌     |
+| Notification                  | ✅            | ✅     |
+| Resource                      | ❌            | N/A    |
 | Resource Calendar             | ✅            | ❌     |
 | Resource Capacity             | ❌            | ❌     |
 | Resource Certificate          | ❌            | ❌     |
 | Resource Filter Value         | ❌            | ❌     |
-| Resource GPS Tracking         | ❌            | ❌     |
-| Resource URL                  | ❌            | ❌     |
+| Resource GPS Tracking         | ❌            | N/A    |
+| Resource URL                  | ✅            | N/A    |
 
 ## Contributing
 
