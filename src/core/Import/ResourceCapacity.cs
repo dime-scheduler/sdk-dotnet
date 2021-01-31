@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class ResourceCapacity : IImportRequestable, IValidatableObject
+    public class ResourceCapacity : IImportRequestable, IValidatableImportRequest<ResourceCapacity>
     {
         [Required]
         public string ResourceNo { get; set; }
@@ -22,8 +22,8 @@ namespace Dime.Scheduler.Sdk.Import
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType == TransactionType.Append
-                ? Validate().CreateAppendRequest()
-                : Validate().CreateDeleteRequest();
+                ? ((IValidatableImportRequest<ResourceCapacity>)this).Validate(transactionType).CreateAppendRequest()
+                : ((IValidatableImportRequest<ResourceCapacity>)this).Validate(transactionType).CreateDeleteRequest();
 
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
@@ -49,22 +49,10 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException();
 
+        ResourceCapacity IValidatableImportRequest<ResourceCapacity>.Validate(TransactionType transactionType)
+            => this.Validate(transactionType);
+
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            List<ValidationResult> results = new List<ValidationResult>();
-            Validator.TryValidateProperty(ResourceNo, new ValidationContext(this, null, null) { MemberName = nameof(ResourceNo) }, results);
-
-            return results;
-        }
-
-        private ResourceCapacity Validate()
-        {
-            IEnumerable<ValidationResult> result = (this as IValidatableObject).Validate(new ValidationContext(this));
-            if (!result.Any())
-                return this;
-
-            string validationExceptionMsg = string.Join(Environment.NewLine, result.Select(x => x.ErrorMessage));
-            throw new Exception(validationExceptionMsg);
-        }
+            => this.Validate<ResourceCapacity>(validationContext);
     }
 }
