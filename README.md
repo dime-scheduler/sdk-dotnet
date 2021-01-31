@@ -67,9 +67,9 @@ foreach (Resource resource in resources)
 | Pin                           | ✅            | ✅     |
 | Filter Group                  | ✅            | ✅     |
 | Filter Value                  | ✅            | ✅     |
-| Job                           | ✅            | 🚧     |
+| Job                           | ✅            | ✅     |
 | Notification                  | ✅            | ✅     |
-| Resource                      | 🚧            | ❌     |
+| Resource                      | ✅            | ❌     |
 | Resource Calendar             | ✅            | ✅     |
 | Resource Capacity             | ✅            | ❌     |
 | Resource Certificate          | ✅            | ✅     |

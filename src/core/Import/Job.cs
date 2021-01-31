@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class Job : IImportRequestable
+    public class Job : IImportRequestable, IValidatableImportRequest<Job>
     {
         public string SourceApp { get; set; }
         public string SourceType { get; set; }
@@ -116,8 +117,16 @@ namespace Dime.Scheduler.Sdk.Import
         public string Note { get; set; }
         public bool OverRuleGanttPlanning { get; set; }
 
+        public bool CheckAppointments { get; set; }
+        public bool SentFromBackOffice { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-        => new ImportRequest(
+            => transactionType == TransactionType.Append
+                ? ((IValidatableImportRequest<Job>)this).Validate(transactionType).CreateAppendRequest()
+                : ((IValidatableImportRequest<Job>)this).Validate(transactionType).CreateDeleteRequest();
+
+        private ImportRequest CreateAppendRequest()
+            => new ImportRequest(
             "mboc_upsertJob",
             new List<string>
             {
@@ -345,5 +354,17 @@ namespace Dime.Scheduler.Sdk.Import
                 Note,
                 OverRuleGanttPlanning.ToString()
             }.ToArray());
+
+        private ImportRequest CreateDeleteRequest()
+            => new ImportRequest(
+                "mboc_deleteJob",
+                new List<string> { "SourceApp", "SourceType", "JobNo", "CheckAppointments", "SentFromBackOffice" }.ToArray(),
+                new List<string> { SourceApp, SourceType, JobNo, CheckAppointments.ToBit().ToString(), SentFromBackOffice.ToBit().ToString() }.ToArray());
+
+        Job IValidatableImportRequest<Job>.Validate(TransactionType transactionType)
+            => this.Validate(transactionType);
+
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+            => this.Validate<Job>(validationContext);
     }
 }
