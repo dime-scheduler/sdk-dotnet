@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

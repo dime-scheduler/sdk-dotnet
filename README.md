@@ -24,9 +24,9 @@ IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
 
 DimeSchedulerClient client = new(uri, authenticator);
 
-Category importRequest = new("Category #1", "#6e62b5");
+Category newCategory = new("Category #1", "#6e62b5");
 IImportEndpoint importEndpoint = await client.Import.Request();
-await importEndpoint.RunAsync(importRequest, TransactionType.Append);
+await importEndpoint.RunAsync(newCategory, TransactionType.Append);
 ```
 
 The example below fetches the resources available in Dime.Scheduler:
@@ -37,8 +37,8 @@ IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
 
 DimeSchedulerClient client = new(uri, authenticator);
 
-IResourceEndpoint svc = await client.Resources.Request();
-IEnumerable<Resource> resources = await svc.GetAsync(new ResourceRequest());
+IResourceEndpoint resourceEndpoint = await client.Resources.Request();
+IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRequest());
 
 foreach (Resource resource in resources)
     Console.WriteLine(resource.Email);
@@ -53,11 +53,12 @@ foreach (Resource resource in resources)
 | Task filter value             | ✅            | ✅     |
 | Task locked                   | ✅            | N/A    |
 | Appointment                   | ❌            | ❌     |
-| Appointment category          | ❌            | N/A    |
-| Appointment importance        | ❌            | N/A    |
-| Appointment locked            | ❌            | N/A    |
-| Appointment planning quantity | ❌            | N/A    |
-| Appointment URL               | ❌            | N/A    |
+| Appointment category          | ✅            | N/A    |
+| Appointment time marker       | ✅            | N/A    |
+| Appointment importance        | ✅            | N/A    |
+| Appointment locked            | ✅            | N/A    |
+| Appointment planning quantity | ✅            | N/A    |
+| Appointment URL               | ✅            | N/A    |
 | Exchange Appointment          | ✅            | ✅     |
 | Action URL                    | ✅            | N/A    |
 | Caption                       | ✅            | N/A    |
@@ -69,11 +70,11 @@ foreach (Resource resource in resources)
 | Job                           | ✅            | ❌     |
 | Notification                  | ✅            | ✅     |
 | Resource                      | ❌            | N/A    |
-| Resource Calendar             | ✅            | ❌     |
-| Resource Capacity             | ❌            | ❌     |
-| Resource Certificate          | ❌            | ❌     |
-| Resource Filter Value         | ❌            | ❌     |
-| Resource GPS Tracking         | ❌            | N/A    |
+| Resource Calendar             | ✅            | ✅     |
+| Resource Capacity             | ✅            | N/A    |
+| Resource Certificate          | ✅            | ✅     |
+| Resource Filter Value         | ✅            | ✅     |
+| Resource GPS Tracking         | ✅            | N/A    |
 | Resource URL                  | ✅            | N/A    |
 
 ## Contributing

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class AppointmentLocked : IImportRequestable
+    public class AppointmentTimeMarker : IImportRequestable
     {
         public string SourceApp { get; set; }
 
@@ -11,7 +11,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         public long AppointmentId { get; set; }
 
-        public bool Locked { get; set; }
+        public string TimeMarker { get; set; }
 
         public Guid? AppointmentGuid { get; set; }
 
@@ -24,9 +24,9 @@ namespace Dime.Scheduler.Sdk.Import
 
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
-                "mboc_upsertAppointmentLocked",
-                new List<string> { "SourceApp", "SourceType", "AppointmentId", "Locked", "AppointmentGuid", "SentFromBackOffice" }.ToArray(),
-                new List<string> { SourceApp, SourceType, AppointmentId.ToString(), Locked.ToBit().ToString(), AppointmentGuid?.ToString(), SentFromBackOffice.ToBit().ToString() }.ToArray());
+                "mboc_upsertAppointmentTimeMarker",
+                new List<string> { "SourceApp", "SourceType", "AppointmentId", "TimeMarker", "AppointmentGuid", "SentFromBackOffice" }.ToArray(),
+                new List<string> { SourceApp, SourceType, AppointmentId.ToString(), TimeMarker, AppointmentGuid?.ToString(), SentFromBackOffice.ToBit().ToString() }.ToArray());
 
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");

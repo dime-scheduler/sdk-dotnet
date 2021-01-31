@@ -16,9 +16,20 @@ namespace Dime.Scheduler.Sdk.Import
         public DateTime EndDate { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+            => transactionType == TransactionType.Append
+                ? CreateAppendRequest()
+                : CreateDeleteRequest();
+
+        private ImportRequest CreateAppendRequest()
             => new ImportRequest(
-                "mboc_upsertFilterGroup",
+                "mboc_upsertResourceCalendar",
                 new List<string> { "ResourceCalendarCode", "ResourceNo", "CalendarCode", "StartDate", "EndDate" }.ToArray(),
                 new List<string> { Code, ResourceNo, CalendarCode, StartDate.ToString("s"), EndDate.ToString("s") }.ToArray());
+
+        private ImportRequest CreateDeleteRequest()
+            => new ImportRequest(
+                "mboc_deleteResourceCalendar",
+                new List<string> { "ResourceCalendarCode" }.ToArray(),
+                new List<string> { Code }.ToArray());
     }
 }
