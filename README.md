@@ -48,11 +48,11 @@ foreach (Resource resource in resources)
 
 | Endpoint                      | Create/Update | Delete |
 | ----------------------------- | ------------- | ------ |
-| Task                          | 🚧            | 🚧     |
+| Task                          | ✅            | ✅     |
 | Task container                | ✅            | ✅     |
 | Task filter value             | ✅            | ✅     |
 | Task locked                   | ✅            | ❌     |
-| Appointment                   | 🚧            | 🚧     |
+| Appointment                   | ✅            | ✅     |
 | Appointment category          | ✅            | ❌     |
 | Appointment time marker       | ✅            | ❌     |
 | Appointment importance        | ✅            | ❌     |

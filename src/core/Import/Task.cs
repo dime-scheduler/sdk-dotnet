@@ -133,9 +133,15 @@ namespace Dime.Scheduler.Sdk.Import
         public string IgnoreCalendars { get; set; }
         public string ContainerName { get; set; }
         public string ContainerIndex { get; set; }
-
+        public bool CheckAppointments { get; set; }
+        public bool SentFromBackOffice { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+            => transactionType == TransactionType.Append
+                ? CreateAppendRequest()
+                : CreateDeleteRequest();
+
+        ImportRequest CreateAppendRequest()
         => new(
             "mboc_upsertTask",
             new List<string>
@@ -402,5 +408,12 @@ namespace Dime.Scheduler.Sdk.Import
                 ContainerName,
                 ContainerIndex
             }.ToArray());
+
+        ImportRequest CreateDeleteRequest() => new(
+            "mboc_deleteTask",
+            new List<string> { "SourceApp", "SourceType", "JobNo", "TaskNo", "CheckAppointments", "SentFromBackOffice" }.ToArray(),
+            new List<string> { SourceApp, SourceType, JobNo, TaskNo, CheckAppointments.ToBit().ToString(), SentFromBackOffice.ToBit().ToString() }.ToArray()
+        );
+
     }
 }
