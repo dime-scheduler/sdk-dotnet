@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Dime.Scheduler.Sdk.Import
 {
@@ -25,8 +24,12 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertAppointmentLocked",
-                new List<string> { "SourceApp", "SourceType", "AppointmentId", "Locked", "AppointmentGuid", "SentFromBackOffice" }.ToArray(),
-                new List<string> { SourceApp, SourceType, AppointmentId.ToString(), Locked.ToBit().ToString(), AppointmentGuid?.ToString(), SentFromBackOffice.ToBit().ToString() }.ToArray());
+                ("SourceApp", SourceApp),
+                ("SourceType", SourceType),
+                ("AppointmentId", AppointmentId),
+                ("Locked", Locked.ToBit()),
+                ("AppointmentGuid", AppointmentGuid),
+                ("SentFromBackOffice", SentFromBackOffice.ToBit()));
 
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");

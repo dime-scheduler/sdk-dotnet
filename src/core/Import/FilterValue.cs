@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Dime.Scheduler.Sdk.Import
+﻿namespace Dime.Scheduler.Sdk.Import
 {
     public class FilterValue : IImportRequestable
     {
@@ -15,13 +13,15 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertFilterValue",
-                new List<string> { "FilterGroupName", "FilterValue" }.ToArray(),
-                new List<string> { Group, Value }.ToArray());
+                ("FilterGroupName", Group),
+                ("FilterValue", Value)
+            );
 
         private ImportRequest CreateDeleteRequest()
             => new ImportRequest(
                 "mboc_deleteFilterValue",
-                new List<string> { "FilterGroupName", "FilterValue" }.ToArray(),
-                new List<string> { Group, Value }.ToArray());
+                ("FilterGroupName", Group),
+                ("FilterValue", Value)
+            );
     }
 }
