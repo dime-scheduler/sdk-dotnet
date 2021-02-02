@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Dime.Scheduler.Sdk.Import
 {
@@ -15,11 +14,11 @@ namespace Dime.Scheduler.Sdk.Import
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportRequest"/> class
         /// </summary>
-        public ImportRequest(string storedProcedureName, params (string paramName, object paramValue)[] parameters)
+        public ImportRequest(string storedProcedureName, params ImportParameter[] parameters)
         : this(
             storedProcedureName,
-            parameters.Select(x => x.paramName).ToArray(),
-            parameters.Select(x => x.paramValue?.ToString()).ToArray())
+            parameters.Select(x => x.Name).ToArray(),
+            parameters.Select(x => x.Value?.ToString()).ToArray())
         {
         }
 

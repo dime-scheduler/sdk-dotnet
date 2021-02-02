@@ -7,18 +7,21 @@ namespace Dime.Scheduler.Sdk.Import
 {
     internal static class ImportRequestExtensions
     {
-        internal static IEnumerable<(string, object)> CreateParameterCollection<T>(this IImportRequestable import, TransactionType type)
+        internal static ImportParameter[] CreateParameters<T>(this IImportRequestable import, TransactionType type) 
+            => import.CreateParametersCollection<T>(type).ToArray();
+
+        private static IEnumerable<ImportParameter> CreateParametersCollection<T>(this IImportRequestable import, TransactionType type)
         {
             IEnumerable<PropertyInfo> importParameters = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ImportParameterAttribute)));
             foreach (PropertyInfo parameter in importParameters)
             {
                 ImportParameterAttribute attrs = parameter.GetCustomAttribute<ImportParameterAttribute>();
 
-                if (!attrs.IsValid(type))
+                if (!attrs.ShouldInclude(type))
                     continue;
 
                 object objValue = parameter.GetValue(import);
-                yield return (attrs.Name, Parse(objValue));
+                yield return new(attrs.Name, Parse(objValue));
             }
         }
 

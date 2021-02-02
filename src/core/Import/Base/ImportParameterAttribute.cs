@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Dime.Scheduler.Sdk.Import
@@ -17,6 +16,6 @@ namespace Dime.Scheduler.Sdk.Import
 
         private IEnumerable<TransactionType> TransactionTypes { get; }
 
-        public bool IsValid(TransactionType type) => TransactionTypes.Any(x => x == type);
+        public bool ShouldInclude(TransactionType type) => !TransactionTypes.Any() || TransactionTypes.Any(x => x == type);
     }
 }

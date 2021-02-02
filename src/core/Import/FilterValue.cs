@@ -2,7 +2,10 @@
 {
     public class FilterValue : IImportRequestable
     {
+        [ImportParameter("FilterGroupName", TransactionType.Append, TransactionType.Delete)]
         public string Group { get; set; }
+
+        [ImportParameter("FilterValue", TransactionType.Append, TransactionType.Delete)]
         public string Value { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
@@ -11,17 +14,9 @@
                 : CreateDeleteRequest();
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
-                "mboc_upsertFilterValue",
-                ("FilterGroupName", Group),
-                ("FilterValue", Value)
-            );
+            => new ImportRequest(ImportProcedures.AppendFilterValue, this.CreateParameters<FilterValue>(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
-                "mboc_deleteFilterValue",
-                ("FilterGroupName", Group),
-                ("FilterValue", Value)
-            );
+            => new ImportRequest(ImportProcedures.DeleteFilterValue, this.CreateParameters<FilterValue>(TransactionType.Delete));
     }
 }

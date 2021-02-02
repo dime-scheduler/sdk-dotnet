@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
 namespace Dime.Scheduler.Sdk.Import
 {
@@ -25,14 +24,10 @@ namespace Dime.Scheduler.Sdk.Import
                 : ((IValidatableImportRequest<FilterGroup>)this).Validate(transactionType).CreateDeleteRequest();
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
-                "mboc_upsertFilterGroup",
-                this.CreateParameterCollection<FilterGroup>(TransactionType.Append).ToArray());
+            => new ImportRequest("mboc_upsertFilterGroup", this.CreateParameters<FilterGroup>(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
-                "mboc_deleteFilterGroup",
-                this.CreateParameterCollection<FilterGroup>(TransactionType.Delete).ToArray());
+            => new ImportRequest("mboc_deleteFilterGroup", this.CreateParameters<FilterGroup>(TransactionType.Delete));
 
         FilterGroup IValidatableImportRequest<FilterGroup>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);
