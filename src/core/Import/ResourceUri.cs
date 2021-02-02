@@ -9,8 +9,8 @@
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => new ImportRequest(
                 "mboc_upsertResourceUrl",
-                ("ResourceNo", ResourceNo),
-                ("Url", Uri),
-                ("UrlDesc", Description));
+                new ImportParameter("ResourceNo", ResourceNo),
+                new ImportParameter("Url", Uri),
+                new ImportParameter("UrlDesc", Description));
     }
 }

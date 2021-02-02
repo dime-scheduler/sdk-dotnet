@@ -24,12 +24,12 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertAppointmentLocked",
-                ("SourceApp", SourceApp),
-                ("SourceType", SourceType),
-                ("AppointmentId", AppointmentId),
-                ("Locked", Locked.ToBit()),
-                ("AppointmentGuid", AppointmentGuid),
-                ("SentFromBackOffice", SentFromBackOffice.ToBit()));
+                new ImportParameter("SourceApp", SourceApp),
+                new ImportParameter("SourceType", SourceType),
+                new ImportParameter("AppointmentId", AppointmentId),
+                new ImportParameter("Locked", Locked.ToBit()),
+                new ImportParameter("AppointmentGuid", AppointmentGuid),
+                new ImportParameter("SentFromBackOffice", SentFromBackOffice.ToBit()));
 
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");

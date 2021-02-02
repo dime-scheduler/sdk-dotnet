@@ -31,15 +31,15 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertExchangeAppointment",
-                ("AppointmentId", AppointmentId.ToString()),
-                ("AppointmentGuid", AppointmentGuid?.ToString()),
-                ("Start", Start.ToString("s") + ""),
-                ("End", End.ToString("s") + ""),
-                ("Subject", Subject),
-                ("Body", Body),
-                ("Importance", Importance),
-                ("ResourceEmail", ResourceEmail),
-                ("Categories", string.Join(";", Categories)));
+                new ImportParameter("AppointmentId", AppointmentId.ToString()),
+                new ImportParameter("AppointmentGuid", AppointmentGuid?.ToString()),
+                new ImportParameter("Start", Start.ToString("s") + ""),
+                new ImportParameter("End", End.ToString("s") + ""),
+                new ImportParameter("Subject", Subject),
+                new ImportParameter("Body", Body),
+                new ImportParameter("Importance", Importance),
+                new ImportParameter("ResourceEmail", ResourceEmail),
+                new ImportParameter("Categories", string.Join(";", Categories)));
 
         private ImportRequest CreateDeleteRequest()
             => new ImportRequest(
