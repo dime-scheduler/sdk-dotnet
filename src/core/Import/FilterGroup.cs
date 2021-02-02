@@ -1,17 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class FilterGroup : IImportRequestable, IValidatableImportRequest<FilterGroup>
     {
+        [ImportParameter(nameof(Id), TransactionType.Append)]
         public int Id { get; set; }
 
         [Required]
+        [ImportParameter("GroupName", TransactionType.Append, TransactionType.Delete)]
         public string Name { get; set; }
 
+        [ImportParameter(nameof(ColumnNo), TransactionType.Append)]
         public int ColumnNo { get; set; }
 
+        [ImportParameter(nameof(DataFilter), TransactionType.Append)]
         public bool DataFilter { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
@@ -22,13 +27,12 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertFilterGroup",
-                ("Id", Id.ToString()),
-                ("GroupName", Name),
-                ("ColumnNo", ColumnNo.ToString()),
-                ("DataFilter", DataFilter.ToBit().ToString()));
+                this.CreateParameterCollection<FilterGroup>(TransactionType.Append).ToArray());
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest("mboc_deleteFilterGroup", ("GroupName", Name));
+            => new ImportRequest(
+                "mboc_deleteFilterGroup",
+                this.CreateParameterCollection<FilterGroup>(TransactionType.Delete).ToArray());
 
         FilterGroup IValidatableImportRequest<FilterGroup>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);
