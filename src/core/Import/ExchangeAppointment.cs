@@ -21,6 +21,8 @@ namespace Dime.Scheduler.Sdk.Import
 
         public string ResourceEmail { get; set; }
 
+        public IEnumerable<string> Categories { get; set; } = new List<string>();
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType == TransactionType.Append
                 ? CreateAppendRequest()
@@ -29,28 +31,15 @@ namespace Dime.Scheduler.Sdk.Import
         private ImportRequest CreateAppendRequest()
             => new ImportRequest(
                 "mboc_upsertExchangeAppointment",
-                new List<string>
-                {
-                    "AppointmentId",
-                    "AppointmentGuid",
-                    "Start",
-                    "End",
-                    "Subject",
-                    "Body",
-                    "Importance",
-                    "ResourceEmail"
-                }.ToArray(),
-                new List<string>
-                {
-                    AppointmentId.ToString(),
-                    AppointmentGuid?.ToString(),
-                    Start.ToString("s") + "",
-                    End.ToString("s") + "",
-                    Subject,
-                    Body,
-                    Importance,
-                    ResourceEmail
-                }.ToArray());
+                ("AppointmentId", AppointmentId.ToString()),
+                ("AppointmentGuid", AppointmentGuid?.ToString()),
+                ("Start", Start.ToString("s") + ""),
+                ("End", End.ToString("s") + ""),
+                ("Subject", Subject),
+                ("Body", Body),
+                ("Importance", Importance),
+                ("ResourceEmail", ResourceEmail),
+                ("Categories", string.Join(";", Categories)));
 
         private ImportRequest CreateDeleteRequest()
             => new ImportRequest(
