@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
@@ -19,15 +20,18 @@ namespace Dime.Scheduler.Sdk.Import
         public bool DataFilter { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => transactionType == TransactionType.Append
-                ? ((IValidatableImportRequest<FilterGroup>)this).Validate(transactionType).CreateAppendRequest()
-                : ((IValidatableImportRequest<FilterGroup>)this).Validate(transactionType).CreateDeleteRequest();
+            => transactionType switch
+            {
+                TransactionType.Append => ((IValidatableImportRequest<FilterGroup>)this).Validate(transactionType).CreateAppendRequest(),
+                TransactionType.Delete => ((IValidatableImportRequest<FilterGroup>)this).Validate(transactionType).CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest("mboc_upsertFilterGroup", this.CreateParameters<FilterGroup>(TransactionType.Append));
+            => new ImportRequest(ImportProcedures.FilterGroup.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest("mboc_deleteFilterGroup", this.CreateParameters<FilterGroup>(TransactionType.Delete));
+            => new ImportRequest(ImportProcedures.FilterGroup.Delete, this.CreateParameters(TransactionType.Delete));
 
         FilterGroup IValidatableImportRequest<FilterGroup>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);

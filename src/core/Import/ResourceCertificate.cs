@@ -1,35 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceCertificate : IImportRequestable
     {
+        [ImportParameter(nameof(ResourceNo), TransactionType.Append, TransactionType.Delete)]
         public string ResourceNo { get; set; }
 
+        [ImportParameter("CertificateNo", TransactionType.Append, TransactionType.Delete)]
         public string No { get; set; }
 
+        [ImportParameter(nameof(Score), TransactionType.Append)]
         public string Score { get; set; }
 
+        [ImportParameter(nameof(LastScoreDate), TransactionType.Append)]
         public DateTime LastScoreDate { get; set; }
 
+        [ImportParameter(nameof(ValidUntil), TransactionType.Append)]
         public DateTime ValidUntil { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => transactionType == TransactionType.Append
-                ? CreateAppendRequest()
-                : CreateDeleteRequest();
+            => transactionType switch
+            {
+                TransactionType.Append => CreateAppendRequest(),
+                TransactionType.Delete => CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
-                "mboc_upsertResourceCertificate",
-                new List<string> { "ResourceNo", "CertificateNo", "Score", "LastScoreDate", "ValidUntil" }.ToArray(),
-                new List<string> { ResourceNo, No, Score, LastScoreDate.ToString("s"), LastScoreDate.ToString("s"), ValidUntil.ToString("s") }.ToArray());
+            => new ImportRequest(ImportProcedures.Resource.Certificate.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
-                "mboc_deleteResourceCertificate",
-                new List<string> { "ResourceNo", "CertificateNo" }.ToArray(),
-                new List<string> { ResourceNo, No }.ToArray());
+            => new ImportRequest(ImportProcedures.Resource.Certificate.Delete, this.CreateParameters(TransactionType.Delete));
     }
 }

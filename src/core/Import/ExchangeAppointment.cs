@@ -5,66 +5,45 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class ExchangeAppointment : IImportRequestable
     {
+        [ImportParameter(nameof(AppointmentId))]
         public long AppointmentId { get; set; }
 
+        [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
+        [ImportParameter(nameof(Start))]
         public DateTime Start { get; set; }
 
+        [ImportParameter(nameof(End))]
         public DateTime End { get; set; }
 
+        [ImportParameter(nameof(Subject))]
         public string Subject { get; set; }
 
+        [ImportParameter(nameof(Body))]
         public string Body { get; set; }
 
+        [ImportParameter(nameof(Importance))]
         public string Importance { get; set; }
 
+        [ImportParameter(nameof(ResourceEmail))]
         public string ResourceEmail { get; set; }
 
+        [ImportParameter(nameof(Categories))]
         public IEnumerable<string> Categories { get; set; } = new List<string>();
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => transactionType == TransactionType.Append
-                ? CreateAppendRequest()
-                : CreateDeleteRequest();
+            => transactionType switch
+            {
+                TransactionType.Append => CreateAppendRequest(),
+                TransactionType.Delete => CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
-                "mboc_upsertExchangeAppointment",
-                new ImportParameter("AppointmentId", AppointmentId.ToString()),
-                new ImportParameter("AppointmentGuid", AppointmentGuid?.ToString()),
-                new ImportParameter("Start", Start.ToString("s") + ""),
-                new ImportParameter("End", End.ToString("s") + ""),
-                new ImportParameter("Subject", Subject),
-                new ImportParameter("Body", Body),
-                new ImportParameter("Importance", Importance),
-                new ImportParameter("ResourceEmail", ResourceEmail),
-                new ImportParameter("Categories", string.Join(";", Categories)));
+            => new ImportRequest(ImportProcedures.ExchangeAppointment.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
-                "mboc_deleteExchangeAppointment",
-                new List<string>
-                {
-                    "AppointmentId",
-                    "AppointmentGuid",
-                    "Start",
-                    "End",
-                    "Subject",
-                    "Body",
-                    "Importance",
-                    "ResourceEmail"
-                }.ToArray(),
-                new List<string>
-                {
-                    AppointmentId.ToString(),
-                    AppointmentGuid?.ToString(),
-                    Start.ToString("s") + "",
-                    End.ToString("s") + "",
-                    Subject,
-                    Body,
-                    Importance,
-                    ResourceEmail
-                }.ToArray());
+            => new ImportRequest(ImportProcedures.ExchangeAppointment.Delete, this.CreateParameters(TransactionType.Delete));
     }
 }

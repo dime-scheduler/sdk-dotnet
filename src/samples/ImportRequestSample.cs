@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Dime.Scheduler.Sdk.Import;
 using t = System.Threading.Tasks;
 
@@ -20,12 +21,13 @@ namespace Dime.Scheduler.Sdk.Samples
                 ExchangeAppointment importRequest = new()
                 {
                     AppointmentId = 0,
-                    Start = new DateTime(2021, 1, 15, 13, 0, 0),
-                    End = new DateTime(2021, 1, 15, 14, 0, 0),
+                    Start = DateTime.Now.AddHours(1),
+                    End = DateTime.Now.AddHours(2),
                     Subject = "Hello world",
                     Body = "Lorem ipsum",
                     Importance = "0",
-                    ResourceEmail = "hendrik.bulens@dimenics.com"
+                    ResourceEmail = "hendrik.bulens@dimenics.com",
+                    Categories = new List<string> { "Category 1" }
                 };
 
                 IImportEndpoint importEndpoint = await client.Import.Request();
@@ -51,8 +53,8 @@ namespace Dime.Scheduler.Sdk.Samples
                 ExchangeAppointment importRequest = new()
                 {
                     AppointmentId = 0,
-                    Start = new DateTime(2021, 1, 15, 13, 0, 0),
-                    End = new DateTime(2021, 1, 15, 14, 0, 0),
+                    Start = DateTime.Now.AddHours(1),
+                    End = DateTime.Now.AddHours(2),
                     Subject = "Hello world",
                     Body = "Lorem ipsum",
                     Importance = "0",

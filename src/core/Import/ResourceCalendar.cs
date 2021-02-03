@@ -1,35 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceCalendar : IImportRequestable
     {
+        [ImportParameter("ResourceCalendarCode", TransactionType.Append, TransactionType.Delete)]
         public string Code { get; set; }
 
+        [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         public string ResourceNo { get; set; }
 
+        [ImportParameter(nameof(CalendarCode), TransactionType.Append)]
         public string CalendarCode { get; set; }
 
+        [ImportParameter(nameof(StartDate), TransactionType.Append)]
         public DateTime StartDate { get; set; }
 
+        [ImportParameter(nameof(EndDate), TransactionType.Append)]
         public DateTime EndDate { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => transactionType == TransactionType.Append
-                ? CreateAppendRequest()
-                : CreateDeleteRequest();
+            => transactionType switch
+            {
+                TransactionType.Append => CreateAppendRequest(),
+                TransactionType.Delete => CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
-                "mboc_upsertResourceCalendar",
-                new List<string> { "ResourceCalendarCode", "ResourceNo", "CalendarCode", "StartDate", "EndDate" }.ToArray(),
-                new List<string> { Code, ResourceNo, CalendarCode, StartDate.ToString("s"), EndDate.ToString("s") }.ToArray());
+            => new ImportRequest(ImportProcedures.Resource.Calendar.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
-                "mboc_deleteResourceCalendar",
-                new List<string> { "ResourceCalendarCode" }.ToArray(),
-                new List<string> { Code }.ToArray());
+            => new ImportRequest(ImportProcedures.Resource.Calendar.Delete, this.CreateParameters(TransactionType.Delete));
     }
 }

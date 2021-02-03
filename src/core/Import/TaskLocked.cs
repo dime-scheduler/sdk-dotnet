@@ -1,25 +1,26 @@
-﻿using System.Collections.Generic;
-
-namespace Dime.Scheduler.Sdk.Import
+﻿namespace Dime.Scheduler.Sdk.Import
 {
     public class TaskLocked : IImportRequestable
     {
+        [ImportParameter(nameof(SourceApp))]
         public string SourceApp { get; set; }
 
+        [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
+        [ImportParameter(nameof(JobNo))]
         public string JobNo { get; set; }
 
+        [ImportParameter(nameof(TaskNo))]
         public string TaskNo { get; set; }
 
+        [ImportParameter(nameof(Locked))]
         public bool Locked { get; set; }
 
-        public bool SentFromBackOfice { get; set; }
+        [ImportParameter(nameof(SentFromBackOffice))]
+        public bool SentFromBackOffice { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => new ImportRequest(
-                "mboc_updateTaskLocked",
-                new List<string> { "SourceApp", "SourceType", "JobNo", "TaskNo", "Locked", "SentFromBackOffice" }.ToArray(),
-                new List<string> { SourceApp, SourceType, JobNo, TaskNo, Locked.ToBit().ToString(), SentFromBackOfice.ToBit().ToString() }.ToArray());
+            => new ImportRequest(ImportProcedures.TaskLocked.Append, this.CreateParameters(transactionType));
     }
 }

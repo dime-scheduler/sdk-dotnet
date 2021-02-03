@@ -7,12 +7,12 @@ namespace Dime.Scheduler.Sdk.Import
 {
     internal static class ImportRequestExtensions
     {
-        internal static ImportParameter[] CreateParameters<T>(this IImportRequestable import, TransactionType type) 
-            => import.CreateParametersCollection<T>(type).ToArray();
+        internal static ImportParameter[] CreateParameters(this IImportRequestable import, TransactionType type)
+            => import.CreateParametersCollection(type).ToArray();
 
-        private static IEnumerable<ImportParameter> CreateParametersCollection<T>(this IImportRequestable import, TransactionType type)
+        private static IEnumerable<ImportParameter> CreateParametersCollection(this IImportRequestable import, TransactionType type)
         {
-            IEnumerable<PropertyInfo> importParameters = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ImportParameterAttribute)));
+            IEnumerable<PropertyInfo> importParameters = import.GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ImportParameterAttribute)));
             foreach (PropertyInfo parameter in importParameters)
             {
                 ImportParameterAttribute attrs = parameter.GetCustomAttribute<ImportParameterAttribute>();
@@ -30,6 +30,7 @@ namespace Dime.Scheduler.Sdk.Import
             {
                 bool b => b.ToBit().ToString(),
                 DateTime dt => dt.ToString("s"),
+                IEnumerable<string> enumerable => string.Join(";", enumerable),
                 _ => objValue?.ToString()
             };
     }

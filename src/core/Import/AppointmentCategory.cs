@@ -23,12 +23,15 @@ namespace Dime.Scheduler.Sdk.Import
         public bool SentFromBackOffice { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => transactionType == TransactionType.Append
-                ? CreateAppendRequest()
-                : CreateDeleteRequest();
+            => transactionType switch
+            {
+                TransactionType.Append => CreateAppendRequest(),
+                TransactionType.Delete => CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest("mboc_upsertAppointmentCategory", this.CreateParameters<AppointmentCategory>(TransactionType.Append));
+            => new ImportRequest(ImportProcedures.Appointment.Category.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");

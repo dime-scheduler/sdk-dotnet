@@ -1,27 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class Pin : Indicator, IImportRequestable, IValidatableImportRequest<Pin>
+    public class Pin : IImportRequestable, IValidatableImportRequest<Pin>
     {
+        [Required]
+        [ImportParameter(nameof(Name))]
+        public string Name { get; set; }
+
+        [ImportParameter("HexColor", TransactionType.Append)]
+        public string Color { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => transactionType == TransactionType.Append
-                ? ((IValidatableImportRequest<Pin>)this).Validate(transactionType).CreateAppendRequest()
-                : ((IValidatableImportRequest<Pin>)this).Validate(transactionType).CreateDeleteRequest();
+            => transactionType switch
+            {
+                TransactionType.Append => ((IValidatableImportRequest<Pin>)this).Validate(transactionType).CreateAppendRequest(),
+                TransactionType.Delete => ((IValidatableImportRequest<Pin>)this).Validate(transactionType).CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
-                "mboc_upsertPin",
-                new List<string> { "Name", "HexColor" }.ToArray(),
-                new List<string> { Name, Color }.ToArray());
+            => new ImportRequest(ImportProcedures.Pin.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
-                "mboc_deletePin",
-                new List<string> { "Name" }.ToArray(),
-                new List<string> { Name }.ToArray());
-
+            => new ImportRequest(ImportProcedures.Pin.Delete, this.CreateParameters(TransactionType.Append));
+        
         Pin IValidatableImportRequest<Pin>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);
 
