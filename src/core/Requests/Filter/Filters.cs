@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk
     {
         public override string ToString()
         {
-            string filtersString = string.Join(',', this.Select(x => x.ToString()));
+            string filtersString = string.Join(",", this.Select(x => x.ToString()));
             return $"[{filtersString}]";
         }
     }
