@@ -20,7 +20,7 @@ namespace Dime.Scheduler.Sdk.Samples
                 Filter<Resource> resourceFilter = new Filter<Resource>()
                     .WithOperator(Operator.Eq)
                     .WithProperty(x => x.ExchangeIntegrationEnabled)
-                    .WithValue(true);
+                    .WithValue(true.ToString().ToLower());
 
                 string filter = new Filters<Resource> { resourceFilter }.ToString();
                 IResourceEndpoint svc = await client.Resources.Request();

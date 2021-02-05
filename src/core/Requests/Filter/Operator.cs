@@ -5,6 +5,9 @@ namespace Dime.Scheduler.Sdk
     public enum Operator
     {
         [Description("==")]
-        Eq
+        Eq,
+
+        [Description("like")]
+        Like
     }
 }
