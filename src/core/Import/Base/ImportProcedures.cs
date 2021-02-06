@@ -144,6 +144,14 @@
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
         }
 
+        internal static class Job
+        {
+            private static readonly string _entity = "Job";
+
+            internal static readonly string Append = $"{_base}{_append}{_entity}";
+            internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+        }
+
         internal static class Resource
         {
 
