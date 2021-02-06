@@ -5,15 +5,17 @@ namespace Dime.Scheduler.Sdk.Import
     public class Notification : IImportRequestable
     {
         [ImportParameter(nameof(SourceApp))]
+        [RequiredIf(TransactionType.Append)]
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]
+        [RequiredIf(TransactionType.Append)]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
         public long? AppointmentId { get; set; }
 
-        [ImportParameter(nameof(MbocId))]
+        [ImportParameter("mboc_id")]
         public string MbocId { get; set; }
 
         [ImportParameter("NotificationType", TransactionType.Append)]
@@ -26,7 +28,8 @@ namespace Dime.Scheduler.Sdk.Import
         public string Text { get; set; }
 
         [ImportParameter("NotificationDate", TransactionType.Append)]
-        public DateTime Date { get; set; }
+        [RequiredIf(TransactionType.Append)]
+        public DateTime? Date { get; set; }
 
         [ImportParameter(nameof(JobNo))]
         public string JobNo { get; set; }
@@ -37,7 +40,7 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid AppointmentGuid { get; set; }
 
-        [ImportParameter(nameof(SentFromBackOffice))]
+        [ImportParameter("SentFromBackoffice")]
         public bool SentFromBackOffice { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

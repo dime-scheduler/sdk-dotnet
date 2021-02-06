@@ -21,14 +21,15 @@ namespace Dime.Scheduler.Sdk.Import
                     continue;
 
                 object objValue = parameter.GetValue(import);
-                yield return new(attrs.Name, Parse(objValue));
+                if (objValue != null)
+                    yield return new(attrs.Name, Parse(objValue));
             }
         }
 
         private static string Parse(object objValue)
             => objValue switch
             {
-                bool b => b.ToBit().ToString(),
+                bool b => b.ToString(),
                 DateTime dt => dt.ToString("s"),
                 IEnumerable<string> enumerable => string.Join(";", enumerable),
                 _ => objValue?.ToString()
