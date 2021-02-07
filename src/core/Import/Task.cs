@@ -128,23 +128,23 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ActualResponseDateTime), TransactionType.Append)]
         public DateTime? ActualResponseDateTime { get; set; }
 
-        [ImportParameter(nameof(RequestedStartDatetime), TransactionType.Append)]
-        public DateTime? RequestedStartDatetime { get; set; }
+        [ImportParameter(nameof(RequestedStartDate), TransactionType.Append)]
+        public DateTime? RequestedStartDate { get; set; }
 
-        [ImportParameter(nameof(RequestedEndDatetime), TransactionType.Append)]
-        public DateTime? RequestedEndDatetime { get; set; }
+        [ImportParameter(nameof(RequestedEndDate), TransactionType.Append)]
+        public DateTime? RequestedEndDate { get; set; }
 
-        [ImportParameter(nameof(ConfirmedStartDatetime), TransactionType.Append)]
-        public DateTime? ConfirmedStartDatetime { get; set; }
+        [ImportParameter(nameof(ConfirmedStartDate), TransactionType.Append)]
+        public DateTime? ConfirmedStartDate { get; set; }
 
-        [ImportParameter(nameof(ConfirmedEndDatetime), TransactionType.Append)]
-        public DateTime? ConfirmedEndDatetime { get; set; }
+        [ImportParameter(nameof(ConfirmedEndDate), TransactionType.Append)]
+        public DateTime? ConfirmedEndDate { get; set; }
 
-        [ImportParameter(nameof(ActualStartDatetime), TransactionType.Append)]
-        public DateTime? ActualStartDatetime { get; set; }
+        [ImportParameter(nameof(ActualStartDate), TransactionType.Append)]
+        public DateTime? ActualStartDate { get; set; }
 
-        [ImportParameter(nameof(ActualEndDatetime), TransactionType.Append)]
-        public DateTime? ActualEndDatetime { get; set; }
+        [ImportParameter(nameof(ActualEndDate), TransactionType.Append)]
+        public DateTime? ActualEndDate { get; set; }
 
         [ImportParameter(nameof(LocationDescription), TransactionType.Append)]
         public string LocationDescription { get; set; }
@@ -338,11 +338,11 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(BulkPlanningQty), TransactionType.Append)]
         public string BulkPlanningQty { get; set; }
 
-        [ImportParameter(nameof(StartDatetime), TransactionType.Append)]
-        public string StartDatetime { get; set; }
+        [ImportParameter(nameof(StartDate), TransactionType.Append)]
+        public string StartDate { get; set; }
 
-        [ImportParameter(nameof(EndDatetime), TransactionType.Append)]
-        public string EndDatetime { get; set; }
+        [ImportParameter(nameof(EndDate), TransactionType.Append)]
+        public string EndDate { get; set; }
 
         [ImportParameter(nameof(PercentDone), TransactionType.Append)]
         public string PercentDone { get; set; }

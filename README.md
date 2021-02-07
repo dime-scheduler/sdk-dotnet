@@ -36,6 +36,7 @@ foreach (Resource resource in resources)
 ```
 
 The `DimeSchedulerClient` class is the entry point and it is where all endpoints are exposed:
+
 ```csharp
 DimeSchedulerClient client = new(uri, authenticator);
 ```
@@ -46,7 +47,7 @@ Two arguments are required: the URI to Dime.Scheduler and credentials to connect
 IResourceEndpoint resourceEndpoint = await client.Resources.Request();
 ```
 
-When the credentials are invalid, an exception is thrown. Otherwise, the user is authenticated and can access the endpoint: 
+When the credentials are invalid, an exception is thrown. Otherwise, the user is authenticated and can access the endpoint:
 
 ```csharp
 IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRequest());
@@ -54,7 +55,7 @@ IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRe
 
 ## Import
 
-The import API is the entry point for external systems to feed data into Dime.Scheduler. The list of supported endpoints below expose a set of import pipelines to map and save data in the Dime.Scheduler database. 
+The import API is the entry point for external systems to feed data into Dime.Scheduler. The list of supported endpoints below expose a set of import pipelines to map and save data in the Dime.Scheduler database.
 
 ### Usage
 
@@ -127,6 +128,7 @@ FilterGroup model = new FilterGroup { ColumnNo = 1 };
 | Appointment planning quantity | ✅            | ❌     |
 | Appointment URL               | ✅            | ❌     |
 | Exchange Appointment          | ✅            | ✅     |
+| Assignment                    | ✅            | ❌     |
 | Action URL                    | ✅            | ❌     |
 | Caption                       | ✅            | ❌     |
 | Category                      | ✅            | ✅     |

@@ -65,7 +65,16 @@
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
             }
         }
-        
+
+        internal static class Assignment
+        {
+            private static readonly string _entity = "AppointmentResource";
+
+            internal static readonly string Append = $"{_base}add{_entity}";
+            internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+        }
+
+
         internal static class Task
         {
             private static readonly string _entity = "Task";
