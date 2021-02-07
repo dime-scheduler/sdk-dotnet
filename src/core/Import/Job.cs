@@ -25,7 +25,6 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ShortDescription), TransactionType.Append)]
         public string ShortDescription { get; set; }
 
-        [RequiredIf(TransactionType.Append)]
         [ImportParameter(nameof(Description), TransactionType.Append)]
         public string Description { get; set; }
 

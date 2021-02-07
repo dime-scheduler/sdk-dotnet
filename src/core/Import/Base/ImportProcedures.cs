@@ -66,13 +66,22 @@
             }
         }
         
-        internal static class TaskFilterValue
+        internal static class Task
         {
-            private static readonly string _entity = "TaskFilterValue";
+            private static readonly string _entity = "Task";
 
             internal static readonly string Append = $"{_base}{_append}{_entity}";
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+
+            internal static class FilterValue
+            {
+                private static readonly string _entity = "TaskFilterValue";
+
+                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+            }
         }
+        
 
         internal static class ActionUri
         {
@@ -154,6 +163,11 @@
 
         internal static class Resource
         {
+            private static readonly string _entity = "Resource";
+
+            internal static readonly string Append = $"{_base}{_append}{_entity}";
+            internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+
 
             internal static class FilterValue
             {
