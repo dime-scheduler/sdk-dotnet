@@ -2,17 +2,20 @@ module.exports = {
   title: 'Dime.Scheduler SDK',
   tagline: 'Software development kit for Dime.Scheduler',
   url: 'https://dimenics.github.io',
-  baseUrl: '/ds-sdk/docs/',
+  baseUrl: '/ds-sdk/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'dimenics',
   projectName: 'ds-sdk',
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+    },
     navbar: {
       title: 'Dime.Scheduler SDK',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Dime Logo',
         src: 'img/dime.png',
       },
       items: [
@@ -64,7 +67,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/dimenics/ds-sdk/docs/edit/master/website/',
+            'https://github.com/dimenics/ds-sdk/edit/master/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

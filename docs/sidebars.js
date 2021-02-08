@@ -1,5 +1,9 @@
 module.exports = {
   someSidebar: {
-    Overview: ['introduction']
+    'Dime.Scheduler': [
+      'introduction',
+      'import',
+      'validation'
+    ]
   },
 };

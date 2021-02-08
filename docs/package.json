@@ -1,6 +1,7 @@
 {
   "name": "docs",
   "version": "0.0.0",
+  "homepage": "https://dimenics.github.io/ds-sdk",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
