@@ -10,9 +10,11 @@ module.exports = {
   projectName: 'ds-sdk',
   themeConfig: {
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/dracula'),
     },
     navbar: {
+      hideOnScroll: true,
       title: 'Dime.Scheduler SDK',
       logo: {
         alt: 'Dime Logo',
@@ -24,6 +26,12 @@ module.exports = {
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
+        },
+        {
+          href: 'https://github.com/dimenics/ds-sdk',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         }
       ],
     },
@@ -57,6 +65,11 @@ module.exports = {
           ]
         }
       ],
+      logo: {
+        alt: 'DS logo',
+        src: 'img/ds-dark.png',
+        href: 'https://dimescheduler.com',
+      },
       copyright: `Copyright © ${new Date().getFullYear()} Dimenics.`,
     },
   },
