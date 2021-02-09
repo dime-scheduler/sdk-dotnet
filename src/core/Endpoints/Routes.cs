@@ -27,5 +27,12 @@
             internal static string Insert = $"{_api}/{_endpoint}/Insert";
             internal static string InsertData = $"{_api}/{_endpoint}/InsertData";
         }
+
+        internal static class Messages
+        {
+            private static string _endpoint = "Messages";
+
+            internal static string Post = $"{_api}/{_endpoint}/Create";
+        }
     }
 }

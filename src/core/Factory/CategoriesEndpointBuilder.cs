@@ -2,6 +2,7 @@
 
 namespace Dime.Scheduler.Sdk
 {
+
     public class CategoriesEndpointBuilder : EndpointBuilder<CategoriesEndpoint>, ICategoryEndpointBuilder
     {
         public CategoriesEndpointBuilder(string uri, IAuthenticator authn)

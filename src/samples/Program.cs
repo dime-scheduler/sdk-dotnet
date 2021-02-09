@@ -7,6 +7,9 @@ namespace Dime.Scheduler.Sdk.Samples
     {
         public static async Task Main(string[] args)
         {
+            MessagesRequestSample messageRequestSample = new();
+            await messageRequestSample.Execute();
+
             ResourcesRequestSample resourcesRequestSample = new();
             await resourcesRequestSample.Execute();
 

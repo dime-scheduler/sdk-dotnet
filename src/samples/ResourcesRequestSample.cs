@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk.Samples
 {
+
     public class ResourcesRequestSample
     {
         public async Task Execute()
