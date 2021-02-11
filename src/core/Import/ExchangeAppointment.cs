@@ -11,6 +11,12 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
+        [ImportParameter(nameof(ExchangeId))]
+        public string ExchangeId { get; set; }
+
+        [ImportParameter(nameof(ICalUId))]
+        public string ICalUId { get; set; }
+
         [ImportParameter(nameof(Start))]
         public DateTime Start { get; set; }
 
