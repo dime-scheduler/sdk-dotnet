@@ -1,9 +1,24 @@
 module.exports = {
-  someSidebar: {
+  intro: {
     'Dime.Scheduler': [
       'introduction',
-      'import',
-      'validation'
+      'about',
+      'contributing'
+    ],
+    'Getting started': [
+      'installation',
+      'example'
     ]
   },
+  api: {
+    'Principles': [
+      'api/getting-started',
+      'api/authentication',
+      'validation'
+    ],
+    'Import': [
+      'import/import',
+      'import/endpoints'
+    ]
+  }
 };

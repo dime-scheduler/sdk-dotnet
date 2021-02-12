@@ -5,46 +5,10 @@ sidebar_label: Introduction
 slug: ./
 ---
 
-## Install
+<img className="center" src="/static/img/connect.svg" height='400px' />
 
-:::caution
-The packages listed here are not publicly available yet on NuGet.
-:::
 
-Use the package manager NuGet to install the base library of the SDK:
+This repository contains the .NET SDK for Dime.Scheduler. Most of the application's capabilities are exposed through RESTful services, so in a way the SDK is an easy to use wrapper around the web APIs.
 
-`dotnet add package Dime.Scheduler.Sdk`
-
-## Usage
-
-```csharp
-string uri = "http://mydimescheduler.com";
-IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
-
-DimeSchedulerClient client = new(uri, authenticator);
-
-IResourceEndpoint resourceEndpoint = await client.Resources.Request();
-IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRequest());
-
-foreach (Resource resource in resources)
-    Console.WriteLine(resource.Email);
-```
-
-The `DimeSchedulerClient` class is the entry point and it is where all endpoints are exposed:
-
-```csharp
-DimeSchedulerClient client = new(uri, authenticator);
-```
-
-Two arguments are required: the URI to Dime.Scheduler and credentials to connect to it. The `IAuthenticator` (with `FormsAuthenticator` as the default implementation) interface is called when an endpoint is requested:
-
-```csharp
-IResourceEndpoint resourceEndpoint = await client.Resources.Request();
-```
-
-When the credentials are invalid, an exception is thrown. Otherwise, the user is authenticated and can access the endpoint:
-
-```csharp
-IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRequest());
-```
+Flexibility is one the application's cornerstones, and this philosophy has been but into effect with the SDK as well, as the user of the SDK is in total control. And by making the repository open source, you can always resort to editing the source code to make it work the way you like it.
 

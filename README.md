@@ -8,7 +8,7 @@
 
 <h1 align="center">Dime.Scheduler .NET SDK</h1>
 
-This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. Learn all about the project on the [website](https://dimenics.github.io/ds-sdk/). 
+This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. Learn all about the project in the [docs 📚](https://dimenics.github.io/ds-sdk/). 
 
 ## Installation
 

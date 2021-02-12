@@ -4,7 +4,7 @@ title: Validation
 sidebar_label: Validation
 ---
 
-Validation is done through the capabilities exposed in the `System.ComponentModel.DataAnnotations` namespace. Wrapped in the interface ` IValidatableImportRequest<out T>`, import objects are validated before the request is sent to Dime.Scheduler.
+Validation is done through the capabilities exposed in the `System.ComponentModel.DataAnnotations` namespace. Wrapped in the interface `IValidatableImportRequest<out T>`, import objects are validated before the request is sent to Dime.Scheduler.
 
 Take the `FilterGroup` class as an example:
 
@@ -13,6 +13,8 @@ public class FilterGroup : IImportRequestable, IValidatableImportRequest<FilterG
 {
     [Required]
     public string Name { get; set; }
+
+    public int ColumnNo { get; set; }
 }
 ```
 
