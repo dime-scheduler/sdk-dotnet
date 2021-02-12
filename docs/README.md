@@ -26,8 +26,12 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
+Run this script in the repository's root:
+
 ```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+set "GIT_USER=hbulens" && yarn deploy
 ```
+
+Replace 'hbulens' with your GitHub user name.
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
