@@ -12,6 +12,8 @@ This repository contains the .NET SDK for Dime.Scheduler's RESTful API services.
 
 ## Installation
 
+[![Join the chat at https://gitter.im/ds-sdk/community](https://badges.gitter.im/ds-sdk/community.svg)](https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > 🚧 Warning: the packages listed here are not publicly available yet on NuGet.
 
 Use the package manager NuGet to install the base library of the SDK:
