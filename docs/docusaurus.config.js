@@ -55,17 +55,27 @@ module.exports = {
           title: 'Community',
           items: [
             {
+              label: 'Join the chat',
+              href: 'https://dimescheduler.com',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/dimenics/ds-sdk',
+            },
+          ]
+        },
+        {
+          title: 'Social',
+          items: [
+            {
               label: 'Website',
               href: 'https://dimescheduler.com',
             },
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/dimenics',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/dimenics/ds-sdk',
             }
+            
           ]
         }
       ],

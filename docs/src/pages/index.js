@@ -5,6 +5,8 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import ImageCard from './imageCard';
+import styled from "styled-components";
 
 const features = [
   {
@@ -21,7 +23,7 @@ const features = [
     imageUrl: 'img/coder.svg',
     description: (
       <>
-       The SDK is easy to use and it lets you plug your application right into the core of Dime.Scheduler.
+        The SDK is easy to use and it lets you plug your application right into the core of Dime.Scheduler.
       </>
     ),
   },
@@ -36,7 +38,7 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
@@ -51,14 +53,62 @@ function Feature({imageUrl, title, description}) {
   );
 }
 
+function OtherFeature({ imageUrl, title, description, i }) {
+  const imgUrl = useBaseUrl(imageUrl);
+
+  const offsetCls = "col--offset-2";
+  const isImageRight = i % 2 == 0;
+
+  const txtCls = `col col--5 padding-vert--xl ${!isImageRight ? offsetCls : ""}`;
+  const txt = <div className={txtCls}>
+    <h2>{title}</h2>
+    <p className="featureDescription_2nlI">{description}</p>
+  </div>;
+
+  const imgCls = `col col--5 ${isImageRight ? offsetCls : ""}`;
+  const img = <div className={imgCls}>
+    <div className="featureImageColumn_QmtA">
+      <img alt={title} src={imgUrl} />
+    </div>
+  </div>;
+
+  const content = i % 2 == 0 ? [img, txt] : [txt, img];
+  return (
+    <div className="row">{content}</div>
+  );
+}
+
+
+const ImageContainer = styled.div`
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    margin: 0 10px;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 900px) {
+    margin-top: 30px;
+  }
+`;
+
+const PurpleSection = styled.section`
+  background: #6e62b5
+`;
+
+
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   return (
     <Layout
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero hero--primary heroTilted_3die', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
@@ -75,19 +125,32 @@ function Home() {
         </div>
       </header>
       <main>
+
         {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
               <div className="row">
                 {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
+                  <OtherFeature key={idx} {...props} i={idx} />
                 ))}
               </div>
             </div>
           </section>
         )}
+
+        <PurpleSection className={styles.features}>
+          <div className="container">
+            <ImageContainer>
+              <Container>
+                <ImageCard image={"img/DS1.png"} height='500' width='800' />
+              </Container>
+            </ImageContainer>
+          </div>
+        </PurpleSection>
+
+
       </main>
-    </Layout>
+    </Layout >
   );
 }
 

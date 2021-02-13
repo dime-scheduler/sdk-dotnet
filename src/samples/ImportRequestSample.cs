@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using Dime.Scheduler.Sdk.Import;
 using t = System.Threading.Tasks;
 
@@ -27,11 +28,17 @@ namespace Dime.Scheduler.Sdk.Samples
                     Body = "Lorem ipsum",
                     Importance = "0",
                     ResourceEmail = "hendrik.bulens@dimenics.com",
-                    Categories = new List<string> { "Category 1" }
+                    Categories = new List<string> { "Category 1" },
+                    ExchangeId = "1001",
+                    ICalUId = "100"
                 };
 
                 IImportEndpoint importEndpoint = await client.Import.Request();
                 await importEndpoint.ProcessAsync(importRequest, TransactionType.Append);
+            }
+            catch (WebException ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
             catch (Exception ex)
             {
