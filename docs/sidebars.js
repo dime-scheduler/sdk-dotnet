@@ -12,6 +12,7 @@ module.exports = {
   api: {
     'Principles': [
       'api/getting-started',
+      'api/endpoints',
       'api/authentication'
     ],
     'Import': [

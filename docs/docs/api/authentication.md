@@ -22,7 +22,7 @@ FilterGroup filterGroup = new FilterGroup { Name = "Group 1" };
 
  // Returns an endpoint with an authenticated user, or throws an exception when the user could not be logged in
 IImportEndpoint importEndpoint = await client.Import.Request();
-await importEndpoint.RunAsync(filterGroup, TransactionType.Append); 
+await importEndpoint.ProcessAsync(filterGroup, TransactionType.Append); 
 ```
 
 ## Authentication
