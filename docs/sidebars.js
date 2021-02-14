@@ -2,8 +2,7 @@ module.exports = {
   intro: {
     'Dime.Scheduler': [
       'introduction',
-      'about',
-      'contributing'
+      'about'
     ],
     'Getting started': [
       'installation',
@@ -13,11 +12,11 @@ module.exports = {
   api: {
     'Principles': [
       'api/getting-started',
-      'api/authentication',
-      'validation'
+      'api/authentication'
     ],
     'Import': [
       'import/import',
+      'import/validation',
       'import/endpoints'
     ]
   }

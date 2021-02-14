@@ -9,9 +9,11 @@ module.exports = {
   organizationName: 'dimenics',
   projectName: 'ds-sdk',
   themeConfig: {
+    hideableSidebar:true,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['csharp']
     },
     navbar: {
       hideOnScroll: true,
