@@ -3,7 +3,7 @@ id: contributing
 title: Contributing
 ---
 
-The Dime.Scheduler .NET SDK is currently under alpha development. We are welcoming contributors to collaborate on the next Dime.Sheduler.
+The Dime.Scheduler SDK for .NET is currently under alpha development. We are welcoming contributors to collaborate on the next Dime.Sheduler.
 
 The [Open Source Guides](https://opensource.guide/) website has a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project. Contributors and people new to open source alike will find the following guides especially useful:
 

@@ -7,7 +7,7 @@
     <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/ds-sdk/community.svg" /></a>
 </p>
 
-<h1 align="center">Dime.Scheduler .NET SDK</h1>
+<h1 align="center">Dime.Scheduler SDK for .NET </h1>
 
 This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. Learn all about the project in the [docs 📚](https://dimenics.github.io/ds-sdk/). 
 
