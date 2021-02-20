@@ -3,8 +3,11 @@
 </p>
 
 <p align="center">
-    <img src="https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master" /> <img src="https://vsrm.dev.azure.com/dimenicsbe/_apis/public/Release/badge/3faeaf76-379c-4e0d-9078-1d71ee186ba5/2/2" /><img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk" /> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
+    <img src="https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master" /> <img src="https://vsrm.dev.azure.com/dimenicsbe/_apis/public/Release/badge/3faeaf76-379c-4e0d-9078-1d71ee186ba5/2/2" /> <img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk" /> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
     <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/ds-sdk/community.svg" /></a>
+    <a href="https://github.com/dimenics/ds-docs/discussions">
+  <img src="https://img.shields.io/badge/chat-discussions-green">
+</a>
 </p>
 
 <h1 align="center">Dime.Scheduler SDK for .NET </h1>
@@ -56,11 +59,7 @@ IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRe
 
 ## Import
 
-The import API is the entry point for external systems to feed data into Dime.Scheduler. The list of supported endpoints below expose a set of import pipelines to map and save data in the Dime.Scheduler database.
-
-### Usage
-
-Any class that implements the `IImportRequestable` interface is eligible to be processed by the import service in Dime.Scheduler.
+The import API is the entry point for external systems to feed data into Dime.Scheduler. The import endpoints expose a set of import pipelines to map and save data in the Dime.Scheduler database. Any class that implements the `IImportRequestable` interface is eligible to be processed by the import service in Dime.Scheduler.
 
 This example adds or updates a category:
 
@@ -92,57 +91,10 @@ IImportEndpoint importEndpoint = await client.Import.Request();
 await importEndpoint.RunAsync(filterGroup, TransactionType.Append);
 ```
 
-### Validation
+## Read more
 
-Validation is done through the capabilities exposed in the `System.ComponentModel.DataAnnotations` namespace. Wrapped in the interface ` IValidatableImportRequest<out T>`, import objects are validated before the request is sent to Dime.Scheduler.
+Check out the **[📚 docs »](https://dimenics.github.io/ds-sdk)** for more info.
 
-Take the `FilterGroup` class as an example:
+## Contributing
 
-```csharp
-public class FilterGroup : IImportRequestable, IValidatableImportRequest<FilterGroup>
-{
-    [Required]
-    public string Name { get; set; }
-}
-```
-
-When invoking the following request, an exception will be thrown:
-
-```csharp
-FilterGroup model = new FilterGroup { ColumnNo = 1 };
-((IImportRequestable) model).ToImportRequest(TransactionType.Append); // Will throw exception
-```
-
-### Supported endpoints
-
-| Endpoint                      | Create/Update | Delete |
-| ----------------------------- | ------------- | ------ |
-| Task                          | ✅            | ✅     |
-| Task container                | ✅            | ✅     |
-| Task filter value             | ✅            | ✅     |
-| Task locked                   | ✅            | ❌     |
-| Appointment                   | ✅            | ✅     |
-| Appointment category          | ✅            | ❌     |
-| Appointment time marker       | ✅            | ❌     |
-| Appointment importance        | ✅            | ❌     |
-| Appointment locked            | ✅            | ❌     |
-| Appointment planning quantity | ✅            | ❌     |
-| Appointment URL               | ✅            | ❌     |
-| Exchange Appointment          | ✅            | ✅     |
-| Assignment                    | ✅            | ❌     |
-| Action URL                    | ✅            | ❌     |
-| Caption                       | ✅            | ❌     |
-| Category                      | ✅            | ✅     |
-| Time marker                   | ✅            | ✅     |
-| Pin                           | ✅            | ✅     |
-| Filter Group                  | ✅            | ✅     |
-| Filter Value                  | ✅            | ✅     |
-| Job                           | ✅            | ✅     |
-| Notification                  | ✅            | ✅     |
-| Resource                      | ✅            | ❌     |
-| Resource Calendar             | ✅            | ✅     |
-| Resource Capacity             | ✅            | ❌     |
-| Resource Certificate          | ✅            | ✅     |
-| Resource Filter Value         | ✅            | ✅     |
-| Resource GPS Tracking         | ✅            | ❌     |
-| Resource URL                  | ✅            | ❌     |
+Pull requests are welcome. Please check out the contribution and code of conduct guidelines.
