@@ -3,17 +3,17 @@
 </p>
 
 <p align="center">
-    <img src="https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master" /> <img src="https://vsrm.dev.azure.com/dimenicsbe/_apis/public/Release/badge/3faeaf76-379c-4e0d-9078-1d71ee186ba5/2/2" /> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
+    <img src="https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master" /> <img src="https://vsrm.dev.azure.com/dimenicsbe/_apis/public/Release/badge/3faeaf76-379c-4e0d-9078-1d71ee186ba5/2/2" /><img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk" /> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
     <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/ds-sdk/community.svg" /></a>
 </p>
 
 <h1 align="center">Dime.Scheduler SDK for .NET </h1>
 
-This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. Learn all about the project in the [docs 📚](https://dimenics.github.io/ds-sdk/). 
+This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. The SDK is a gateway to connect *any* system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
+
+Check out the **[📚 docs »](https://dimenics.github.io/ds-sdk)** for more info.
 
 ## Installation
-
-> 🚧 Warning: the packages listed here are not publicly available yet on NuGet.
 
 Use the package manager NuGet to install the base library of the SDK:
 
