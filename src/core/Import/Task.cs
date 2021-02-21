@@ -134,6 +134,12 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(RequestedEndDate), TransactionType.Append)]
         public DateTime? RequestedEndDate { get; set; }
 
+        [ImportParameter(nameof(RequestedStartTime), TransactionType.Append)]
+        public TimeSpan? RequestedStartTime { get; set; }
+
+        [ImportParameter(nameof(RequestedEndTime), TransactionType.Append)]
+        public TimeSpan? RequestedEndTime { get; set; }
+
         [ImportParameter(nameof(ConfirmedStartDate), TransactionType.Append)]
         public DateTime? ConfirmedStartDate { get; set; }
 
