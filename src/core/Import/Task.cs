@@ -263,20 +263,20 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(FreeDecimal5), TransactionType.Append)]
         public decimal FreeDecimal5 { get; set; }
 
-        [ImportParameter(nameof(FreeDateTime1), TransactionType.Append)]
-        public DateTime? FreeDateTime1 { get; set; }
+        [ImportParameter(nameof(FreeDate1), TransactionType.Append)]
+        public DateTime? FreeDate1 { get; set; }
 
-        [ImportParameter(nameof(FreeDateTime2), TransactionType.Append)]
-        public DateTime? FreeDateTime2 { get; set; }
+        [ImportParameter(nameof(FreeDate2), TransactionType.Append)]
+        public DateTime? FreeDate2 { get; set; }
 
-        [ImportParameter(nameof(FreeDateTime3), TransactionType.Append)]
-        public DateTime? FreeDateTime3 { get; set; }
+        [ImportParameter(nameof(FreeDate3), TransactionType.Append)]
+        public DateTime? FreeDate3 { get; set; }
 
-        [ImportParameter(nameof(FreeDateTime4), TransactionType.Append)]
-        public DateTime? FreeDateTime4 { get; set; }
+        [ImportParameter(nameof(FreeDate4), TransactionType.Append)]
+        public DateTime? FreeDate4 { get; set; }
 
-        [ImportParameter(nameof(FreeDateTime5), TransactionType.Append)]
-        public DateTime? FreeDateTime5 { get; set; }
+        [ImportParameter(nameof(FreeDate5), TransactionType.Append)]
+        public DateTime? FreeDate5 { get; set; }
 
         [ImportParameter(nameof(FreeBit1), TransactionType.Append)]
         public bool FreeBit1 { get; set; }
