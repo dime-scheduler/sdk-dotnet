@@ -6,7 +6,7 @@ using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk.Samples
 {
-    public class ExchangeImportRequestSample
+    public class ImportRequestSample
     {
         public async t.Task Execute()
         {

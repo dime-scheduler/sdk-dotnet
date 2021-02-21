@@ -7,10 +7,7 @@ namespace Dime.Scheduler.Sdk.Samples
     {
         public static async Task Main(string[] args)
         {
-            TaskImportRequestSample taskImportSample = new();
-            await taskImportSample.ExecuteWithResult();
-
-            ExchangeImportRequestSample sample = new();
+            ImportRequestSample sample = new();
             ImportSet set = await sample.ExecuteWithResult();
 
             MessagesRequestSample messageRequestSample = new();
