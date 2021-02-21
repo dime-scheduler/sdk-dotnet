@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="33.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\core\Dime.Scheduler.Sdk.csproj" />
   </ItemGroup>
 
