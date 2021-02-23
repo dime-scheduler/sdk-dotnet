@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Dime.Scheduler.Sdk.Import
 {
@@ -32,9 +31,9 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Resource.FilterValue.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Resource.FilterValue.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.Resource.FilterValue.Delete, this.CreateParameters(TransactionType.Delete));
+            => new(ImportProcedures.Resource.FilterValue.Delete, this.CreateParameters(TransactionType.Delete));
     }
 }

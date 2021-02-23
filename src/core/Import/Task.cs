@@ -422,10 +422,10 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Task.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Task.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.Task.Delete, this.CreateParameters(TransactionType.Delete));
+            => new(ImportProcedures.Task.Delete, this.CreateParameters(TransactionType.Delete));
 
         Task IValidatableImportRequest<Task>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);

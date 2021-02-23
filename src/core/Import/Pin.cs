@@ -22,10 +22,10 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Pin.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Pin.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.Pin.Delete, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Pin.Delete, this.CreateParameters(TransactionType.Append));
         
         Pin IValidatableImportRequest<Pin>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);

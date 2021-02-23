@@ -22,7 +22,7 @@ namespace Dime.Scheduler.Sdk.Import
 
                 object objValue = parameter.GetValue(import);
                 if (objValue != null)
-                    yield return new(attrs.Name, Parse(objValue));
+                    yield return new ImportParameter(attrs.Name, Parse(objValue));
             }
         }
 

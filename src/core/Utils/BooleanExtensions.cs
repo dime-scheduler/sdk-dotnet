@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Dime.Scheduler.Sdk.Import
+﻿namespace Dime.Scheduler.Sdk.Import
 {
     internal static class BooleanExtensions
     {

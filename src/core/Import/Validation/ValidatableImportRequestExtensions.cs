@@ -9,8 +9,8 @@ namespace Dime.Scheduler.Sdk.Import
     {
         internal static T Validate<T>(this T request, TransactionType transactionType)
         {
-            KeyValuePair<object, object?> keyValuePair = new KeyValuePair<object, object?>("transactionType", transactionType);
-            ValidationContext validationContext = new ValidationContext(request) { Items = { keyValuePair } };
+            KeyValuePair<object, object?> keyValuePair = new("transactionType", transactionType);
+            ValidationContext validationContext = new(request) { Items = { keyValuePair } };
 
             IEnumerable<ValidationResult> result = (request as IValidatableObject).Validate(validationContext);
             if (!result.Any())

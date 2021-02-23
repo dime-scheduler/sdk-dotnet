@@ -8,7 +8,7 @@ namespace Dime.Scheduler.Sdk.Import
     {
         internal static IEnumerable<ValidationResult> Validate<T>(this IImportRequestable request, ValidationContext validationContext)
         {
-            List<ValidationResult> results = new List<ValidationResult>();
+            List<ValidationResult> results = new();
 
             PropertyInfo[] properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (PropertyInfo property in properties)
@@ -22,7 +22,7 @@ namespace Dime.Scheduler.Sdk.Import
         private static ValidationContext CreateValidationContext(this IImportRequestable request, ValidationContext validationContext, string property)
         {
             validationContext.Items.TryGetValue("transactionType", out object? transactionType);
-            KeyValuePair<object, object?> keyValuePair = new KeyValuePair<object, object?>("transactionType", transactionType);
+            KeyValuePair<object, object?> keyValuePair = new("transactionType", transactionType);
 
             return new ValidationContext(request, null, null) { Items = { keyValuePair }, MemberName = property };
         }

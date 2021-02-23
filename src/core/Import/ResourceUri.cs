@@ -12,6 +12,6 @@
         public string Description { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => new ImportRequest(ImportProcedures.Resource.Uri.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Resource.Uri.Append, this.CreateParameters(TransactionType.Append));
     }
 }

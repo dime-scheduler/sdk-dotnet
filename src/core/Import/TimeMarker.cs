@@ -22,10 +22,10 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.TimeMarker.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.TimeMarker.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.TimeMarker.Delete, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.TimeMarker.Delete, this.CreateParameters(TransactionType.Append));
 
         TimeMarker IValidatableImportRequest<TimeMarker>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);

@@ -14,6 +14,6 @@ namespace Dime.Scheduler.Sdk
          => await Create();
 
         protected override CategoriesEndpoint Create(AuthenticationOptions opts)
-        => new CategoriesEndpoint(opts);
+        => new(opts);
     }
 }

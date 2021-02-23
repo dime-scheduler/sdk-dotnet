@@ -34,12 +34,12 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
+            => new(
                 ImportProcedures.Task.FilterValue.Append,
                 this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(
+            => new(
                 ImportProcedures.Task.FilterValue.Delete,
                 this.CreateParameters(TransactionType.Delete));
     }

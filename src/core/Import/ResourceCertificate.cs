@@ -28,9 +28,9 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Resource.Certificate.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Resource.Certificate.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.Resource.Certificate.Delete, this.CreateParameters(TransactionType.Delete));
+            => new(ImportProcedures.Resource.Certificate.Delete, this.CreateParameters(TransactionType.Delete));
     }
 }

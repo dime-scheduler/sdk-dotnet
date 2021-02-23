@@ -13,6 +13,6 @@ namespace Dime.Scheduler.Sdk
             => await Create();
 
         protected override ResourcesEndpoint Create(AuthenticationOptions opts)
-            => new ResourcesEndpoint(opts);
+            => new(opts);
     }
 }

@@ -3,13 +3,13 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class AppointmentedLockedTests
+    public class AppointmentLockedTests
     {
         [Fact]
         public void AppointmentLocked_ToImportRequest_ShouldMapParameters()
         {
-            AppointmentLocked model = new AppointmentLocked { SourceApp = "BC001", SourceType = "BC001" };
-            ImportRequest importRequest = (model as IImportRequestable).ToImportRequest(TransactionType.Append);
+            AppointmentLocked model = new() { SourceApp = "BC001", SourceType = "BC001" };
+            ImportRequest importRequest = ((IImportRequestable) model).ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[0] == "SourceApp");
             Assert.True(importRequest.ParameterValues[0] == "BC001");

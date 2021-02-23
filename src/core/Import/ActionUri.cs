@@ -21,6 +21,6 @@
         public bool Default { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-         => new ImportRequest(ImportProcedures.ActionUri.Append, this.CreateParameters(transactionType));
+         => new(ImportProcedures.ActionUri.Append, this.CreateParameters(transactionType));
     }
 }

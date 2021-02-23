@@ -279,10 +279,10 @@ namespace Dime.Scheduler.Sdk.Import
            };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Resource.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Resource.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.Resource.Delete, this.CreateParameters(TransactionType.Delete));
+            => new(ImportProcedures.Resource.Delete, this.CreateParameters(TransactionType.Delete));
 
         Resource IValidatableImportRequest<Resource>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);

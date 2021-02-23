@@ -33,3 +33,10 @@ steps:
       solution: "**/*.sln"
       platform: "$(BuildPlatform)"
       configuration: "$(BuildConfiguration)"
+
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+      projects: '**/*.csproj'
+      arguments: '--configuration $(BuildConfiguration) --collect "Code Coverage" -f "net5.0" -s "src/test.runsettings"'

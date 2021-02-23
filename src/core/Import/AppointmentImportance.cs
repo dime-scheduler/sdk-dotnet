@@ -31,7 +31,7 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
+            => new(
                 ImportProcedures.Appointment.Importance.Append,
                 this.CreateParameters(TransactionType.Append));
 

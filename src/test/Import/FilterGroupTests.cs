@@ -9,7 +9,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void FilterGroup_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
-            FilterGroup model = new FilterGroup { Name = "Group 1" };
+            FilterGroup model = new() { Name = "Group 1" };
             ImportRequest importRequest = ((IImportRequestable) model).ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[1] == "GroupName");
@@ -19,14 +19,14 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void FilterGroup_Append_Validate_HasIncompleteRequiredAttributes_ShouldThrowException()
         {
-            FilterGroup model = new FilterGroup { ColumnNo = 1 };
+            FilterGroup model = new() { ColumnNo = 1 };
             Assert.Throws<Exception>(() => ((IImportRequestable) model).ToImportRequest(TransactionType.Append));
         }
 
         [Fact]
         public void FilterGroup_Delete_Validate_HasRequiredAttributes_ShouldSucceed()
         {
-            FilterGroup model = new FilterGroup { Name = "Group 1" };
+            FilterGroup model = new() { Name = "Group 1" };
             ImportRequest importRequest = ((IImportRequestable) model).ToImportRequest(TransactionType.Delete);
 
             Assert.True(importRequest.ParameterNames[0] == "GroupName");
@@ -36,7 +36,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void FilterGroup_Delete_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
-            FilterGroup model = new FilterGroup();
+            FilterGroup model = new();
             Assert.Throws<Exception>(() => ((IImportRequestable) model).ToImportRequest(TransactionType.Delete));
         }
     }

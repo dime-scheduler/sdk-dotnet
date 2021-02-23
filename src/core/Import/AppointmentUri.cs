@@ -23,7 +23,7 @@ namespace Dime.Scheduler.Sdk.Import
                 : CreateDeleteRequest();
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(
+            => new(
                 "mboc_upsertAppointmentUrl",
                 new List<string> { "pSourceApp", "pSourceType", "pAppointmentId", "pAppointmentGuid", "pUrl", "pUrlDesc" }.ToArray(),
                 new List<string> { SourceApp, SourceType, AppointmentId.ToString(), AppointmentGuid?.ToString(), Uri, Description }.ToArray());

@@ -9,8 +9,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Pin_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
-            Pin model = new Pin { Name = "Pin 1" };
-            ImportRequest importRequest = (model as IImportRequestable).ToImportRequest(TransactionType.Append);
+            Pin model = new() { Name = "Pin 1" };
+            ImportRequest importRequest = ((IImportRequestable) model).ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[0] == "Name");
             Assert.True(importRequest.ParameterValues[0] == "Pin 1");
@@ -19,15 +19,15 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Pin_Append_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
-            Pin model = new Pin();
-            Assert.Throws<Exception>(() => (model as IImportRequestable).ToImportRequest(TransactionType.Append));
+            Pin model = new();
+            Assert.Throws<Exception>(() => ((IImportRequestable) model).ToImportRequest(TransactionType.Append));
         }
 
         [Fact]
         public void Pin_Delete_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
-            Pin model = new Pin();
-            Assert.Throws<Exception>(() => (model as IImportRequestable).ToImportRequest(TransactionType.Delete));
+            Pin model = new();
+            Assert.Throws<Exception>(() => ((IImportRequestable) model).ToImportRequest(TransactionType.Delete));
         }
     }
 }

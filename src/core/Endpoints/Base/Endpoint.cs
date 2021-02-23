@@ -17,8 +17,8 @@ namespace Dime.Scheduler.Sdk
 
         protected async Task<IRestResponse> Execute(string endpoint, Method method, TRequest requestParameters)
         {
-            Uri baseUri = new Uri(_opts.Uri);
-            Uri endpointUri = new Uri(baseUri, endpoint);
+            Uri baseUri = new(_opts.Uri);
+            Uri endpointUri = new(baseUri, endpoint);
 
             RestClient client = new(endpointUri);
             RestRequest request = new(method);
@@ -36,8 +36,8 @@ namespace Dime.Scheduler.Sdk
 
         protected async Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
         {
-            Uri baseUri = new Uri(_opts.Uri);
-            Uri endpointUri = new Uri(baseUri, endpoint);
+            Uri baseUri = new(_opts.Uri);
+            Uri endpointUri = new(baseUri, endpoint);
 
             RestClient client = new(endpointUri);
             RestRequest request = new(method);

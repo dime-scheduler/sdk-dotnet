@@ -21,6 +21,6 @@
         public bool SentFromBackOffice { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-            => new ImportRequest(ImportProcedures.TaskLocked.Append, this.CreateParameters(transactionType));
+            => new(ImportProcedures.TaskLocked.Append, this.CreateParameters(transactionType));
     }
 }

@@ -28,10 +28,10 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.FilterGroup.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.FilterGroup.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.FilterGroup.Delete, this.CreateParameters(TransactionType.Delete));
+            => new(ImportProcedures.FilterGroup.Delete, this.CreateParameters(TransactionType.Delete));
 
         FilterGroup IValidatableImportRequest<FilterGroup>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);

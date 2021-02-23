@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using RestSharp;
@@ -32,9 +31,9 @@ namespace Dime.Scheduler.Sdk
 
             IRestResponse<TokenResponse> response = await client.ExecuteAsync<TokenResponse>(request);
 
-            return response.StatusCode != HttpStatusCode.OK
-                ? throw new Exception(response.Content)
-                : response.Data?.access_token;
+            return response.StatusCode == HttpStatusCode.OK
+                ? response.Data?.access_token
+                : throw new WebException(response.ErrorMessage, response.ErrorException);
         }
     }
 }

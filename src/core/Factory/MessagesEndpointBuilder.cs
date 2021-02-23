@@ -13,6 +13,6 @@ namespace Dime.Scheduler.Sdk
          => await Create();
 
         protected override MessagesEndpoint Create(AuthenticationOptions opts)
-        => new MessagesEndpoint(opts);
+        => new(opts);
     }
 }

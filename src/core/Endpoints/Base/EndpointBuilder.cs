@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk
         private readonly IAuthenticator _authn;
         private readonly string _uri;
 
-        public EndpointBuilder(string uri, IAuthenticator authn)
+        protected EndpointBuilder(string uri, IAuthenticator authn)
         {
             _uri = uri;
             _authn = authn;

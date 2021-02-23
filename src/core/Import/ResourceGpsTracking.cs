@@ -37,9 +37,9 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Resource.GpsTracking.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Resource.GpsTracking.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new ImportRequest(ImportProcedures.Resource.GpsTracking.Delete, this.CreateParameters(TransactionType.Delete));
+            => new(ImportProcedures.Resource.GpsTracking.Delete, this.CreateParameters(TransactionType.Delete));
     }
 }

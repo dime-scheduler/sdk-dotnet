@@ -31,7 +31,7 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new ImportRequest(ImportProcedures.Appointment.Locked.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Appointment.Locked.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");
