@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-    <img src="https://dev.azure.com/dimenicsbe/Utilities/_apis/build/status/dimenics.ds-sdk?branchName=master" /> <img src="https://vsrm.dev.azure.com/dimenicsbe/_apis/public/Release/badge/3faeaf76-379c-4e0d-9078-1d71ee186ba5/2/2" /> <img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk" /> <img src="https://img.shields.io/badge/License-MIT-blue.svg"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
-    <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/ds-sdk/community.svg" /></a>
+    <img src="https://img.shields.io/azure-devops/build/dimenicsbe/utilities/172?style=flat-square" /> <img src="https://img.shields.io/azure-devops/coverage/dimenicsbe/Utilities/175?style=flat-square" /> <img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
+    <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://img.shields.io/badge/Chat-on%20gitter-brightgreen.svg?style=flat-square" /></a>
     <a href="https://github.com/dimenics/ds-docs/discussions">
-  <img src="https://img.shields.io/badge/chat-discussions-green">
+  <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
 </a>
 </p>
 
