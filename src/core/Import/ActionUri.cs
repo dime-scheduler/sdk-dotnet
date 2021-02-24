@@ -1,4 +1,6 @@
-﻿namespace Dime.Scheduler.Sdk.Import
+﻿using System;
+
+namespace Dime.Scheduler.Sdk.Import
 {
     public class ActionUri : IImportRequestable
     {
@@ -21,6 +23,17 @@
         public bool Default { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
-         => new(ImportProcedures.ActionUri.Append, this.CreateParameters(transactionType));
+            => transactionType switch
+            {
+                TransactionType.Append => CreateAppendRequest(),
+                TransactionType.Delete => CreateDeleteRequest(),
+                _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
+            };
+
+        private ImportRequest CreateAppendRequest()
+            => new(ImportProcedures.ActionUri.Append, this.CreateParameters(TransactionType.Append));
+
+        private ImportRequest CreateDeleteRequest()
+            => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");
     }
 }

@@ -1,0 +1,25 @@
+﻿using System;
+using Dime.Scheduler.Sdk.Import;
+using Xunit;
+
+namespace Dime.Scheduler.Sdk.Tests.Import
+{
+    public class ResourceCalendarTests
+    {
+        [Fact]
+        public void ResourceCalendar_ToImportRequest_Append_AllShouldMapParameters()
+        {
+            ResourceCalendar model = new()
+            {
+                ResourceNo = "RESOURCE1",
+                CalendarCode = "CODE",
+                EndDate = new DateTime(2020, 1, 1),
+                StartDate = new DateTime(2019, 1, 3),
+                Code = "CODE"
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
+    }
+}

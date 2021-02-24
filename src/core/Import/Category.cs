@@ -45,6 +45,6 @@ namespace Dime.Scheduler.Sdk.Import
             => this.Validate(transactionType);
 
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-            => this.Validate<Pin>(validationContext);
+            => this.Validate<Category>(validationContext);
     }
 }
