@@ -17,7 +17,6 @@ namespace Dime.Scheduler.Sdk.Import
         public string SourceType { get; set; }
 
         [Required]
-        [MaxLength(50)]
         [ImportParameter(nameof(AppointmentId))]
         public long AppointmentId { get; set; }
 

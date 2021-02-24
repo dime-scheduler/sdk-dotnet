@@ -7,6 +7,23 @@ namespace Dime.Scheduler.Sdk.Tests.Import
     public class ResourceCapacityTests
     {
         [Fact]
+        public void ResourceCapacity_ToImportRequest_Append_AllShouldMapParameters()
+        {
+            ResourceCapacity model = new()
+            {
+                ResourceNo = "RESOURCE1",
+                CapacityInSeconds = 1,
+                Date = new DateTime(2020, 1, 1),
+                Quantity = 1,
+                UnitOfMeasure = "YES",
+                UnitOfMeasureConversion = 1
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
+
+        [Fact]
         public void ResourceCapacity_Validate_HasRequiredAttributes_ShouldSucceed()
         {
             ResourceCapacity model = new() { ResourceNo = "HJONES" };

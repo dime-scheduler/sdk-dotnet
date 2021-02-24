@@ -7,6 +7,23 @@ namespace Dime.Scheduler.Sdk.Tests.Import
     public class TaskContainerTests
     {
         [Fact]
+        public void TaskContainer_ToImportRequest_Append_AllShouldMapParameters()
+        {
+            TaskContainer model = new()
+            {
+                Index = 1,
+                JobNo = "TEXT",
+                Name = "TEXT",
+                SourceApp = "TEXT",
+                SourceType = "TEXT",
+                TaskNo = "TEXT"
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
+
+        [Fact]
         public void TaskContainer_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
             TaskContainer model = new() { SourceApp = "BC001", SourceType = "BC001", JobNo = "JOB0001", TaskNo = "TASK0001", Name = "Container 1" };
@@ -27,7 +44,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void TaskContainer_Append_Validate_ExceedsMaxLength_ShouldThrowException()
         {
             TaskContainer model = new() { SourceApp = "BC001", SourceType = "SOURCE TYPE LONGER THAN 10 CHARACTERS", JobNo = "JOB0001", TaskNo = "TASK0001", Name = "Container 1" };
-            Assert.Throws<Exception>(() => ((IImportRequestable) model).ToImportRequest(TransactionType.Append));
+            Assert.Throws<Exception>(() => ((IImportRequestable)model).ToImportRequest(TransactionType.Append));
         }
 
         [Fact]

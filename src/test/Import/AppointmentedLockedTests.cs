@@ -1,4 +1,5 @@
-﻿using Dime.Scheduler.Sdk.Import;
+﻿using System;
+using Dime.Scheduler.Sdk.Import;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
@@ -6,13 +7,39 @@ namespace Dime.Scheduler.Sdk.Tests.Import
     public class AppointmentLockedTests
     {
         [Fact]
-        public void AppointmentLocked_ToImportRequest_ShouldMapParameters()
+        public void AppointmentLocked_ToImportRequest_Append_AllShouldMapParameters()
         {
-            AppointmentLocked model = new() { SourceApp = "BC001", SourceType = "BC001" };
-            ImportRequest importRequest = ((IImportRequestable) model).ToImportRequest(TransactionType.Append);
+            AppointmentLocked model = new()
+            {
+                SourceApp = "BC001",
+                SourceType = "BC001",
+                AppointmentId = 1,
+                AppointmentGuid = Guid.NewGuid(),
+                Locked = true,
+                SentFromBackOffice = true
+            };
 
-            Assert.True(importRequest.ParameterNames[0] == "SourceApp");
-            Assert.True(importRequest.ParameterValues[0] == "BC001");
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
+
+            importRequest.AssertStoredProcedureName("mboc_upsertAppointmentLocked");
+            importRequest.AssertEqualParameterCollectionCount();
+            importRequest.AssertParameterCount(6);
+        }
+
+        [Fact]
+        public void AppointmentLocked_ToImportRequest_Delete_ShouldThrowException()
+        {
+            AppointmentLocked model = new()
+            {
+                SourceApp = "BC001",
+                SourceType = "BC001",
+                AppointmentId = 1,
+                AppointmentGuid = Guid.NewGuid(),
+                Locked = true,
+                SentFromBackOffice = true
+            };
+
+            model.ShouldNotCreateImportRequest(TransactionType.Delete);
         }
     }
 }

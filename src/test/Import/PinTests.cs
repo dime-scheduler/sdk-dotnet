@@ -7,6 +7,19 @@ namespace Dime.Scheduler.Sdk.Tests.Import
     public class PinTests
     {
         [Fact]
+        public void Pin_ToImportRequest_Append_AllShouldMapParameters()
+        {
+            Pin model = new()
+            {
+                Color = "GREEN",
+                Name = "PIN 1"
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
+
+        [Fact]
         public void Pin_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
             Pin model = new() { Name = "Pin 1" };
