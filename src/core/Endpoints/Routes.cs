@@ -1,5 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Dime.Scheduler.Sdk
 {
+    [ExcludeFromCodeCoverage]
     internal static class Routes
     {
         private static string _api = "api";

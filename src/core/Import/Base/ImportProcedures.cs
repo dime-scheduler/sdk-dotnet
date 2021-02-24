@@ -1,5 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk.Import
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Dime.Scheduler.Sdk.Import
 {
+    [ExcludeFromCodeCoverage]
     internal static class ImportProcedures
     {
         private static readonly string _base = "mboc_";
@@ -90,7 +93,7 @@
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
             }
         }
-        
+
 
         internal static class ActionUri
         {

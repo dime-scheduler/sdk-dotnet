@@ -14,6 +14,7 @@
                 <ModulePath>.*CPPUnitTestFramework.*</ModulePath>
                 <ModulePath>.*moq.dll</ModulePath>
                 <ModulePath>.*Tests.dll</ModulePath>
+                <ModulePath>.*xunit.*</ModulePath>
               </Exclude>
             </ModulePaths>
 
