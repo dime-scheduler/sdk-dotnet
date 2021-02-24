@@ -8,7 +8,16 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void TaskLocked_ToImportRequest_Append_AllShouldMapParameters()
         {
-            TaskLocked model = new();
+            TaskLocked model = new()
+            {
+                SentFromBackOffice = true,
+                JobNo = "TEXT",
+                SourceApp = "TEXT",
+                SourceType = "TEXT",
+                TaskNo = "TEXT",
+                Locked = true
+            };
+
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }

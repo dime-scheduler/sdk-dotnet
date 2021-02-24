@@ -10,7 +10,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         {
             TimeMarker model = new()
             {
-                Name = "MARKER 1"
+                Name = "MARKER 1",
+                Color = "BLUE"
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);

@@ -8,7 +8,15 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Caption_ToImportRequest_Append_AllShouldMapParameters()
         {
-            Caption model = new();
+            Caption model = new()
+            {
+                Context = 1,
+                FieldName = "FIELD",
+                Language = "LANG",
+                SourceTable = "TABLE",
+                Text = "TXT"
+            };
+
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }

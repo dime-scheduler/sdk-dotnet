@@ -12,7 +12,10 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             {
                 SourceApp = "APP",
                 SourceType = "TYPE",
-                ResourceNo = "LINDA"
+                ResourceNo = "LINDA",
+                SentFromBackOffice = 1,
+                AppointmentGuid = "GUID",
+                AppointmentId = 1
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);

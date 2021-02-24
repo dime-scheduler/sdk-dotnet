@@ -6,10 +6,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 {
     public class AppointmentPlanningQuantityTests
     {
-        [Fact]
-        public void AppointmentPlanningQuantity_ToImportRequest_Append_AllShouldMapParameters()
-        {
-            AppointmentPlanningQuantity model = new()
+        private static AppointmentPlanningQuantity CreateModel()
+            => new()
             {
                 AppointmentGuid = Guid.NewGuid(),
                 AppointmentId = 1,
@@ -19,8 +17,21 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Quantity = 5
             };
 
+        [Fact]
+        public void AppointmentPlanningQuantity_ToImportRequest_Append_AllShouldMapParameters()
+        {
+            AppointmentPlanningQuantity model = CreateModel();
+
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
+        }
+
+        [Fact]
+        public void AppointmentPlanningQuantity_ToImportRequest_Delete_ShouldThrowException()
+        {
+            AppointmentPlanningQuantity model = CreateModel();
+
+            model.ShouldNotCreateImportRequest(TransactionType.Delete);
         }
     }
 }

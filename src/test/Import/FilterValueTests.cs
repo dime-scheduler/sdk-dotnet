@@ -8,7 +8,12 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void FilterValue_ToImportRequest_Append_AllShouldMapParameters()
         {
-            FilterValue model = new();
+            FilterValue model = new()
+            {
+                Group = "GROUP",
+                Value = "VALUE"
+            };
+
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }

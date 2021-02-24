@@ -8,7 +8,17 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void TaskFilterValue_ToImportRequest_Append_AllShouldMapParameters()
         {
-            TaskFilterValue model = new();
+            TaskFilterValue model = new()
+            {
+                FilterValue = "TEXT",
+                TransferToTemp = true,
+                JobNo = "TEXT",
+                SourceApp = "TEXT",
+                SourceType = "TEXT",
+                TaskNo = "TEXT",
+                FilterGroup = "TEXT"
+            };
+
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }
