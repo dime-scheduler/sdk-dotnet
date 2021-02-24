@@ -30,7 +30,7 @@ namespace Dime.Scheduler.Sdk.Import
             => objValue switch
             {
                 bool b => b.ToString(),
-                DateTime dt => dt.ToString("s"),
+                DateTime dt => dt.ToString("u"),
                 IEnumerable<string> enumerable => string.Join(";", enumerable),
                 _ => objValue?.ToString()
             };
