@@ -29,4 +29,7 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Dime.Scheduler.Sdk.Tests" />
+  </ItemGroup>
 </Project>
