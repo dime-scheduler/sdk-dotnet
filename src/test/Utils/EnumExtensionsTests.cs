@@ -38,8 +38,8 @@ namespace Dime.Scheduler.Sdk.Tests.Utils
         [Fact]
         public void EnumExtensions_GetDescription_HasNoDescription_ShouldReturnToString()
         {
-            Employee newEmployee = new() { Department = Department.Marketing, FirstName = "Max", LastName = "Power" };
-            Assert.True(newEmployee.Department.GetDescription() == "Marketing");
+            Employee newEmployee = new() { Department = Department.Administration, FirstName = "Max", LastName = "Power" };
+            Assert.True(newEmployee.Department.GetDescription() == "Administration");
         }
 
         [Fact]

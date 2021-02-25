@@ -29,6 +29,7 @@ namespace Dime.Scheduler.Sdk.Import
         private static string Parse(object objValue)
             => objValue switch
             {
+                Enum e => e.ToString("d"),
                 bool b => b.ToString(),
                 DateTime dt => dt.ToString("u"),
                 IEnumerable<string> enumerable => string.Join(";", enumerable),

@@ -1,5 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Dime.Scheduler.Sdk
 {
+    [ExcludeFromCodeCoverage]
     public class GetPageRequest
     {
         public int page { get; set; } = 1;
