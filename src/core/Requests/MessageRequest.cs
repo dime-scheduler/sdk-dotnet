@@ -1,5 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Dime.Scheduler.Sdk
 {
+    [ExcludeFromCodeCoverage]
     public class MessageRequest
     {
         public string Text { get; set; }
