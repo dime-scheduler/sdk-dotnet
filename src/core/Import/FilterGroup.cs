@@ -9,6 +9,7 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(Id), TransactionType.Append)]
         public int Id { get; set; }
 
+        [MaxLength(50)]
         [Required]
         [ImportParameter("GroupName", TransactionType.Append, TransactionType.Delete)]
         public string Name { get; set; }

@@ -7,5 +7,7 @@ namespace Dime.Scheduler.Sdk
     public class Page<T>
     {
         public IEnumerable<T> Data { get; set; }
+
+        public void Deconstruct(out IEnumerable<T> data) => data = Data;
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class FilterValue : IImportRequestable
     {
+        [MaxLength(50)]
         [ImportParameter("FilterGroupName")]
         public string Group { get; set; }
 
+        [MaxLength(100)]
         [ImportParameter("FilterValue")]
         public string Value { get; set; }
 

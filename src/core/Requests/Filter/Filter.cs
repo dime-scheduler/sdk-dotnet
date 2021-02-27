@@ -5,13 +5,13 @@ namespace Dime.Scheduler.Sdk
 {
     public class Filter<T>
     {
-        private Operator _oper;
+        private Operator _filterOperator;
         private object _val;
         private string _property;
 
-        public Filter<T> WithOperator(Operator oper)
+        public Filter<T> WithOperator(Operator filterOperator)
         {
-            _oper = oper;
+            _filterOperator = filterOperator;
             return this;
         }
 
@@ -29,6 +29,6 @@ namespace Dime.Scheduler.Sdk
         }
 
         public override string ToString()
-            => $"{{ 'operator':'{_oper.GetDescription()}','value':{_val},'property':'{_property}'}}";
+            => $"{{ 'operator':'{_filterOperator.GetDescription()}','value':{_val},'property':'{_property}'}}";
     }
 }

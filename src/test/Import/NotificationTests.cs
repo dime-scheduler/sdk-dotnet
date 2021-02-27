@@ -17,7 +17,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Code = "CODE",
                 Date = new DateTime(2020, 1, 1),
                 JobNo = "JOB",
-                MbocId = "MBOC",
+                ConnectorId = "MBOC",
                 SourceApp = "APP",
                 TaskNo = "TASK",
                 SourceType = "TYPE",

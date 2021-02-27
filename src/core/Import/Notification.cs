@@ -1,26 +1,32 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Notification : IImportRequestable
     {
-        [ImportParameter(nameof(SourceApp))]
+        [MaxLength(30)]
         [RequiredIf(TransactionType.Append)]
+        [ImportParameter(nameof(SourceApp))]
         public string SourceApp { get; set; }
 
-        [ImportParameter(nameof(SourceType))]
+        [MaxLength(10)]
         [RequiredIf(TransactionType.Append)]
+        [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
         public long? AppointmentId { get; set; }
 
+        [MaxLength(50)]
         [ImportParameter("mboc_id")]
-        public string MbocId { get; set; }
+        public string ConnectorId { get; set; }
 
+        [MaxLength(20)]
         [ImportParameter("NotificationType", TransactionType.Append)]
         public string Type { get; set; }
 
+        [MaxLength(20)]
         [ImportParameter("NotificationCode", TransactionType.Append)]
         public string Code { get; set; }
 
@@ -31,14 +37,16 @@ namespace Dime.Scheduler.Sdk.Import
         [RequiredIf(TransactionType.Append)]
         public DateTime? Date { get; set; }
 
+        [MaxLength(50)]
         [ImportParameter(nameof(JobNo))]
         public string JobNo { get; set; }
 
+        [MaxLength(50)]
         [ImportParameter(nameof(TaskNo))]
         public string TaskNo { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
-        public Guid AppointmentGuid { get; set; }
+        public Guid? AppointmentGuid { get; set; }
 
         [ImportParameter("SentFromBackoffice")]
         public bool SentFromBackOffice { get; set; }
