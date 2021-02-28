@@ -6,6 +6,16 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class TimeMarker : IImportRequestable, IValidatableImportRequest<TimeMarker>
     {
+        public TimeMarker()
+        {
+        }
+
+        public TimeMarker(string name, string color)
+        {
+            Name = name;
+            Color = color;
+        }
+
         [Required]
         [ImportParameter("TimeMarker")]
         public string Name { get; set; }

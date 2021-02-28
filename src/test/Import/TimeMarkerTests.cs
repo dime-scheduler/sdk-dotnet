@@ -17,5 +17,13 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }
+
+        [Fact]
+        public void TimeMarker_ToImportRequest_Delete_AllShouldMapParameters()
+        {
+            TimeMarker model = new("Hello world", "Blue");
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
     }
 }

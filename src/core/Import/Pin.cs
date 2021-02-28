@@ -6,6 +6,16 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Pin : IImportRequestable, IValidatableImportRequest<Pin>
     {
+        public Pin()
+        {
+
+        }
+        public Pin(string name, string color)
+        {
+            Name = name;
+            Color = color;
+        }
+
         [Required]
         [ImportParameter(nameof(Name))]
         public string Name { get; set; }

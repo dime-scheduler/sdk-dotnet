@@ -11,6 +11,8 @@ namespace Dime.Scheduler.Sdk.Samples
         {
             try
             {
+                Console.WriteLine("Running resource import sample");
+
                 IAuthenticator authenticator = new FormsAuthenticator
                 (DimeSchedulerCredentials.Uri,
                     DimeSchedulerCredentials.User,
@@ -24,6 +26,8 @@ namespace Dime.Scheduler.Sdk.Samples
 
                 for (int i = 0; i < 20; i++)
                 {
+                    Console.WriteLine("Importing resource " + i + 1);
+
                     Import.Resource resourceRequest = new Faker<Import.Resource>()
                    .RuleFor(x => x.SourceApp, (f, u) => "IMPORT")
                    .RuleFor(x => x.SourceType, (f, u) => "IMPORT")
@@ -59,7 +63,7 @@ namespace Dime.Scheduler.Sdk.Samples
                    .RuleFor(x => x.FreeText17, (f, u) => f.Rant.Review("Dime.Scheduler").ClampLength(0, 100))
                    .RuleFor(x => x.FreeText18, (f, u) => f.Rant.Review("Dime.Scheduler").ClampLength(0, 100))
                    .RuleFor(x => x.FreeText19, (f, u) => f.Rant.Review("Dime.Scheduler").ClampLength(0, 100))
-                   .RuleFor(x => x.FreeText20, (f, u) => f.Rant.Review("Dime.Scheduler").ClampLength(0,100))
+                   .RuleFor(x => x.FreeText20, (f, u) => f.Rant.Review("Dime.Scheduler").ClampLength(0, 100))
                    .RuleFor(x => x.FreeDate1, (f, u) => f.Date.Future())
                    .RuleFor(x => x.FreeDate2, (f, u) => f.Date.Future())
                    .RuleFor(x => x.FreeDate3, (f, u) => f.Date.Future())
@@ -79,6 +83,8 @@ namespace Dime.Scheduler.Sdk.Samples
 
                     ImportSet resourceImport = await importEndpoint.ProcessAsync(resourceRequest, TransactionType.Append);
                 }
+
+                Console.WriteLine("All done!");
             }
             catch (Exception ex)
             {

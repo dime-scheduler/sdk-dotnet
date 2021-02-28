@@ -5,6 +5,16 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class FilterValue : IImportRequestable
     {
+        public FilterValue()
+        {
+        }
+
+        public FilterValue(string group, string value)
+        {
+            Group = group;
+            Value = value;
+        }
+
         [MaxLength(50)]
         [ImportParameter("FilterGroupName")]
         public string Group { get; set; }

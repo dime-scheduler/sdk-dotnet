@@ -26,5 +26,13 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }
+
+        [Fact]
+        public void Category_Constructor_ToImportRequest_Delete_AllShouldMapParameters()
+        {
+            Category model = new("Hello world", "Blue");
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
     }
 }

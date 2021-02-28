@@ -37,6 +37,14 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         }
 
         [Fact]
+        public void Pin_ToImportRequest_Delete_AllShouldMapParameters()
+        {
+            Pin model = new("Hello world", "Blue");
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
+
+        [Fact]
         public void Pin_Delete_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
             Pin model = new();
