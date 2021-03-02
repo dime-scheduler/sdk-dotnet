@@ -19,7 +19,8 @@ module.exports = {
     'Import': [
       'import/import',
       'import/validation',
-      'import/endpoints'
+      'import/endpoints',
+      'import/jobs'
     ]
   }
 };

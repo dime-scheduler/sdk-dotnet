@@ -29,11 +29,19 @@ As the highest possible level for a work order, jobs capture information about t
 - Billing
 - Addresses
 
+![Dime.Scheduler](../static/img/jobs.png)
+
 Tasks cannot exist without a job. In other words, in order to send tasks to Dime.Scheduler, a task always needs to be preceeded by a job import run.
+
+## Appointment
+
+The final piece in the puzzle is the appointment. An appointment is the main deliverable of Dime.Scheduler: it allows the planner to assign tasks to resources and specify a date and time when the task should be executed.
 
 ## Filter group / value
 
 Dime.Scheduler filters provide a simple and flexible framework to define requirements for tasks and qualifications for resources. This allows planners to find the right resource for the task. For example, in order to execute the "Translate user manual to Spanish" task, a resource would for instance need to possess a C2 CEFR level for Spanish.
+
+![Dime.Scheduler](../static/img/filters.png)
 
 ## Indicator
 
