@@ -20,7 +20,16 @@ Tasks are initially displayed in the open tasks component in Dime.Scheduler. Of 
 
 ## Job
 
-A job is a meta entity that contains a number of tasks. In the real world, there are many names for a job: a project, a service order, production order, sales order, assembly order, etc. Jobs describe the assignment on a high level and contain data that is true for all the underlying tasks. 
+A job is a meta entity that holds a number of related tasks. In the real world, there are many names for a job: a project, a service order, production order, sales order, assembly order, etc. Jobs describe the assignment on a high level and contain data that is true for all the underlying tasks. 
+
+As the highest possible level for a work order, jobs capture information about the following entities:
+
+- Customer
+- Contact 
+- Billing
+- Addresses
+
+Tasks cannot exist without a job. In other words, in order to send tasks to Dime.Scheduler, a task always needs to be preceeded by a job import run.
 
 ## Filter group / value
 
