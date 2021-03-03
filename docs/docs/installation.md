@@ -10,10 +10,6 @@ This project is the first step towards a suite of SDKs using various technologie
 
 `dotnet add package Dime.Scheduler.Sdk`
 
-:::caution
-The packages listed here are not publicly available yet on NuGet.
-:::
-
 Besides that, you'll need three key pieces of information:
 - The URI of your Dime.Scheduler instance
 - The e-mail address (which serves as the user name) of a Forms user with administrative access
