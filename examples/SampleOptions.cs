@@ -18,5 +18,8 @@ namespace Dime.Scheduler.Sdk.Samples
 
         [Option('f', "filter", Required = false, HelpText = "Execute filter import.")]
         public bool Filter { get; set; }
+
+        [Option('g', "gpstracking", Required = false, HelpText = "Execute GPS tracking import.")]
+        public bool ResourceGpsTracking { get; set; }
     }
 }
