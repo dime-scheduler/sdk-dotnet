@@ -44,6 +44,12 @@ namespace Dime.Scheduler.Sdk.Import
         }
 
         public JobBuilder WithExtendables(Extendable extendable)
+            => WithFreeTextExtendables(extendable)
+                .WithFreeDateExtendables(extendable)
+                .WithFreeDecimalExtendables(extendable)
+                .WithFreeBooleanExtendables(extendable);
+
+        private JobBuilder WithFreeTextExtendables(Extendable extendable)
         {
             _job.FreeText1 = extendable.FreeText1;
             _job.FreeText2 = extendable.FreeText2;
@@ -65,16 +71,35 @@ namespace Dime.Scheduler.Sdk.Import
             _job.FreeText18 = extendable.FreeText18;
             _job.FreeText19 = extendable.FreeText19;
             _job.FreeText20 = extendable.FreeText20;
-            _job.FreeDate1 = extendable.FreeDate1;
-            _job.FreeDate2 = extendable.FreeDate2;
-            _job.FreeDate3 = extendable.FreeDate3;
-            _job.FreeDate4 = extendable.FreeDate4;
-            _job.FreeDate5 = extendable.FreeDate5;
+
+            return this;
+        }
+
+        private JobBuilder WithFreeDecimalExtendables(Extendable extendable)
+        {
+
             _job.FreeDecimal1 = extendable.FreeDecimal1;
             _job.FreeDecimal2 = extendable.FreeDecimal2;
             _job.FreeDecimal3 = extendable.FreeDecimal3;
             _job.FreeDecimal4 = extendable.FreeDecimal4;
             _job.FreeDecimal5 = extendable.FreeDecimal5;
+
+            return this;
+        }
+
+        private JobBuilder WithFreeDateExtendables(Extendable extendable)
+        {
+            _job.FreeDate1 = extendable.FreeDate1;
+            _job.FreeDate2 = extendable.FreeDate2;
+            _job.FreeDate3 = extendable.FreeDate3;
+            _job.FreeDate4 = extendable.FreeDate4;
+            _job.FreeDate5 = extendable.FreeDate5;
+
+            return this;
+        }
+
+        private JobBuilder WithFreeBooleanExtendables(Extendable extendable)
+        {
             _job.FreeBit1 = extendable.FreeBit1;
             _job.FreeBit2 = extendable.FreeBit2;
             _job.FreeBit3 = extendable.FreeBit3;
