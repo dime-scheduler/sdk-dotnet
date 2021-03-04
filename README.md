@@ -22,6 +22,10 @@ Use the package manager NuGet to install the base library of the SDK:
 
 `dotnet add package Dime.Scheduler.Sdk`
 
+## Prerequisites
+
+To clone and run this application, you'll need Visual Studio 16.7 or higher. The application is built with C# 9 and targets .NET Standard 2.0, .NET Standard 2.1 and .NET 5.
+
 ## Usage
 
 The example below fetches the resources available in Dime.Scheduler:
@@ -97,4 +101,13 @@ Check out the **[📚 docs »](https://dimenics.github.io/ds-sdk)** for more inf
 
 ## Contributing
 
-Pull requests are welcome. Please check out the contribution and code of conduct guidelines.
+We welcome contributions. Please check out the contribution and code of conduct guidelines first.
+
+To contribute:
+
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/mynewfeature`)
+3. Commit your changes (`git commit -m 'Add mynewfeature'`)
+4. Push to the branch (`git push origin feature/mynewfeature`)
+5. Open a pull request
+

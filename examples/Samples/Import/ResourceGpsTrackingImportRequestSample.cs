@@ -58,8 +58,6 @@ namespace Dime.Scheduler.Sdk.Samples
 
                 for (int i = 0; i < coordinates.Count; i++)
                 {
-                    Thread.Sleep(2000); // Sleep 2 seconds
-
                     Console.WriteLine("Updating GPS location " + (i + 1));
 
                     (decimal lat, decimal lng) = coordinates.ElementAt(i);
@@ -71,6 +69,7 @@ namespace Dime.Scheduler.Sdk.Samples
                     };
 
                     ImportSet resourceCoordinatesImport = await importEndpoint.ProcessAsync(resourceGpsTrackingRequest, TransactionType.Append);
+                    Thread.Sleep(5000); // Sleep 2 seconds
                 }
 
                 Console.WriteLine("All done!");
