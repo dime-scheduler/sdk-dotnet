@@ -21,5 +21,8 @@ namespace Dime.Scheduler.Sdk.Samples
 
         [Option('g', "gpstracking", Required = false, HelpText = "Execute GPS tracking import.")]
         public bool ResourceGpsTracking { get; set; }
+
+        [Option('n', "notification", Required = false, HelpText = "Execute notification import.")]
+        public bool Notification { get; set; }
     }
 }

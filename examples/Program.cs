@@ -60,6 +60,12 @@ namespace Dime.Scheduler.Sdk.Samples
                         ResourceGpsTrackingImportRequestSample gpsTrackingSample = new();
                         await gpsTrackingSample.Execute();
                     }
+
+                    if (o.Notification)
+                    {
+                        NotificationImportRequestSample gpsTrackingSample = new();
+                        await gpsTrackingSample.Execute();
+                    }
                 });
 
             Console.ReadLine();
