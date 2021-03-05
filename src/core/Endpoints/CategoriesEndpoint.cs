@@ -10,6 +10,11 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
+        internal CategoriesEndpoint(IDimeSchedulerRestClient<CategoryRequest> restClient) 
+            : base(restClient)
+        {
+        }
+
         public Task Create(CategoryRequest requestParameters)
             => Execute(Routes.Categories.Create, Method.POST, requestParameters);
 

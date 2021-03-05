@@ -2,8 +2,8 @@
 {
     public record AuthenticationOptions
     {
-        public string Uri { get; set; }
-        public string AuthenticationToken { get; set; }
+        public string Uri { get; }
+        public string AuthenticationToken { get; }
 
         public AuthenticationOptions(string uri, string authenticationToken)
             => (Uri, AuthenticationToken) = (uri, authenticationToken);

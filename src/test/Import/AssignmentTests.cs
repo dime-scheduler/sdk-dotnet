@@ -21,5 +21,22 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
         }
+
+        [Fact]
+        public void Assignment_ToImportRequest_Delete_AllShouldMapParameters()
+        {
+            Assignment model = new()
+            {
+                SourceApp = "APP",
+                SourceType = "TYPE",
+                ResourceNo = "LINDA",
+                SentFromBackOffice = 1,
+                AppointmentGuid = "GUID",
+                AppointmentId = 1
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
     }
 }

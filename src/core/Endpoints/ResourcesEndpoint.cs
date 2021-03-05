@@ -11,10 +11,15 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
+        internal ResourcesEndpoint(IDimeSchedulerRestClient<ResourceRequest> restClient)
+            : base(restClient)
+        {
+        }
+
         public async Task<IEnumerable<Resource>> GetAsync(ResourceRequest request)
         {
             Page<Resource> data = await Execute<Page<Resource>>(Routes.Resources.Get, Method.GET, request);
-            return data.Data;
+            return data?.Data ?? new List<Resource>();
         }
     }
 }
