@@ -55,5 +55,9 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             FilterGroup model = new();
             Assert.Throws<Exception>(() => ((IImportRequestable)model).ToImportRequest(TransactionType.Delete));
         }
+
+        [Fact]
+        public void FilterGroup_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
+            => ToImportRequestTestUtils.TestToInvalidImportRequest<FilterGroup>();
     }
 }

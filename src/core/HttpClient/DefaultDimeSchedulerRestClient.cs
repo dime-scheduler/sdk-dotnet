@@ -19,7 +19,9 @@ namespace Dime.Scheduler.Sdk
 
         public async Task Execute(string endpoint, Method method, TRequest requestParameters)
         {
-            Uri baseUri = new(_opts.Uri);
+            (string uri, string authenticationToken) = _opts;
+
+            Uri baseUri = new(uri);
             Uri endpointUri = new(baseUri, endpoint);
 
             RestClient client = new(endpointUri);
@@ -29,7 +31,7 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("authorization", "Bearer " + _opts.AuthenticationToken);
+            request.AddHeader("authorization", "Bearer " + authenticationToken);
             request.AddJsonBody(requestParameters);
 
             IRestResponse response = await client.ExecuteAsync(request);

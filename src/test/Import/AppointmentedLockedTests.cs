@@ -41,5 +41,9 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 
             model.ShouldNotCreateImportRequest(TransactionType.Delete);
         }
+
+        [Fact]
+        public void AppointmentLocked_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
+            => ToImportRequestTestUtils.TestToInvalidImportRequest<AppointmentLocked>();
     }
 }
