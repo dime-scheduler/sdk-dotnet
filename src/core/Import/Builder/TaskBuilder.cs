@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Import
+namespace Dime.Scheduler.Sdk.Import.Builder
 {
     [Obsolete("Will be removed in version 2.x")]
     public class TaskBuilder : IImportRequestableBuilder<Task>
@@ -24,6 +24,28 @@ namespace Dime.Scheduler.Sdk.Import
             _task.PredecessorLag = projectTask.PredecessorLag;
             _task.PredecessorTaskNo = projectTask.PredecessorTaskNo;
             _task.SchedulingMode = projectTask.SchedulingMode;
+
+            return this;
+        }
+
+        public TaskBuilder WithIris(InternationalRepairCodingSystem iris)
+        {
+            _task.IrisArea = iris.Area;
+            _task.IrisFault = iris.Fault;
+            _task.IrisReason = iris.Reason;
+            _task.IrisResolution = iris.Resolution;
+            _task.IrisSymptom = iris.Symptom;
+
+            return this;
+        }
+
+        public TaskBuilder WithContract(Contract contract)
+        {
+            _task.ContractNo = contract.No;
+            _task.ContractType = contract.Type;
+            _task.ContractDescription = contract.Description;
+            _task.ContractStartDate = contract.StartDate;
+            _task.ContractEndDate = contract.EndDate;
 
             return this;
         }

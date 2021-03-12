@@ -63,5 +63,9 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             TaskContainer model = new();
             Assert.Throws<Exception>(() => ((IImportRequestable)model).ToImportRequest(TransactionType.Delete));
         }
+
+        [Fact]
+        public void TaskContainer_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
+            => ToImportRequestTestUtils.TestToInvalidImportRequest<TaskContainer>();
     }
 }

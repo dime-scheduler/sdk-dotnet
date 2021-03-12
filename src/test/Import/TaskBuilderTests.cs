@@ -1,5 +1,6 @@
 ﻿using System;
 using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Import.Builder;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
@@ -76,6 +77,39 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             }).Create();
 
             Assert.True(task.PredecessorTaskNo == "TASK_002");
+        }
+
+        [Fact]
+        public void TaskBuilder_SetIris_ShouldMapProperties()
+        {
+            TaskBuilder taskBuilder = new();
+            Task task = taskBuilder.WithIris(new InternationalRepairCodingSystem()
+            {
+                Reason = "Reason",
+                Area = "Area",
+                Fault = "Fault",
+                Resolution = "Resolution",
+                Symptom = "Symptom"
+            }).Create();
+
+            Assert.True(task.IrisArea == "Area");
+        }
+
+        [Fact]
+        public void TaskBuilder_SetContract_ShouldMapProperties()
+        {
+            TaskBuilder taskBuilder = new();
+            Task task = taskBuilder.WithContract(new Contract()
+            {
+
+                Description = "Description",
+                StartDate = new DateTime(2020, 1, 1),
+                EndDate = new DateTime(2020, 1, 3),
+                Type = "Type",
+                No = "No"
+            }).Create();
+
+            Assert.True(task.ContractDescription == "Description");
         }
     }
 }

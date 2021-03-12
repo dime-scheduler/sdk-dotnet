@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Import
+namespace Dime.Scheduler.Sdk.Import.Builder
 {
     [Obsolete("Will be removed in version 2.x")]
     public class JobBuilder : IImportRequestableBuilder<Job>

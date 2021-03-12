@@ -1,4 +1,4 @@
-﻿namespace Dime.Scheduler.Sdk.Import
+﻿namespace Dime.Scheduler.Sdk.Import.Builder
 {
     public class Address
     {

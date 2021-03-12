@@ -37,5 +37,10 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
             importRequest.AssertEqualParameterCollectionCount();
         }
+
+        [Fact]
+        public void ResourceCalendar_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
+            => ToImportRequestTestUtils.TestToInvalidImportRequest<ResourceCalendar>();
+
     }
 }

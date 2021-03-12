@@ -1,5 +1,6 @@
 ﻿using System;
 using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Import.Builder;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
@@ -66,7 +67,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void JobBuilder_SetCustomer_ShouldMapProperties()
         {
             JobBuilder jobBuilder = new();
-            Job job = jobBuilder.WithCustomer(new Sdk.Import.Customer
+            Job job = jobBuilder.WithCustomer(new Sdk.Import.Builder.Customer
             {
                 Address = "Kommandantenstraße 18, 10969 Berlin, Germany",
                 Name = "Customer 1",
