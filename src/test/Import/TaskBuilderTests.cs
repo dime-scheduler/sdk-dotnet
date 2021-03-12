@@ -72,7 +72,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 PercentDone = 50,
                 PredecessorLag = 2,
                 PredecessorTaskNo = "TASK_002",
-                SchedulingMode = 3,
+                SchedulingMode = SchedulingMode.FixedDuration,
                 StartDate = new DateTime(2020, 1, 6)
             }).Create();
 
@@ -110,6 +110,22 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             }).Create();
 
             Assert.True(task.ContractDescription == "Description");
+        }
+
+        [Fact]
+        public void TaskBuilder_SetService_ShouldMapProperties()
+        {
+            TaskBuilder taskBuilder = new();
+            Task task = taskBuilder.WithService(new Service()
+            {
+                Name = "Name",
+                Class = "Class",
+                Group = "Group",
+                No = "No",
+                SerialNo = "SerialNo"
+            }).Create();
+
+            Assert.True(task.ServiceSerialNo == "SerialNo");
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk.Import.Builder
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public int PercentDone { get; set; }
-        public int SchedulingMode { get; set; }
+        public SchedulingMode SchedulingMode { get; set; }
         public DateTime? BaseLineStartDate { get; set; }
         public DateTime? BaseLineEndDate { get; set; }
         public int BaseLinePercentDone { get; set; }

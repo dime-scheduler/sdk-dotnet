@@ -28,6 +28,17 @@ namespace Dime.Scheduler.Sdk.Import.Builder
             return this;
         }
 
+        public TaskBuilder WithService(Service service)
+        {
+            _task.ServiceNo = service.No;
+            _task.ServiceClass = service.Class;
+            _task.ServiceGroup = service.Group;
+            _task.ServiceName = service.Name;
+            _task.ServiceSerialNo = service.SerialNo;
+
+            return this;
+        }
+
         public TaskBuilder WithIris(InternationalRepairCodingSystem iris)
         {
             _task.IrisArea = iris.Area;

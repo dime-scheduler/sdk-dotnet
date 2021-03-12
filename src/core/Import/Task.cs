@@ -405,7 +405,7 @@ namespace Dime.Scheduler.Sdk.Import
         public int PercentDone { get; set; }
 
         [ImportParameter(nameof(SchedulingMode), TransactionType.Append)]
-        public int SchedulingMode { get; set; }
+        public SchedulingMode SchedulingMode { get; set; }
 
         [ImportParameter(nameof(BaseLineStartDate), TransactionType.Append)]
         public DateTime? BaseLineStartDate { get; set; }
