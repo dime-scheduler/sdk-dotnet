@@ -1,5 +1,6 @@
 ﻿using System;
 using CommandLine;
+using Dime.Scheduler.Sdk.Samples.Samples.Import;
 
 namespace Dime.Scheduler.Sdk.Samples
 {
@@ -71,6 +72,12 @@ namespace Dime.Scheduler.Sdk.Samples
                     {
                         ProjectImportRequestSample projectImportRequestSample = new();
                         await projectImportRequestSample.Execute();
+                    }
+
+                    if (o.Appointment)
+                    {
+                        AppointmentImportRequestSample appointmentImportRequestSample = new();
+                        await appointmentImportRequestSample.Execute();
                     }
                 });
 

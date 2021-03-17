@@ -13,20 +13,22 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentGuid), TransactionType.Append)]
         public Guid AppointmentGuid { get; set; }
 
-        [Required]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         public string SourceApp { get; set; }
 
-        [Required]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(10)]
         [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         public string SourceType { get; set; }
 
+        [RequiredIf(TransactionType.Append)]
         [MaxLength(50)]
         [ImportParameter(nameof(JobNo), TransactionType.Append)]
         public string JobNo { get; set; }
 
+        [RequiredIf(TransactionType.Append)]
         [MaxLength(50)]
         [ImportParameter(nameof(TaskNo), TransactionType.Append)]
         public string TaskNo { get; set; }

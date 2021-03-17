@@ -27,5 +27,8 @@ namespace Dime.Scheduler.Sdk.Samples
 
         [Option('p', "project", Required = false, HelpText = "Execute notification import.")]
         public bool Project { get; set; }
+
+        [Option('a', "appointment", Required = false, HelpText = "Execute appointment import.")]
+        public bool Appointment { get; set; }
     }
 }
