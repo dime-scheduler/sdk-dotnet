@@ -69,22 +69,22 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ReplaceResource), TransactionType.Append)]
         public bool? ReplaceResource { get; set; }
 
-        [ImportParameter(nameof(BackOfficeId), TransactionType.Append)]
+        [ImportParameter("BackofficeID", TransactionType.Append)]
         public string BackOfficeId { get; set; }
 
-        [ImportParameter(nameof(BackOfficeParentId), TransactionType.Append)]
+        [ImportParameter("BackofficeParentID", TransactionType.Append)]
         public string BackOfficeParentId { get; set; }
 
-        [ImportParameter(nameof(UnitOfMeasure), TransactionType.Append)]
+        [ImportParameter("PlanningUOM", TransactionType.Append)]
         public string UnitOfMeasure { get; set; }
 
         [ImportParameter("PlanningUOMConversion", TransactionType.Append)]
         public decimal? UnitOfMeasureConversion { get; set; }
 
-        [ImportParameter(nameof(PlanningQuantity), TransactionType.Append)]
+        [ImportParameter("PlanningQty", TransactionType.Append)]
         public decimal? PlanningQuantity { get; set; }
 
-        [ImportParameter(nameof(UseFixedPlanningQuantity), TransactionType.Append)]
+        [ImportParameter("UseFixPlanningQty", TransactionType.Append)]
         public bool? UseFixedPlanningQuantity { get; set; }
 
         [ImportParameter("RoundToUOM", TransactionType.Append)]
