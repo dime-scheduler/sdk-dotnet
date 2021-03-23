@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
@@ -14,7 +13,7 @@ namespace Dime.Scheduler.Sdk.Tests
                 .WithValue("Handsome B. Wonderful")
                 .ToString();
 
-            string filterValue = "{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'}";
+            const string filterValue = "{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'}";
             Assert.True(filter == filterValue);
         }
 
@@ -36,10 +35,9 @@ namespace Dime.Scheduler.Sdk.Tests
                 .WithProperty(x => x.Name)
                 .WithValue("Handsome B. Wonderful");
 
-            Filters<Customer> filterList = new Filters<Customer>() { filter1, filter2, filter3 };
+            Filters<Customer> filterList = new() { filter1, filter2, filter3 };
 
-            const string expectedValue =
-                "[{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'},{ 'operator':'==','value':Max Power,'property':'Name'},{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'}]";
+            const string expectedValue =  "[{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'},{ 'operator':'==','value':Max Power,'property':'Name'},{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'}]";
             string filterJsonArray = filterList.ToString();
             Assert.True(filterJsonArray == expectedValue);
         }
