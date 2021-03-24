@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Import.Exchange;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
@@ -19,10 +20,12 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Body = "BODY",
                 Start = new DateTime(2020, 1, 1, 15, 30, 0),
                 End = new DateTime(2020, 1, 1, 16, 30, 0),
-                Categories = new List<string>() { "1", "2" },
+                Categories = new List<string> { "1", "2" },
                 ExchangeId = "1",
                 ICalUId = "1",
-                ResourceEmail = "email"
+                ResourceEmail = "email",
+                ShowAs = ShowAs.Office,
+                Sensitivity = Sensitivity.Confidential
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
@@ -41,10 +44,12 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Body = "BODY",
                 Start = new DateTime(2020, 1, 1, 15, 30, 0),
                 End = new DateTime(2020, 1, 1, 16, 30, 0),
-                Categories = new List<string>() { "1", "2" },
+                Categories = new List<string> { "1", "2" },
                 ExchangeId = "1",
                 ICalUId = "1",
-                ResourceEmail = "email"
+                ResourceEmail = "email",
+                ShowAs = ShowAs.Free,
+                Sensitivity = Sensitivity.Normal
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);

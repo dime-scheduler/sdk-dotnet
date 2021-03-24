@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dime.Scheduler.Sdk.Import.Exchange;
 
 namespace Dime.Scheduler.Sdk.Import
 {
@@ -34,6 +35,12 @@ namespace Dime.Scheduler.Sdk.Import
 
         [ImportParameter(nameof(ResourceEmail))]
         public string ResourceEmail { get; set; }
+
+        [ImportParameter(nameof(ShowAs))]
+        public ShowAs ShowAs { get; set; }
+
+        [ImportParameter(nameof(Sensitivity))]
+        public Sensitivity Sensitivity { get; set; }
 
         [ImportParameter(nameof(Categories))]
         public IEnumerable<string> Categories { get; set; } = new List<string>();
