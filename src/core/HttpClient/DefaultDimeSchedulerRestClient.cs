@@ -35,7 +35,7 @@ namespace Dime.Scheduler.Sdk
             request.AddJsonBody(requestParameters);
 
             IRestResponse response = await client.ExecuteAsync(request);
-            if (response.IsSuccessful)
+            if (!response.IsSuccessful)
                 throw new WebException(response.ErrorMessage, response.ErrorException);
         }
 
