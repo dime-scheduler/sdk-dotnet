@@ -40,7 +40,7 @@ namespace Dime.Scheduler.Sdk.Import
             => new(ImportProcedures.Category.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new(ImportProcedures.Category.Delete, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Category.Delete, this.CreateParameters(TransactionType.Delete));
 
         Category IValidatableImportRequest<Category>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);
