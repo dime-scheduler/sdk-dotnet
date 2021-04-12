@@ -35,7 +35,7 @@ namespace Dime.Scheduler.Sdk.Import
             => new(ImportProcedures.Pin.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => new(ImportProcedures.Pin.Delete, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Pin.Delete, this.CreateParameters(TransactionType.Delete));
         
         Pin IValidatableImportRequest<Pin>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);
