@@ -30,7 +30,7 @@ namespace Dime.Scheduler.Sdk.Import
             {
                 private static readonly string _entity = "AppointmentImportance";
 
-                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
 
             }
@@ -39,7 +39,7 @@ namespace Dime.Scheduler.Sdk.Import
             {
                 private static readonly string _entity = "AppointmentLocked";
 
-                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
 
             }
@@ -48,7 +48,7 @@ namespace Dime.Scheduler.Sdk.Import
             {
                 private static readonly string _entity = "AppointmentPlanningQty";
 
-                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
 
             }
@@ -57,7 +57,7 @@ namespace Dime.Scheduler.Sdk.Import
             {
                 private static readonly string _entity = "AppointmentCategory";
 
-                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
             }
 
@@ -65,7 +65,7 @@ namespace Dime.Scheduler.Sdk.Import
             {
                 private static readonly string _entity = "AppointmentTimeMarker";
 
-                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
             }
 
