@@ -21,7 +21,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
 
-            importRequest.AssertStoredProcedureName("mboc_upsertAppointmentLocked");
+            importRequest.AssertStoredProcedureName("mboc_updateAppointmentLocked");
             importRequest.AssertEqualParameterCollectionCount();
             importRequest.AssertParameterCount(6);
         }

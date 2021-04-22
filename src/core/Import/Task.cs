@@ -462,10 +462,10 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ContainerIndex), TransactionType.Append)]
         public int ContainerIndex { get; set; }
 
-        [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
+        [ImportParameter(nameof(CheckAppointments), TransactionType.Delete)]
         public bool CheckAppointments { get; set; }
 
-        [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
+        [ImportParameter("SentFromBackoffice", TransactionType.Delete)]
         public bool SentFromBackOffice { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
