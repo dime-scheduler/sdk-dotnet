@@ -26,6 +26,8 @@ Use the package manager NuGet to install the base library of the SDK:
 
 To clone and run this application, you'll need Visual Studio 16.7 or higher. The application is built with C# 9 and targets .NET Standard 2.0, .NET Standard 2.1 and .NET 5.
 
+The SDK is currently only supported for the latest version of Dime.Scheduler.
+
 ## Usage
 
 The example below fetches the resources available in Dime.Scheduler:

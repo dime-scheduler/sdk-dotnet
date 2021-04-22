@@ -8,6 +8,7 @@ namespace Dime.Scheduler.Sdk.Import
         private static readonly string _base = "mboc_";
 
         private static readonly string _append = "upsert";
+        private static readonly string _update = "update";
         private static readonly string _delete = "delete";
 
         internal static class ExchangeAppointment
@@ -66,6 +67,12 @@ namespace Dime.Scheduler.Sdk.Import
 
                 internal static readonly string Append = $"{_base}{_append}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+            }
+
+            internal static class Content
+            {
+                private static readonly string _entity = "AppointmentContent";
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
             }
         }
 
