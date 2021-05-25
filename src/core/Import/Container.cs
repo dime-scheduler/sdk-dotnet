@@ -16,6 +16,14 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(Name))]
         public string Name { get; set; }
 
+        [Required]
+        [ImportParameter(nameof(HandleDate))]
+        public DateTime HandleDate { get; set; }
+
+        [Required]
+        [ImportParameter(nameof(HandleLocked))]
+        public bool HandleLocked { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {

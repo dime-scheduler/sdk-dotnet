@@ -21,11 +21,23 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Container_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
-            Container model = new() { Name = "Container 1" };
+            Container model = new()
+            {
+                Name = "Container 1",
+                HandleDate = new DateTime(2021, 05, 25),
+                HandleLocked = true
+            };
+
             ImportRequest importRequest = ((IImportRequestable)model).ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[0] == "Name");
             Assert.True(importRequest.ParameterValues[0] == "Container 1");
+
+            Assert.True(importRequest.ParameterNames[1] == "HandleDate");
+            Assert.True(importRequest.ParameterValues[1] == "2021-05-25 00:00:00Z");
+
+            Assert.True(importRequest.ParameterNames[2] == "HandleLocked");
+            Assert.True(importRequest.ParameterValues[2] == "True");
         }
 
         [Fact]
@@ -40,7 +52,9 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         {
             Container model = new()
             {
-                Name = "Container 1"
+                Name = "Container 1",
+                HandleDate = new DateTime(2021, 05, 25),
+                HandleLocked = true
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
