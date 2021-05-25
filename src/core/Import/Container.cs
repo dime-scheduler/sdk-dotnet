@@ -7,21 +7,17 @@ namespace Dime.Scheduler.Sdk.Import
 
     public class Container : IImportRequestable, IValidatableImportRequest<Container>
     {
-        public Container()
-        {
-
-        }
-        
         [Required]
+        [MaxLength(255)]
         [ImportParameter(nameof(Name))]
         public string Name { get; set; }
 
         [Required]
-        [ImportParameter(nameof(HandleDate))]
+        [ImportParameter(nameof(HandleDate), TransactionType.Append)]
         public DateTime HandleDate { get; set; }
 
         [Required]
-        [ImportParameter(nameof(HandleLocked))]
+        [ImportParameter(nameof(HandleLocked), TransactionType.Append)]
         public bool HandleLocked { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
