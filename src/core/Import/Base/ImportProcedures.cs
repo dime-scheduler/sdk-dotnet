@@ -242,5 +242,21 @@ namespace Dime.Scheduler.Sdk.Import
             internal static readonly string Append = $"{_base}{_append}{_entity}";
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
         }
+
+        internal static class Container
+        {
+            private static readonly string _entity = "Container";
+
+            internal static readonly string Append = $"{_base}{_append}{_entity}";
+            internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+        }
+
+        internal static class AppointmentContainer
+        {
+            private static readonly string _entity = "AppointmentContainer";
+
+            internal static readonly string Append = $"{_base}{_append}{_entity}";
+            internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+        }
     }
 }
