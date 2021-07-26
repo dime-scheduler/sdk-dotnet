@@ -2,7 +2,7 @@ module.exports = {
   title: 'Dime.Scheduler SDK',
   tagline: 'Software development kit for Dime.Scheduler',
   url: 'https://dimenics.github.io',
-  baseUrl: '/ds-sdk/',
+  baseUrl: '/ds-sdk-dotnet/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
