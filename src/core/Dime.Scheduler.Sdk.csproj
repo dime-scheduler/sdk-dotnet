@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;net5.0</TargetFrameworks>
-    <Company>Dimenics</Company>
-    <Authors>Dimenics</Authors>
+    <Company>Dime Software</Company>
+    <Authors>Dime Software</Authors>
     <Product>Dime.Scheduler</Product>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
