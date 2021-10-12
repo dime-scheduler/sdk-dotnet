@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/azure-devops/build/dimenicsbe/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimenicsbe/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler.sdk?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimenicsbe/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dimenics/ds-sdk/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
+    <img src="https://img.shields.io/azure-devops/build/dimenicsbe/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimenicsbe/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler.sdk?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimenicsbe/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
     <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://img.shields.io/badge/chat-on%20gitter-brightgreen.svg?style=flat-square" /></a>
-    <a href="https://github.com/dimenics/ds-sdk/discussions">
+    <a href="https://github.com/dime-scheduler/sdk-dotnet/discussions">
   <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
 </a>
 </p>
@@ -14,7 +14,7 @@
 
 This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. The SDK is a gateway to connect *any* system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
-Check out the **[📚 docs »](https://dimenics.github.io/ds-sdk)** for more info.
+Check out the **[📚 docs »](https://dime-scheduler.github.io/sdk-dotnet)** for more info.
 
 ## Installation
 

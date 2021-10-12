@@ -11,7 +11,7 @@ import styled from "styled-components";
 const features = [
   {
     title: 'Connect any system',
-    imageUrl: 'img/monitors.svg',
+    imageUrl: 'img/integrate.svg',
     description: (
       <>
         Dime.Scheduler's flexibility allows for integration with any system. Connect your bespoke software and workflows with Dime.Scheduler and vice versa.
@@ -68,7 +68,7 @@ function OtherFeature({ imageUrl, title, description, i }) {
   const imgCls = `col col--5 ${isImageRight ? offsetCls : ""}`;
   const img = <div className={imgCls}>
     <div className="featureImageColumn_QmtA">
-      <img alt={title} src={imgUrl} />
+      <img alt={title} src={imgUrl} style={{ height: "250px" }} />
     </div>
   </div>;
 

@@ -4,7 +4,7 @@ title: Endpoints
 sidebar_label: Endpoints
 ---
 
-In Dime.Scheduler, there is a help section that enlists all the web APIs. 
+In Dime.Scheduler, there is a help section that enlists all the web APIs.
 
 ![Dime.Scheduler](../../static/img/api/ds-api-menu.png)
 
@@ -18,9 +18,14 @@ See the table below for the current status of this endeavour.
 
 ## Supported endpoints
 
-| Endpoint   | Status |
-| ---------- | ------ |
-| Import     | ✅     |
-| Resources  | 🚧     |
-| Categories | 🚧     |
-| Messages   | 🚧     |
+| Endpoint     | Status |
+| ------------ | ------ |
+| Import       | ✅     |
+| Resources    | 🚧     |
+| Categories   | ✅     |
+| Time Markers | ✅     |
+| Pins         | ✅     |
+| Messages     | ✅     |
+
+The import endpoint is available in the first version of the SDK.
+The other endpoints are expected in version 3 of the SDK.

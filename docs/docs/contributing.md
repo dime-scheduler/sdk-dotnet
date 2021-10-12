@@ -20,24 +20,24 @@ Contributions are very welcome. If you think you need help planning your contrib
 
 ## Our development process
 
-Dime.Sheduler uses [GitHub](https://github.com/dimenics/ds-sdk) as its source of truth. The core team will be working directly there. All changes will be public from the beginning.
+Dime.Sheduler uses [GitHub](https://github.com/dime-scheduler/sdk-dotnet) as its source of truth. The core team will be working directly there. All changes will be public from the beginning.
 
 When a change made on GitHub is approved, it will be checked by our continuous integration system, CircleCI.
 
 ### Reporting new issues
 
-When [opening a new issue](https://github.com/dimenics/ds-sdk/issues/new/choose), always make sure to fill out the issue template. **This step is very important!** Not doing so may result in your issue not managed in a timely fashion. Don't take this personally if this happens, and feel free to open a new issue once you've gathered all the information required by the template.
+When [opening a new issue](https://github.com/dime-scheduler/sdk-dotnet/issues/new/choose), always make sure to fill out the issue template. **This step is very important!** Not doing so may result in your issue not managed in a timely fashion. Don't take this personally if this happens, and feel free to open a new issue once you've gathered all the information required by the template.
 
 - **One issue, one bug:** Please report a single bug per issue.
 - **Provide reproduction steps:** List all the steps necessary to reproduce the issue. The person reading your bug report should be able to follow these steps to reproduce your issue with minimal effort.
 
 ### Reporting bugs
 
-We use [GitHub Issues](https://github.com/dimenics/ds-sdk/issues) for our public bugs. If you would like to report a problem, take a look around and see if someone already opened an issue about it. If you a are certain this is a new, unreported bug, you can submit a [bug report](#reporting-new-issues).
+We use [GitHub Issues](https://github.com/dime-scheduler/sdk-dotnet/issues) for our public bugs. If you would like to report a problem, take a look around and see if someone already opened an issue about it. If you a are certain this is a new, unreported bug, you can submit a [bug report](#reporting-new-issues).
 
 If you have questions about using Dime.Sheduler, contact the Dime.Sheduler Twitter account at [@docusaurus](https://twitter.com/docusaurus), and we will do our best to answer your questions.
 
-You can also file issues as [feature requests or enhancements](https://github.com/dimenics/ds-sdk/labels/feature).
+You can also file issues as [feature requests or enhancements](https://github.com/dime-scheduler/sdk-dotnet/labels/feature).
 
 ## Working on Dime.Sheduler code
 
@@ -105,13 +105,13 @@ Working on your first Pull Request? You can learn how from this free video serie
 
 [**How to Contribute to an Open Source Project on GitHub**](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
-We have a list of [beginner friendly issues](https://github.com/dimenics/ds-sdk/labels/good%20first%20issue) to help you get your feet wet in the Dime.Sheduler codebase and familiar with our contribution process. This is a great place to get started.
+We have a list of [beginner friendly issues](https://github.com/dime-scheduler/sdk-dotnet/labels/good%20first%20issue) to help you get your feet wet in the Dime.Sheduler codebase and familiar with our contribution process. This is a great place to get started.
 
 ### Proposing a change
 
-If you would like to request a new feature or enhancement but are not yet thinking about opening a pull request, you can also file an issue with [feature template](https://github.com/dimenics/ds-sdk/issues/new?template=feature.md/).
+If you would like to request a new feature or enhancement but are not yet thinking about opening a pull request, you can also file an issue with [feature template](https://github.com/dime-scheduler/sdk-dotnet/issues/new?template=feature.md/).
 
-If you intend to change the public API (e.g., something in `docusaurus.config.js`), or make any non-trivial changes to the implementation, we recommend filing an issue with [proposal template](https://github.com/dimenics/ds-sdk/issues/new?template=proposal.md) and including `[Proposal]` in the title. This lets us reach an agreement on your proposal before you put significant effort into it. These types of issues should be rare.
+If you intend to change the public API (e.g., something in `docusaurus.config.js`), or make any non-trivial changes to the implementation, we recommend filing an issue with [proposal template](https://github.com/dime-scheduler/sdk-dotnet/issues/new?template=proposal.md) and including `[Proposal]` in the title. This lets us reach an agreement on your proposal before you put significant effort into it. These types of issues should be rare.
 
 If you're only fixing a bug, it's fine to submit a pull request right away but we still recommend to file an issue detailing what you're fixing. This is helpful in case we don't accept that specific fix but want to keep track of the issue.
 
@@ -121,9 +121,9 @@ Small pull requests are much easier to review and more likely to get merged. Mak
 
 Please make sure the following is done when submitting a pull request:
 
-1. Fork [the repository](https://github.com/dimenics/ds-sdk) and create your branch from `master`.
+1. Fork [the repository](https://github.com/dime-scheduler/sdk-dotnet) and create your branch from `master`.
 1. Add the copyright notice to the top of any code new files you've added.
-1. Describe your [test plan](#test-plan) in your pull request description. Make sure to [test your changes](https://github.com/dimenics/ds-sdk/blob/master/admin/testing-changes-on-Dime.Sheduler-itself.md/)!
+1. Describe your [test plan](#test-plan) in your pull request description. Make sure to [test your changes](https://github.com/dime-scheduler/sdk-dotnet/blob/master/admin/testing-changes-on-Dime.Sheduler-itself.md/)!
 1. Make sure your code lints (`yarn prettier && yarn lint`).
 1. Make sure your Jest tests pass (`yarn test`).
 1. If you haven't already, [sign the CLA](https://code.facebook.com/cla).

@@ -13,8 +13,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://cdn.dimescheduler.com/dime-software/logo-shape.png</PackageIconUrl>
     <PackageTags>Dime.Scheduler;SDK;REST</PackageTags>
-    <RepositoryUrl>https://github.com/dimenics/ds-sdk</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/dimenics/ds-sdk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dime-scheduler/sdk-dotnet</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dime-scheduler/sdk-dotnet</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Dime.Scheduler SDK for .NET</Description>
     <Summary>A developer toolkit that connects any system to Dime.Scheduler in .NET</Summary>

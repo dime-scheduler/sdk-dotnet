@@ -4,7 +4,7 @@ title: Endpoints
 sidebar_label: Endpoints
 ---
 
-For an up to date list of the types and their properties, check out the [source code](https://github.com/dimenics/ds-sdk/tree/master/src/core/Import).
+For an up to date list of the types and their properties, check out the [source code](https://github.com/dime-scheduler/sdk-dotnet/tree/master/src/core/Import).
 All import types live in the ` Dime.Scheduler.Sdk.Import` namespace.
 
 | Endpoint                      | Create/Update | Delete | Type name                   |

@@ -1,12 +1,12 @@
 module.exports = {
   title: 'Dime.Scheduler SDK',
   tagline: 'Software development kit for Dime.Scheduler',
-  url: 'https://dimenics.github.io',
+  url: 'https://dime-scheduler/.github.io',
   baseUrl: '/sdk-dotnet/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'dimenics',
+  organizationName: 'dime-software',
   projectName: 'ds-sdk',
   themeConfig: {
     hideableSidebar:true,
@@ -34,7 +34,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/dimenics/ds-sdk',
+          href: 'https://github.com/dime-scheduler/sdk-dotnet',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
@@ -62,7 +62,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/dimenics/ds-sdk',
+              href: 'https://github.com/dime-scheduler/sdk-dotnet',
             },
           ]
         },
@@ -86,7 +86,7 @@ module.exports = {
         src: 'img/ds-dark.png',
         href: 'https://dimescheduler.com',
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Dimenics.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Dime Software.`,
     },
   },
   presets: [
@@ -96,7 +96,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/dimenics/ds-sdk/edit/master/docs',
+            'https://github.com/dime-scheduler/sdk-dotnet/edit/master/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
