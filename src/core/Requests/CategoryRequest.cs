@@ -1,6 +1,9 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public class CategoryRequest
+    public class IndicatorRequest
     {
+        public string Name { get; set; }
+
+        public string Color { get; set; }
     }
 }

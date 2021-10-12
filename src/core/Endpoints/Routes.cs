@@ -16,6 +16,25 @@ namespace Dime.Scheduler.Sdk
             internal static readonly string Delete = $"{_api}/{_endpoint}/Delete";
         }
 
+        internal static class TimeMarkers
+        {
+            private static readonly string _endpoint = "TimeMarker";
+
+            internal static readonly string Create = $"{_api}/{_endpoint}/Create";
+            internal static readonly string Update = $"{_api}/{_endpoint}/Update";
+            internal static readonly string Delete = $"{_api}/{_endpoint}/Delete";
+        }
+
+        internal static class Pins
+        {
+            private static readonly string _endpoint = "Pins";
+
+            internal static readonly string Create = $"{_api}/{_endpoint}/Create";
+            internal static readonly string Update = $"{_api}/{_endpoint}/Update";
+            internal static readonly string Delete = $"{_api}/{_endpoint}/Delete";
+        }
+
+        
         internal static class Resources
         {
             private static readonly string _endpoint = "Resources";
