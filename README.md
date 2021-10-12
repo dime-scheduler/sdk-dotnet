@@ -99,7 +99,7 @@ await importEndpoint.RunAsync(filterGroup, TransactionType.Append);
 
 ## Read more
 
-Check out the **[📚 docs »](https://dimenics.github.io/ds-sdk)** for more info.
+Check out the **[📚 docs »](https://dime-scheduler.github.io/sdk-dotnet)** for more info.
 
 ## Contributing
 
