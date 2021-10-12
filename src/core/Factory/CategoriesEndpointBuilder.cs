@@ -10,7 +10,7 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        public async Task<ICrudEndpoint<CategoryRequest>> Request()
+        public async Task<ICrudEndpoint<IndicatorRequest>> Request()
          => await Create();
 
         protected override CategoriesEndpoint Create(AuthenticationOptions opts)

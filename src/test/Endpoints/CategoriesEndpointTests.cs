@@ -11,22 +11,22 @@ namespace Dime.Scheduler.Sdk.Tests
         [Fact]
         public async Task CategoriesEndpoint_MockClient_Create_ShouldCreate()
         {
-            CategoriesEndpoint endpoint = new(new MockRestClient<CategoryRequest>());
-            await endpoint.Create(new CategoryRequest());
+            CategoriesEndpoint endpoint = new(new MockRestClient<IndicatorRequest>());
+            await endpoint.Create(new IndicatorRequest());
         }
 
         [Fact]
         public async Task CategoriesEndpoint_MockClient_Update_ShouldUpdate()
         {
-            CategoriesEndpoint endpoint = new(new MockRestClient<CategoryRequest>());
-            await endpoint.Update(new CategoryRequest());
+            CategoriesEndpoint endpoint = new(new MockRestClient<IndicatorRequest>());
+            await endpoint.Update(new IndicatorRequest());
         }
 
         [Fact]
         public async Task CategoriesEndpoint_MockClient_Delete_ShouldDelete()
         {
-            CategoriesEndpoint endpoint = new(new MockRestClient<CategoryRequest>());
-            await endpoint.Delete(new CategoryRequest());
+            CategoriesEndpoint endpoint = new(new MockRestClient<IndicatorRequest>());
+            await endpoint.Delete(new IndicatorRequest());
         }
     }
 }

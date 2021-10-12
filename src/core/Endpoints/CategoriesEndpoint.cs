@@ -3,25 +3,25 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class CategoriesEndpoint : Endpoint<CategoryRequest>, ICrudEndpoint<CategoryRequest>
+    public class CategoriesEndpoint : Endpoint<IndicatorRequest>, ICrudEndpoint<IndicatorRequest>
     {
         public CategoriesEndpoint(AuthenticationOptions opts)
             : base(opts)
         {
         }
 
-        internal CategoriesEndpoint(IDimeSchedulerRestClient<CategoryRequest> restClient) 
+        internal CategoriesEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient) 
             : base(restClient)
         {
         }
 
-        public Task Create(CategoryRequest requestParameters)
+        public Task Create(IndicatorRequest requestParameters)
             => Execute(Routes.Categories.Create, Method.POST, requestParameters);
 
-        public Task Update(CategoryRequest requestParameters)
+        public Task Update(IndicatorRequest requestParameters)
             => Execute(Routes.Categories.Update, Method.PUT, requestParameters);
 
-        public Task Delete(CategoryRequest requestParameters)
+        public Task Delete(IndicatorRequest requestParameters)
             => Execute(Routes.Categories.Delete, Method.DELETE, requestParameters);
     }
 }

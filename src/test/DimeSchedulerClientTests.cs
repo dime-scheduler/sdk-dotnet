@@ -44,7 +44,7 @@ namespace Dime.Scheduler.Sdk.Tests
             IAuthenticator authenticator = new MockAuthenticator();
             DimeSchedulerClient client = new(uri, authenticator);
 
-            ICrudEndpoint<CategoryRequest> endpoint = await client.Categories.Request();
+            ICrudEndpoint<IndicatorRequest> endpoint = await client.Categories.Request();
             Assert.NotNull(endpoint);
         }
 
