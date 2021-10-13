@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using RestSharp;
@@ -7,6 +8,7 @@ namespace Dime.Scheduler.Sdk
 {
     public class FormsAuthenticator : IAuthenticator
     {
+        private TokenResponse _tokenResponse;
         private readonly string _uri;
         private readonly string _userName;
         private readonly string _password;
@@ -20,6 +22,9 @@ namespace Dime.Scheduler.Sdk
 
         public async Task<string> AuthenticateAsync()
         {
+            if (IsLocalTokenValid)
+                return _tokenResponse.access_token;
+
             RestClient client = new(Path.Combine(_uri, "token"));
             RestRequest request = new(Method.POST);
             request.AddHeader("cache-control", "no-cache");
@@ -31,9 +36,26 @@ namespace Dime.Scheduler.Sdk
 
             IRestResponse<TokenResponse> response = await client.ExecuteAsync<TokenResponse>(request);
 
-            return response.StatusCode == HttpStatusCode.OK
-                ? response.Data?.access_token
-                : throw new WebException(response.ErrorMessage, response.ErrorException);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                _tokenResponse = response.Data;
+                return response.Data?.access_token;
+            }
+
+            _tokenResponse = null;
+            throw new WebException(response.ErrorMessage, response.ErrorException);
+        }
+
+        public bool IsLocalTokenValid
+        {
+            get
+            {
+                if (_tokenResponse == null)
+                    return false;
+
+                return !string.IsNullOrEmpty(_tokenResponse.access_token)
+                    && _tokenResponse.expires > DateTime.Now;
+            }
         }
     }
 }
