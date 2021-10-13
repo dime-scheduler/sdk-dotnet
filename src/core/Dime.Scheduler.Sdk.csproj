@@ -5,10 +5,10 @@
     <Company>Dime Software</Company>
     <Authors>Dime Software</Authors>
     <Product>Dime.Scheduler</Product>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://cdn.dimescheduler.com/dime-software/logo-shape.png</PackageIconUrl>
@@ -19,7 +19,7 @@
     <Description>Dime.Scheduler SDK for .NET</Description>
     <Summary>A developer toolkit that connects any system to Dime.Scheduler in .NET</Summary>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <VersionSuffix>alpha.18</VersionSuffix>
+    <VersionSuffix>alpha.20</VersionSuffix>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
   </PropertyGroup>
@@ -29,6 +29,12 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
   <ItemGroup>
     <InternalsVisibleTo Include="Dime.Scheduler.Sdk.Tests" />
   </ItemGroup>

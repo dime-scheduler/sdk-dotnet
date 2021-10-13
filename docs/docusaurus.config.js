@@ -6,7 +6,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'dime-software',
+  organizationName: 'dimenics',
   projectName: 'ds-sdk',
   themeConfig: {
     hideableSidebar:true,

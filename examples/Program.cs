@@ -20,18 +20,6 @@ namespace Dime.Scheduler.Sdk.Samples
                 .ParseArguments<SampleOptions>(args)
                 .WithParsed(async o =>
                 {
-                    // If not using the command line, you can always set the options in the code
-                    // Uncomment the line below to active the resource import sample
-                    // o.Resource =  true;
-                    if (o.Resource)
-                    {
-                        ResourceImportRequestSample resourceImportRequestSample = new();
-                        await resourceImportRequestSample.ExecuteWithResult();
-
-                        ResourcesRequestSample resourcesRequestSample = new();
-                        await resourcesRequestSample.Execute();
-                    }
-
                     if (o.Task)
                     {
                         TaskImportRequestSample taskImportSample = new();
