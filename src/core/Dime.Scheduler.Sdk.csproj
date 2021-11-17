@@ -19,13 +19,13 @@
     <Description>Dime.Scheduler SDK for .NET</Description>
     <Summary>A developer toolkit that connects any system to Dime.Scheduler in .NET</Summary>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <VersionSuffix>alpha.20</VersionSuffix>
+    <VersionSuffix>beta.2</VersionSuffix>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RestSharp" Version="106.12.0" />
+    <PackageReference Include="RestSharp" Version="106.13.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
