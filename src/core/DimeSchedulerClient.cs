@@ -8,10 +8,12 @@
             Import = new ImportEndpointBuilder(baseUrl, authenticator);
             Messages = new MessagesEndpointBuilder(baseUrl, authenticator);
             Users = new UsersEndpointBuilder(baseUrl, authenticator);
+            Resources = new ResourcesEndpointBuilder(baseUrl, authenticator);
         }
 
         public IImportEndpointBuilder Import { get; }
         public IMessageEndpointBuilder Messages { get; }
         public IUserEndpointBuilder Users { get; }
+        public IResourceEndpointBuilder Resources { get; }
     }
 }
