@@ -9,7 +9,7 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        public async Task<ICrudEndpoint<IndicatorRequest>> Request()
+        public async Task<ICrudEndpoint<UserRequest>> Request()
          => await Create();
 
         protected override UsersEndpoint Create(AuthenticationOptions opts)
