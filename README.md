@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/connect.svg?raw=true" width="350>
+    <img src="assets/connect.svg?raw=true" width="350">
 </p>
 
 <p align="center">
@@ -21,18 +21,18 @@ Use the package manager NuGet to install the SDK:
 
 `dotnet add package Dime.Scheduler.Sdk`
 
+> Note: The SDK is still in preview. Do not use for production purposes just yet.
+
 ## Prerequisites
 
 To clone and run this application, you'll need Visual Studio 2022 or higher. The application is built with C# 10 and targets:
 
-| Target framework  |
-| ----------------- |
-| .NET Standard 2.0 |
-| .NET Standard 2.1 |
-| .NET 5            |
-| .NET 6            |
+- .NET Standard 2.0
+- .NET Standard 2.1
+- .NET 5
+- .NET 6
 
-The SDK is currently only supported for the **latest version** of Dime.Scheduler.
+The SDK is currently only supported for the latest version of Dime.Scheduler. Once released, versioning of the SDK will take Dime.Schedulers versions into account.
 
 ## Usage
 
