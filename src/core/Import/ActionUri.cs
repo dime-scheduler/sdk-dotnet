@@ -1,22 +1,27 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ActionUri : IImportRequestable
     {
         [ImportParameter(nameof(SourceApp))]
+        [MaxLength(30)]        
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]
+        [MaxLength(10)]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(UriType))]
         public int UriType { get; set; }
 
         [ImportParameter(nameof(Uri))]
+        [Required]
         public string Uri { get; set; }
 
         [ImportParameter(nameof(Description))]
+        [MaxLength(255)]
         public string Description { get; set; }
 
         [ImportParameter(nameof(Default))]

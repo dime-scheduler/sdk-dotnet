@@ -74,6 +74,14 @@ namespace Dime.Scheduler.Sdk.Import
                 private static readonly string _entity = "AppointmentContent";
                 internal static readonly string Append = $"{_base}{_update}{_entity}";
             }
+
+            internal static class Uri
+            {
+                private static readonly string _entity = "AppointmentUrl";
+
+                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+            }
         }
 
         internal static class Assignment
@@ -101,8 +109,15 @@ namespace Dime.Scheduler.Sdk.Import
 
                 internal static readonly string Clear = $"{_base}Clear{_entity}";
             }
-        }
 
+            internal static class Uri
+            {
+                private static readonly string _entity = "TaskUrl";
+
+                internal static readonly string Append = $"{_base}{_append}{_entity}";
+                internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+            }
+        }
 
         internal static class ActionUri
         {

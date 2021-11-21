@@ -1,31 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class AppointmentUri : IImportRequestable
+    public class TaskUri : IImportRequestable
     {
-        [ImportParameter("pSourceApp")]
+        [ImportParameter(nameof(SourceApp))]
+        [RequiredIf(TransactionType.Append)]
         [MaxLength(30)]
         public string SourceApp { get; set; }
 
-        [ImportParameter("pSourceType")]
+        [ImportParameter(nameof(SourceType))]
+        [RequiredIf(TransactionType.Append)]
         [MaxLength(10)]
         public string SourceType { get; set; }
 
-        [ImportParameter("pAppointmentId")]
-        public long AppointmentId { get; set; }
+        [ImportParameter(nameof(JobNo))]
+        [RequiredIf(TransactionType.Append)]
+        [MaxLength(50)]
+        public string JobNo { get; set; }
 
-        [ImportParameter("pAppointmentGuid")]
-        public Guid? AppointmentGuid { get; set; }
+        [ImportParameter(nameof(TaskNo))]
+        [RequiredIf(TransactionType.Append)]
+        [MaxLength(50)]
+        public string TaskNo { get; set; }
 
-        [ImportParameter("pUrl")]
+        [ImportParameter("url")]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(1000)]
         public string Uri { get; set; }
 
-        [ImportParameter("pUrlDesc")]
+        [ImportParameter("urldesc")]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(255)]
         public string Description { get; set; }
@@ -39,7 +44,7 @@ namespace Dime.Scheduler.Sdk.Import
             };
 
         private ImportRequest CreateAppendRequest()
-            => new(ImportProcedures.Appointment.Uri.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Task.Uri.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
             => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");

@@ -44,7 +44,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void ResourceCapacity_Validate_HasRequiredAttributes_ShouldSucceed()
         {
             ResourceCapacity model = new() { ResourceNo = "HJONES" };
-            ImportRequest importRequest = (model as IImportRequestable).ToImportRequest(TransactionType.Append);
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[0] == "ResourceNo");
             Assert.True(importRequest.ParameterValues[0] == "HJONES");
@@ -54,7 +54,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void ResourceCapacity_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
             ResourceCapacity model = new();
-            Assert.Throws<Exception>(() => (model as IImportRequestable).ToImportRequest(TransactionType.Append));
+            Assert.Throws<Exception>(() => model.ToImportRequest(TransactionType.Append));
         }
     }
 }

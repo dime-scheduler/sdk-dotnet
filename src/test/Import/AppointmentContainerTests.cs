@@ -23,7 +23,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void AppointmentContainer_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
             AppointmentContainer model = new() { Container = "Container 1", Appointment = "Appointment 1" };
-            ImportRequest importRequest = ((IImportRequestable)model).ToImportRequest(TransactionType.Append);
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[0] == "Container");
             Assert.True(importRequest.ParameterValues[0] == "Container 1");
@@ -33,7 +33,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void AppointmentContainer_Append_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
             AppointmentContainer model = new();
-            Assert.Throws<Exception>(() => ((IImportRequestable)model).ToImportRequest(TransactionType.Append));
+            Assert.Throws<Exception>(() => model.ToImportRequest(TransactionType.Append));
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void AppointmentContainer_Delete_Validate_MissingRequiredAttributes_ShouldThrowException()
         {
             AppointmentContainer model = new();
-            Assert.Throws<Exception>(() => ((IImportRequestable)model).ToImportRequest(TransactionType.Delete));
+            Assert.Throws<Exception>(() => model.ToImportRequest(TransactionType.Delete));
         }
     }
 }
