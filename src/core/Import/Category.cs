@@ -16,16 +16,20 @@ namespace Dime.Scheduler.Sdk.Import
             DisplayName = name;
             Color = color;
         }
-
-        [Required]
+        
         [ImportParameter("CategoryName")]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(100)]
         public string Name { get; set; }
-
-        [Required]
+       
         [ImportParameter(nameof(DisplayName), TransactionType.Append)]
+        [RequiredIf(TransactionType.Append)]
+        [MaxLength(100)]
         public string DisplayName { get; set; }
 
+        [RequiredIf(TransactionType.Append)]
         [ImportParameter("CategoryHexColor", TransactionType.Append)]
+        [MaxLength(7)]
         public string Color { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

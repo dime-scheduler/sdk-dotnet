@@ -1,26 +1,31 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class AppointmentImportance : IImportRequestable
     {
         [ImportParameter(nameof(SourceApp))]
+        [MaxLength(30)]
+        [Required]
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]
+        [MaxLength(10)]
+        [Required]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
         public long AppointmentId { get; set; }
 
         [ImportParameter(nameof(Importance))]
-        public string Importance { get; set; }
+        public int Importance { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice))]
-        public bool SentFromBackOffice { get; set; }
+        public bool SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

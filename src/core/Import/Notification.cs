@@ -5,15 +5,15 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Notification : IImportRequestable, IValidatableImportRequest<Notification>
-    {
+    {        
+        [ImportParameter(nameof(SourceApp))]
         [MaxLength(30)]
         [RequiredIf(TransactionType.Append)]
-        [ImportParameter(nameof(SourceApp))]
         public string SourceApp { get; set; }
-
+        
+        [ImportParameter(nameof(SourceType))]
         [MaxLength(10)]
         [RequiredIf(TransactionType.Append)]
-        [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
@@ -33,16 +33,15 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter("NotificationText", TransactionType.Append)]
         public string Text { get; set; }
 
-        [ImportParameter("NotificationDate", TransactionType.Append)]
-        [RequiredIf(TransactionType.Append)]
+        [ImportParameter("NotificationDate", TransactionType.Append)]        
         public DateTime? Date { get; set; }
-
-        [MaxLength(50)]
+        
         [ImportParameter(nameof(JobNo))]
-        public string JobNo { get; set; }
-
         [MaxLength(50)]
+        public string JobNo { get; set; }
+        
         [ImportParameter(nameof(TaskNo))]
+        [MaxLength(50)]
         public string TaskNo { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]

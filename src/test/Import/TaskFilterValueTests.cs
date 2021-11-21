@@ -45,5 +45,23 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void TaskFilterValue_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
             => ToImportRequestTestUtils.TestToInvalidImportRequest<TaskFilterValue>();
 
+        [Fact]
+        public void TaskFilterValue_ToImportRequest_Clear_AllShouldMapParameters()
+        {
+            TaskFilterValue model = new()
+            {
+                FilterValue = "TEXT",
+                TransferToTemp = true,
+                JobNo = "TEXT",
+                SourceApp = "TEXT",
+                SourceType = "TEXT",
+                TaskNo = "TEXT",
+                FilterGroup = "TEXT"
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete, true);
+            importRequest.AssertEqualParameterCollectionCount();
+        }
+
     }
 }

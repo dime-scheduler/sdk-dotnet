@@ -1,26 +1,33 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class AppointmentTimeMarker : IImportRequestable
     {
         [ImportParameter(nameof(SourceApp))]
+        [MaxLength(30)]
+        [Required]
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]
+        [MaxLength(10)]
+        [Required]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
         public long AppointmentId { get; set; }
 
         [ImportParameter(nameof(TimeMarker))]
+        [MaxLength(100)]
+        [Required]
         public string TimeMarker { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice))]
-        public bool SentFromBackOffice { get; set; }
+        public bool SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

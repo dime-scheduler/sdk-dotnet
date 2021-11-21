@@ -1,10 +1,9 @@
 <p align="center">
-    <img src="assets/connect.svg?raw=true" width="350" alt="Logo provided by Flaticon">
+    <img src="assets/connect.svg?raw=true" width="350>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/azure-devops/build/dimesoftware/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimesoftware/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler.sdk?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
-    <a href="https://gitter.im/ds-sdk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://img.shields.io/badge/chat-on%20gitter-brightgreen.svg?style=flat-square" /></a>
+    <img src="https://img.shields.io/azure-devops/build/dimesoftware/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimesoftware/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler.sdk?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />    
     <a href="https://github.com/dime-scheduler/sdk-dotnet/discussions">
   <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
 </a>
@@ -12,21 +11,28 @@
 
 <h1 align="center">Dime.Scheduler SDK for .NET </h1>
 
-This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. The SDK is a gateway to connect *any* system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
+This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
 Check out the **[📚 docs »](https://dime-scheduler.github.io/sdk-dotnet)** for more info.
 
 ## Installation
 
-Use the package manager NuGet to install the base library of the SDK:
+Use the package manager NuGet to install the SDK:
 
 `dotnet add package Dime.Scheduler.Sdk`
 
 ## Prerequisites
 
-To clone and run this application, you'll need Visual Studio 16.7 or higher. The application is built with C# 9 and targets .NET Standard 2.0, .NET Standard 2.1 and .NET 5.
+To clone and run this application, you'll need Visual Studio 2022 or higher. The application is built with C# 10 and targets:
 
-The SDK is currently only supported for the latest version of Dime.Scheduler.
+| Target framework  |
+| ----------------- |
+| .NET Standard 2.0 |
+| .NET Standard 2.1 |
+| .NET 5            |
+| .NET 6            |
+
+The SDK is currently only supported for the **latest version** of Dime.Scheduler.
 
 ## Usage
 
@@ -112,4 +118,3 @@ To contribute:
 3. Commit your changes (`git commit -m 'Add mynewfeature'`)
 4. Push to the branch (`git push origin feature/mynewfeature`)
 5. Open a pull request
-

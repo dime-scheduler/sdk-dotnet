@@ -4,20 +4,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-
     public class Container : IImportRequestable, IValidatableImportRequest<Container>
-    {
-        [Required]
-        [MaxLength(255)]
+    {                
         [ImportParameter(nameof(Name))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(100)]
         public string Name { get; set; }
-
-        [Required]
+        
         [ImportParameter(nameof(HandleDate), TransactionType.Append)]
+        [RequiredIf(TransactionType.Append)]
         public DateTime HandleDate { get; set; }
-
-        [Required]
+        
         [ImportParameter(nameof(HandleLocked), TransactionType.Append)]
+        [RequiredIf(TransactionType.Append)]
         public bool HandleLocked { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

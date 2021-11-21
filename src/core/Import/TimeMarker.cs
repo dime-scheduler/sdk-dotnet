@@ -15,12 +15,14 @@ namespace Dime.Scheduler.Sdk.Import
             Name = name;
             Color = color;
         }
-
-        [Required]
+        
         [ImportParameter("TimeMarker")]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         [ImportParameter("HexColor", TransactionType.Append)]
+        [MaxLength(7)]
         public string Color { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

@@ -10,12 +10,15 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(ResourceNo))]
         public string ResourceNo { get; set; }
 
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(FilterGroup))]
         public string FilterGroup { get; set; }
 
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(FilterValue))]
         public string FilterValue { get; set; }
 
@@ -30,10 +33,19 @@ namespace Dime.Scheduler.Sdk.Import
                 _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
             };
 
+        public ImportRequest ToImportRequest(TransactionType transactionType, bool clear = false)
+            => clear ? CreateClearRequest() : ((IImportRequestable)this).ToImportRequest(transactionType);
+
         private ImportRequest CreateAppendRequest()
             => new(ImportProcedures.Resource.FilterValue.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
             => new(ImportProcedures.Resource.FilterValue.Delete, this.CreateParameters(TransactionType.Delete));
+
+        private ImportRequest CreateClearRequest()
+            => new(ImportProcedures.Resource.FilterValue.Clear,
+                new ImportParameter(nameof(SourceApp), SourceApp),
+                new ImportParameter(nameof(SourceType), SourceType),
+                new ImportParameter(nameof(ResourceNo), ResourceNo));
     }
 }

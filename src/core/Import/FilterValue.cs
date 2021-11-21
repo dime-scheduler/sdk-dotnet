@@ -14,13 +14,15 @@ namespace Dime.Scheduler.Sdk.Import
             Group = group;
             Value = value;
         }
-
-        [MaxLength(50)]
+       
         [ImportParameter("FilterGroupName")]
+        [MaxLength(50)]
+        [Required]
         public string Group { get; set; }
-
-        [MaxLength(100)]
+        
         [ImportParameter("FilterValue")]
+        [MaxLength(100)]
+        [Required]
         public string Value { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

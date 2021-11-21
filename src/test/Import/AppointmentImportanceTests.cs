@@ -14,7 +14,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 AppointmentId = 1,
                 SentFromBackOffice = true,
                 SourceApp = "APP",
-                Importance = "1"
+                Importance = 1
             };
 
         [Fact]

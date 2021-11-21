@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class AppointmentContent : IImportRequestable
     {
         [ImportParameter(nameof(SourceApp))]
+        [MaxLength(30)]
+        [Required]
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]
+        [MaxLength(10)]
+        [Required]
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
@@ -19,7 +22,7 @@ namespace Dime.Scheduler.Sdk.Import
         public Guid? AppointmentGuid { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice))]
-        public bool SentFromBackOffice { get; set; }
+        public bool SentFromBackOffice { get; set; } = true;
 
         [ImportParameter(nameof(Subject))]
         public string Subject { get; set; }

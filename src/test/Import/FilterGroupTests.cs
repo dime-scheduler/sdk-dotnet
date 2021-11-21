@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Dime.Scheduler.Sdk.Import;
 using Xunit;
 
