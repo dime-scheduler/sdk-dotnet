@@ -5,25 +5,27 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceCapacity : IImportRequestable, IValidatableImportRequest<ResourceCapacity>
-    {
-        [Required]
+    {        
         [ImportParameter(nameof(ResourceNo))]
+        [Required]
+        [MaxLength(50)]
         public string ResourceNo { get; set; }
 
         [ImportParameter("CapacityDate")]
         public DateTime Date { get; set; }
 
         [ImportParameter(nameof(CapacityInSeconds))]
-        public int CapacityInSeconds { get; set; }
+        public long? CapacityInSeconds { get; set; }
 
         [ImportParameter("CapacityQty")]
-        public int Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
         [ImportParameter("CapacityUOM")]
+        [MaxLength(20)]
         public string UnitOfMeasure { get; set; }
 
         [ImportParameter("CapacityUOMConversion")]
-        public decimal UnitOfMeasureConversion { get; set; }
+        public decimal? UnitOfMeasureConversion { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

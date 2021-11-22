@@ -6,217 +6,271 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Job : IImportRequestable, IValidatableImportRequest<Job>
     {
+        [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(30)]
-        [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         public string SourceApp { get; set; }
 
+        [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(10)]
-        [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         public string SourceType { get; set; }
 
+        [ImportParameter(nameof(JobNo), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(50)]
-        [ImportParameter(nameof(JobNo), TransactionType.Append, TransactionType.Delete)]
         public string JobNo { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ShortDescription), TransactionType.Append)]
+        [MaxLength(50)]
         public string ShortDescription { get; set; }
 
         [ImportParameter(nameof(Description), TransactionType.Append)]
         public string Description { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(Type), TransactionType.Append)]
+        [MaxLength(50)]
         public string Type { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter(nameof(Name), TransactionType.Append)]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         [ImportParameter(nameof(Category), TransactionType.Append)]
+        [MaxLength(100)]
         public string Category { get; set; }
 
         [ImportParameter(nameof(TimeMarker), TransactionType.Append)]
+        [MaxLength(100)]
         public string TimeMarker { get; set; }
 
         [ImportParameter(nameof(Pin), TransactionType.Append)]
+        [MaxLength(100)]
         public string Pin { get; set; }
 
         [ImportParameter(nameof(CustomerNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string CustomerNo { get; set; }
 
         [ImportParameter(nameof(CustomerName), TransactionType.Append)]
+        [MaxLength(50)]
         public string CustomerName { get; set; }
 
         [ImportParameter(nameof(CustomerAddress), TransactionType.Append)]
         public string CustomerAddress { get; set; }
 
         [ImportParameter(nameof(CustomerAddressGeoLong), TransactionType.Append)]
+        [MaxLength(50)]
         public string CustomerAddressGeoLong { get; set; }
 
         [ImportParameter(nameof(CustomerAddressGeoLat), TransactionType.Append)]
+        [MaxLength(50)]
         public string CustomerAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(CustomerPhone), TransactionType.Append)]
+        [MaxLength(50)]
         public string CustomerPhone { get; set; }
 
         [ImportParameter(nameof(CustomerEmail), TransactionType.Append)]
+        [MaxLength(50)]
         public string CustomerEmail { get; set; }
 
         [ImportParameter(nameof(ContactNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string ContactNo { get; set; }
 
         [ImportParameter(nameof(ContactName), TransactionType.Append)]
+        [MaxLength(50)]
         public string ContactName { get; set; }
 
         [ImportParameter(nameof(ContactAddress), TransactionType.Append)]
         public string ContactAddress { get; set; }
 
         [ImportParameter(nameof(ContactAddressGeoLong), TransactionType.Append)]
+        [MaxLength(50)]
         public string ContactAddressGeoLong { get; set; }
 
         [ImportParameter(nameof(ContactAddressGeoLat), TransactionType.Append)]
+        [MaxLength(50)]
         public string ContactAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(ContactPhone), TransactionType.Append)]
+        [MaxLength(50)]
         public string ContactPhone { get; set; }
 
         [ImportParameter(nameof(ContactEmail), TransactionType.Append)]
+        [MaxLength(50)]
         public string ContactEmail { get; set; }
 
         [ImportParameter(nameof(SiteNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string SiteNo { get; set; }
 
         [ImportParameter(nameof(SiteName), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteName { get; set; }
 
         [ImportParameter(nameof(SiteAddress), TransactionType.Append)]
         public string SiteAddress { get; set; }
 
         [ImportParameter(nameof(SiteAddressGeoLong), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteAddressGeoLong { get; set; }
 
         [ImportParameter(nameof(SiteAddressGeoLat), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(SitePhone), TransactionType.Append)]
+        [MaxLength(50)]
         public string SitePhone { get; set; }
 
         [ImportParameter(nameof(SiteEmail), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteEmail { get; set; }
 
         [ImportParameter(nameof(SiteRegion), TransactionType.Append)]
+        [MaxLength(10)]
         public string SiteRegion { get; set; }
 
         [ImportParameter(nameof(SiteStreet), TransactionType.Append)]
+        [MaxLength(255)]
         public string SiteStreet { get; set; }
 
         [ImportParameter(nameof(SiteStreetNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string SiteStreetNo { get; set; }
 
         [ImportParameter(nameof(SitePostcode), TransactionType.Append)]
+        [MaxLength(20)]
         public string SitePostcode { get; set; }
 
         [ImportParameter(nameof(SiteCity), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteCity { get; set; }
 
         [ImportParameter(nameof(SiteCounty), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteCounty { get; set; }
 
         [ImportParameter(nameof(SiteState), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteState { get; set; }
 
         [ImportParameter(nameof(SiteCountry), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteCountry { get; set; }
 
         [ImportParameter(nameof(SiteFromNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string SiteFromNo { get; set; }
 
         [ImportParameter(nameof(SiteFromName), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromName { get; set; }
 
         [ImportParameter(nameof(SiteFromAddress), TransactionType.Append)]
         public string SiteFromAddress { get; set; }
 
         [ImportParameter(nameof(SiteFromAddressGeoLong), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromAddressGeoLong { get; set; }
 
         [ImportParameter(nameof(SiteFromAddressGeoLat), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(SiteFromPhone), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromPhone { get; set; }
 
         [ImportParameter(nameof(SiteFromEmail), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromEmail { get; set; }
 
         [ImportParameter(nameof(SiteFromRegion), TransactionType.Append)]
+        [MaxLength(10)]
         public string SiteFromRegion { get; set; }
 
         [ImportParameter(nameof(SiteFromStreet), TransactionType.Append)]
+        [MaxLength(255)]
         public string SiteFromStreet { get; set; }
 
         [ImportParameter(nameof(SiteFromStreetNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string SiteFromStreetNo { get; set; }
 
         [ImportParameter(nameof(SiteFromPostcode), TransactionType.Append)]
+        [MaxLength(20)]
         public string SiteFromPostcode { get; set; }
 
         [ImportParameter(nameof(SiteFromCity), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromCity { get; set; }
 
         [ImportParameter(nameof(SiteFromCounty), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromCounty { get; set; }
 
         [ImportParameter(nameof(SiteFromState), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromState { get; set; }
 
         [ImportParameter(nameof(SiteFromCountry), TransactionType.Append)]
+        [MaxLength(50)]
         public string SiteFromCountry { get; set; }
 
         [ImportParameter(nameof(BillNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string BillNo { get; set; }
 
         [ImportParameter(nameof(BillName), TransactionType.Append)]
+        [MaxLength(50)]
         public string BillName { get; set; }
 
         [ImportParameter(nameof(BillAddress), TransactionType.Append)]
         public string BillAddress { get; set; }
 
         [ImportParameter(nameof(BillAddressGeoLong), TransactionType.Append)]
+        [MaxLength(50)]
         public string BillAddressGeoLong { get; set; }
 
         [ImportParameter(nameof(BillAddressGeoLat), TransactionType.Append)]
+        [MaxLength(50)]
         public string BillAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(BillPhone), TransactionType.Append)]
+        [MaxLength(50)]
         public string BillPhone { get; set; }
 
         [ImportParameter(nameof(BillEmail), TransactionType.Append)]
+        [MaxLength(50)]
         public string BillEmail { get; set; }
 
         [ImportParameter(nameof(BillRegion), TransactionType.Append)]
+        [MaxLength(10)]
         public string BillRegion { get; set; }
 
         [ImportParameter(nameof(Importance), TransactionType.Append)]
-        public string Importance { get; set; }
+        public Importance Importance { get; set; }
 
         [ImportParameter(nameof(CreationDateTime), TransactionType.Append)]
         public DateTime? CreationDateTime { get; set; }
 
         [ImportParameter(nameof(CustomerReference), TransactionType.Append)]
+        [MaxLength(50)]
         public string CustomerReference { get; set; }
 
         [ImportParameter(nameof(Language), TransactionType.Append)]
+        [MaxLength(10)]
         public string Language { get; set; }
 
         [ImportParameter(nameof(Responsible), TransactionType.Append)]
+        [MaxLength(50)]
         public string Responsible { get; set; }
 
         [ImportParameter(nameof(Creator), TransactionType.Append)]
+        [MaxLength(50)]
         public string Creator { get; set; }
 
         [ImportParameter(nameof(FreeText1), TransactionType.Append)]
@@ -357,7 +411,7 @@ namespace Dime.Scheduler.Sdk.Import
         public DateTime? EndDate { get; set; }
 
         [ImportParameter(nameof(AllowDependencies), TransactionType.Append)]
-        public bool AllowDependencies { get; set; }
+        public bool AllowDependencies { get; set; } = true;
 
         [ImportParameter(nameof(Note), TransactionType.Append)]
         public string Note { get; set; }
@@ -369,7 +423,7 @@ namespace Dime.Scheduler.Sdk.Import
         public bool CheckAppointments { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
-        public bool SentFromBackOffice { get; set; }
+        public bool SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

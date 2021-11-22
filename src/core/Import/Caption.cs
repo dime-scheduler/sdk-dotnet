@@ -1,22 +1,27 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Caption : IImportRequestable
     {
         [ImportParameter(nameof(Context))]
-        public int Context { get; set; }
+        public int Context { get; set; } = 6;
 
         [ImportParameter(nameof(SourceTable))]
+        [MaxLength(255)]
         public string SourceTable { get; set; }
 
         [ImportParameter(nameof(FieldName))]
+        [MaxLength(255)]
         public string FieldName { get; set; }
 
         [ImportParameter(nameof(Language))]
+        [MaxLength(10)]
         public string Language { get; set; }
 
         [ImportParameter("Caption")]
+        [MaxLength(100)]
         public string Text { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

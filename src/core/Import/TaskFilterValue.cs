@@ -1,31 +1,39 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class TaskFilterValue : IImportRequestable
     {
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(SourceApp))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(30)]
         public string SourceApp { get; set; }
 
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(SourceType))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(10)]
         public string SourceType { get; set; }
 
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(JobNo))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(50)]
         public string JobNo { get; set; }
 
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(TaskNo))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(50)]
         public string TaskNo { get; set; }
 
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(FilterGroup))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(50)]
         public string FilterGroup { get; set; }
 
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [ImportParameter(nameof(FilterValue))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(100)]
+
         public string FilterValue { get; set; }
 
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]

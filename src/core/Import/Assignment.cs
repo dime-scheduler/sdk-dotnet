@@ -6,30 +6,30 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Assignment : IImportRequestable, IValidatableImportRequest<Assignment>
     {
+        [ImportParameter(nameof(SourceApp))]
         [Required]
         [MaxLength(30)]
-        [ImportParameter(nameof(SourceApp))]
         public string SourceApp { get; set; }
 
+        [ImportParameter(nameof(SourceType))]
         [Required]
         [MaxLength(10)]
-        [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
-        [Required]
         [ImportParameter(nameof(AppointmentId))]
+        [Required]
         public long AppointmentId { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
-        public string AppointmentGuid { get; set; }
+        public Guid? AppointmentGuid { get; set; }
 
+        [ImportParameter(nameof(ResourceNo))]
         [Required]
         [MaxLength(50)]
-        [ImportParameter(nameof(ResourceNo))]
         public string ResourceNo { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice))]
-        public long? SentFromBackOffice { get; set; }
+        public bool SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

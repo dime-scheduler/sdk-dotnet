@@ -1,22 +1,31 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceCalendar : IImportRequestable
     {
         [ImportParameter("ResourceCalendarCode", TransactionType.Append, TransactionType.Delete)]
+        [Required]
+        [MaxLength(50)]
         public string Code { get; set; }
 
         [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
+        [Required]
+        [MaxLength(50)]
         public string ResourceNo { get; set; }
 
         [ImportParameter(nameof(CalendarCode), TransactionType.Append)]
+        [Required]
+        [MaxLength(255)]
         public string CalendarCode { get; set; }
 
         [ImportParameter(nameof(StartDate), TransactionType.Append)]
+        [Required]
         public DateTime StartDate { get; set; }
 
         [ImportParameter(nameof(EndDate), TransactionType.Append)]
+        [Required]
         public DateTime EndDate { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

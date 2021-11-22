@@ -1,19 +1,25 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceGpsTracking : IImportRequestable
     {
         [ImportParameter(nameof(ResourceNo))]
+        [MaxLength(50)]
+        [Required]
         public string ResourceNo { get; set; }
 
         [ImportParameter(nameof(GpsTrackingResourceNo))]
+        [MaxLength(50)]
         public string GpsTrackingResourceNo { get; set; }
 
         [ImportParameter(nameof(Latitude))]
+        [Required]
         public decimal Latitude { get; set; }
 
         [ImportParameter(nameof(Longitude))]
+        [Required]
         public decimal Longitude { get; set; }
 
         [ImportParameter(nameof(Speed))]
@@ -23,9 +29,11 @@ namespace Dime.Scheduler.Sdk.Import
         public DateTime? Date { get; set; }
 
         [ImportParameter(nameof(RowId))]
+        [MaxLength(100)]
         public string RowId { get; set; }
 
         [ImportParameter(nameof(Power))]
+        [MaxLength(50)]
         public string Power { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

@@ -6,35 +6,35 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Appointment : IImportRequestable, IValidatableImportRequest<Appointment>
     {
-        [RequiredIf(TransactionType.Delete)]
         [ImportParameter(nameof(AppointmentId), TransactionType.Append)]
+        [RequiredIf(TransactionType.Delete)]
         public long AppointmentId { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid), TransactionType.Append)]
         public Guid AppointmentGuid { get; set; }
 
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
-        [MaxLength(30)]
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(30)]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string SourceApp { get; set; }
 
+        [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(10)]
-        [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         public string SourceType { get; set; }
 
+        [ImportParameter(nameof(JobNo), TransactionType.Append)]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(50)]
-        [ImportParameter(nameof(JobNo), TransactionType.Append)]
         public string JobNo { get; set; }
 
-        [RequiredIf(TransactionType.Append)]
-        [MaxLength(50)]
         [ImportParameter(nameof(TaskNo), TransactionType.Append)]
+        [MaxLength(50)]
+        [RequiredIf(TransactionType.Append)]
         public string TaskNo { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
+        [MaxLength(50)]
         public string ResourceNo { get; set; }
 
         [ImportParameter(nameof(Subject), TransactionType.Append)]
@@ -43,12 +43,12 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(Body), TransactionType.Append)]
         public string Body { get; set; }
 
-        [RequiredIf(TransactionType.Append)]
         [ImportParameter(nameof(Start), TransactionType.Append)]
+        [RequiredIf(TransactionType.Append)]
         public DateTime? Start { get; set; }
 
-        [RequiredIf(TransactionType.Append)]
         [ImportParameter(nameof(End), TransactionType.Append)]
+        [RequiredIf(TransactionType.Append)]
         public DateTime? End { get; set; }
 
         [ImportParameter("IsAllDayEvent", TransactionType.Append)]
@@ -70,12 +70,15 @@ namespace Dime.Scheduler.Sdk.Import
         public bool? ReplaceResource { get; set; }
 
         [ImportParameter("BackofficeID", TransactionType.Append)]
+        [MaxLength(100)]
         public string BackOfficeId { get; set; }
 
         [ImportParameter("BackofficeParentID", TransactionType.Append)]
+        [MaxLength(100)]
         public string BackOfficeParentId { get; set; }
 
         [ImportParameter("PlanningUOM", TransactionType.Append)]
+        [MaxLength(20)]
         public string UnitOfMeasure { get; set; }
 
         [ImportParameter("PlanningUOMConversion", TransactionType.Append)]
@@ -91,7 +94,7 @@ namespace Dime.Scheduler.Sdk.Import
         public bool? RoundToUnitOfMeasure { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
-        public bool? SentFromBackOffice { get; set; }
+        public bool? SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

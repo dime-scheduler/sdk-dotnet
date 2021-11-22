@@ -5,64 +5,64 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Resource : IImportRequestable, IValidatableImportRequest<Resource>
-    {
+    {        
+        [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         [Required]
         [MaxLength(50)]
-        [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         public string ResourceNo { get; set; }
-
-        [MaxLength(30)]
+        
         [ImportParameter(nameof(SourceApp), TransactionType.Append)]
+        [MaxLength(30)]
         public string SourceApp { get; set; }
-
-        [MaxLength(10)]
+        
         [ImportParameter(nameof(SourceType), TransactionType.Append)]
+        [MaxLength(10)]
         public string SourceType { get; set; }
-
-        [MaxLength(100)]
+        
         [ImportParameter(nameof(ResourceType), TransactionType.Append)]
+        [MaxLength(100)]
         public string ResourceType { get; set; }
 
         [ImportParameter(nameof(ResourceTypeId), TransactionType.Append)]
         public int? ResourceTypeId { get; set; }
-
-        [MaxLength(100)]
+        
         [ImportParameter(nameof(ResourceName), TransactionType.Append)]
+        [MaxLength(100)]
         public string ResourceName { get; set; }
-
-        [MaxLength(100)]
+        
         [ImportParameter(nameof(DisplayName), TransactionType.Append)]
-        public string DisplayName { get; set; }
-
-        [MaxLength(50)]
-        [ImportParameter(nameof(Department), TransactionType.Append)]
-        public string Department { get; set; }
-
         [MaxLength(100)]
+        public string DisplayName { get; set; }
+        
+        [ImportParameter(nameof(Department), TransactionType.Append)]
+        [MaxLength(50)]
+        public string Department { get; set; }
+        
         [ImportParameter(nameof(Email), TransactionType.Append)]
+        [MaxLength(100)]
         public string Email { get; set; }
-
-        [MaxLength(50)]
+        
         [ImportParameter(nameof(Phone), TransactionType.Append)]
-        public string Phone { get; set; }
-
         [MaxLength(50)]
+        public string Phone { get; set; }
+        
         [ImportParameter(nameof(MobilePhone), TransactionType.Append)]
+        [MaxLength(50)]
         public string MobilePhone { get; set; }
 
         [ImportParameter(nameof(ReplacementResource), TransactionType.Append)]
         public bool ReplacementResource { get; set; }
-
-        [MaxLength(100)]
+        
         [ImportParameter(nameof(FieldServiceEmail), TransactionType.Append)]
-        public string FieldServiceEmail { get; set; }
-
         [MaxLength(100)]
+        public string FieldServiceEmail { get; set; }
+        
         [ImportParameter(nameof(PersonalEmail), TransactionType.Append)]
+        [MaxLength(100)]
         public string PersonalEmail { get; set; }
-
-        [MaxLength(50)]
+        
         [ImportParameter(nameof(GpsTrackingResourceNo), TransactionType.Append)]
+        [MaxLength(50)]
         public string GpsTrackingResourceNo { get; set; }
 
         [ImportParameter(nameof(HomeAddress), TransactionType.Append)]
@@ -73,64 +73,64 @@ namespace Dime.Scheduler.Sdk.Import
 
         [ImportParameter(nameof(HomeAddressGeoLat), TransactionType.Append)]
         public float? HomeAddressGeoLat { get; set; }
-
-        [MaxLength(50)]
+        
         [ImportParameter(nameof(HomePhone), TransactionType.Append)]
-        public string HomePhone { get; set; }
-
         [MaxLength(50)]
+        public string HomePhone { get; set; }
+        
         [ImportParameter(nameof(HomeEmail), TransactionType.Append)]
+        [MaxLength(50)]
         public string HomeEmail { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter(nameof(HomeStreet), TransactionType.Append)]
+        [MaxLength(255)]
         public string HomeStreet { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(HomeStreetNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string HomeStreetNo { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(HomePostcode), TransactionType.Append)]
+        [MaxLength(20)]
         public string HomePostcode { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(HomeCity), TransactionType.Append)]
+        [MaxLength(50)]
         public string HomeCity { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(HomeCounty), TransactionType.Append)]
+        [MaxLength(50)]
         public string HomeCounty { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(HomeState), TransactionType.Append)]
+        [MaxLength(50)]
         public string HomeState { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(HomeCountry), TransactionType.Append)]
+        [MaxLength(50)]
         public string HomeCountry { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter(nameof(HomeRegion), TransactionType.Append)]
+        [MaxLength(10)]
         public string HomeRegion { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(TeamCode), TransactionType.Append)]
+        [MaxLength(20)]
         public string TeamCode { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(TeamName), TransactionType.Append)]
+        [MaxLength(100)]
         public string TeamName { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(TeamType), TransactionType.Append)]
+        [MaxLength(20)]
         public string TeamType { get; set; }
 
         [ImportParameter(nameof(TeamSort), TransactionType.Append)]
         public int TeamSort { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(TeamMemberType), TransactionType.Append)]
+        [MaxLength(20)]
         public string TeamMemberType { get; set; }
 
         [ImportParameter(nameof(TeamMemberSort), TransactionType.Append)]
@@ -148,18 +148,20 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ExchangeIntegrationEnabled), TransactionType.Append)]
         public bool ExchangeIntegrationEnabled { get; set; }
 
-        [MaxLength(1000)]
         [ImportParameter("url1", TransactionType.Append)]
+        [MaxLength(1000)]
         public string Url1 { get; set; }
 
         [ImportParameter("urldesc1", TransactionType.Append)]
+        [MaxLength(255)]
         public string UrlDescription1 { get; set; }
 
-        [MaxLength(1000)]
         [ImportParameter("url2", TransactionType.Append)]
+        [MaxLength(1000)]
         public string Url2 { get; set; }
 
         [ImportParameter("urldesc2", TransactionType.Append)]
+        [MaxLength(255)]
         public string UrlDescription2 { get; set; }
 
         [MaxLength(1000)]
@@ -167,6 +169,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string Url3 { get; set; }
 
         [ImportParameter("urldesc3", TransactionType.Append)]
+        [MaxLength(255)]
         public string UrlDescription3 { get; set; }
 
         [ImportParameter(nameof(BulkPlanning), TransactionType.Append)]
@@ -178,16 +181,16 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ResourceGpsTrackingEnabled), TransactionType.Append)]
         public bool ResourceGpsTrackingEnabled { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(Pin), TransactionType.Append)]
+        [MaxLength(100)]
         public string Pin { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText1), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText1 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText2), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText2 { get; set; }
 
         [ImportParameter(nameof(FreeText3), TransactionType.Append)]

@@ -6,115 +6,115 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Task : IImportRequestable, IValidatableImportRequest<Task>
     {
+        [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(30)]
-        [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         public string SourceApp { get; set; }
 
+        [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(10)]
-        [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         public string SourceType { get; set; }
 
-        [Required]
-        [MaxLength(50)]
         [ImportParameter(nameof(JobNo), TransactionType.Append, TransactionType.Delete)]
+        [MaxLength(50)]
+        [Required]
         public string JobNo { get; set; }
 
+        [ImportParameter(nameof(TaskNo), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(50)]
-        [ImportParameter(nameof(TaskNo), TransactionType.Append)]
         public string TaskNo { get; set; }
 
         [ImportParameter(nameof(TaskType), TransactionType.Append)]
         public TaskType TaskType { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ShortDescription), TransactionType.Append)]
+        [MaxLength(50)]
         public string ShortDescription { get; set; }
 
         [ImportParameter(nameof(Description), TransactionType.Append)]
         [MaxLength(50)]
         public string Description { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter(nameof(Name), TransactionType.Append)]
+        [MaxLength(255)]
         public string Name { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(Type), TransactionType.Append)]
+        [MaxLength(20)]
         public string Type { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(Category), TransactionType.Append)]
+        [MaxLength(100)]
         public string Category { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(TimeMarker), TransactionType.Append)]
+        [MaxLength(100)]
         public string TimeMarker { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(Pin), TransactionType.Append)]
+        [MaxLength(100)]
         public string Pin { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ServiceNo), TransactionType.Append)]
+        [MaxLength(50)]
         public string ServiceNo { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(ServiceGroup), TransactionType.Append)]
+        [MaxLength(20)]
         public string ServiceGroup { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(ServiceClass), TransactionType.Append)]
+        [MaxLength(20)]
         public string ServiceClass { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ServiceSerialNo), TransactionType.Append)]
+        [MaxLength(50)]
         public string ServiceSerialNo { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ServiceName), TransactionType.Append)]
+        [MaxLength(50)]
         public string ServiceName { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter("IRISFault", TransactionType.Append)]
+        [MaxLength(10)]
         public string IrisFault { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter("IRISSymptom", TransactionType.Append)]
+        [MaxLength(10)]
         public string IrisSymptom { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter("IRISArea", TransactionType.Append)]
+        [MaxLength(10)]
         public string IrisArea { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter("IRISReason", TransactionType.Append)]
+        [MaxLength(10)]
         public string IrisReason { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter("IRISResolution", TransactionType.Append)]
+        [MaxLength(10)]
         public string IrisResolution { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter(nameof(Skill1), TransactionType.Append)]
+        [MaxLength(10)]
         public string Skill1 { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter(nameof(Skill2), TransactionType.Append)]
+        [MaxLength(10)]
         public string Skill2 { get; set; }
 
-        [MaxLength(10)]
         [ImportParameter(nameof(Skill3), TransactionType.Append)]
+        [MaxLength(10)]
         public string Skill3 { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(ContractNo), TransactionType.Append)]
+        [MaxLength(20)]
         public string ContractNo { get; set; }
 
-        [MaxLength(30)]
         [ImportParameter(nameof(ContractType), TransactionType.Append)]
+        [MaxLength(30)]
         public string ContractType { get; set; }
 
         [ImportParameter(nameof(ContractDescription), TransactionType.Append)]
@@ -211,84 +211,84 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentLatestAllowed), TransactionType.Append)]
         public DateTime? AppointmentLatestAllowed { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText1), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText1 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText2), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText2 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText3), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText3 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText4), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText4 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText5), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText5 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText6), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText6 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText7), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText7 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText8), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText8 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText9), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText9 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText10), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText10 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText11), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText11 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText12), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText12 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText13), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText13 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText14), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText14 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText15), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText15 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText16), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText16 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText17), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText17 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText18), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText18 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText19), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText19 { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(FreeText20), TransactionType.Append)]
+        [MaxLength(100)]
         public string FreeText20 { get; set; }
 
         [ImportParameter(nameof(FreeDecimal1), TransactionType.Append)]
@@ -336,28 +336,28 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(FreeBit5), TransactionType.Append)]
         public bool FreeBit5 { get; set; }
 
-        [MaxLength(1000)]
         [ImportParameter("url1", TransactionType.Append)]
+        [MaxLength(1000)]
         public string Url1 { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter("urldesc1", TransactionType.Append)]
+        [MaxLength(255)]
         public string UrlDescription1 { get; set; }
 
-        [MaxLength(1000)]
         [ImportParameter("url2", TransactionType.Append)]
+        [MaxLength(1000)]
         public string Url2 { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter("urldesc2", TransactionType.Append)]
+        [MaxLength(255)]
         public string UrlDescription2 { get; set; }
 
-        [MaxLength(1000)]
         [ImportParameter("url3", TransactionType.Append)]
+        [MaxLength(1000)]
         public string Url3 { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter("urldesc3", TransactionType.Append)]
+        [MaxLength(255)]
         public string UrlDescription3 { get; set; }
 
         [ImportParameter(nameof(CertificateNo), TransactionType.Append)]
@@ -372,8 +372,8 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(IsComplete), TransactionType.Append)]
         public bool IsComplete { get; set; }
 
-        [MaxLength(20)]
         [ImportParameter(nameof(PlanningUOM), TransactionType.Append)]
+        [MaxLength(20)]
         public string PlanningUOM { get; set; }
 
         [ImportParameter(nameof(PlanningUOMConversion), TransactionType.Append)]
@@ -388,8 +388,8 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(RoundToUOM), TransactionType.Append)]
         public bool RoundToUOM { get; set; }
 
-        [MaxLength(100)]
         [ImportParameter(nameof(AppointmentTemplate), TransactionType.Append)]
+        [MaxLength(100)]
         public string AppointmentTemplate { get; set; }
 
         [ImportParameter(nameof(BulkPlanningQty), TransactionType.Append)]
@@ -428,16 +428,16 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ConstraintDatetime), TransactionType.Append)]
         public DateTime? ConstraintDatetime { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(ParentTaskNo), TransactionType.Append)]
+        [MaxLength(50)]
         public string ParentTaskNo { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter(nameof(CalendarCode), TransactionType.Append)]
+        [MaxLength(255)]
         public string CalendarCode { get; set; }
 
-        [MaxLength(50)]
         [ImportParameter(nameof(PredecessorTaskNo), TransactionType.Append)]
+        [MaxLength(50)]
         public string PredecessorTaskNo { get; set; }
 
         [ImportParameter(nameof(PredecessorLag), TransactionType.Append)]
@@ -455,8 +455,8 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(IgnoreCalendars), TransactionType.Append)]
         public bool IgnoreCalendars { get; set; }
 
-        [MaxLength(255)]
         [ImportParameter(nameof(ContainerName), TransactionType.Append)]
+        [MaxLength(255)]
         public string ContainerName { get; set; }
 
         [ImportParameter(nameof(ContainerIndex), TransactionType.Append)]
@@ -466,7 +466,7 @@ namespace Dime.Scheduler.Sdk.Import
         public bool CheckAppointments { get; set; }
 
         [ImportParameter("SentFromBackoffice", TransactionType.Delete)]
-        public bool SentFromBackOffice { get; set; }
+        public bool SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
