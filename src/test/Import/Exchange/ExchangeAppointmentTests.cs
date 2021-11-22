@@ -13,7 +13,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         {
             ExchangeAppointment model = new()
             {
-                Importance = "1",
+                Importance = Importance.Low,
                 Subject = "SUB",
                 AppointmentId = 1,
                 AppointmentGuid = Guid.NewGuid(),
@@ -37,7 +37,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         {
             ExchangeAppointment model = new()
             {
-                Importance = "1",
+                Importance = Importance.Low,
                 Subject = "SUB",
                 AppointmentId = 1,
                 AppointmentGuid = Guid.NewGuid(),

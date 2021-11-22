@@ -13,8 +13,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 SourceApp = "APP",
                 SourceType = "TYPE",
                 ResourceNo = "LINDA",
-                SentFromBackOffice = 1,
-                AppointmentGuid = "GUID",
+                SentFromBackOffice = true,
+                AppointmentGuid = new System.Guid(),
                 AppointmentId = 1
             };
 
@@ -30,8 +30,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 SourceApp = "APP",
                 SourceType = "TYPE",
                 ResourceNo = "LINDA",
-                SentFromBackOffice = 1,
-                AppointmentGuid = "GUID",
+                SentFromBackOffice = true,
+                AppointmentGuid = System.Guid.NewGuid(),
                 AppointmentId = 1
             };
 
