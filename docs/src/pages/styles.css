@@ -1,0 +1,7 @@
+:root {
+  --ifm-font-family-base: "Nunito";
+}
+
+.markdown h1:first-child {
+  text-align: center;
+}

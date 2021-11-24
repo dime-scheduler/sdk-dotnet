@@ -11,7 +11,7 @@ First things first: adding the NuGet package is the only thing you need to conne
 Once that's done, you can do pretty much anything you want with it. Below is a very simple example that authenticates the user and adds a category named "Category #1" to the system.
 
 ```csharp
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk;
 
 string uri = "http://mydimescheduler.com";
 IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");

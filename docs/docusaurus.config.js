@@ -1,15 +1,15 @@
 module.exports = {
   title: 'Dime.Scheduler SDK',
-  tagline: 'Software development kit for Dime.Scheduler',
+  tagline: 'Dime.Scheduler Software Development Kit',
   url: 'https://dime-scheduler/.github.io',
   baseUrl: '/sdk-dotnet/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'dimenics',
+  organizationName: 'dimesoftware',
   projectName: 'ds-sdk',
   themeConfig: {
-    hideableSidebar:true,
+    hideableSidebar: true,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
@@ -50,19 +50,31 @@ module.exports = {
             {
               label: 'Getting started',
               to: 'docs/',
+            },
+            {
+              label: 'Installation',
+              to: 'docs/installation',
+            },
+            {
+              label: 'Glossary',
+              to: 'docs/glossary',
             }
           ],
         },
         {
-          title: 'Community',
+          title: 'Deep dive',
           items: [
             {
-              label: 'Join the chat',
-              href: 'https://dimescheduler.com',
+              label: 'Import service',
+              to: 'docs/import/import',
             },
             {
               label: 'GitHub',
               href: 'https://github.com/dime-scheduler/sdk-dotnet',
+            },
+            {
+              label: 'Docs',
+              href: 'https://docs.dimescheduler.com',
             },
           ]
         },
@@ -75,9 +87,20 @@ module.exports = {
             },
             {
               label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/dimenics',
+              href: 'https://www.linkedin.com/company/dimesoftware',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/dimesoftware',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/dimesoftware',
+            },
+            {
+              label: 'Youtube',
+              href: 'https://www.youtube.com/channel/UCYD4LGox7SJLL7r8gmjulNA',
             }
-            
           ]
         }
       ],

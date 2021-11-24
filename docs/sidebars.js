@@ -7,7 +7,8 @@ module.exports = {
     'Getting started': [
       'installation',
       'example',
-      'glossary'
+      'glossary',
+      'cli'
     ]
   },
   api: {

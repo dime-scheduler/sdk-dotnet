@@ -18,14 +18,10 @@ See the table below for the current status of this endeavour.
 
 ## Supported endpoints
 
-| Endpoint     | Status |
-| ------------ | ------ |
-| Import       | ✅     |
-| Resources    | 🚧     |
-| Categories   | ✅     |
-| Time Markers | ✅     |
-| Pins         | ✅     |
-| Messages     | ✅     |
+| Endpoint  | Status | Version |
+| --------- | ------ | ------- |
+| Import    | ✅     | 1.0.0   |
+| Resources | 🚧     | 1.x.0   |
+| Users     | 🚧     | 1.x.0   |
 
-The import endpoint is available in the first version of the SDK.
-The other endpoints are expected in version 3 of the SDK.
+The import endpoint is available in the first version of the SDK, the other endpoints are expected in later versions.

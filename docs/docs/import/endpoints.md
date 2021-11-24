@@ -20,6 +20,7 @@ All import types live in the ` Dime.Scheduler.Sdk.Import` namespace.
 | Appointment locked            | ✅            | ❌     | AppointmentLocked           |
 | Appointment planning quantity | ✅            | ❌     | AppointmentPlanningQuantity |
 | Appointment URL               | ✅            | ❌     | AppointmentUri              |
+| Appointment Container         | ✅            | ✅     | AppointmentContainer        |
 | Exchange Appointment          | ✅            | ✅     | ExchangeAppointment         |
 | Assignment                    | ✅            | ❌     | Assignment                  |
 | Action URI                    | ✅            | ❌     | ActionUri                   |
@@ -38,3 +39,19 @@ All import types live in the ` Dime.Scheduler.Sdk.Import` namespace.
 | Resource Filter Value         | ✅            | ✅     | ResourceFilterValue         |
 | Resource GPS Tracking         | ✅            | ❌     | ResourceGpsTracking         |
 | Resource URL                  | ✅            | ❌     | ResourceUri                 |
+| Container                     | ✅            | ✅     | Container                   |
+
+Let's say you would like to insert a new resource into the system. As you know by now, this is easy. Simply create an instance of the `Resource` class and pass it on the import endpoint:
+
+```csharp
+using Dime.Scheduler.Sdk.Import;
+
+string uri = "http://mydimescheduler.com";
+IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
+
+DimeSchedulerClient client = new(uri, authenticator);
+
+Resource resource = new Resource { ... };
+IImportEndpoint importEndpoint = await client.Import.Request();
+await importEndpoint.ProcessAsync(resource, TransactionType.Append);
+```

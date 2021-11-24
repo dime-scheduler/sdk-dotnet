@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const features = [
   {
-    title: 'Connect any system',
+    title: 'Connect to any system',
     imageUrl: 'img/integrate.svg',
     description: (
       <>
@@ -23,7 +23,7 @@ const features = [
     imageUrl: 'img/coder.svg',
     description: (
       <>
-        The SDK is easy to use and it lets you plug your application right into the core of Dime.Scheduler.
+        With a few lines of code, you can plug your application right into the core of Dime.Scheduler.
       </>
     ),
   },
@@ -105,9 +105,8 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+    <Layout      
+      description="Dime.Scheduler Software Development Kit">
       <header className={clsx('hero hero--primary heroTilted_3die', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -122,6 +121,7 @@ function Home() {
               Get Started
             </Link>
           </div>
+          <ImageCard image={"img/DS1.png"} height='500' width='800' className="center" style={{ paddingTop: "25px" }} />
         </div>
       </header>
       <main>
@@ -142,7 +142,7 @@ function Home() {
           <div className="container">
             <ImageContainer>
               <Container>
-                <ImageCard image={"img/DS1.png"} height='500' width='800' />
+
               </Container>
             </ImageContainer>
           </div>

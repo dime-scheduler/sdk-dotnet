@@ -24,3 +24,5 @@ When invoking the following request, an exception will be thrown:
 FilterGroup model = new FilterGroup { ColumnNo = 1 };
 ((IImportRequestable) model).ToImportRequest(TransactionType.Append); // Will throw exception
 ```
+
+The name wasn't populated and wouldn't be acccepted by the the import service anyway. As a result, there are two identical validation rounds: once in the SDK and once in Dime.Scheduler's import service.
