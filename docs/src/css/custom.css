@@ -62,3 +62,8 @@ html[data-theme="dark"] .header-github-link:before {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%);
 }
+
+.breadcrumbs__link,
+.button.button--secondary.button--outline:not(.button--active):not(:hover) {
+  color: white;
+}

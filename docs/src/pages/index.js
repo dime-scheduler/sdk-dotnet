@@ -19,7 +19,7 @@ const features = [
     ),
   },
   {
-    title: 'Easy to use SDK',
+    title: 'Lightweight',
     imageUrl: 'img/coder.svg',
     description: (
       <>
@@ -109,8 +109,8 @@ function Home() {
       description="Dime.Scheduler Software Development Kit">
       <header className={clsx('hero hero--primary heroTilted_3die', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className="hero__title">Dime.Scheduler</h1>
+          <p className="hero__subtitle">Software Development Kit</p>
           <div className={styles.buttons}>
             <Link
               className={clsx(

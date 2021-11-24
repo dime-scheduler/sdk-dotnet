@@ -6,8 +6,8 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'dimesoftware',
-  projectName: 'ds-sdk',
+  organizationName: 'dime-scheduler',
+  projectName: 'sdk-dotnet',
   themeConfig: {
     hideableSidebar: true,
     prism: {
