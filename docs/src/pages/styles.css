@@ -1,5 +1,5 @@
 :root {
-  --ifm-font-family-base: "Nunito";
+  --ifm-font-family-base: sans-serif;
 }
 
 .markdown h1:first-child {
