@@ -9,6 +9,7 @@ module.exports = {
   organizationName: 'dime-scheduler',
   projectName: 'sdk-dotnet',
   themeConfig: {
+    image: 'https://cdn.dimescheduler.com/dime-scheduler/og.png',
     hideableSidebar: true,
     prism: {
       theme: require('prism-react-renderer/themes/github'),
