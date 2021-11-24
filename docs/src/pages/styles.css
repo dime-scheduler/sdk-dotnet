@@ -1,5 +1,8 @@
 :root {
   --ifm-font-family-base: sans-serif;
+  --ifm-navbar-background-color: #6e62b5;
+  --ifm-navbar-link-color: white;
+  --ifm-navbar-link-hover-color: #2C2748;
 }
 
 .markdown h1:first-child {
