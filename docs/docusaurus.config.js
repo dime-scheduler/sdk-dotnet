@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Dime.Scheduler SDK',
   tagline: 'Dime.Scheduler Software Development Kit',
-  url: 'https://dime-scheduler/.github.io',
-  baseUrl: '/sdk-dotnet/',
+  url: 'https://sdk.dimescheduler.com',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

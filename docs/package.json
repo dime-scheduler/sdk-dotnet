@@ -1,7 +1,7 @@
 {
   "name": "dime-scheduler-sdk-docs",
   "version": "0.0.1",
-  "homepage": "https://dime-scheduler.github.io/sdk-dotnet/",
+  "homepage": "https://sdk.dimescheduler.com",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
