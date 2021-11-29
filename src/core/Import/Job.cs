@@ -22,6 +22,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string JobNo { get; set; }
 
         [ImportParameter(nameof(ShortDescription), TransactionType.Append)]
+        [RequiredIf(TransactionType.Append)]
         [MaxLength(50)]
         public string ShortDescription { get; set; }
 
