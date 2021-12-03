@@ -8,10 +8,10 @@ namespace Dime.Scheduler.Sdk.Import
     {
         [ImportParameter(nameof(AppointmentId), TransactionType.Append)]
         [RequiredIf(TransactionType.Delete)]
-        public long AppointmentId { get; set; }
+        public long? AppointmentId { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid), TransactionType.Append)]
-        public Guid AppointmentGuid { get; set; }
+        public Guid? AppointmentGuid { get; set; }
 
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
@@ -35,6 +35,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         [MaxLength(50)]
+        [RequiredIf(TransactionType.Append)]
         public string ResourceNo { get; set; }
 
         [ImportParameter(nameof(Subject), TransactionType.Append)]

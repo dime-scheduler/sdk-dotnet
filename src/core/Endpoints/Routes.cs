@@ -57,6 +57,13 @@ namespace Dime.Scheduler.Sdk
             internal static readonly string Post = $"{_api}/{_endpoint}/Create";
         }
 
+        internal static class License
+        {
+            private static readonly string _endpoint = "Activate";
+
+            internal static readonly string Update = $"{_api}/{_endpoint}/Update";
+        }
+
         internal static class Users
         {
             private static readonly string _endpoint = "Administration/Users";

@@ -82,5 +82,25 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         public void Appointment_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
             => ToImportRequestTestUtils.TestToInvalidImportRequest<Appointment>();
 
+        [Fact]
+        public void Appointment_ToImportRequest_Append_ShouldMapRequiredParameters()
+        {
+            Appointment model = new()
+            {
+                SourceApp = "APP",
+                SourceType = "TYPE",
+                Start = new DateTime(2020, 1, 1),
+                End = new DateTime(2020, 1, 2),
+                JobNo = "JOB",
+                TaskNo = "TASK",
+                ResourceNo = "NO"
+            };
+
+            ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
+            importRequest.AssertEqualParameterCollectionCount();
+            Assert.True(importRequest.ParameterNames.Length == 7);
+            Assert.True(importRequest.ParameterValues.Length == 7);
+        }
+
     }
 }
