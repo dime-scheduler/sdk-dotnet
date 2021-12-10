@@ -466,7 +466,7 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(CheckAppointments), TransactionType.Delete)]
         public bool CheckAppointments { get; set; }
 
-        [ImportParameter("SentFromBackoffice", TransactionType.Delete)]
+        [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
         public bool SentFromBackOffice { get; set; } = true;
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

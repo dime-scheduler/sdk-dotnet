@@ -5,12 +5,12 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Notification : IImportRequestable, IValidatableImportRequest<Notification>
-    {        
+    {
         [ImportParameter(nameof(SourceApp))]
         [MaxLength(30)]
         [RequiredIf(TransactionType.Append)]
         public string SourceApp { get; set; }
-        
+
         [ImportParameter(nameof(SourceType))]
         [MaxLength(10)]
         [RequiredIf(TransactionType.Append)]
@@ -22,7 +22,7 @@ namespace Dime.Scheduler.Sdk.Import
         [MaxLength(50)]
         [ImportParameter("mboc_id")]
         public string ConnectorId { get; set; }
-  
+
         [ImportParameter("NotificationType", TransactionType.Append)]
         public NotificationType Type { get; set; }
 
@@ -33,13 +33,13 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter("NotificationText", TransactionType.Append)]
         public string Text { get; set; }
 
-        [ImportParameter("NotificationDate", TransactionType.Append)]        
+        [ImportParameter("NotificationDate", TransactionType.Append)]
         public DateTime? Date { get; set; }
-        
+
         [ImportParameter(nameof(JobNo))]
         [MaxLength(50)]
         public string JobNo { get; set; }
-        
+
         [ImportParameter(nameof(TaskNo))]
         [MaxLength(50)]
         public string TaskNo { get; set; }
@@ -47,9 +47,9 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
-        [ImportParameter("SentFromBackoffice")]
+        [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; }
-        
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
