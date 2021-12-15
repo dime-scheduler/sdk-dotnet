@@ -77,7 +77,6 @@ namespace Dime.Scheduler.Sdk.Import.Builder
 
         private JobBuilder WithFreeDecimalExtendables(Extendable extendable)
         {
-
             _job.FreeDecimal1 = extendable.FreeDecimal1;
             _job.FreeDecimal2 = extendable.FreeDecimal2;
             _job.FreeDecimal3 = extendable.FreeDecimal3;

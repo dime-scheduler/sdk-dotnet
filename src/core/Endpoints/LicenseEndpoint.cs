@@ -9,6 +9,7 @@ namespace Dime.Scheduler.Sdk
             : base(opts)
         {
         }
+
         internal LicenseEndpoint(IDimeSchedulerRestClient<LicenseRequest> restClient)
             : base(restClient)
         {

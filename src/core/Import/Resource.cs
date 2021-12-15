@@ -5,62 +5,62 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Resource : IImportRequestable, IValidatableImportRequest<Resource>
-    {        
+    {
         [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         [Required]
         [MaxLength(50)]
         public string ResourceNo { get; set; }
-        
+
         [ImportParameter(nameof(SourceApp), TransactionType.Append)]
         [MaxLength(30)]
         public string SourceApp { get; set; }
-        
+
         [ImportParameter(nameof(SourceType), TransactionType.Append)]
         [MaxLength(10)]
         public string SourceType { get; set; }
-        
+
         [ImportParameter(nameof(ResourceType), TransactionType.Append)]
         [MaxLength(100)]
         public string ResourceType { get; set; }
 
         [ImportParameter(nameof(ResourceTypeId), TransactionType.Append)]
         public int? ResourceTypeId { get; set; }
-        
+
         [ImportParameter(nameof(ResourceName), TransactionType.Append)]
         [MaxLength(100)]
         public string ResourceName { get; set; }
-        
+
         [ImportParameter(nameof(DisplayName), TransactionType.Append)]
         [MaxLength(100)]
         public string DisplayName { get; set; }
-        
+
         [ImportParameter(nameof(Department), TransactionType.Append)]
         [MaxLength(50)]
         public string Department { get; set; }
-        
+
         [ImportParameter(nameof(Email), TransactionType.Append)]
         [MaxLength(100)]
         public string Email { get; set; }
-        
+
         [ImportParameter(nameof(Phone), TransactionType.Append)]
         [MaxLength(50)]
         public string Phone { get; set; }
-        
+
         [ImportParameter(nameof(MobilePhone), TransactionType.Append)]
         [MaxLength(50)]
         public string MobilePhone { get; set; }
 
         [ImportParameter(nameof(ReplacementResource), TransactionType.Append)]
         public bool ReplacementResource { get; set; }
-        
+
         [ImportParameter(nameof(FieldServiceEmail), TransactionType.Append)]
         [MaxLength(100)]
         public string FieldServiceEmail { get; set; }
-        
+
         [ImportParameter(nameof(PersonalEmail), TransactionType.Append)]
         [MaxLength(100)]
         public string PersonalEmail { get; set; }
-        
+
         [ImportParameter(nameof(GpsTrackingResourceNo), TransactionType.Append)]
         [MaxLength(50)]
         public string GpsTrackingResourceNo { get; set; }
@@ -73,11 +73,11 @@ namespace Dime.Scheduler.Sdk.Import
 
         [ImportParameter(nameof(HomeAddressGeoLat), TransactionType.Append)]
         public float? HomeAddressGeoLat { get; set; }
-        
+
         [ImportParameter(nameof(HomePhone), TransactionType.Append)]
         [MaxLength(50)]
         public string HomePhone { get; set; }
-        
+
         [ImportParameter(nameof(HomeEmail), TransactionType.Append)]
         [MaxLength(50)]
         public string HomeEmail { get; set; }

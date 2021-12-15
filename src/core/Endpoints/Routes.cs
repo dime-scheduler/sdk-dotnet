@@ -34,7 +34,6 @@ namespace Dime.Scheduler.Sdk
             internal static readonly string Delete = $"{_api}/{_endpoint}/Delete";
         }
 
-        
         internal static class Resources
         {
             private static readonly string _endpoint = "Resources";

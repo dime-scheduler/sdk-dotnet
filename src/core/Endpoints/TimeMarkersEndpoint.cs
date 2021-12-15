@@ -10,7 +10,7 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        internal TimeMarkersEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient) 
+        internal TimeMarkersEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient)
             : base(restClient)
         {
         }

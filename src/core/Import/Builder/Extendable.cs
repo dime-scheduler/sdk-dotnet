@@ -17,7 +17,7 @@ namespace Dime.Scheduler.Sdk.Import.Builder
         public string FreeText11 { get; set; }
         public string FreeText12 { get; set; }
         public string FreeText13 { get; set; }
-        public string FreeText14 { get; set; } 
+        public string FreeText14 { get; set; }
         public string FreeText15 { get; set; }
         public string FreeText16 { get; set; }
         public string FreeText17 { get; set; }

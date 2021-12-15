@@ -8,14 +8,14 @@ namespace Dime.Scheduler.Sdk.Import
     {
         public Pin()
         {
-
         }
+
         public Pin(string name, string color)
         {
             Name = name;
             Color = color;
         }
-        
+
         [ImportParameter(nameof(Name))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
@@ -38,7 +38,7 @@ namespace Dime.Scheduler.Sdk.Import
 
         private ImportRequest CreateDeleteRequest()
             => new(ImportProcedures.Pin.Delete, this.CreateParameters(TransactionType.Delete));
-        
+
         Pin IValidatableImportRequest<Pin>.Validate(TransactionType transactionType)
             => this.Validate(transactionType);
 

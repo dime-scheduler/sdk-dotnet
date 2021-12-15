@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceCapacity : IImportRequestable, IValidatableImportRequest<ResourceCapacity>
-    {        
+    {
         [ImportParameter(nameof(ResourceNo))]
         [Required]
         [MaxLength(50)]

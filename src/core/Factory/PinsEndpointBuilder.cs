@@ -2,7 +2,6 @@
 
 namespace Dime.Scheduler.Sdk
 {
-
     public class PinsEndpointBuilder : EndpointBuilder<PinsEndpoint>, IPinEndpointBuilder
     {
         public PinsEndpointBuilder(string uri, IAuthenticator authn)

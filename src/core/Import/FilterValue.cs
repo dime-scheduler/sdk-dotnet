@@ -14,12 +14,12 @@ namespace Dime.Scheduler.Sdk.Import
             Group = group;
             Value = value;
         }
-       
+
         [ImportParameter("FilterGroupName")]
         [MaxLength(50)]
         [Required]
         public string Group { get; set; }
-        
+
         [ImportParameter("FilterValue")]
         [MaxLength(100)]
         [Required]

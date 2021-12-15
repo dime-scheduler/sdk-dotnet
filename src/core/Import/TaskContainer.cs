@@ -5,27 +5,27 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class TaskContainer : IImportRequestable, IValidatableImportRequest<TaskContainer>
-    {       
+    {
         [ImportParameter(nameof(SourceApp))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
         public string SourceApp { get; set; }
-        
+
         [ImportParameter(nameof(SourceType))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(10)]
         public string SourceType { get; set; }
-        
+
         [ImportParameter(nameof(JobNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string JobNo { get; set; }
-        
+
         [ImportParameter(nameof(TaskNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string TaskNo { get; set; }
-        
+
         [ImportParameter("ContainerName")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(255)]

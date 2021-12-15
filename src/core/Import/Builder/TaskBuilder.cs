@@ -95,7 +95,6 @@ namespace Dime.Scheduler.Sdk.Import.Builder
 
         private TaskBuilder WithFreeDecimalExtendables(Extendable extendable)
         {
-
             _task.FreeDecimal1 = extendable.FreeDecimal1;
             _task.FreeDecimal2 = extendable.FreeDecimal2;
             _task.FreeDecimal3 = extendable.FreeDecimal3;

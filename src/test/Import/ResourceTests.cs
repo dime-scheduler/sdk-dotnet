@@ -94,7 +94,6 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 TeamName = "TEXT",
                 TeamSort = 1,
                 TeamType = "TEXT"
-
             };
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
@@ -188,7 +187,6 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 TeamName = "TEXT",
                 TeamSort = 1,
                 TeamType = "TEXT"
-
             };
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);
             importRequest.AssertEqualParameterCollectionCount();
@@ -197,6 +195,5 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Resource_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
             => ToImportRequestTestUtils.TestToInvalidImportRequest<Sdk.Import.Resource>();
-
     }
 }

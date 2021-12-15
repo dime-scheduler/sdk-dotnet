@@ -16,12 +16,12 @@ namespace Dime.Scheduler.Sdk.Import
             DisplayName = name;
             Color = color;
         }
-        
+
         [ImportParameter("CategoryName")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public string Name { get; set; }
-       
+
         [ImportParameter(nameof(DisplayName), TransactionType.Append)]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(100)]

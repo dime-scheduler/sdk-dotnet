@@ -101,6 +101,5 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             Assert.True(importRequest.ParameterNames.Length == 7);
             Assert.True(importRequest.ParameterValues.Length == 7);
         }
-
     }
 }

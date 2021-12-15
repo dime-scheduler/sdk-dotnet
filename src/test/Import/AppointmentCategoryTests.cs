@@ -33,6 +33,5 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 
             model.ShouldNotCreateImportRequest(TransactionType.Delete);
         }
-
     }
 }

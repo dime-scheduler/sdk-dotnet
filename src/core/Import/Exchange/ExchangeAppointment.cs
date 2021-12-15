@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using Dime.Scheduler.Sdk.Import.Exchange;
 
 namespace Dime.Scheduler.Sdk.Import
@@ -31,7 +30,7 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(Body))]
         public string Body { get; set; }
 
-        [ImportParameter(nameof(Importance))]        
+        [ImportParameter(nameof(Importance))]
         public Importance Importance { get; set; }
 
         [ImportParameter(nameof(ResourceEmail))]

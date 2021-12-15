@@ -29,6 +29,5 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void FilterValue_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
             => ToImportRequestTestUtils.TestToInvalidImportRequest<FilterValue>();
-
     }
 }

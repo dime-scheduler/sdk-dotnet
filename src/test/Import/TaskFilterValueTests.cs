@@ -62,6 +62,5 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete, true);
             importRequest.AssertEqualParameterCollectionCount();
         }
-
     }
 }

@@ -6,7 +6,7 @@ namespace Dime.Scheduler.Sdk.Import
     public class ActionUri : IImportRequestable
     {
         [ImportParameter(nameof(SourceApp))]
-        [MaxLength(30)]        
+        [MaxLength(30)]
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]

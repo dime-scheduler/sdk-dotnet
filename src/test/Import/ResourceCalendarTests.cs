@@ -41,6 +41,5 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void ResourceCalendar_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
             => ToImportRequestTestUtils.TestToInvalidImportRequest<ResourceCalendar>();
-
     }
 }

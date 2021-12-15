@@ -10,7 +10,7 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        internal CategoriesEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient) 
+        internal CategoriesEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient)
             : base(restClient)
         {
         }

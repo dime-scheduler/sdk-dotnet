@@ -32,7 +32,6 @@ namespace Dime.Scheduler.Sdk.Import
 
                 internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
-
             }
 
             internal static class Locked
@@ -41,7 +40,6 @@ namespace Dime.Scheduler.Sdk.Import
 
                 internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
-
             }
 
             internal static class PlanningQuantity
@@ -50,7 +48,6 @@ namespace Dime.Scheduler.Sdk.Import
 
                 internal static readonly string Append = $"{_base}{_update}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
-
             }
 
             internal static class Category
@@ -91,7 +88,6 @@ namespace Dime.Scheduler.Sdk.Import
             internal static readonly string Append = $"{_base}add{_entity}";
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
         }
-
 
         internal static class Task
         {
@@ -203,7 +199,6 @@ namespace Dime.Scheduler.Sdk.Import
 
             internal static readonly string Append = $"{_base}{_append}{_entity}";
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
-
 
             internal static class FilterValue
             {

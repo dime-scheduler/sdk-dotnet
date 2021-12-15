@@ -10,7 +10,7 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        internal UsersEndpoint(IDimeSchedulerRestClient<UserRequest> restClient) 
+        internal UsersEndpoint(IDimeSchedulerRestClient<UserRequest> restClient)
             : base(restClient)
         {
         }

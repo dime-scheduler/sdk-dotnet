@@ -10,7 +10,7 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        internal PinsEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient) 
+        internal PinsEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient)
             : base(restClient)
         {
         }

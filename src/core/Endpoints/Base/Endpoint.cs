@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk
     {
         private readonly IDimeSchedulerRestClient<TRequest> _restClient;
 
-        protected Endpoint(AuthenticationOptions opts) 
+        protected Endpoint(AuthenticationOptions opts)
             : this(new DefaultDimeSchedulerRestClient<TRequest>(opts))
         {
         }

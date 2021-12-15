@@ -5,16 +5,16 @@ using System.ComponentModel.DataAnnotations;
 namespace Dime.Scheduler.Sdk.Import
 {
     public class Container : IImportRequestable, IValidatableImportRequest<Container>
-    {                
+    {
         [ImportParameter(nameof(Name))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public string Name { get; set; }
-        
+
         [ImportParameter(nameof(HandleDate), TransactionType.Append)]
         [RequiredIf(TransactionType.Append)]
         public DateTime HandleDate { get; set; }
-        
+
         [ImportParameter(nameof(HandleLocked), TransactionType.Append)]
         [RequiredIf(TransactionType.Append)]
         public bool HandleLocked { get; set; }

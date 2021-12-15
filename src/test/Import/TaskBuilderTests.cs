@@ -101,7 +101,6 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             TaskBuilder taskBuilder = new();
             Task task = taskBuilder.WithContract(new Contract()
             {
-
                 Description = "Description",
                 StartDate = new DateTime(2020, 1, 1),
                 EndDate = new DateTime(2020, 1, 3),

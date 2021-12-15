@@ -15,7 +15,7 @@ namespace Dime.Scheduler.Sdk.Import
             Name = name;
             Color = color;
         }
-        
+
         [ImportParameter("TimeMarker")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]

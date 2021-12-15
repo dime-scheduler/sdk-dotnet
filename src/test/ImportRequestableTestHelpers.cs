@@ -14,7 +14,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 
         internal static void AssertStoredProcedureName(this ImportRequest request, string storedProcedureName)
             => Assert.True(request.StoredProcedureName == storedProcedureName);
-        internal static void AssertEqualParameterCollectionCount(this ImportRequest request) 
+
+        internal static void AssertEqualParameterCollectionCount(this ImportRequest request)
             => Assert.True(request.ParameterNames.Length == request.ParameterValues.Length);
 
         internal static void AssertParameterCount(this ImportRequest request, int length)

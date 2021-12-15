@@ -33,7 +33,6 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(FilterValue))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
-
         public string FilterValue { get; set; }
 
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]
@@ -46,6 +45,7 @@ namespace Dime.Scheduler.Sdk.Import
                 TransactionType.Delete => CreateDeleteRequest(),
                 _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
             };
+
         public ImportRequest ToImportRequest(TransactionType transactionType, bool clear = false)
             => clear ? CreateClearRequest() : ((IImportRequestable)this).ToImportRequest(transactionType);
 

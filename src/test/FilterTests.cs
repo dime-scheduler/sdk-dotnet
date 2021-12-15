@@ -37,7 +37,7 @@ namespace Dime.Scheduler.Sdk.Tests
 
             Filters<Customer> filterList = new() { filter1, filter2, filter3 };
 
-            const string expectedValue =  "[{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'},{ 'operator':'==','value':Max Power,'property':'Name'},{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'}]";
+            const string expectedValue = "[{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'},{ 'operator':'==','value':Max Power,'property':'Name'},{ 'operator':'==','value':Handsome B. Wonderful,'property':'Name'}]";
             string filterJsonArray = filterList.ToString();
             Assert.True(filterJsonArray == expectedValue);
         }
