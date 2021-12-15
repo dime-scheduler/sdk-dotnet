@@ -7,13 +7,11 @@ namespace Dime.Scheduler.Sdk.Import
     public class Notification : IImportRequestable, IValidatableImportRequest<Notification>
     {
         [ImportParameter(nameof(SourceApp))]
-        [MaxLength(30)]
-        [RequiredIf(TransactionType.Append)]
+        [MaxLength(30)]        
         public string SourceApp { get; set; }
 
         [ImportParameter(nameof(SourceType))]
-        [MaxLength(10)]
-        [RequiredIf(TransactionType.Append)]
+        [MaxLength(10)]        
         public string SourceType { get; set; }
 
         [ImportParameter(nameof(AppointmentId))]
