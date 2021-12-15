@@ -13,11 +13,13 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentGuid), TransactionType.Append)]
         public Guid? AppointmentGuid { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string SourceApp { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(10)]

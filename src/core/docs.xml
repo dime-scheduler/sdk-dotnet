@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+	<members name="TrackedEntity">
+		<SourceApp>
+			<summary>
+				Identifies the record's originating system. 
+			</summary>
+		</SourceApp>
+		<SourceType>
+			<summary>
+				Identifies the record's type in the originating system.
+			</summary>
+		</SourceType>
+	</members>
+	<members name="ExtendableEntity">
+		<FreeText>
+			<summary>
+				A text property which can be used at your discretion.
+			</summary>
+		</FreeText>
+		<FreeDecimal>
+			<summary>
+				A decimal property which can be used at your discretion.
+			</summary>
+		</FreeDecimal>
+		<FreeBoolean>
+			<summary>
+				A boolean property which can be used at your discretion.
+			</summary>
+		</FreeBoolean>
+		<FreeDate>
+			<summary>
+				A date property which can be used at your discretion.
+			</summary>
+		</FreeDate>
+	</members>
+	<members name="Work">
+		<JobNo>
+			<summary>
+				Identifies the job.
+			</summary>
+		</JobNo>
+		<Taskno>
+			<summary>
+				Identifies the task.
+			</summary>
+		</Taskno>
+	</members>
+	<members name="Indicator">
+		<Name>
+			<summary>
+				Identifies the indicator.
+			</summary>
+		</Name>
+		<Color>
+			<summary>
+				The hex color.
+			</summary>
+		</Color>
+	</members>
+</docs>

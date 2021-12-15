@@ -4,9 +4,11 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class ResourceFilterValue : IImportRequestable
     {
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
         public string SourceApp { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 

@@ -5,11 +5,13 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class AppointmentCategory : IImportRequestable
     {
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
         [MaxLength(30)]
         [Required]
         public string SourceApp { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType))]
         [MaxLength(10)]
         [Required]

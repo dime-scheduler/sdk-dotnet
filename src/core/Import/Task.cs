@@ -6,11 +6,13 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Task : IImportRequestable, IValidatableImportRequest<Task>
     {
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(30)]
         public string SourceApp { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
         [Required]
         [MaxLength(10)]
@@ -212,128 +214,163 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentLatestAllowed), TransactionType.Append)]
         public DateTime? AppointmentLatestAllowed { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText1), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText1 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText2), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText2 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText3), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText3 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText4), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText4 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText5), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText5 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText6), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText6 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText7), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText7 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText8), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText8 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText9), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText9 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText10), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText10 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText11), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText11 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText12), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText12 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText13), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText13 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText14), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText14 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText15), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText15 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText16), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText16 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText17), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText17 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText18), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText18 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText19), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText19 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeText/*'/>
         [ImportParameter(nameof(FreeText20), TransactionType.Append)]
         [MaxLength(100)]
         public string FreeText20 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDecimal/*'/>
         [ImportParameter(nameof(FreeDecimal1), TransactionType.Append)]
         public decimal FreeDecimal1 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDecimal/*'/>
         [ImportParameter(nameof(FreeDecimal2), TransactionType.Append)]
         public decimal FreeDecimal2 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDecimal/*'/>
         [ImportParameter(nameof(FreeDecimal3), TransactionType.Append)]
         public decimal FreeDecimal3 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDecimal/*'/>
         [ImportParameter(nameof(FreeDecimal4), TransactionType.Append)]
         public decimal FreeDecimal4 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDecimal/*'/>
         [ImportParameter(nameof(FreeDecimal5), TransactionType.Append)]
         public decimal FreeDecimal5 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDate/*'/>
         [ImportParameter(nameof(FreeDate1), TransactionType.Append)]
         public DateTime? FreeDate1 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDate/*'/>
         [ImportParameter(nameof(FreeDate2), TransactionType.Append)]
         public DateTime? FreeDate2 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDate/*'/>
         [ImportParameter(nameof(FreeDate3), TransactionType.Append)]
         public DateTime? FreeDate3 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDate/*'/>
         [ImportParameter(nameof(FreeDate4), TransactionType.Append)]
         public DateTime? FreeDate4 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeDate/*'/>
         [ImportParameter(nameof(FreeDate5), TransactionType.Append)]
         public DateTime? FreeDate5 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeBoolean/*'/>
         [ImportParameter(nameof(FreeBit1), TransactionType.Append)]
         public bool FreeBit1 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeBoolean/*'/>
         [ImportParameter(nameof(FreeBit2), TransactionType.Append)]
         public bool FreeBit2 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeBoolean/*'/>
         [ImportParameter(nameof(FreeBit3), TransactionType.Append)]
         public bool FreeBit3 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeBoolean/*'/>
         [ImportParameter(nameof(FreeBit4), TransactionType.Append)]
         public bool FreeBit4 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="ExtendableEntity"]/FreeBoolean/*'/>
         [ImportParameter(nameof(FreeBit5), TransactionType.Append)]
         public bool FreeBit5 { get; set; }
 

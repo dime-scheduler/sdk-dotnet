@@ -17,16 +17,19 @@ namespace Dime.Scheduler.Sdk.Import
             Color = color;
         }
 
+        /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Name/*'/>
         [ImportParameter("CategoryName")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public string Name { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Name/*'/>
         [ImportParameter(nameof(DisplayName), TransactionType.Append)]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(100)]
         public string DisplayName { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Color/*'/>
         [RequiredIf(TransactionType.Append)]
         [ImportParameter("CategoryHexColor", TransactionType.Append)]
         [MaxLength(7)]

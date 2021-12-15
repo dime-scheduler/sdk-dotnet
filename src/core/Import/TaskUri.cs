@@ -5,11 +5,13 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class TaskUri : IImportRequestable
     {
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(30)]
         public string SourceApp { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType))]
         [RequiredIf(TransactionType.Append)]
         [MaxLength(10)]
