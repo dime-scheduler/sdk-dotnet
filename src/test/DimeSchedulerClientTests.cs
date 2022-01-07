@@ -26,28 +26,6 @@ namespace Dime.Scheduler.Sdk.Tests
             Assert.NotNull(endpoint);
         }
 
-        //[Fact]
-        //public async Task DimeSchedulerClient_ResourcesEndpoint_ShouldCreate()
-        //{
-        //    const string uri = "http://mydimescheduler.io";
-        //    IAuthenticator authenticator = new MockAuthenticator();
-        //    DimeSchedulerClient client = new(uri, authenticator);
-
-        //    IResourceEndpoint endpoint = await client.Resources.Request();
-        //    Assert.NotNull(endpoint);
-        //}
-
-        //[Fact]
-        //public async Task DimeSchedulerClient_CategoriesEndpoint_ShouldCreate()
-        //{
-        //    const string uri = "http://mydimescheduler.io";
-        //    IAuthenticator authenticator = new MockAuthenticator();
-        //    DimeSchedulerClient client = new(uri, authenticator);
-
-        //    ICrudEndpoint<IndicatorRequest> endpoint = await client.Categories.Request();
-        //    Assert.NotNull(endpoint);
-        //}
-
         [Fact]
         public async Task DimeSchedulerClient_MessageEndpoint_ShouldCreate()
         {

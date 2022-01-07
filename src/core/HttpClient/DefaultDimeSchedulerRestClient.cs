@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Reflection;
+using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 
@@ -35,8 +36,11 @@ namespace Dime.Scheduler.Sdk
             request.AddJsonBody(requestParameters);
 
             IRestResponse response = await client.ExecuteAsync(request);
-            if (!response.IsSuccessful)
-                throw new WebException(response.ErrorMessage, response.ErrorException);
+            if (response.IsSuccessful)
+                return;
+
+            WebApiException exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
+            throw new WebException(exception.Description);
         }
 
         public async Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
@@ -60,7 +64,11 @@ namespace Dime.Scheduler.Sdk
                     request.AddParameter(prop.Name, prop.GetValue(requestParameters, null)?.ToString() ?? "");
 
             IRestResponse<T> response = await client.ExecuteAsync<T>(request);
-            return response.IsSuccessful ? response.Data : throw new WebException(response.ErrorMessage, response.ErrorException);
+            if (response.IsSuccessful)
+                return response.Data;
+
+            WebApiException exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
+            throw new WebException(exception.Description);
         }
     }
 }
