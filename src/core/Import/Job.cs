@@ -467,6 +467,9 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
         public bool SentFromBackOffice { get; set; } = true;
 
+        [ImportParameter(nameof(ReadOnly), TransactionType.Append)]
+        public bool ReadOnly { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
