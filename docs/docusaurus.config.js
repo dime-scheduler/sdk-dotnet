@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Dime.Scheduler Software Development Kit',
   url: 'https://sdk.dimescheduler.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'dime-scheduler',
