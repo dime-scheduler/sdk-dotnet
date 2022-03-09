@@ -109,7 +109,7 @@ function Home() {
       description="Dime.Scheduler Software Development Kit">
       <header className={clsx('hero hero--primary heroTilted_3die', styles.heroBanner)}>
         <div className="container">
-          <img src="img/ds.svg" height="100" alt="Dime.Scheduler logo" />
+          <img src="img/ds.svg" width="500" alt="Dime.Scheduler logo" />
           <p className="hero__subtitle">Software Development Kit</p>
           <div className={styles.buttons}>
             <Link
