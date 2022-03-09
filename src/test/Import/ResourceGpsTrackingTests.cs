@@ -14,8 +14,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Date = new DateTime(2020, 1, 1),
                 ResourceNo = "LINDA",
                 GpsTrackingResourceNo = "NO",
-                Latitude = 1,
-                Longitude = 2,
+                Latitude = 34.210446M,
+                Longitude = -118.436528M,
                 Power = "MAX",
                 RowId = "1",
                 Speed = 1
