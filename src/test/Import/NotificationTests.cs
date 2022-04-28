@@ -30,20 +30,6 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         }
 
         [Fact]
-        public void Notification_ToImportRequest_Append_MissingRequiredParameters_ShouldThrowException()
-        {
-            Notification model = new()
-            {
-                Code = "CODE",
-                Date = new DateTime(2020, 1, 1),
-                Text = "TXT",
-                Type = NotificationType.Info
-            };
-
-            Assert.Throws<Exception>(() => model.ToImportRequest(TransactionType.Append));
-        }
-
-        [Fact]
         public void Notification_ToImportRequest_Delete_AllShouldMapParameters()
         {
             Notification model = new()

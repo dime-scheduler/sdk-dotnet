@@ -67,7 +67,16 @@ namespace Dime.Scheduler.Sdk
             if (response.IsSuccessful)
                 return response.Data;
 
-            WebApiException exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
+            WebApiException exception;
+            try
+            {
+                exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
+            }
+            catch
+            {
+                exception = new WebApiException() { Description = response.ErrorMessage };
+            }
+
             throw new WebException(exception.Description);
         }
     }

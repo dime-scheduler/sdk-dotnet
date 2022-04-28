@@ -34,7 +34,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             IImportEndpoint importEndpoint = await client.Import.Request();
 
             await Assert.ThrowsAsync<WebException>(
-                async () => await importEndpoint.ProcessAsync(new ExchangeAppointment(), TransactionType.Append));
+                async () => await importEndpoint.ProcessAsync(new Category("Name", "Color"), TransactionType.Append));
         }
     }
 }
