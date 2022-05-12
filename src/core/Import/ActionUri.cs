@@ -15,7 +15,7 @@ namespace Dime.Scheduler.Sdk.Import
         [MaxLength(10)]
         public string SourceType { get; set; }
 
-        [ImportParameter(nameof(UriType))]
+        [ImportParameter("UrlType")]
         public int UriType { get; set; }
 
         [ImportParameter(nameof(Uri))]

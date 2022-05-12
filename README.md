@@ -1,5 +1,9 @@
+<div align="center">
+<img src="https://cdn.dimescheduler.com/dime-scheduler/Dime.Scheduler-Black.svg" height="75px" />
+</div>
+
 <p align="center">
-    <img src="assets/connect.svg?raw=true" width="350">
+    <img src="assets/connect.svg?raw=true" width="350px">
 </p>
 
 <p align="center">
@@ -7,6 +11,12 @@
     <a href="https://github.com/dime-scheduler/sdk-dotnet/discussions">
   <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
 </a>
+</p>
+
+<p align="center">
+  <a href="https://sdk.dimescheduler.com">Documentation</a> |
+  <a href="https://docs.dimescheduler.com/history">Changelog</a> |
+  <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
 </p>
 
 <h1 align="center">Dime.Scheduler SDK for .NET </h1>
