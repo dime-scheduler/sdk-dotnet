@@ -64,18 +64,16 @@ namespace Dime.Scheduler.Sdk
                     request.AddParameter(prop.Name, prop.GetValue(requestParameters, null)?.ToString() ?? "");
 
             IRestResponse<T> response = await client.ExecuteAsync<T>(request);
+
             if (response.IsSuccessful)
                 return response.Data;
 
-            WebApiException exception;
-            try
+            WebApiException exception = response.ContentType switch
             {
-                exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
-            }
-            catch
-            {
-                exception = new WebApiException() { Description = response.ErrorMessage };
-            }
+                "text/plain" => new WebApiException() { Description = response.Content ?? response.StatusDescription },
+                "application/json" => JsonSerializer.Deserialize<WebApiException>(response.Content),
+                _ => throw new NotImplementedException(),
+            };
 
             throw new WebException(exception.Description);
         }

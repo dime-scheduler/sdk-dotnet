@@ -43,7 +43,9 @@ namespace Dime.Scheduler.Sdk
             }
 
             _tokenResponse = null;
-            throw new WebException(response.ErrorMessage, response.ErrorException);
+
+            string errMessage = response.StatusDescription + (!string.IsNullOrEmpty(response.ErrorMessage) ? " -> " + response.ErrorMessage : "");
+            throw new WebException(errMessage, response.ErrorException);
         }
 
         public bool IsLocalTokenValid
