@@ -18,15 +18,15 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter("UrlType")]
         public int UriType { get; set; }
 
-        [ImportParameter(nameof(Uri))]
+        [ImportParameter("Uri")]
         [Required]
         public string Uri { get; set; }
 
-        [ImportParameter(nameof(Description))]
+        [ImportParameter("UrlDesc")]
         [MaxLength(255)]
         public string Description { get; set; }
 
-        [ImportParameter(nameof(Default))]
+        [ImportParameter("DefaultUrl")]
         public bool Default { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
