@@ -2,14 +2,16 @@ module.exports = {
   intro: {
     'Dime.Scheduler': [
       'introduction',
-      'about'
+      'about',
+      'glossary'
     ],
     'Getting started': [
       'installation',
-      'example',
-      'glossary',
+      'example',          
+    ],
+    "Implementations": [
       'cli'
-    ]
+    ]    
   },
   api: {
     'Principles': [

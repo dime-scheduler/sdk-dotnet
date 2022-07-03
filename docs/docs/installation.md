@@ -19,7 +19,6 @@ These are reflected in the way you instantiate the relevant classes:
 
 ```cs
 using Dime.Scheduler.Sdk
-
 ...
 
 string uri = "http://mydimescheduler.com";

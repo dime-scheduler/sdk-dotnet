@@ -6,6 +6,7 @@
  */
 
 /* You can override the default Infima variables here. */
+
 :root {
   --ifm-color-primary: #6e62b5;
   --ifm-color-primary-dark: #5c5194;
@@ -16,6 +17,42 @@
   --ifm-color-primary-lightest: #cfc8e7;
   --ifm-code-font-size: 95%;
   --ifm-footer-background-color: #6e62b5;
+  --ifm-font-family-monospace: "Consolas";
+  --ifm-font-family-base: "Nunito";
+}
+
+[data-theme="dark"]:root {
+  --ifm-color-primary: #383257;
+  --ifm-color-primary-dark: #383257;
+  --ifm-color-primary-darker: #383257;
+  --ifm-color-primary-darkest: #383257;
+  --ifm-color-primary-light: #383257;
+  --ifm-color-primary-lighter: #383257;
+  --ifm-color-primary-lightest: #383257;
+  --ifm-hero-text-color: white;
+  --ifm-font-color-base-inverse: white;
+  --ifm-footer-background-color: #383257;
+  --ifm-color-primary: #383257;
+  --ifm-background-color: #383257;
+  --ifm-navbar-background-color: #383257;
+  --ifm-navbar-link-hover-color: lightgray;
+  --ifm-footer-link-hover-color: lightgray;
+}
+
+.theme-code-block {
+  font-family: Consolas;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/static/fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+[data-theme="dark"] .footer--dark {
+  --ifm-footer-background-color: #383257;
 }
 
 .footer--dark {
@@ -63,7 +100,10 @@ html[data-theme="dark"] .header-github-link:before {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%);
 }
 
-.breadcrumbs__link,
-.button.button--secondary.button--outline:not(.button--active):not(:hover) {
-  color: white;
+[data-theme="dark"] .breadcrumbs__link {
+  color: white !important;
+}
+
+.breadcrumbs__link {
+  color: black !important;
 }

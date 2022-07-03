@@ -78,32 +78,8 @@ function OtherFeature({ imageUrl, title, description, i }) {
   );
 }
 
-
-const ImageContainer = styled.div`
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    margin: 0 10px;
-  }
-`;
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 900px) {
-    margin-top: 30px;
-  }
-`;
-
-const PurpleSection = styled.section`
-  background: #6e62b5
-`;
-
-
 function Home() {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
   return (
     <Layout      
       description="Dime.Scheduler Software Development Kit">
@@ -138,17 +114,7 @@ function Home() {
           </section>
         )}
 
-        <PurpleSection className={styles.features}>
-          <div className="container">
-            <ImageContainer>
-              <Container>
-
-              </Container>
-            </ImageContainer>
-          </div>
-        </PurpleSection>
-
-
+   
       </main>
     </Layout >
   );
