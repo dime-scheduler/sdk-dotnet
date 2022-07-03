@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 {
     public partial class ResourceTests
     {
-        private static Dime.Scheduler.Sdk.Import.Resource Test => new()
+        internal static Dime.Scheduler.Sdk.Import.Resource Test => new()
         {
             ResourceNo = "SDK_TEST",
             GpsTrackingResourceNo = "1",

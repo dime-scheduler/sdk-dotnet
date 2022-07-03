@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 {
     public partial class TaskTests
     {
-        private static Task Test => new()
+        internal static Task Test => new()
         {
             SourceApp = "POWERAPPS",
             SourceType = "POWERAPPS",
@@ -25,7 +25,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             ContractStartDate = new DateTime(2020, 1, 1),
             ContractType = "TYPE",
             DeadLine = new DateTime(2020, 1, 1, 15, 30, 15),
-            DoNotCountAppointmentResource = true,            
+            DoNotCountAppointmentResource = true,
             ExpectedResponseDateTime = DateTime.Now.AddDays(2),
             FreeBit1 = true,
             FreeBit2 = false,
@@ -78,7 +78,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             PlanningQty = 500.21M,
             PlanningUOM = "UOM",
             PlanningUOMConversion = 25,
-            RequiredNoResources = 1,            
+            RequiredNoResources = 1,
             RequiredTotalDurationInSeconds = 18000,
             RoundToUOM = true,
             ServiceClass = "CLASS",
