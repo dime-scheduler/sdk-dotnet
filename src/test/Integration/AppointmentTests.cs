@@ -19,7 +19,8 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             Body = "Hello from SDK's unit tests",
             Subject = "Unit test",
             Category = "OFFICE",
-            Importance = Importance.High
+            Importance = Importance.High,
+            UseFixedPlanningQuantity = true
         };
 
         [Fact]

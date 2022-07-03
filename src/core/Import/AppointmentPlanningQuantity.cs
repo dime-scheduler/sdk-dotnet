@@ -20,7 +20,7 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(AppointmentId))]
         public long AppointmentId { get; set; }
 
-        [ImportParameter(nameof(Quantity))]
+        [ImportParameter("PlanningQty")]
         public decimal Quantity { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
