@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class TaskLockedTests
+    public partial class TaskLockedTests
     {
         [Fact]
         public void TaskLocked_ToImportRequest_Append_AllShouldMapParameters()

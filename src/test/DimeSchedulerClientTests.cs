@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
-    public class DimeSchedulerClientTests
+    public partial class DimeSchedulerClientTests
     {
         [Fact]
         public void DimeSchedulerClient_Constructor_ShouldCreate()

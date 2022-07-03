@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class ResourceGpsTrackingTests
+    public partial class ResourceGpsTrackingTests
     {
         [Fact]
         public void ResourceGpsTracking_ToImportRequest_Append_AllShouldMapParameters()

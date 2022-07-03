@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class ResourceUriTests
+    public partial class ResourceUriTests
     {
         [Fact]
         public void ResourceUri_ToImportRequest_Append_AllShouldMapParameters()

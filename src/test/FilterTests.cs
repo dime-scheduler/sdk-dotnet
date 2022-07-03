@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Sdk.Tests
 {
-    public class FilterTests
+    public partial class FilterTests
     {
         [Fact]
         public void Filter_Build_ShouldCreateExtFilter()

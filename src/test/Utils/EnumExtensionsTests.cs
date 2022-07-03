@@ -26,7 +26,7 @@ namespace Dime.Scheduler.Sdk.Tests.Utils
         public Department Department { get; set; }
     }
 
-    public class EnumExtensionsTests
+    public partial class EnumExtensionsTests
     {
         [Fact]
         public void EnumExtensions_GetDescription_HasDescription_ShouldReturnDescription()

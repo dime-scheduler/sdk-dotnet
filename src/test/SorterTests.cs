@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
-    public class SorterTests
+    public partial class SorterTests
     {
         [Fact]
         public void Sorter_Asc_Build_ShouldCreateExtSorter()

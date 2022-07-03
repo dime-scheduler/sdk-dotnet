@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class JobBuilderTests
+    public partial class JobBuilderTests
     {
         [Fact]
         public void JobBuilder_SetMasterData_ShouldMapProperties()

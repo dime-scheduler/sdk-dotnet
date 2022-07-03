@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class TaskUriTests
+    public partial class TaskUriTests
     {
         [Fact]
         public void TaskUri_ToImportRequest_Append_AllShouldMapParameters()

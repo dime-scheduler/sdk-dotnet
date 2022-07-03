@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Sdk.Tests.Utils
 {
-    public class AuthenticationOptionsTests
+    public partial class AuthenticationOptionsTests
     {
         [Fact]
         public void AuthenticationOptions_Deconstruct_ShouldMapProperties()

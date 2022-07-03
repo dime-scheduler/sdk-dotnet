@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using Dime.Scheduler.Sdk.Import;
 using Xunit;
 
@@ -23,18 +24,6 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 
             IImportEndpoint importEndpoint = await client.Import.Request();
             Assert.NotNull(importEndpoint);
-        }
-
-        [Fact]
-        public async System.Threading.Tasks.Task Endpoint_ProcessAsync_InvalidUrl_ShouldThrowException()
-        {
-            const string faultyUrl = "https://dimescheduler.io/doesnotexist";
-            DimeSchedulerClient client = new(faultyUrl, new MockAuthenticator());
-
-            IImportEndpoint importEndpoint = await client.Import.Request();
-
-            await Assert.ThrowsAsync<WebException>(
-                async () => await importEndpoint.ProcessAsync(new Category("Name", "Color"), TransactionType.Append));
         }
     }
 }

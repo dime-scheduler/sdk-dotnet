@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class AppointmentContainerTests
+    public partial class AppointmentContainerTests
     {
         [Fact]
         public void AppointmentContainer_ToImportRequest_Append_AllShouldMapParameters()

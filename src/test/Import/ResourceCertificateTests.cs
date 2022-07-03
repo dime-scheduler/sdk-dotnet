@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class ResourceCertificateTests
+    public partial class ResourceCertificateTests
     {
         [Fact]
         public void ResourceCertificate_ToImportRequest_Append_AllShouldMapParameters()

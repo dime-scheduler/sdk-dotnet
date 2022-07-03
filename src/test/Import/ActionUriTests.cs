@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class ActionUriTests
+    public partial class ActionUriTests
     {
         [Fact]
         public void ActionUri_ToImportRequest_Append_AllShouldMapParameters()
@@ -12,7 +12,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             {
                 SourceApp = "BC001",
                 SourceType = "BC001",
-                UriType = 5,
+                UriType = UriType.PlanningBoard,
                 Uri = "https://www.google.com",
                 Description = "Hello world",
                 Default = true
@@ -32,7 +32,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
             {
                 SourceApp = "BC001",
                 SourceType = "BC001",
-                UriType = 5,
+                UriType = UriType.PlanningBoard,
                 Uri = "https://www.google.com",
                 Description = "Hello world",
                 Default = true

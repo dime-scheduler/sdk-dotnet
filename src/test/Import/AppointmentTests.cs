@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class AppointmentTests
+    public partial class AppointmentTests
     {
         [Fact]
         public void Appointment_ToImportRequest_Append_AllShouldMapParameters()
@@ -24,7 +24,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Body = "Body",
                 Subject = "Subject",
                 Category = "CAT",
-                Importance = 1,
+                Importance = Importance.High,
                 IsAllDay = false,
                 JobNo = "Job",
                 Locked = true,
@@ -60,7 +60,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
                 Body = "Body",
                 Subject = "Subject",
                 Category = "CAT",
-                Importance = 1,
+                Importance = Importance.High,
                 IsAllDay = false,
                 JobNo = "Job",
                 Locked = true,

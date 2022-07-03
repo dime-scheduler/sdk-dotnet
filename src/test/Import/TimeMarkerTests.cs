@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class TimeMarkerTests
+    public partial class TimeMarkerTests
     {
         [Fact]
         public void TimeMarker_ToImportRequest_Append_AllShouldMapParameters()

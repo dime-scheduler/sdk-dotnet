@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
-    public class TimeMarkersEndpointTests
+    public partial class TimeMarkersEndpointTests
     {
         [Fact]
         public async Task TimeMarkersEndpoint_MockClient_Create_ShouldCreate()

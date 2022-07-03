@@ -64,7 +64,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string Category { get; set; }
 
         [ImportParameter(nameof(Importance), TransactionType.Append)]
-        public int? Importance { get; set; }
+        public Importance? Importance { get; set; }
 
         [ImportParameter(nameof(Locked), TransactionType.Append)]
         public bool? Locked { get; set; }

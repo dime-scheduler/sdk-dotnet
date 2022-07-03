@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import.Exchange
 {
-    public class ShowAsTests
+    public partial class ShowAsTests
     {
         [Fact]
         public void ShowAs_Enum_ShouldMatchExchangeIntegerValues()

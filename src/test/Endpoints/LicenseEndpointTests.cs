@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
-    public class LicenseEndpointTests
+    public partial class LicenseEndpointTests
     {
         [Fact]
         public async Task LicenseEndpoint_MockClient_Create_ShouldCreate()

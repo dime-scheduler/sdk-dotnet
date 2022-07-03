@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class AppointmentContentTests
+    public partial class AppointmentContentTests
     {
         private static AppointmentContent CreateModel()
             => new()

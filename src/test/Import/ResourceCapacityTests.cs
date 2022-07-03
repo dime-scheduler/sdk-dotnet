@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class ResourceCapacityTests
+    public partial class ResourceCapacityTests
     {
         [Fact]
         public void ResourceCapacity_ToImportRequest_Append_AllShouldMapParameters()

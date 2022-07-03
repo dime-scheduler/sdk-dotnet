@@ -35,6 +35,7 @@ namespace Dime.Scheduler.Sdk.Import
                 bool b => b.ToString(),
                 DateTime dt => dt.ToString("u"),
                 IEnumerable<string> enumerable => string.Join(";", enumerable),
+                TimeSpan ts => ts.Ticks.ToString(),
                 _ => objValue?.ToString()
             };
 

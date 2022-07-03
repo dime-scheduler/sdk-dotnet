@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class PinTests
+    public partial class PinTests
     {
         [Fact]
         public void Pin_ToImportRequest_Append_AllShouldMapParameters()

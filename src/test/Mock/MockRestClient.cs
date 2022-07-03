@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
-    public class MockRestClient<TRequest> : IDimeSchedulerRestClient<TRequest>
+    public partial class MockRestClient<TRequest> : IDimeSchedulerRestClient<TRequest>
     {
         public Task Execute(string endpoint, Method method, TRequest requestParameters)
             => Task.FromResult(0);

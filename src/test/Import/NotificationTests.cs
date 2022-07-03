@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
 {
-    public class NotificationTests
+    public partial class NotificationTests
     {
         [Fact]
         public void Notification_ToImportRequest_Append_AllShouldMapParameters()
