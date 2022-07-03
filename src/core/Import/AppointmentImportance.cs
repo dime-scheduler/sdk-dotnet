@@ -21,7 +21,7 @@ namespace Dime.Scheduler.Sdk.Import
         public long AppointmentId { get; set; }
 
         [ImportParameter(nameof(Importance))]
-        public int Importance { get; set; }
+        public Importance Importance { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }

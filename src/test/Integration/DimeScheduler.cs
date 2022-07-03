@@ -1,5 +1,6 @@
 ﻿using t = System.Threading.Tasks;
 using Dime.Scheduler.Sdk.Import;
+using System.Linq;
 
 namespace Dime.Scheduler.Sdk.Tests
 {
@@ -17,6 +18,15 @@ namespace Dime.Scheduler.Sdk.Tests
 
             ImportSet result = await importEndpoint.ProcessAsync(importRequest, transaction);
             return result.Success;
+        }
+
+        internal static async t.Task<long> DoAppointmentImportRequest(ImportRequest importRequest, TransactionType transaction = TransactionType.Append)
+        {
+            DimeSchedulerClient client = new(Url, new FormsAuthenticator(Url, User, Password));
+            IImportEndpoint importEndpoint = await client.Import.Request();
+
+            ImportSet result = await importEndpoint.ProcessAsync(importRequest, transaction);
+            return result.Appointments.First().Id;
         }
     }
 }

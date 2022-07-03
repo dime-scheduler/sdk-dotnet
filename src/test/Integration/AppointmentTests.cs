@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 {
     public partial class AppointmentTests
     {
-        private static Appointment Test => new()
+        internal static Appointment Test => new()
         {
             SourceApp = "POWERAPPS",
             SourceType = "POWERAPPS",
