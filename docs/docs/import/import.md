@@ -1,7 +1,7 @@
 ---
-id: import
-title: Import
-sidebar_label: Import
+id: api
+title: Using the Import API
+sidebar_label: API
 ---
 
 Any class that implements the `IImportRequestable` interface is eligible to be processed by the import service in Dime.Scheduler. All import requests are done through `DimeSchedulerClient`'s Import property, which is an implementation of the `IImportEndpoint` interface. 

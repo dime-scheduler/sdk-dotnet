@@ -19,10 +19,15 @@ module.exports = {
       'api/authentication'
     ],
     'Import': [
-      'import/import',
+      'import/api',
       'import/validation',
-      'import/endpoints',
-      'import/jobs'
+      'import/endpoints'
+    ],
+    'Other endpoints': [
+      'resources/resources-api',
+      'messages/messages-api',
+      'users/users-api',
+      'license/license-api'
     ]
   }
 };

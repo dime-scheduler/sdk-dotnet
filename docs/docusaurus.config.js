@@ -33,12 +33,12 @@ module.exports = {
         },
         {
           to: 'docs',
-          label: 'Docs',
+          label: 'Home',
           position: 'left',
         },
         {
           to: 'docs/api/api-overview',
-          label: 'API',
+          label: 'Usage',
           position: 'left',
         },
         {

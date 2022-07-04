@@ -21,7 +21,9 @@ See the table below for the current status of this endeavour.
 | Endpoint  | Status | Version |
 | --------- | ------ | ------- |
 | Import    | ✅     | 1.0.0   |
-| Resources | 🚧     | 1.x.0   |
-| Users     | 🚧     | 1.x.0   |
+| Resources | 🚧     | TBD     |
+| Users     | 🚧     | TBD     |
+| License   | 🚧     | TBD     |
+| Message   | 🚧     | TBD     |
 
 The import endpoint is available in the first version of the SDK, the other endpoints are expected in later versions.
