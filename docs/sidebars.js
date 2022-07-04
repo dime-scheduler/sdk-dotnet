@@ -1,21 +1,20 @@
 module.exports = {
+  quickstart: ['installation', 'example'],
   intro: {
     'Dime.Scheduler': [
       'introduction',
       'about',
       'glossary'
     ],
-    'Getting started': [
-      'installation',
-      'example',          
-    ],
     "Implementations": [
-      'cli'
-    ]    
+      'cli',
+      'connect',
+      'powerplatform'
+    ]
   },
   api: {
-    'Principles': [
-      'api/getting-started',
+    'Principles': [,
+      'api/api-overview',
       'api/endpoints',
       'api/authentication'
     ],

@@ -22,7 +22,7 @@ const AnimatedCard = styled(animated("img"))`
 `;
 
 const ImageCard = (props) => {
-    const { image, height = 500, width = 600, onClick, className, style } = props;
+    const { image, height, width, onClick, className, style } = props;
 
     const [spring, setSpring] = useSpring(() => ({
         xys: [0, 0, 1],

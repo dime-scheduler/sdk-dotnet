@@ -55,3 +55,11 @@ They share the same purpose and as such, they have the same data model. Indicato
 fields in the back office system that actually have a meaning because the indicator's data model is extremely simple and does not expose any business logic; it merely htas a name and a color.
 
 For example, a category can serve as a status indicator. When a resource starts the task, he can then update the task through a mobile app and set the status to 'In Progress'. Through real-time synchronization, the appointment in the planning board will be updated and the planner will see - through the color of the modified indicator - that the resource has arrived at the client's site and has started the activity.
+
+## Source apps and types
+
+Dime.Scheduler is a centralized planning tool, and thus it could accommodate the work orders and resources from multiple back-office systems. In order to distinguish between those items, `Source Applications` and `Source Types` are used. 
+
+A **source application** is merely an identifier to indicate the originating back-office system. A back-office system could be Business Central Production, Business Central Test, CRM Production, and any other kind of system that produces work that needs to be scheduled. This code also appears in the so-called 'multi-back-office setup', where you can configure the URI and the credentials to use to send the data back when the planning has been made.
+
+A **source type** describes the entity type in the back office system. For example, a source type could be a service order, a case, an appointment, a production order, and anything else.

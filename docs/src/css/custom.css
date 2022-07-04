@@ -37,6 +37,9 @@
   --ifm-navbar-background-color: #383257;
   --ifm-navbar-link-hover-color: lightgray;
   --ifm-footer-link-hover-color: lightgray;
+  --ifm-menu-color-active: lightgray;
+  --ifm-link-color: white;
+  --ifm-tabs-color-active: yellow;
 }
 
 .theme-code-block {

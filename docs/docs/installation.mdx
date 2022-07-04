@@ -4,13 +4,42 @@ title: Installation
 sidebar_label: Installation
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Dime.Scheduler was built on the .NET web stack. Most of the capabilities of the system are exposed through RESTful services, and as such, any technology that is able to send and receive web requests can interact with Dime.Scheduler
 
 This project is the first step towards a suite of SDKs using various technologies and languages such as NodeJS, Dart and Java. For .NET developers, installing the SDK as simple as installing a NuGet package:
 
-`dotnet add package Dime.Scheduler.Sdk`
+<Tabs
+    defaultValue="dotnetcli"
+    values={[
+        {label: '.NET CLI', value: 'dotnetcli'},
+        {label: 'Package Manager', value: 'packman'},
+        {label: 'Package Reference', value: 'packagereference'},
+    ]}>
+<TabItem value="dotnetcli">
+
+    
+    dotnet add package Dime.Scheduler.Sdk --version VERSION_NO
+    
+
+</TabItem><TabItem value="packman">
+
+    
+    dotnet add package Dime.Scheduler.Sdk -Version VERSION_NO
+    
+
+</TabItem><TabItem value="packagereference">
+
+    
+    <PackageReference Include="Dime.Scheduler.Sdk" Version="VERSION_NO" />
+    
+
+</TabItem></Tabs>
 
 Besides that, you'll need three key pieces of information:
+
 - The **URI** of your Dime.Scheduler instance
 - The **e-mail** address (which serves as the user name) of a Forms user with administrative access
 - The **password** of that account

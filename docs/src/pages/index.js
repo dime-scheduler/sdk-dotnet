@@ -6,7 +6,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import ImageCard from './imageCard';
-import styled from "styled-components";
 
 const features = [
   {
@@ -37,21 +36,6 @@ const features = [
     ),
   },
 ];
-
-function Feature({ imageUrl, title, description }) {
-  const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className={clsx('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
-}
 
 function OtherFeature({ imageUrl, title, description, i }) {
   const imgUrl = useBaseUrl(imageUrl);
@@ -97,7 +81,7 @@ function Home() {
               Get Started
             </Link>
           </div>
-          <ImageCard image={"img/DS1.png"} height='500' width='800' className="center" style={{ paddingTop: "25px" }} />
+          <ImageCard image={"img/DS1.png"} className="center" style={{ paddingTop: "25px" }} />
         </div>
       </header>
       <main>

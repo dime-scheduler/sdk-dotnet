@@ -38,4 +38,4 @@ IImportEndpoint importEndpoint = await client.Import.Request();
 await importEndpoint.ProcessAsync(filterGroup, TransactionType.Append);
 ```
 
-As you can see, the experience is exactly the same. The only thing you need to worry about is the (correctness of) data.
+As you can see, the experience is exactly the same. The only thing you need to worry about is the (correctness of the) data.

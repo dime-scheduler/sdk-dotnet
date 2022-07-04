@@ -9,7 +9,7 @@ module.exports = {
   organizationName: 'dime-scheduler',
   projectName: 'sdk-dotnet',
   themeConfig: {
-    image: 'https://cdn.dimescheduler.com/dime-scheduler/og.png',    
+    image: 'https://cdn.dimescheduler.com/dime-scheduler/og.png',
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
@@ -27,12 +27,17 @@ module.exports = {
       },
       items: [
         {
+          to: 'docs/installation',
+          label: 'Quick Start',
+          position: 'left',
+        },
+        {
           to: 'docs',
           label: 'Docs',
           position: 'left',
         },
         {
-          to: 'docs/api/getting-started',
+          to: 'docs/api/api-overview',
           label: 'API',
           position: 'left',
         },
@@ -68,26 +73,35 @@ module.exports = {
           title: 'Deep dive',
           items: [
             {
-              label: 'Import service',
-              to: 'docs/import/import',
+              label: 'API',
+              to: 'docs/api/api-overview',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/dime-scheduler/sdk-dotnet',
-            },
-            {
-              label: 'Docs',
-              href: 'https://docs.dimescheduler.com',
+              label: 'Import',
+              to: 'docs/import',
             },
           ]
         },
         {
-          title: 'Social',
+          title: 'Dime.Scheduler',
           items: [
             {
               label: 'Website',
               href: 'https://dimescheduler.com',
             },
+            {
+              label: 'Docs',
+              href: 'https://docs.dimescheduler.com',
+            },
+            {
+              label: 'Slide deck',
+              href: 'https://intro.dimescheduler.com',
+            },
+          ]
+        },
+        {
+          title: 'Dime Software',
+          items: [
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/dimesoftware',
@@ -104,13 +118,13 @@ module.exports = {
               label: 'Youtube',
               href: 'https://www.youtube.com/channel/UCYD4LGox7SJLL7r8gmjulNA',
             }
-          ]
-        }
+          ],
+        },
       ],
       logo: {
         alt: 'DS logo',
         src: 'img/ds-dark.png',
-        href: 'https://dimescheduler.com',
+        href: 'https://sdk.dimescheduler.com',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Dime Software.`,
     },
@@ -123,10 +137,12 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/dime-scheduler/sdk-dotnet/edit/master/docs',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-        },
+        }
       },
     ],
   ],
