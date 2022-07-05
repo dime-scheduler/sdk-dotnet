@@ -39,3 +39,7 @@
 .getStarted {
   color: white !important;
 }
+
+.getStarted:hover {
+  color: black !important;
+}
