@@ -8,7 +8,9 @@ The SDK can be used in a variety of ways. For example, the Dime.Scheduler CLI is
 
 ## Installation
 
+```cmd
 dotnet tool install Dime.Scheduler.CLI --global --version 0.0.1-beta.latest
+```
 
 ## Usage
 
