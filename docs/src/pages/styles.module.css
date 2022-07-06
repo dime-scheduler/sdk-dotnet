@@ -10,6 +10,13 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  background-image: url(/static/img/bg.png);
+  background-position: center center;
+}
+
+html[data-theme="dark"] .heroBanner {
+  background-image: none;
 }
 
 @media screen and (max-width: 966px) {
