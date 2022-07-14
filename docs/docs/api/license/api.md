@@ -1,5 +1,5 @@
 ---
-id: license-api
+id: license
 title: Using the License API
 sidebar_label: License
 ---

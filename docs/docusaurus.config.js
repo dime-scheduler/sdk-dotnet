@@ -15,30 +15,27 @@ module.exports = {
       darkTheme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['csharp']
     },
-    sidebar: {
-      hideable: true
+    docs: {
+      sidebar: {
+        hideable: true
+      },
     },
     navbar: {
       hideOnScroll: true,
       title: 'Dime.Scheduler SDK',
       logo: {
-        alt: 'Dime Logo',
+        alt: 'Dime.Scheduler Logo',
         src: 'img/dime.png',
       },
       items: [
         {
-          to: 'docs/installation',
-          label: 'Quick Start',
-          position: 'left',
-        },
-        {
           to: 'docs',
-          label: 'Home',
+          label: 'Docs',
           position: 'left',
         },
         {
-          to: 'docs/api/api-overview',
-          label: 'Usage',
+          to: 'docs/api/overview',
+          label: 'API',
           position: 'left',
         },
         {
@@ -74,7 +71,7 @@ module.exports = {
           items: [
             {
               label: 'API',
-              to: 'docs/api/api-overview',
+              to: 'docs/api/overview',
             },
             {
               label: 'Import',

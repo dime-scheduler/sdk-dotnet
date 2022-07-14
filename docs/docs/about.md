@@ -1,7 +1,7 @@
 ---
 id: about
 title: About Dime.Scheduler
-sidebar_label: About
+sidebar_label: About Dime.Scheduler
 ---
 
 ![Dime.Scheduler](../static/img/DS1.png)

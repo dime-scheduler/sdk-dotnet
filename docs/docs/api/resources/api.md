@@ -1,5 +1,5 @@
 ---
-id: resources-api
+id: resources
 title: Using the Resources API
 sidebar_label: Resource
 ---

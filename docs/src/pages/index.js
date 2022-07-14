@@ -65,7 +65,7 @@ function OtherFeature({ imageUrl, title, description, i }) {
 function Home() {
   const context = useDocusaurusContext();
   return (
-    <Layout      
+    <Layout
       description="Dime.Scheduler Software Development Kit">
       <header className={clsx('hero hero--primary heroTilted_3die', styles.heroBanner)}>
         <div className="container">
@@ -97,8 +97,6 @@ function Home() {
             </div>
           </section>
         )}
-
-   
       </main>
     </Layout >
   );

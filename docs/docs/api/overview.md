@@ -1,5 +1,5 @@
 ---
-id: api-overview
+id: overview
 title: Overview
 sidebar_label: Overview
 default: true

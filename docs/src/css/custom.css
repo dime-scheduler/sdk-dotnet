@@ -19,6 +19,7 @@
   --ifm-footer-background-color: #6e62b5;
   --ifm-font-family-monospace: "Consolas";
   --ifm-font-family-base: "Nunito";
+  --ifm-link-hover-decoration: none;
 }
 
 [data-theme="dark"]:root {

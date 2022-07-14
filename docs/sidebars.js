@@ -1,33 +1,48 @@
 module.exports = {
-  quickstart: ['installation', 'example'],
-  intro: {
-    'Dime.Scheduler': [
-      'introduction',
-      'about',
-      'glossary'
-    ],
-    "Implementations": [
-      'cli',
-      'connect',
-      'powerplatform'
-    ]
-  },
+  docs: [
+    {
+      type: 'category',
+      label: 'Docs',
+      collapsible: false,
+      items: [
+        'introduction',
+        'about',
+        'glossary'
+      ]
+    }, {
+      type: 'category',
+      label: 'Quick start',
+      collapsible: true,
+      collapsed: false,
+      items: ['installation', 'example']
+    }, {
+      type: 'category',
+      label: 'Implementations',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'cli',
+        'connect',
+        'powerplatform'
+      ],
+    }
+  ],
   api: {
     'Principles': [,
-      'api/api-overview',
+      'api/overview',
       'api/endpoints',
       'api/authentication'
     ],
     'Import': [
-      'import/api',
-      'import/validation',
-      'import/endpoints'
+      'api/import/api',
+      'api/import/validation',
+      'api/import/endpoints'
     ],
     'Other endpoints': [
-      'resources/resources-api',
-      'messages/messages-api',
-      'users/users-api',
-      'license/license-api'
+      'api/resources/resources',
+      'api/messages/messages',
+      'api/users/users',
+      'api/license/license'
     ]
   }
 };
