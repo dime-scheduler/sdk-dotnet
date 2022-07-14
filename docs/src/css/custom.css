@@ -20,6 +20,7 @@
   --ifm-font-family-monospace: "Consolas";
   --ifm-font-family-base: "Nunito";
   --ifm-link-hover-decoration: none;
+  --ifm-footer-link-hover-color: lightgray;
 }
 
 [data-theme="dark"]:root {
@@ -41,6 +42,7 @@
   --ifm-menu-color-active: lightgray;
   --ifm-link-color: white;
   --ifm-tabs-color-active: yellow;
+  --ifm-footer-link-hover-color: #6e62b5;
 }
 
 .theme-code-block {
@@ -110,4 +112,8 @@ html[data-theme="dark"] .header-github-link:before {
 
 .breadcrumbs__link {
   color: black !important;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-footer-link-hover-color) !important;
 }
