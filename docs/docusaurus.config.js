@@ -136,6 +136,7 @@ module.exports = {
             'https://github.com/dime-scheduler/sdk-dotnet/edit/master/docs',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          breadcrumbs: false
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
