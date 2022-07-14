@@ -39,6 +39,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/cli/overview',
+          label: 'CLI',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/dime-scheduler/sdk-dotnet',
           position: 'right',
           className: 'header-github-link',

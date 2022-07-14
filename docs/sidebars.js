@@ -21,9 +21,32 @@ module.exports = {
       collapsible: true,
       collapsed: true,
       items: [
-        'cli',
         'connect',
         'powerplatform'
+      ],
+    }
+  ],
+  cli: [
+    'cli/overview',
+    'cli/auth',
+    , {
+      type: 'category',
+      label: 'Commands',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'cli/actionuri',
+        'cli/appointments',
+        'cli/captions',
+        'cli/containers',
+        'cli/filters',
+        'cli/indicators',
+        'cli/jobs',
+        'cli/messages',
+        'cli/notifications',
+        'cli/resources',
+        'cli/tasks',
+        'cli/users'
       ],
     }
   ],
