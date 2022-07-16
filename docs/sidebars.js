@@ -29,7 +29,7 @@ module.exports = {
   cli: [
     'cli/overview',
     'cli/auth',
-    , {
+    {
       type: 'category',
       label: 'Commands',
       collapsible: true,
