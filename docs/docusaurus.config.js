@@ -44,6 +44,12 @@ module.exports = {
           position: 'left',
         },
         {
+          href: 'https://docs.dimescheduler.com',
+          position: 'right',
+          className: 'header-ds-link',
+          'aria-label': 'Dime.Scheduler Docs',
+        },
+        {
           href: 'https://github.com/dime-scheduler/sdk-dotnet',
           position: 'right',
           className: 'header-github-link',
