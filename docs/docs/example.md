@@ -1,8 +1,10 @@
 ---
 id: example
-title: Sample code to insert a job 
+title: Example
 sidebar_label: Example
 ---
+
+## How to create a job
 
 Here is a simple console application that creates or updates a [_job_](https://docs.dimescheduler.com/docs/en/user-manual/user-glossary#from-job-to-appointment) through the import endpoint. A job in Dime.Scheduler is the equivalent of an order (service, sales, project, production, etc.) in the real world.
 
@@ -61,4 +63,10 @@ Task jobTask = new()
 await importEndpoint.ProcessAsync(jobTask, TransactionType.Append);
 ```
 
-More examples can be found on [Github](https://github.com/dime-scheduler/sdk-dotnet/tree/master/examples).
+More examples can be found on [Github](https://github.com/dime-scheduler/sdk-dotnet/tree/master/example).
+
+## Interactive example
+
+Or run the following interactive example:
+
+<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/5y8D3o" frameborder="0"></iframe>
