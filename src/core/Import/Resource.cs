@@ -71,10 +71,10 @@ namespace Dime.Scheduler.Sdk.Import
         public string HomeAddress { get; set; }
 
         [ImportParameter(nameof(HomeAddressGeoLong), TransactionType.Append)]
-        public float? HomeAddressGeoLong { get; set; }
+        public decimal? HomeAddressGeoLong { get; set; }
 
         [ImportParameter(nameof(HomeAddressGeoLat), TransactionType.Append)]
-        public float? HomeAddressGeoLat { get; set; }
+        public decimal? HomeAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(HomePhone), TransactionType.Append)]
         [MaxLength(50)]
