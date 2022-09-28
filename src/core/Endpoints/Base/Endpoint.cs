@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using RestSharp;
 
 namespace Dime.Scheduler.Sdk
@@ -21,6 +22,9 @@ namespace Dime.Scheduler.Sdk
             => _restClient.Execute(endpoint, method, requestParameters);
 
         protected Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
+            => _restClient.Execute<T>(endpoint, method, requestParameters);
+
+        protected Task<T> Execute<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters)
             => _restClient.Execute<T>(endpoint, method, requestParameters);
     }
 }

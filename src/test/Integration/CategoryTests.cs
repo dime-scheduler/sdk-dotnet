@@ -1,4 +1,5 @@
-﻿using Dime.Scheduler.Sdk.Import;
+﻿using System.Collections.Generic;
+using Dime.Scheduler.Sdk.Import;
 using Xunit;
 using t = System.Threading.Tasks;
 
@@ -25,6 +26,30 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         {
             ImportRequest importRequest = Test.ToImportRequest(TransactionType.Delete);
             Assert.True(await DimeScheduler.DoImportRequest(importRequest, TransactionType.Delete));
+        }
+
+        [Fact]
+        public async t.Task Category_Append_List_ShouldSucceed()
+        {
+            Category model1 = new()
+            {
+                Name = "CATEGORY_1",
+                DisplayName = "Category 1",
+                Color = "BLUE"
+            };
+
+            Category model2 = new()
+            {
+                Name = "CATEGORY_2",
+                DisplayName = "Category 2",
+                Color = "BLUE"
+            };
+
+            ImportRequest importRequest1 = model1.ToImportRequest(TransactionType.Append);
+            ImportRequest importRequest2 = model2.ToImportRequest(TransactionType.Append);
+
+            Assert.True(await DimeScheduler.DoImportRequest(new List<ImportRequest> { importRequest1, importRequest2 }, TransactionType.Append));
+
         }
     }
 }

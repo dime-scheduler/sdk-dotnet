@@ -46,7 +46,7 @@ namespace Dime.Scheduler.Sdk
             private static readonly string _endpoint = "Import";
 
             internal static readonly string Insert = $"{_api}/{_endpoint}/Insert";
-            internal static readonly string InsertData = $"{_api}/{_endpoint}/InsertData";
+            internal static readonly string InsertData = $"{_api}/{_endpoint}/Execute";
         }
 
         internal static class Messages

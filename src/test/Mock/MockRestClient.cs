@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using RestSharp;
 
 namespace Dime.Scheduler.Sdk.Tests
@@ -9,6 +10,9 @@ namespace Dime.Scheduler.Sdk.Tests
             => Task.FromResult(0);
 
         public Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
+            => Task.FromResult(default(T));
+
+        public Task<T> Execute<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters)
             => Task.FromResult(default(T));
     }
 }
