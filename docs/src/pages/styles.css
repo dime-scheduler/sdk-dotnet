@@ -1,7 +1,0 @@
-.markdown h1:first-child {
-  text-align: center;
-}
-
-.breadcrumbs__link {
-  color: var(--ifm-navbar-background-color);
-}

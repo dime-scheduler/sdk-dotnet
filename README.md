@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://sdk.dimescheduler.com">Documentation</a> |
+  <a href="https://docs.dimescheduler.com">Documentation</a> |
   <a href="https://docs.dimescheduler.com/history">Changelog</a> |
   <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
 </p>
@@ -22,8 +22,6 @@
 <h1 align="center">Dime.Scheduler SDK for .NET </h1>
 
 This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
-
-Check out the **[📚 docs »](https://dime-scheduler.github.io/sdk-dotnet)** for more info.
 
 ## Installation
 
@@ -39,7 +37,7 @@ To clone and run this application, you'll need Visual Studio 2022 or higher. The
 
 - .NET Standard 2.0
 - .NET Standard 2.1
-- .NET 5
+- .NET 
 - .NET 6
 
 The SDK is currently only supported for the latest version of Dime.Scheduler. Once released, versioning of the SDK will take Dime.Schedulers versions into account.
@@ -115,7 +113,7 @@ await importEndpoint.RunAsync(filterGroup, TransactionType.Append);
 
 ## Read more
 
-Check out the **[📚 docs »](https://dime-scheduler.github.io/sdk-dotnet)** for more info.
+Check out the **[📚 docs »](https://docs.dimescheduler.com)** for more info.
 
 ## Contributing
 
