@@ -142,7 +142,7 @@ namespace Dime.Scheduler.Sdk.Import
         {
             private static readonly string _entity = "TaskLocked";
 
-            internal static readonly string Append = $"{_base}{_append}{_entity}";
+            internal static readonly string Append = $"{_base}{_update}{_entity}";
         }
 
         internal static class TaskContainer
