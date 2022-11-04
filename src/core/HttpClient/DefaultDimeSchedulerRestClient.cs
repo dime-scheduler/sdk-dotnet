@@ -71,8 +71,8 @@ namespace Dime.Scheduler.Sdk
 
             WebApiException exception = response.ContentType switch
             {
-                "text/plain" => new WebApiException() { Description = response.Content ?? response.StatusDescription },
-                "application/json" => JsonSerializer.Deserialize<WebApiException>(response.Content),
+                string ct when ct.Contains("text/plain") => new WebApiException() { Description = response.Content ?? response.StatusDescription },
+                string ct when ct.Contains("application/json") => JsonSerializer.Deserialize<WebApiException>(response.Content),
                 _ => throw new NotImplementedException(),
             };
 
