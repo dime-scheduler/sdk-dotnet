@@ -2,20 +2,19 @@
 {
     public class DimeSchedulerClient
     {
-        public DimeSchedulerClient(string uri, IAuthenticator authenticator)
+        public DimeSchedulerClient(AuthenticationOptions opts)
         {
-            string baseUrl = uri.EnsureTrailingSlash();
-            Import = new ImportEndpointBuilder(baseUrl, authenticator);
-            Messages = new MessagesEndpointBuilder(baseUrl, authenticator);
-            Users = new UsersEndpointBuilder(baseUrl, authenticator);
-            Resources = new ResourcesEndpointBuilder(baseUrl, authenticator);
-            License = new LicensesEndpointBuilder(baseUrl, authenticator);
+            Import = new ImportEndpoint(opts);
+            Messages = new MessagesEndpoint(opts);
+            Users = new UsersEndpoint(opts);
+            Resources = new ResourcesEndpoint(opts);
+            License = new LicenseEndpoint(opts);
         }
 
-        public IImportEndpointBuilder Import { get; }
-        public IMessageEndpointBuilder Messages { get; }
-        public IUserEndpointBuilder Users { get; }
-        public IResourceEndpointBuilder Resources { get; }
-        public ILicenseEndpointBuilder License { get; }
+        public IImportEndpoint Import { get; }
+        public IMessageEndpoint Messages { get; }
+        public UsersEndpoint Users { get; }
+        public IResourceEndpoint Resources { get; }
+        public ILicenseEndpoint License { get; }
     }
 }

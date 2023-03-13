@@ -21,7 +21,7 @@ namespace Dime.Scheduler.Sdk
 
         public async Task Execute(string endpoint, Method method, TRequest requestParameters)
         {
-            (string uri, string authenticationToken) = _opts;
+            (string uri, string key) = _opts;
 
             Uri baseUri = new(uri);
             Uri endpointUri = new(baseUri, endpoint);
@@ -33,7 +33,7 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("authorization", "Bearer " + authenticationToken);
+            request.AddHeader("X-API-KEY", key);
             request.AddJsonBody(requestParameters);
 
             IRestResponse response = await client.ExecuteAsync(request);
@@ -56,7 +56,7 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("authorization", "Bearer " + _opts.AuthenticationToken);
+            request.AddHeader("X-API-KEY", _opts.Key);
 
             if (method != Method.GET)
                 request.AddJsonBody(requestParameters);
@@ -91,7 +91,7 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("authorization", "Bearer " + _opts.AuthenticationToken);
+            request.AddHeader("X-API-KEY", _opts.Key);
 
             if (method != Method.GET)
                 request.AddJsonBody(requestParameters);

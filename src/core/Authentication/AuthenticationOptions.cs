@@ -3,12 +3,12 @@
     public record AuthenticationOptions
     {
         public string Uri { get; }
-        public string AuthenticationToken { get; }
+        public string Key { get; }
 
-        public AuthenticationOptions(string uri, string authenticationToken)
-            => (Uri, AuthenticationToken) = (uri, authenticationToken);
+        public AuthenticationOptions(string uri, string key)
+            => (Uri, Key) = (uri, key);
 
-        public void Deconstruct(out string uri, out string authenticationToken)
-            => (uri, authenticationToken) = (Uri, AuthenticationToken);
+        public void Deconstruct(out string uri, out string key)
+            => (uri, key) = (Uri, Key);
     }
 }

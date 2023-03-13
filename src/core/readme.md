@@ -2,7 +2,7 @@
 
 This repository contains the .NET SDK for Dime.Scheduler's RESTful API services. The SDK is a gateway to connect *any* system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
-Check out the **[📚 docs »](https://sdk.dimescheduler.com)** for more info.
+Check out the **[📚 docs »](https://docs.dimescheduler.com)** for more info.
 
 ## Installation
 
@@ -14,26 +14,18 @@ Use the package manager NuGet to install the base library of the SDK:
 
 To clone and run this application, you'll need Visual Studio 2022 or higher. The application is built with C# 10 and targets:
 
-- .NET Standard 2.0
-- .NET Standard 2.1
-- .NET 5
-- .NET 6
+- .NET 7
+- .NET 8
 
-The SDK is currently only supported for the latest version of Dime.Scheduler. Once released, versioning of the SDK will take Dime.Schedulers versions into account.
+Version 2 is built for the cloud version of Dime.Scheduler. Use 1.x.x for on-premise versions.
 
 ## Usage
 
 The example below fetches the resources available in Dime.Scheduler:
 
 ```csharp
-string uri = "http://mydimescheduler.com";
-IAuthenticator authenticator = new FormsAuthenticator(uri,"admin","admin");
-
-DimeSchedulerClient client = new(uri, authenticator);
-
-IResourceEndpoint resourceEndpoint = await client.Resources.Request();
-IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRequest());
-
+DimeSchedulerClient client = new("http://mydimescheduler.com", "my-api-key");
+IEnumerable<Resource> resources = await client.Resources.GetAsync(new ResourceRequest());
 foreach (Resource resource in resources)
     Console.WriteLine(resource.Email);
 ```
@@ -41,16 +33,10 @@ foreach (Resource resource in resources)
 The `DimeSchedulerClient` class is the entry point and it is where all endpoints are exposed:
 
 ```csharp
-DimeSchedulerClient client = new(uri, authenticator);
+DimeSchedulerClient client = new(uri,  "my-api-key");
 ```
 
-Two arguments are required: the URI to Dime.Scheduler and credentials to connect to it. The `IAuthenticator` (with `FormsAuthenticator` as the default implementation) interface is called when an endpoint is requested:
-
-```csharp
-IResourceEndpoint resourceEndpoint = await client.Resources.Request();
-```
-
-When the credentials are invalid, an exception is thrown. Otherwise, the user is authenticated and can access the endpoint:
+Two arguments are required: the URI to Dime.Scheduler and a valid API key. With these credentials, you can access any of the endpoints.
 
 ```csharp
 IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRequest());
@@ -65,14 +51,9 @@ This example adds or updates a category:
 ```csharp
 using Dime.Scheduler.Sdk.Import;
 
-string uri = "http://mydimescheduler.com";
-IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
-
-DimeSchedulerClient client = new(uri, authenticator);
-
+DimeSchedulerClient client = new(uri,  "my-api-key");
 Category category = new("Category #1", "#6e62b5");
-IImportEndpoint importEndpoint = await client.Import.Request();
-await importEndpoint.RunAsync(category, TransactionType.Append);
+await client.Import.RunAsync(category, TransactionType.Append);
 ```
 
 This example adds or updates a filter group:
@@ -81,15 +62,12 @@ This example adds or updates a filter group:
 using Dime.Scheduler.Sdk.Import;
 
 string uri = "http://mydimescheduler.com";
-IAuthenticator authenticator = new FormsAuthenticator(uri, "admin", "admin");
-
-DimeSchedulerClient client = new(uri, authenticator);
+DimeSchedulerClient client = new(uri,  "my-api-key");
 
 FilterGroup filterGroup = new FilterGroup { Name = "Group 1" };
-IImportEndpoint importEndpoint = await client.Import.Request();
-await importEndpoint.RunAsync(filterGroup, TransactionType.Append);
+await client.Import.RunAsync(filterGroup, TransactionType.Append);
 ```
 
 ## Read more
 
-Check out the **[📚 docs »](https://sdk.dimescheduler.com)** for more info.
+Check out the **[📚 docs »](https://docs.dimescheduler.com)** for more info.
