@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Dime.Scheduler.Sdk.Import;
 using RestSharp;
 using t = System.Threading.Tasks;
@@ -12,10 +13,41 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        public t.Task<ImportSet> ProcessAsync(IEnumerable<IImportRequestable> requestParameters, TransactionType transactionType)
-            => Execute<ImportSet>(Routes.Import.InsertData, Method.POST, requestParameters.ToImportRequest(transactionType));
+        internal ImportEndpoint(IDimeSchedulerRestClient<ImportRequest> restClient)
+            : base(restClient)
+        {
+        }
 
-        public t.Task<ImportSet> ProcessAsync(IImportRequestable requestParameters, TransactionType transactionType)
-            => Execute<ImportSet>(Routes.Import.Insert, Method.POST, requestParameters.ToImportRequest(transactionType));
+        public async t.Task<ImportSet> ProcessAsync(IEnumerable<IImportRequestable> requestParameters, TransactionType transactionType)
+        {
+            try
+            {
+                return await Execute<ImportSet>(Routes.Import.InsertData, Method.POST, requestParameters.ToImportRequest(transactionType));
+            }
+            catch (WebApiException ex)
+            {
+                return new ImportSet() { Status = (int)ex.StatusCode, Success = false, Message = ex.Error };
+            }
+            catch (Exception ex)
+            {
+                return new ImportSet() { Status = 500, Success = false, Message = ex.Message };
+            }
+        }
+
+        public async t.Task<ImportSet> ProcessAsync(IImportRequestable requestParameters, TransactionType transactionType)
+        {
+            try
+            {
+                return await Execute<ImportSet>(Routes.Import.Insert, Method.POST, requestParameters.ToImportRequest(transactionType));
+            }
+            catch (WebApiException ex)
+            {
+                return new ImportSet() { Status = (int)ex.StatusCode, Success = false, Message = ex.Error };
+            }
+            catch (Exception ex)
+            {
+                return new ImportSet() { Status = 500, Success = false, Message = ex.Message };
+            }
+        }
     }
 }

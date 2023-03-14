@@ -1,10 +1,15 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using System;
+using System.Net;
+
+namespace Dime.Scheduler.Sdk
 {
-    public class WebApiException
+    public class WebApiException : Exception
     {
         public WebApiException()
         {
         }
+
+        public HttpStatusCode StatusCode { get; set; }
 
         public string Error { get; set; }
 

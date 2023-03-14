@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
+using System.Net.Mail;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -69,14 +70,12 @@ namespace Dime.Scheduler.Sdk
             if (response.IsSuccessful)
                 return response.Data;
 
-            WebApiException exception = response.ContentType switch
+            throw response.ContentType switch
             {
-                string ct when ct.Contains("text/plain") => new WebApiException() { Description = response.Content ?? response.StatusDescription },
-                string ct when ct.Contains("application/json") => JsonSerializer.Deserialize<WebApiException>(response.Content),
+                "text/plain" => SerializePlainTextError(response),
+                string ct when ct.Contains("application/json") => SerializeJsonError(response),
                 _ => throw new NotImplementedException(),
             };
-
-            throw new WebException(exception.Description);
         }
 
         public async Task<T> Execute<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters)
@@ -104,14 +103,26 @@ namespace Dime.Scheduler.Sdk
             if (response.IsSuccessful)
                 return response.Data;
 
-            WebApiException exception = response.ContentType switch
+            throw response.ContentType switch
             {
-                "text/plain" => new WebApiException() { Description = response.Content ?? response.StatusDescription },
-                "application/json" => JsonSerializer.Deserialize<WebApiException>(response.Content),
-                _ => throw new NotImplementedException(),
+                "text/plain" => SerializePlainTextError(response),
+                "application/json" => SerializeJsonError(response),
+                _ => SerializePlainTextError(response),
+            };
+        }
+
+        private static WebApiException SerializePlainTextError<T>(IRestResponse<T> response)
+            => new()
+            {
+                Description = response.Content ?? response.StatusDescription,
+                StatusCode = response.StatusCode
             };
 
-            throw new WebException(exception.Description);
+        private static WebApiException SerializeJsonError<T>(IRestResponse<T> response)
+        {
+            WebApiException exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
+            exception.StatusCode = response.StatusCode;
+            return exception;
         }
     }
 }
