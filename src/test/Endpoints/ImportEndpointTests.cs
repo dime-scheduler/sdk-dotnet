@@ -16,7 +16,7 @@ namespace Dime.Scheduler.Sdk.Tests
         [Fact]
         public async t.Task ImportEndpoint_TestClient_Create_ShouldCreate()
         {
-            ImportEndpoint endpoint = new(new AuthenticationOptions("https://dev-app.dimescheduler.com", "WRONG-KEY"));
+            ImportEndpoint endpoint = new(new AuthenticationOptions("https://api-t.dimescheduler.com", "WRONG-KEY"));
             ImportSet result = await endpoint.ProcessAsync(new ImportRequest(), TransactionType.Append);
 
             Assert.True(result.Success == false);

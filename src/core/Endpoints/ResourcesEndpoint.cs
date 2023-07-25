@@ -18,7 +18,7 @@ namespace Dime.Scheduler.Sdk
 
         public async Task<IEnumerable<Resource>> GetAsync(ResourceRequest request)
         {
-            Page<Resource> data = await Execute<Page<Resource>>(Routes.Resources.Get, Method.GET, request);
+            Page<Resource> data = await Execute<Page<Resource>>(Routes.Resources.Get, Method.Get, request);
             return data?.Data ?? new List<Resource>();
         }
     }

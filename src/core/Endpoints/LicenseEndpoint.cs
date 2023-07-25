@@ -16,6 +16,6 @@ namespace Dime.Scheduler.Sdk
         }
 
         public async Task PostAsync(LicenseRequest request)
-            => await Execute(Routes.License.Update, Method.PUT, request);
+            => await Execute(Routes.License.Update, Method.Put, request);
     }
 }

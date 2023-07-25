@@ -16,6 +16,6 @@ namespace Dime.Scheduler.Sdk
         }
 
         public async Task PostAsync(MessageRequest request)
-            => await Execute(Routes.Messages.Post, Method.POST, request);
+            => await Execute(Routes.Messages.Post, Method.Post, request);
     }
 }

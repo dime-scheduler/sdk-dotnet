@@ -27,17 +27,17 @@ namespace Dime.Scheduler.Sdk
             Uri baseUri = new(uri);
             Uri endpointUri = new(baseUri, endpoint);
 
-            RestClient client = new(endpointUri);
-            RestRequest request = new(method);
+            RestClient client = new(uri);
+            RestRequest request = new(endpointUri, method);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
             request.AddHeader("accept-encoding", "gzip, deflate");
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("X-API-KEY", key);
-            request.AddJsonBody(requestParameters);
+            request.AddBody(requestParameters);
 
-            IRestResponse response = await client.ExecuteAsync(request);
+            RestResponse response = await client.ExecuteAsync(request);
             if (response.IsSuccessful)
                 return;
 
@@ -49,23 +49,20 @@ namespace Dime.Scheduler.Sdk
         {
             Uri baseUri = new(_opts.Uri);
             Uri endpointUri = new(baseUri, endpoint);
-
+            
             RestClient client = new(endpointUri);
-            RestRequest request = new(method);
-            request.AddHeader("cache-control", "no-cache");
-            request.AddHeader("Connection", "keep-alive");
-            request.AddHeader("accept-encoding", "gzip, deflate");
+            RestRequest request = new(endpointUri, method);                        
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("X-API-KEY", _opts.Key);
 
-            if (method != Method.GET)
-                request.AddJsonBody(requestParameters);
+            if (method != Method.Get)
+                request.AddBody(requestParameters, ContentType.Json);
             else
                 foreach (PropertyInfo prop in requestParameters.GetType().GetProperties())
                     request.AddParameter(prop.Name, prop.GetValue(requestParameters, null)?.ToString() ?? "");
 
-            IRestResponse<T> response = await client.ExecuteAsync<T>(request);
+            RestResponse<T> response = await client.ExecuteAsync<T>(request);
 
             if (response.IsSuccessful)
                 return response.Data;
@@ -74,7 +71,7 @@ namespace Dime.Scheduler.Sdk
             {
                 "text/plain" => SerializePlainTextError(response),
                 string ct when ct.Contains("application/json") => SerializeJsonError(response),
-                _ => throw new NotImplementedException(),
+                _ => SerializePlainTextError(response),
             };
         }
 
@@ -84,7 +81,7 @@ namespace Dime.Scheduler.Sdk
             Uri endpointUri = new(baseUri, endpoint);
 
             RestClient client = new(endpointUri);
-            RestRequest request = new(method);
+            RestRequest request = new(endpointUri, method);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Connection", "keep-alive");
             request.AddHeader("accept-encoding", "gzip, deflate");
@@ -92,13 +89,13 @@ namespace Dime.Scheduler.Sdk
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("X-API-KEY", _opts.Key);
 
-            if (method != Method.GET)
+            if (method != Method.Get)
                 request.AddJsonBody(requestParameters);
             else
                 foreach (PropertyInfo prop in requestParameters.GetType().GetProperties())
                     request.AddParameter(prop.Name, prop.GetValue(requestParameters, null)?.ToString() ?? "");
 
-            IRestResponse<T> response = await client.ExecuteAsync<T>(request);
+            RestResponse<T> response = await client.ExecuteAsync<T>(request);
 
             if (response.IsSuccessful)
                 return response.Data;
@@ -111,14 +108,14 @@ namespace Dime.Scheduler.Sdk
             };
         }
 
-        private static WebApiException SerializePlainTextError<T>(IRestResponse<T> response)
+        private static WebApiException SerializePlainTextError<T>(RestResponse<T> response)
             => new()
             {
                 Description = response.Content ?? response.StatusDescription,
                 StatusCode = response.StatusCode
             };
 
-        private static WebApiException SerializeJsonError<T>(IRestResponse<T> response)
+        private static WebApiException SerializeJsonError<T>(RestResponse<T> response)
         {
             WebApiException exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
             exception.StatusCode = response.StatusCode;

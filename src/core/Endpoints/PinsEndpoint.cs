@@ -16,12 +16,12 @@ namespace Dime.Scheduler.Sdk
         }
 
         public Task Create(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Create, Method.POST, requestParameters);
+            => Execute(Routes.Pins.Create, Method.Post, requestParameters);
 
         public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Update, Method.PUT, requestParameters);
+            => Execute(Routes.Pins.Update, Method.Put, requestParameters);
 
         public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Delete, Method.DELETE, requestParameters);
+            => Execute(Routes.Pins.Delete, Method.Delete, requestParameters);
     }
 }

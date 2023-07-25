@@ -22,7 +22,7 @@ namespace Dime.Scheduler.Sdk
         {
             try
             {
-                return await Execute<ImportSet>(Routes.Import.InsertData, Method.POST, requestParameters.ToImportRequest(transactionType));
+                return await Execute<ImportSet>(Routes.Import.InsertData, Method.Post, requestParameters.ToImportRequest(transactionType));
             }
             catch (WebApiException ex)
             {
@@ -38,7 +38,7 @@ namespace Dime.Scheduler.Sdk
         {
             try
             {
-                return await Execute<ImportSet>(Routes.Import.Insert, Method.POST, requestParameters.ToImportRequest(transactionType));
+                return await Execute<ImportSet>(Routes.Import.Insert, Method.Post, requestParameters.ToImportRequest(transactionType));
             }
             catch (WebApiException ex)
             {
