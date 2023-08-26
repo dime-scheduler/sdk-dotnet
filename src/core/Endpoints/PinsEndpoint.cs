@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class PinsEndpoint : Endpoint<IndicatorRequest>, ICrudEndpoint<IndicatorRequest>
+    public class PinsEndpoint : Endpoint<IndicatorRequest>, IPinEndpoint
     {
         public PinsEndpoint(AuthenticationOptions opts)
             : base(opts)
@@ -16,12 +16,12 @@ namespace Dime.Scheduler.Sdk
         }
 
         public Task Create(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Create, Method.Post, requestParameters);
+            => Execute(Routes.Pin, Method.Post, requestParameters);
 
         public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Update, Method.Put, requestParameters);
+            => Execute(Routes.Pin, Method.Put, requestParameters);
 
         public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Delete, Method.Delete, requestParameters);
+            => Execute(Routes.Pin, Method.Delete, requestParameters);
     }
 }

@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class CategoriesEndpoint : Endpoint<IndicatorRequest>, ICrudEndpoint<IndicatorRequest>
+    public class CategoriesEndpoint : Endpoint<IndicatorRequest>, ICategoryEndpoint
     {
         public CategoriesEndpoint(AuthenticationOptions opts)
             : base(opts)
@@ -16,12 +16,12 @@ namespace Dime.Scheduler.Sdk
         }
 
         public Task Create(IndicatorRequest requestParameters)
-            => Execute(Routes.Categories.Create, Method.Post, requestParameters);
+            => Execute(Routes.Category, Method.Post, requestParameters);
 
         public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.Categories.Update, Method.Put, requestParameters);
+            => Execute(Routes.Category, Method.Put, requestParameters);
 
         public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.Categories.Delete, Method.Delete, requestParameters);
+            => Execute(Routes.Category, Method.Delete, requestParameters);
     }
 }

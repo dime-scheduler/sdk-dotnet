@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class TimeMarkersEndpoint : Endpoint<IndicatorRequest>, ICrudEndpoint<IndicatorRequest>
+    public class TimeMarkersEndpoint : Endpoint<IndicatorRequest>, ITimeMarkerEndpoint
     {
         public TimeMarkersEndpoint(AuthenticationOptions opts)
             : base(opts)
@@ -16,12 +16,12 @@ namespace Dime.Scheduler.Sdk
         }
 
         public Task Create(IndicatorRequest requestParameters)
-            => Execute(Routes.TimeMarkers.Create, Method.Post, requestParameters);
+            => Execute(Routes.TimeMarker, Method.Post, requestParameters);
 
         public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.TimeMarkers.Update, Method.Put, requestParameters);
+            => Execute(Routes.TimeMarker, Method.Put, requestParameters);
 
         public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.TimeMarkers.Delete, Method.Delete, requestParameters);
+            => Execute(Routes.TimeMarker, Method.Delete, requestParameters);
     }
 }

@@ -11,7 +11,7 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<NeutralLanguage>en</NeutralLanguage>
 		<RepositoryType>git</RepositoryType>
-		<PackageIconUrl>https://cdn.dimescheduler.com/dime-software/logo-shape.png</PackageIconUrl>
+		<PackageIconUrl>https://cdn.dimescheduler.com/dime-scheduler/logo-shape.png</PackageIconUrl>
 		<PackageTags>Dime.Scheduler;SDK;REST</PackageTags>
 		<RepositoryUrl>https://github.com/dime-scheduler/sdk-dotnet</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/dime-scheduler/sdk-dotnet</PackageProjectUrl>
@@ -19,7 +19,7 @@
 		<Description>Dime.Scheduler SDK for .NET</Description>
 		<Summary>A developer toolkit that connects any system to Dime.Scheduler in .NET</Summary>
 		<VersionPrefix>2.0.0</VersionPrefix>
-		<VersionSuffix>alpha.3</VersionSuffix>
+		<VersionSuffix>alpha.4</VersionSuffix>
 		<AssemblyVersion>2.0.0.0</AssemblyVersion>
 		<FileVersion>2.0.0.0</FileVersion>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
