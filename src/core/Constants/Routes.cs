@@ -63,6 +63,8 @@ namespace Dime.Scheduler.Sdk
             internal const string Uri = "taskUri";
             internal const string TimeMarker = "taskTimeMarker";
             internal const string Category = "taskCategory";
+            internal const string Container = "/taskContainer";
+            internal const string FilterValue = "/taskFilterValue";
         }
 
         internal static class Job

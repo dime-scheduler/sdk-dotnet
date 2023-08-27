@@ -1,6 +1,14 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Import;
+
+namespace Dime.Scheduler.Sdk
 {
-    public interface IResourceEndpoint : IEndpoint
+    public interface IResourceEndpoint :
+        ICrudEndpoint<Resource>,
+        ICrudEndpoint<ResourceFilterValue>,
+        ICrudEndpoint<ResourceCalendar>,
+        ICrudEndpoint<ResourceCapacity>,
+        ICrudEndpoint<ResourceGpsTracking>,
+        ICrudEndpoint<ResourceCertificate>
     {
     }
 }

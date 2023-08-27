@@ -19,6 +19,8 @@
             Captions = new CaptionEndpoint(opts);
             Containers = new ContainerEndpoint(opts);
             Notifications = new NotificationEndpoint(opts);
+            FilterGroups = new FilterGroupEndpoint(opts);
+            FilterValues = new FilterValueEndpoint(opts);
         }
 
         public IActionUriEndpoint ActionUris { get; set; }
@@ -26,7 +28,8 @@
         public ICaptionEndpoint Captions { get; set; }
         public ICategoryEndpoint Categories { get; set; }
         public IContainerEndpoint Containers { get; set; }
-        public IFilterEndpoint Filters { get; set; }
+        public IFilterGroupEndpoint FilterGroups { get; set; }
+        public IFilterValueEndpoint FilterValues { get; set; }
         public IJobEndpoint Jobs { get; set; }
         public INotificationEndpoint Notifications { get; set; }
         public IMessageEndpoint Messages { get; }
