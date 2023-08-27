@@ -19,9 +19,9 @@ namespace Dime.Scheduler.Sdk
             => Execute(Routes.Category, Method.Post, requestParameters);
 
         public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.Category, Method.Put, requestParameters);
+            => Execute(Routes.Category, Method.Post, requestParameters);
 
         public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.Category, Method.Delete, requestParameters);
+            => Execute(Routes.Category, Method.Post, requestParameters);
     }
 }

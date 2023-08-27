@@ -3,7 +3,7 @@
 	<members name="TrackedEntity">
 		<SourceApp>
 			<summary>
-				Identifies the record's originating system. 
+				Identifies the record's originating system.
 			</summary>
 		</SourceApp>
 		<SourceType>

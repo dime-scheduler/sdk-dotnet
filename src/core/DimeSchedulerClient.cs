@@ -4,6 +4,8 @@
     {
         public DimeSchedulerClient(AuthenticationOptions opts)
         {
+            ActionUris = new ActionUriEndpoint(opts);
+            Appointments = new AppointmentEndpoint(opts);
             Import = new ImportEndpoint(opts);
             Messages = new MessagesEndpoint(opts);
             Users = new UsersEndpoint(opts);
@@ -12,17 +14,28 @@
             Pins = new PinsEndpoint(opts);
             Categories = new CategoriesEndpoint(opts);
             TimeMarkers = new TimeMarkersEndpoint(opts);
-            Appointments = new AppointmentEndpoint(opts);
+            Captions = new CaptionEndpoint(opts);
+            Jobs = new JobEndpoint(opts);
+            Captions = new CaptionEndpoint(opts);
+            Containers = new ContainerEndpoint(opts);
+            Notifications = new NotificationEndpoint(opts);
         }
 
-        public IImportEndpoint Import { get; }
+        public IActionUriEndpoint ActionUris { get; set; }
+        public IAppointmentEndpoint Appointments { get; set; }
+        public ICaptionEndpoint Captions { get; set; }
+        public ICategoryEndpoint Categories { get; set; }
+        public IContainerEndpoint Containers { get; set; }
+        public IFilterEndpoint Filters { get; set; }
+        public IJobEndpoint Jobs { get; set; }
+        public INotificationEndpoint Notifications { get; set; }
         public IMessageEndpoint Messages { get; }
-        public UsersEndpoint Users { get; }
+        public IUserEndpoint Users { get; }
         public IResourceEndpoint Resources { get; }
         public ITaskEndpoint Tasks { get; }
         public IPinEndpoint Pins { get; }
-        public ICategoryEndpoint Categories { get; }
         public ITimeMarkerEndpoint TimeMarkers { get; }
-        public IAppointmentEndpoint Appointments { get; }
+
+        public IImportEndpoint Import { get; }
     }
 }

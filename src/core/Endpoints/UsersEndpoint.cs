@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class UsersEndpoint : Endpoint<UserRequest>, ICrudEndpoint<UserRequest>
+    public class UsersEndpoint : Endpoint<UserRequest>, ICrudEndpoint<UserRequest>, IUserEndpoint
     {
         public UsersEndpoint(AuthenticationOptions opts)
             : base(opts)
@@ -19,9 +19,9 @@ namespace Dime.Scheduler.Sdk
             => Execute(Routes.Users.Create, Method.Post, requestParameters);
 
         public Task Update(UserRequest requestParameters)
-            => Execute(Routes.Users.Update, Method.Put, requestParameters);
+            => Execute(Routes.Users.Update, Method.Post, requestParameters);
 
         public Task Delete(UserRequest requestParameters)
-            => Execute(Routes.Users.Delete, Method.Delete, requestParameters);
+            => Execute(Routes.Users.Delete, Method.Post, requestParameters);
     }
 }

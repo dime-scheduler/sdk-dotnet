@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
-using System.Net.Mail;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -49,9 +48,9 @@ namespace Dime.Scheduler.Sdk
         {
             Uri baseUri = new(_opts.Uri);
             Uri endpointUri = new(baseUri, endpoint);
-            
+
             RestClient client = new(endpointUri);
-            RestRequest request = new(endpointUri, method);                        
+            RestRequest request = new(endpointUri, method);
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("X-API-KEY", _opts.Key);

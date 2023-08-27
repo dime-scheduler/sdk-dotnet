@@ -66,10 +66,10 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(CustomerAddress), TransactionType.Append)]
         public string CustomerAddress { get; set; }
 
-        [ImportParameter(nameof(CustomerAddressGeoLong), TransactionType.Append)]        
+        [ImportParameter(nameof(CustomerAddressGeoLong), TransactionType.Append)]
         public decimal? CustomerAddressGeoLong { get; set; }
 
-        [ImportParameter(nameof(CustomerAddressGeoLat), TransactionType.Append)]        
+        [ImportParameter(nameof(CustomerAddressGeoLat), TransactionType.Append)]
         public decimal? CustomerAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(CustomerPhone), TransactionType.Append)]
@@ -91,10 +91,10 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(ContactAddress), TransactionType.Append)]
         public string ContactAddress { get; set; }
 
-        [ImportParameter(nameof(ContactAddressGeoLong), TransactionType.Append)]        
+        [ImportParameter(nameof(ContactAddressGeoLong), TransactionType.Append)]
         public decimal? ContactAddressGeoLong { get; set; }
 
-        [ImportParameter(nameof(ContactAddressGeoLat), TransactionType.Append)]        
+        [ImportParameter(nameof(ContactAddressGeoLat), TransactionType.Append)]
         public decimal? ContactAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(ContactPhone), TransactionType.Append)]
@@ -116,10 +116,10 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(SiteAddress), TransactionType.Append)]
         public string SiteAddress { get; set; }
 
-        [ImportParameter(nameof(SiteAddressGeoLong), TransactionType.Append)]        
+        [ImportParameter(nameof(SiteAddressGeoLong), TransactionType.Append)]
         public decimal? SiteAddressGeoLong { get; set; }
 
-        [ImportParameter(nameof(SiteAddressGeoLat), TransactionType.Append)]        
+        [ImportParameter(nameof(SiteAddressGeoLat), TransactionType.Append)]
         public decimal? SiteAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(SitePhone), TransactionType.Append)]
@@ -173,10 +173,10 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(SiteFromAddress), TransactionType.Append)]
         public string SiteFromAddress { get; set; }
 
-        [ImportParameter(nameof(SiteFromAddressGeoLong), TransactionType.Append)]        
+        [ImportParameter(nameof(SiteFromAddressGeoLong), TransactionType.Append)]
         public decimal? SiteFromAddressGeoLong { get; set; }
 
-        [ImportParameter(nameof(SiteFromAddressGeoLat), TransactionType.Append)]        
+        [ImportParameter(nameof(SiteFromAddressGeoLat), TransactionType.Append)]
         public decimal? SiteFromAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(SiteFromPhone), TransactionType.Append)]
@@ -230,10 +230,10 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(BillAddress), TransactionType.Append)]
         public string BillAddress { get; set; }
 
-        [ImportParameter(nameof(BillAddressGeoLong), TransactionType.Append)]        
+        [ImportParameter(nameof(BillAddressGeoLong), TransactionType.Append)]
         public decimal? BillAddressGeoLong { get; set; }
 
-        [ImportParameter(nameof(BillAddressGeoLat), TransactionType.Append)]        
+        [ImportParameter(nameof(BillAddressGeoLat), TransactionType.Append)]
         public decimal? BillAddressGeoLat { get; set; }
 
         [ImportParameter(nameof(BillPhone), TransactionType.Append)]

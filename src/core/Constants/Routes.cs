@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Reflection.Metadata;
 
 namespace Dime.Scheduler.Sdk
 {
@@ -43,6 +42,7 @@ namespace Dime.Scheduler.Sdk
             internal const string PlanningQuantity = "appointmentPlanningQuantity";
             internal const string TimeMarker = "appointmentTimeMarker";
             internal const string Uri = "appointmentUri";
+            internal const string Content = "appointmentcontent";
         }
 
         internal static class Resource
