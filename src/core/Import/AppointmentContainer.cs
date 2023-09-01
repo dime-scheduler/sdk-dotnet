@@ -4,12 +4,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class AppointmentContainer : IImportRequestable, IValidatableImportRequest<AppointmentContainer>
+    public class AppointmentContainer : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<AppointmentContainer>
     {
         [ImportParameter(nameof(Container))]
         [Required]
         [MaxLength(100)]
         public string Container { get; set; }
+
+        public string AppointmentNo { get; set; }
 
         [ImportParameter(nameof(Appointment))]
         [Required]

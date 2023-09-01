@@ -1,6 +1,6 @@
-﻿using t = System.Threading.Tasks;
+﻿using Dime.Scheduler.Sdk.Import;
 using RestSharp;
-using Dime.Scheduler.Sdk.Import;
+using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk
 {
@@ -19,7 +19,7 @@ namespace Dime.Scheduler.Sdk
 
         public t.Task Delete(Import.Task requestParameters)
             => Execute(Routes.Task.Entity, Method.Delete, requestParameters);
-            
+
         t.Task ICrudEndpoint<TaskLocked>.Create(TaskLocked requestParameters)
             => Execute(Routes.Task.Locked, Method.Post, requestParameters);
 
@@ -28,7 +28,7 @@ namespace Dime.Scheduler.Sdk
 
         t.Task ICrudEndpoint<TaskLocked>.Delete(TaskLocked requestParameters)
             => Execute(Routes.Task.Locked, Method.Delete, requestParameters);
-       
+
         t.Task ICrudEndpoint<TaskUri>.Create(TaskUri requestParameters)
             => Execute(Routes.Task.Uri, Method.Post, requestParameters);
 
@@ -54,6 +54,6 @@ namespace Dime.Scheduler.Sdk
             => Execute(Routes.Task.FilterValue, Method.Post, requestParameters);
 
         t.Task ICrudEndpoint<TaskFilterValue>.Delete(TaskFilterValue requestParameters)
-            => Execute(Routes.Task.FilterValue, Method.Delete, requestParameters);    
+            => Execute(Routes.Task.FilterValue, Method.Delete, requestParameters);
     }
 }

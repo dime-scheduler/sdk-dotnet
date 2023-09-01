@@ -4,8 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class Appointment : IImportRequestable, IValidatableImportRequest<Appointment>
+    public class Appointment : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<Appointment>
     {
+        public string AppointmentNo { get; set; }
+
         [ImportParameter(nameof(AppointmentId), TransactionType.Append)]
         [RequiredIf(TransactionType.Delete)]
         public long? AppointmentId { get; set; }
