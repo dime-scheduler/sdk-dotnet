@@ -506,6 +506,8 @@ namespace Dime.Scheduler.Sdk.Import
         [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
         public bool SentFromBackOffice { get; set; } = true;
 
+        public bool CreateJob { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
