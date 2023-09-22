@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net8.0</TargetFrameworks>
 		<Company>Dime Software</Company>
 		<Authors>Dime Software</Authors>
 		<Product>Dime.Scheduler</Product>
@@ -16,10 +16,10 @@
 		<RepositoryUrl>https://github.com/dime-scheduler/sdk-dotnet</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/dime-scheduler/sdk-dotnet</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Description>Dime.Scheduler SDK for .NET</Description>
+		<Description>The official .NET SDK for Dime.Scheduler.</Description>
 		<Summary>A developer toolkit that connects any system to Dime.Scheduler in .NET</Summary>
 		<VersionPrefix>2.0.0</VersionPrefix>
-		<VersionSuffix>alpha.11</VersionSuffix>
+		<VersionSuffix>alpha.12</VersionSuffix>
 		<AssemblyVersion>2.0.0.0</AssemblyVersion>
 		<FileVersion>2.0.0.0</FileVersion>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>

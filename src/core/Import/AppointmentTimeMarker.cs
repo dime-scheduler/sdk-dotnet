@@ -7,14 +7,12 @@ namespace Dime.Scheduler.Sdk.Import
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
-        [MaxLength(30)]
-        [Required]
+        [MaxLength(30)]        
         public string SourceApp { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType))]
         [MaxLength(10)]
-        [Required]
         public string SourceType { get; set; }
 
         public string AppointmentNo { get; set; }
