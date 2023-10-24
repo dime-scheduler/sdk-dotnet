@@ -6,7 +6,6 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Appointment : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<Appointment>
     {
-        [ImportParameter(nameof(AppointmentNo), TransactionType.Append, TransactionType.Delete)]
         public string AppointmentNo { get; set; }
 
         [ImportParameter(nameof(AppointmentId), TransactionType.Append)]
