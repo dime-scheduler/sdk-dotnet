@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Import
 {
-    public class Notification : IImportRequestable, IValidatableImportRequest<Notification>
+    public class Notification : IImportRequestable, IValidatableImportRequest<Notification>, IAppointmentIdentifier
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -18,6 +18,9 @@ namespace Dime.Scheduler.Sdk.Import
 
         [ImportParameter(nameof(AppointmentId))]
         public long? AppointmentId { get; set; }
+
+        [ImportParameter(nameof(AppointmentNo))]
+        public string AppointmentNo { get; set; }
 
         [MaxLength(50)]
         [ImportParameter("mboc_id")]
