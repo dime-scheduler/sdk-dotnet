@@ -36,7 +36,7 @@ namespace Dime.Scheduler.Sdk.Import
         public string Text { get; set; }
 
         [ImportParameter("NotificationDate", TransactionType.Append)]
-        public DateTime? Date { get; set; }
+        public DateTime? Date { get; set; } = DateTime.Now;
 
         [ImportParameter(nameof(JobNo))]
         [MaxLength(50)]
