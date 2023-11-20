@@ -11,49 +11,94 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        public t.Task Create(Import.Task requestParameters)
-            => Execute(Routes.Task.Entity, Method.Post, requestParameters);
+        void ICrudEndpoint<Task>.Create(Task requestParameters)
+            => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
-        public t.Task Update(Import.Task requestParameters)
-            => Execute(Routes.Task.Entity, Method.Post, requestParameters);
+        void ICrudEndpoint<Task>.Update(Task requestParameters)
+            => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
-        public t.Task Delete(Import.Task requestParameters)
-            => Execute(Routes.Task.Entity, Method.Delete, requestParameters);
+        void ICrudEndpoint<Task>.Delete(Task requestParameters)
+            => ExecuteAsync(Routes.Task.Entity, Method.Delete, requestParameters);
 
-        t.Task ICrudEndpoint<TaskLocked>.Create(TaskLocked requestParameters)
-            => Execute(Routes.Task.Locked, Method.Post, requestParameters);
+        public t.Task CreateAsync(Import.Task requestParameters)
+            => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskLocked>.Update(TaskLocked requestParameters)
-            => Execute(Routes.Task.Locked, Method.Post, requestParameters);
+        public t.Task UpdateAsync(Import.Task requestParameters)
+            => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskLocked>.Delete(TaskLocked requestParameters)
-            => Execute(Routes.Task.Locked, Method.Delete, requestParameters);
+        public t.Task DeleteAsync(Import.Task requestParameters)
+            => ExecuteAsync(Routes.Task.Entity, Method.Delete, requestParameters);
 
-        t.Task ICrudEndpoint<TaskUri>.Create(TaskUri requestParameters)
-            => Execute(Routes.Task.Uri, Method.Post, requestParameters);
+        void ICrudEndpoint<TaskLocked>.Create(TaskLocked requestParameters)
+            => ExecuteAsync(Routes.Task.Locked, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskUri>.Update(TaskUri requestParameters)
-            => Execute(Routes.Task.Uri, Method.Post, requestParameters);
+        void ICrudEndpoint<TaskLocked>.Update(TaskLocked requestParameters)
+            => ExecuteAsync(Routes.Task.Locked, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskUri>.Delete(TaskUri requestParameters)
-            => Execute(Routes.Task.Uri, Method.Delete, requestParameters);
+        void ICrudEndpoint<TaskLocked>.Delete(TaskLocked requestParameters)
+            => ExecuteAsync(Routes.Task.Locked, Method.Delete, requestParameters);
 
-        t.Task ICrudEndpoint<TaskContainer>.Create(TaskContainer requestParameters)
-            => Execute(Routes.Task.Container, Method.Post, requestParameters);
+        t.Task ICrudEndpoint<TaskLocked>.CreateAsync(TaskLocked requestParameters)
+            => ExecuteAsync(Routes.Task.Locked, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskContainer>.Update(TaskContainer requestParameters)
-            => Execute(Routes.Task.Container, Method.Post, requestParameters);
+        t.Task ICrudEndpoint<TaskLocked>.UpdateAsync(TaskLocked requestParameters)
+            => ExecuteAsync(Routes.Task.Locked, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskContainer>.Delete(TaskContainer requestParameters)
-            => Execute(Routes.Task.Container, Method.Delete, requestParameters);
+        t.Task ICrudEndpoint<TaskLocked>.DeleteAsync(TaskLocked requestParameters)
+            => ExecuteAsync(Routes.Task.Locked, Method.Delete, requestParameters);
 
-        t.Task ICrudEndpoint<TaskFilterValue>.Create(TaskFilterValue requestParameters)
-               => Execute(Routes.Task.FilterValue, Method.Post, requestParameters);
+        void ICrudEndpoint<TaskUri>.Create(TaskUri requestParameters)
+            => ExecuteAsync(Routes.Task.Uri, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskFilterValue>.Update(TaskFilterValue requestParameters)
-            => Execute(Routes.Task.FilterValue, Method.Post, requestParameters);
+        void ICrudEndpoint<TaskUri>.Update(TaskUri requestParameters)
+            => ExecuteAsync(Routes.Task.Uri, Method.Post, requestParameters);
 
-        t.Task ICrudEndpoint<TaskFilterValue>.Delete(TaskFilterValue requestParameters)
-            => Execute(Routes.Task.FilterValue, Method.Delete, requestParameters);
+        void ICrudEndpoint<TaskUri>.Delete(TaskUri requestParameters)
+             => ExecuteAsync(Routes.Task.Uri, Method.Delete, requestParameters);
+
+        t.Task ICrudEndpoint<TaskUri>.CreateAsync(TaskUri requestParameters)
+            => ExecuteAsync(Routes.Task.Uri, Method.Post, requestParameters);
+
+        t.Task ICrudEndpoint<TaskUri>.UpdateAsync(TaskUri requestParameters)
+            => ExecuteAsync(Routes.Task.Uri, Method.Post, requestParameters);
+
+        t.Task ICrudEndpoint<TaskUri>.DeleteAsync(TaskUri requestParameters)
+            => ExecuteAsync(Routes.Task.Uri, Method.Delete, requestParameters);
+
+        void ICrudEndpoint<TaskContainer>.Create(TaskContainer requestParameters)
+            => ExecuteAsync(Routes.Task.Container, Method.Post, requestParameters);
+
+        void ICrudEndpoint<TaskContainer>.Update(TaskContainer requestParameters)
+            => ExecuteAsync(Routes.Task.Container, Method.Post, requestParameters);
+
+        void ICrudEndpoint<TaskContainer>.Delete(TaskContainer requestParameters)
+            => ExecuteAsync(Routes.Task.Container, Method.Delete, requestParameters);
+
+        t.Task ICrudEndpoint<TaskContainer>.CreateAsync(TaskContainer requestParameters)
+            => ExecuteAsync(Routes.Task.Container, Method.Post, requestParameters);
+
+        t.Task ICrudEndpoint<TaskContainer>.UpdateAsync(TaskContainer requestParameters)
+            => ExecuteAsync(Routes.Task.Container, Method.Post, requestParameters);
+
+        t.Task ICrudEndpoint<TaskContainer>.DeleteAsync(TaskContainer requestParameters)
+            => ExecuteAsync(Routes.Task.Container, Method.Delete, requestParameters);
+
+        void ICrudEndpoint<TaskFilterValue>.Create(TaskFilterValue requestParameters)
+            => ExecuteAsync(Routes.Task.FilterValue, Method.Post, requestParameters);
+
+        void ICrudEndpoint<TaskFilterValue>.Update(TaskFilterValue requestParameters)
+             => ExecuteAsync(Routes.Task.FilterValue, Method.Post, requestParameters);
+
+        void ICrudEndpoint<TaskFilterValue>.Delete(TaskFilterValue requestParameters)
+            => ExecuteAsync(Routes.Task.FilterValue, Method.Delete, requestParameters);
+
+        t.Task ICrudEndpoint<TaskFilterValue>.CreateAsync(TaskFilterValue requestParameters)
+            => ExecuteAsync(Routes.Task.FilterValue, Method.Post, requestParameters);
+
+        t.Task ICrudEndpoint<TaskFilterValue>.UpdateAsync(TaskFilterValue requestParameters)
+            => ExecuteAsync(Routes.Task.FilterValue, Method.Post, requestParameters);
+
+        t.Task ICrudEndpoint<TaskFilterValue>.DeleteAsync(TaskFilterValue requestParameters)
+            => ExecuteAsync(Routes.Task.FilterValue, Method.Delete, requestParameters);
     }
 }

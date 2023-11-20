@@ -12,16 +12,28 @@ namespace Dime.Scheduler.Sdk
             _opts = opts;
         }
 
-        protected Task<T> Execute<T>(string endpoint, Method method, T requestParameters)
+        protected T Execute<T>(string endpoint, Method method, T requestParameters)
         {
-            IDimeSchedulerRestClient<T> restClient = new DefaultDimeSchedulerRestClient<T>(_opts);
+            IDimeSchedulerRestClient<T> restClient = new DimeSchedulerRestClient<T>(_opts);
             return restClient.Execute<T>(endpoint, method, requestParameters);
         }
 
-        protected Task<T> Execute<T, TRequest>(string endpoint, Method method, TRequest requestParameters)
+        protected Task<T> ExecuteAsync<T>(string endpoint, Method method, T requestParameters)
         {
-            IDimeSchedulerRestClient<TRequest> restClient = new DefaultDimeSchedulerRestClient<TRequest>(_opts);
+            IDimeSchedulerRestClient<T> restClient = new DimeSchedulerRestClient<T>(_opts);
+            return restClient.ExecuteAsync<T>(endpoint, method, requestParameters);
+        }
+        
+        protected T Execute<T, TRequest>(string endpoint, Method method, TRequest requestParameters)
+        {
+            IDimeSchedulerRestClient<TRequest> restClient = new DimeSchedulerRestClient<TRequest>(_opts);
             return restClient.Execute<T>(endpoint, method, requestParameters);
+        }
+
+        protected Task<T> ExecuteAsync<T, TRequest>(string endpoint, Method method, TRequest requestParameters)
+        {
+            IDimeSchedulerRestClient<TRequest> restClient = new DimeSchedulerRestClient<TRequest>(_opts);
+            return restClient.ExecuteAsync<T>(endpoint, method, requestParameters);
         }
     }
 }

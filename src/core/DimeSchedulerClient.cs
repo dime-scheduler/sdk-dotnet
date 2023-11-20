@@ -2,7 +2,23 @@
 {
     public class DimeSchedulerClient
     {
-        public DimeSchedulerClient(AuthenticationOptions opts)
+        public DimeSchedulerClient(Environment environment, string key)
+            : this(new AuthenticationOptions(environment.ToUrl(), key))
+        {
+        }
+
+        public DimeSchedulerClient(string key)
+            : this(Environment.Production, key)
+        {
+        }
+
+        public DimeSchedulerClient(string uri, string key)
+            : this(new AuthenticationOptions(uri, key))
+        {
+        }
+
+
+        private DimeSchedulerClient(AuthenticationOptions opts)
         {
             ActionUris = new ActionUriEndpoint(opts);
             Appointments = new AppointmentEndpoint(opts);

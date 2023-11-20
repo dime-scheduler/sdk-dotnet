@@ -15,13 +15,22 @@ namespace Dime.Scheduler.Sdk
         {
         }
 
-        public Task Create(UserRequest requestParameters)
+        void ICrudEndpoint<UserRequest>.Create(UserRequest requestParameters)
             => Execute(Routes.Users.Create, Method.Post, requestParameters);
 
-        public Task Update(UserRequest requestParameters)
+        public Task CreateAsync(UserRequest requestParameters)
+            => ExecuteAsync(Routes.Users.Create, Method.Post, requestParameters);
+
+        void ICrudEndpoint<UserRequest>.Update(UserRequest requestParameters)
             => Execute(Routes.Users.Update, Method.Post, requestParameters);
 
-        public Task Delete(UserRequest requestParameters)
-            => Execute(Routes.Users.Delete, Method.Post, requestParameters);
+        public Task UpdateAsync(UserRequest requestParameters)
+            => ExecuteAsync(Routes.Users.Update, Method.Post, requestParameters);
+
+        public Task DeleteAsync(UserRequest requestParameters)
+            => ExecuteAsync(Routes.Users.Delete, Method.Post, requestParameters);
+
+        void ICrudEndpoint<UserRequest>.Delete(UserRequest requestParameters)
+              => Execute(Routes.Users.Delete, Method.Post, requestParameters);
     }
 }

@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Sdk
     {
         private static readonly string _api = "api";
 
-        internal const string ActionUri = "actionUri";
+        internal const string ActionUri = "actionuri";
         internal const string Caption = "caption";
         internal const string Container = "container";
         internal const string Category = "categories";

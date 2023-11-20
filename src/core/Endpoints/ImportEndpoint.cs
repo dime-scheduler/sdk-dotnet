@@ -17,7 +17,7 @@ namespace Dime.Scheduler.Sdk
         {
             try
             {
-                IEnumerable<ImportRequest> result = await Execute(Routes.Import.InsertData, Method.Post, requestParameters.ToImportRequest(transactionType));
+                IEnumerable<ImportRequest> result = await ExecuteAsync(Routes.Import.InsertData, Method.Post, requestParameters.ToImportRequest(transactionType));
                 return new ImportSet() { Status = 200, Success = true };
             }
             catch (WebApiException ex)
@@ -34,7 +34,7 @@ namespace Dime.Scheduler.Sdk
         {
             try
             {
-                ImportResult importResult = await Execute<ImportResult, IEnumerable<ImportRequest>>(Routes.Import.Insert, Method.Post, new List<ImportRequest> { requestParameters.ToImportRequest(transactionType) });
+                ImportResult importResult = await ExecuteAsync<ImportResult, IEnumerable<ImportRequest>>(Routes.Import.Insert, Method.Post, new List<ImportRequest> { requestParameters.ToImportRequest(transactionType) });
 
                 return new ImportSet()
                 {

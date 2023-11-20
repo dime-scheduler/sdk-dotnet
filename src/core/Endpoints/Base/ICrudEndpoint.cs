@@ -4,10 +4,16 @@ namespace Dime.Scheduler.Sdk
 {
     public interface ICrudEndpoint<in T> : IEndpoint where T : class
     {
-        Task Create(T requestParameters);
+        void Create(T requestParameters);
 
-        Task Update(T requestParameters);
+        Task CreateAsync(T requestParameters);
 
-        Task Delete(T requestParameters);
+        void Update(T requestParameters);
+
+        Task UpdateAsync(T requestParameters);
+
+        void Delete(T requestParameters);
+
+        Task DeleteAsync(T requestParameters);
     }
 }

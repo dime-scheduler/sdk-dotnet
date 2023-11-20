@@ -16,7 +16,7 @@ namespace Dime.Scheduler.Sdk.Import
             if (!result.Any())
                 return request;
 
-            string validationExceptionMsg = string.Join(Environment.NewLine, result.Select(x => x.ErrorMessage));
+            string validationExceptionMsg = string.Join(System.Environment.NewLine, result.Select(x => x.ErrorMessage));
             throw new Exception(validationExceptionMsg);
         }
     }

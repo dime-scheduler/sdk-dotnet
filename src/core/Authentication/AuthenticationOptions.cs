@@ -5,6 +5,13 @@
         public string Uri { get; }
         public string Key { get; }
 
+        public AuthenticationOptions(Environment environment, string key)
+            => (Uri, Key) = (environment.ToUrl(), key);
+
+        public AuthenticationOptions(string key) : this(Environment.Production, key)
+        {
+        }
+
         public AuthenticationOptions(string uri, string key)
             => (Uri, Key) = (uri, key);
 
