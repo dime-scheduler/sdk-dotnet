@@ -1,7 +1,7 @@
-﻿using Dime.Scheduler.Sdk.Import.Exchange;
+﻿using Dime.Scheduler.Sdk.Models.Exchange;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests.Import.Exchange
+namespace Dime.Scheduler.Sdk.Tests.Models.Exchange
 {
     public partial class SensitivityTests
     {

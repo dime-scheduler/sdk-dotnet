@@ -23,7 +23,7 @@ namespace Dime.Scheduler.Sdk
             IDimeSchedulerRestClient<T> restClient = new DimeSchedulerRestClient<T>(_opts);
             return restClient.ExecuteAsync<T>(endpoint, method, requestParameters);
         }
-        
+
         protected T Execute<T, TRequest>(string endpoint, Method method, TRequest requestParameters)
         {
             IDimeSchedulerRestClient<TRequest> restClient = new DimeSchedulerRestClient<TRequest>(_opts);

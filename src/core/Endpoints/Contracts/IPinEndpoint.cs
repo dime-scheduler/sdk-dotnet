@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public interface IPinEndpoint : ICrudEndpoint<IndicatorRequest>
+    public interface IPinEndpoint : ICrudEndpoint<Indicator>
     {
     }
 }

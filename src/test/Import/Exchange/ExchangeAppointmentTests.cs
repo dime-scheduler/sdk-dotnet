@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Import;
-using Dime.Scheduler.Sdk.Import.Exchange;
+using Dime.Scheduler.Sdk.Models;
+using Dime.Scheduler.Sdk.Models.Exchange;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import

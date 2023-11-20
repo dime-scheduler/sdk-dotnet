@@ -1,6 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Models;
+
+namespace Dime.Scheduler.Sdk
 {
-    public interface IContainerEndpoint : ICrudEndpoint<Import.Container>
+    public interface IContainerEndpoint : ICrudEndpoint<Container>
     {
     }
 }

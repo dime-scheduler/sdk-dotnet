@@ -1,4 +1,4 @@
-﻿using Dime.Scheduler.Sdk.Import;
+﻿using Dime.Scheduler.Sdk.Models;
 
 namespace Dime.Scheduler.Sdk
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Models;
 
 namespace Dime.Scheduler.Sdk
 {

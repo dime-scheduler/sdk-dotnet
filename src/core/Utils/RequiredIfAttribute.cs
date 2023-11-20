@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace Dime.Scheduler.Sdk.Import
+namespace Dime.Scheduler.Sdk.Models
 {
     public class RequiredIfAttribute : RequiredAttribute
     {

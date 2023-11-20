@@ -1,5 +1,5 @@
 ﻿using System;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Models;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import

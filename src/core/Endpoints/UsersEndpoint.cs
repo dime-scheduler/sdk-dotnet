@@ -3,34 +3,34 @@ using RestSharp;
 
 namespace Dime.Scheduler.Sdk
 {
-    public class UsersEndpoint : Endpoint<UserRequest>, ICrudEndpoint<UserRequest>, IUserEndpoint
+    public class UsersEndpoint : Endpoint<User>, ICrudEndpoint<User>, IUserEndpoint
     {
         public UsersEndpoint(AuthenticationOptions opts)
             : base(opts)
         {
         }
 
-        internal UsersEndpoint(IDimeSchedulerRestClient<UserRequest> restClient)
+        internal UsersEndpoint(IDimeSchedulerRestClient<User> restClient)
             : base(restClient)
         {
         }
 
-        void ICrudEndpoint<UserRequest>.Create(UserRequest requestParameters)
+        void ICrudEndpoint<User>.Create(User requestParameters)
             => Execute(Routes.Users.Create, Method.Post, requestParameters);
 
-        public Task CreateAsync(UserRequest requestParameters)
+        public Task CreateAsync(User requestParameters)
             => ExecuteAsync(Routes.Users.Create, Method.Post, requestParameters);
 
-        void ICrudEndpoint<UserRequest>.Update(UserRequest requestParameters)
+        void ICrudEndpoint<User>.Update(User requestParameters)
             => Execute(Routes.Users.Update, Method.Post, requestParameters);
 
-        public Task UpdateAsync(UserRequest requestParameters)
+        public Task UpdateAsync(User requestParameters)
             => ExecuteAsync(Routes.Users.Update, Method.Post, requestParameters);
 
-        public Task DeleteAsync(UserRequest requestParameters)
+        public Task DeleteAsync(User requestParameters)
             => ExecuteAsync(Routes.Users.Delete, Method.Post, requestParameters);
 
-        void ICrudEndpoint<UserRequest>.Delete(UserRequest requestParameters)
+        void ICrudEndpoint<User>.Delete(User requestParameters)
               => Execute(Routes.Users.Delete, Method.Post, requestParameters);
     }
 }

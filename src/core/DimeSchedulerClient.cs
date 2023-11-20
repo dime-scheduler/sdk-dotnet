@@ -17,7 +17,6 @@
         {
         }
 
-
         private DimeSchedulerClient(AuthenticationOptions opts)
         {
             ActionUris = new ActionUriEndpoint(opts);
@@ -54,7 +53,6 @@
         public ITaskEndpoint Tasks { get; }
         public IPinEndpoint Pins { get; }
         public ITimeMarkerEndpoint TimeMarkers { get; }
-
         public IImportEndpoint Import { get; }
     }
 }

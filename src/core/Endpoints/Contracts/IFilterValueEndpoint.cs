@@ -1,6 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Models;
+
+namespace Dime.Scheduler.Sdk
 {
-    public interface IFilterValueEndpoint : ICrudEndpoint<Import.FilterValue>
+    public interface IFilterValueEndpoint : ICrudEndpoint<FilterValue>
     {
     }
 }

@@ -1,11 +1,13 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Models;
+
+namespace Dime.Scheduler.Sdk
 {
     public interface ITaskEndpoint :
-        ICrudEndpoint<Import.Task>,
-        ICrudEndpoint<Import.TaskFilterValue>,
-        ICrudEndpoint<Import.TaskLocked>,
-        ICrudEndpoint<Import.TaskUri>,
-        ICrudEndpoint<Import.TaskContainer>
+        ICrudEndpoint<Task>,
+        ICrudEndpoint<TaskFilterValue>,
+        ICrudEndpoint<TaskLocked>,
+        ICrudEndpoint<TaskUri>,
+        ICrudEndpoint<TaskContainer>
     {
     }
 }

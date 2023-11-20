@@ -1,14 +1,16 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Models;
+
+namespace Dime.Scheduler.Sdk
 {
     public interface IAppointmentEndpoint :
-        ICrudEndpoint<Import.Appointment>,
-        ICrudEndpoint<Import.AppointmentCategory>,
-        ICrudEndpoint<Import.AppointmentContent>,
-        ICrudEndpoint<Import.AppointmentLocked>,
-        ICrudEndpoint<Import.AppointmentTimeMarker>,
-        ICrudEndpoint<Import.AppointmentUri>,
-        ICrudEndpoint<Import.AppointmentContainer>,
-        ICrudEndpoint<Import.Assignment>
+        ICrudEndpoint<Appointment>,
+        ICrudEndpoint<AppointmentCategory>,
+        ICrudEndpoint<AppointmentContent>,
+        ICrudEndpoint<AppointmentLocked>,
+        ICrudEndpoint<AppointmentTimeMarker>,
+        ICrudEndpoint<AppointmentUri>,
+        ICrudEndpoint<AppointmentContainer>,
+        ICrudEndpoint<Assignment>
     {
     }
 }

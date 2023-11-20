@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Models;
 using RestSharp;
 using t = System.Threading.Tasks;
 

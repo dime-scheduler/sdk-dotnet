@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Sdk
 {
-    public class TimeMarkersEndpoint : DefaultEndpoint<IndicatorRequest>, ITimeMarkerEndpoint
+    public class TimeMarkersEndpoint : DefaultEndpoint<Indicator>, ITimeMarkerEndpoint
     {
         public TimeMarkersEndpoint(AuthenticationOptions opts)
             : base(Routes.TimeMarker, opts)

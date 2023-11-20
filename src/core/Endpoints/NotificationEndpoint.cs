@@ -1,6 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Models;
+
+namespace Dime.Scheduler.Sdk
 {
-    public class NotificationEndpoint : DefaultEndpoint<Import.Notification>, INotificationEndpoint
+    public class NotificationEndpoint : DefaultEndpoint<Notification>, INotificationEndpoint
     {
         public NotificationEndpoint(AuthenticationOptions opts)
             : base(Routes.Notification, opts)

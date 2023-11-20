@@ -1,6 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using Dime.Scheduler.Sdk.Models;
+
+namespace Dime.Scheduler.Sdk
 {
-    public interface IActionUriEndpoint : ICrudEndpoint<Import.ActionUri>
+    public interface IActionUriEndpoint : ICrudEndpoint<ActionUri>
     {
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Models;
 using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler.Sdk

@@ -1,5 +1,5 @@
 ﻿using System;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Sdk.Models;
 using Xunit;
 
 namespace Dime.Scheduler.Sdk.Tests.Import
@@ -9,7 +9,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Resource_ToImportRequest_Append_AllShouldMapParameters()
         {
-            Dime.Scheduler.Sdk.Import.Resource model = new()
+            Dime.Scheduler.Sdk.Models.Resource model = new()
             {
                 ResourceNo = "Resource",
                 GpsTrackingResourceNo = "1",
@@ -102,7 +102,7 @@ namespace Dime.Scheduler.Sdk.Tests.Import
         [Fact]
         public void Resource_ToImportRequest_Delete_AllShouldMapParameters()
         {
-            Dime.Scheduler.Sdk.Import.Resource model = new()
+            Dime.Scheduler.Sdk.Models.Resource model = new()
             {
                 ResourceNo = "Resource",
                 GpsTrackingResourceNo = "1",
@@ -194,6 +194,6 @@ namespace Dime.Scheduler.Sdk.Tests.Import
 
         [Fact]
         public void Resource_ToImportRequest_InvalidTransactionType_ShouldThrowArgumentOutOfRangeException()
-            => ToImportRequestTestUtils.TestToInvalidImportRequest<Sdk.Import.Resource>();
+            => ToImportRequestTestUtils.TestToInvalidImportRequest<Sdk.Models.Resource>();
     }
 }

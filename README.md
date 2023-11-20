@@ -29,12 +29,12 @@ Use the package manager NuGet to install the SDK:
 
 `dotnet add package Dime.Scheduler.Sdk`
 
+> [!IMPORTANT]  
+> Version 2 and onwards is only forwards compatible with Dime.Scheduler cloud.
+
 ## Prerequisites
 
 To clone and run this application, you'll need Visual Studio 2022 or higher. It is built on the latest versions of .NET and C#.
-
-> [!IMPORTANT]  
-> Version 2 and onwards is only forwards compatible with Dime.Scheduler cloud.
 
 ## Usage
 
