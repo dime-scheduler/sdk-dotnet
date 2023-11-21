@@ -21,21 +21,21 @@
         {
             ActionUris = new ActionUriEndpoint(opts);
             Appointments = new AppointmentEndpoint(opts);
-            Import = new ImportEndpoint(opts);
-            Messages = new MessagesEndpoint(opts);
-            Users = new UsersEndpoint(opts);
-            Resources = new ResourcesEndpoint(opts);
-            Tasks = new TaskEndpoint(opts);
-            Pins = new PinsEndpoint(opts);
+            Captions = new CaptionEndpoint(opts);
+            Captions = new CaptionEndpoint(opts);
             Categories = new CategoriesEndpoint(opts);
-            TimeMarkers = new TimeMarkersEndpoint(opts);
-            Captions = new CaptionEndpoint(opts);
-            Jobs = new JobEndpoint(opts);
-            Captions = new CaptionEndpoint(opts);
             Containers = new ContainerEndpoint(opts);
-            Notifications = new NotificationEndpoint(opts);
             FilterGroups = new FilterGroupEndpoint(opts);
             FilterValues = new FilterValueEndpoint(opts);
+            Import = new ImportEndpoint(opts);
+            Jobs = new JobEndpoint(opts);
+            Messages = new MessagesEndpoint(opts);
+            Notifications = new NotificationEndpoint(opts);
+            Pins = new PinsEndpoint(opts);
+            Resources = new ResourcesEndpoint(opts);
+            Tasks = new TaskEndpoint(opts);
+            TimeMarkers = new TimeMarkersEndpoint(opts);
+            Users = new UsersEndpoint(opts);
         }
 
         public IActionUriEndpoint ActionUris { get; set; }
@@ -45,14 +45,14 @@
         public IContainerEndpoint Containers { get; set; }
         public IFilterGroupEndpoint FilterGroups { get; set; }
         public IFilterValueEndpoint FilterValues { get; set; }
+        public IImportEndpoint Import { get; }
         public IJobEndpoint Jobs { get; set; }
-        public INotificationEndpoint Notifications { get; set; }
         public IMessageEndpoint Messages { get; }
-        public IUserEndpoint Users { get; }
+        public INotificationEndpoint Notifications { get; set; }
+        public IPinEndpoint Pins { get; }
         public IResourceEndpoint Resources { get; }
         public ITaskEndpoint Tasks { get; }
-        public IPinEndpoint Pins { get; }
         public ITimeMarkerEndpoint TimeMarkers { get; }
-        public IImportEndpoint Import { get; }
+        public IUserEndpoint Users { get; }
     }
 }

@@ -6,8 +6,10 @@ namespace Dime.Scheduler.Sdk.Models
 {
     public class Appointment : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<Appointment>
     {
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentId/*'/>
         [ImportParameter(nameof(AppointmentId), TransactionType.Append)]
         [RequiredIf(TransactionType.Delete)]
         public long? AppointmentId { get; set; }

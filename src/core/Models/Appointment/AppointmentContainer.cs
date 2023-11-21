@@ -11,6 +11,7 @@ namespace Dime.Scheduler.Sdk.Models
         [MaxLength(100)]
         public string Container { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
 
         [ImportParameter(nameof(Appointment))]

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Sdk.Models
 {
-    public class AppointmentContent : IAppointmentIdentifier, IImportRequestable
+    public class AppointmentCategory : IAppointmentIdentifier, IImportRequestable
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -15,22 +15,23 @@ namespace Dime.Scheduler.Sdk.Models
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentId/*'/>
         [ImportParameter(nameof(AppointmentId))]
         public long? AppointmentId { get; set; }
+
+        [ImportParameter(nameof(Category))]
+        [MaxLength(100)]
+        [Required]
+        public string Category { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; } = true;
-
-        [ImportParameter(nameof(Subject))]
-        public string Subject { get; set; }
-
-        [ImportParameter(nameof(Body))]
-        public string Body { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
@@ -41,9 +42,9 @@ namespace Dime.Scheduler.Sdk.Models
             };
 
         private ImportRequest CreateAppendRequest()
-            => new(ImportProcedures.Appointment.Content.Append, this.CreateParameters(TransactionType.Append));
+            => new(ImportProcedures.Appointment.Category.Append, this.CreateParameters(TransactionType.Append));
 
         private ImportRequest CreateDeleteRequest()
-            => throw new NotImplementedException("Action does not exist yet in Dime.Scheduler");
+            => throw new NotImplementedException("Action does not exist in Dime.Scheduler");
     }
 }

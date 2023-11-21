@@ -6,11 +6,15 @@ namespace Dime.Scheduler.Sdk.Models
 {
     public class ExchangeAppointment : IImportRequestable
     {
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentId/*'/>
         [ImportParameter(nameof(AppointmentId))]
         public long AppointmentId { get; set; }
 
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
+
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
+        public string AppointmentNo { get; set; }
 
         [ImportParameter(nameof(ExchangeId))]
         public string ExchangeId { get; set; }
