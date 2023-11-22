@@ -1,4 +1,6 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿using System;
+
+namespace Dime.Scheduler.Sdk
 {
     public class DimeSchedulerClient
     {
@@ -23,6 +25,7 @@
             Appointments = new AppointmentEndpoint(opts);
             Captions = new CaptionEndpoint(opts);
             Captions = new CaptionEndpoint(opts);
+            Connectors = new ConnectorEndpoint(opts);
             Categories = new CategoriesEndpoint(opts);
             Containers = new ContainerEndpoint(opts);
             FilterGroups = new FilterGroupEndpoint(opts);
@@ -38,17 +41,21 @@
             Users = new UsersEndpoint(opts);
         }
 
-        public IActionUriEndpoint ActionUris { get; set; }
-        public IAppointmentEndpoint Appointments { get; set; }
-        public ICaptionEndpoint Captions { get; set; }
-        public ICategoryEndpoint Categories { get; set; }
-        public IContainerEndpoint Containers { get; set; }
-        public IFilterGroupEndpoint FilterGroups { get; set; }
-        public IFilterValueEndpoint FilterValues { get; set; }
+        public IActionUriEndpoint ActionUris { get; }
+        public IAppointmentEndpoint Appointments { get; }
+        public ICaptionEndpoint Captions { get; }
+
+        [Obsolete("This endpoint is in preview.")]
+        public IConnectorEndpoint Connectors { get; }
+
+        public ICategoryEndpoint Categories { get; }
+        public IContainerEndpoint Containers { get; }
+        public IFilterGroupEndpoint FilterGroups { get; }
+        public IFilterValueEndpoint FilterValues { get; }
         public IImportEndpoint Import { get; }
-        public IJobEndpoint Jobs { get; set; }
+        public IJobEndpoint Jobs { get; }
         public IMessageEndpoint Messages { get; }
-        public INotificationEndpoint Notifications { get; set; }
+        public INotificationEndpoint Notifications { get; }
         public IPinEndpoint Pins { get; }
         public IResourceEndpoint Resources { get; }
         public ITaskEndpoint Tasks { get; }

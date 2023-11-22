@@ -88,6 +88,13 @@ namespace Dime.Scheduler.Sdk.Models
             internal static readonly string Append = $"{_base}add{_entity}";
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
         }
+        internal static class Connector
+        {
+            private static readonly string _entity = "Connector";
+
+            internal static readonly string Append = $"{_base}add{_entity}";
+            internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+        }
 
         internal static class Task
         {

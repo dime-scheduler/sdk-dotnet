@@ -9,6 +9,7 @@ namespace Dime.Scheduler.Sdk
 
         internal const string ActionUri = "actionuri";
         internal const string Caption = "caption";
+        internal const string Connector = "connector";
         internal const string Container = "container";
         internal const string Category = "categories";
         internal const string TimeMarker = "timeMarker";

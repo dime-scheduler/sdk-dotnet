@@ -11,17 +11,17 @@ namespace Dime.Scheduler.Sdk.Models
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
-
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        
         [ImportParameter(nameof(ResourceNo))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string ResourceNo { get; set; }
-
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        
         [ImportParameter(nameof(FilterGroup))]
-        public string FilterGroup { get; set; }
-
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        public string FilterGroup { get; set; }
+        
         [ImportParameter(nameof(FilterValue))]
+        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterValue { get; set; }
 
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]

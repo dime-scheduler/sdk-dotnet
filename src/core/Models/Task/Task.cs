@@ -501,7 +501,7 @@ namespace Dime.Scheduler.Sdk.Models
         public int ContainerIndex { get; set; }
 
         [ImportParameter(nameof(CheckAppointments), TransactionType.Delete)]
-        public bool CheckAppointments { get; set; }
+        public bool CheckAppointments { get; set; } = true;
 
         [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
         public bool SentFromBackOffice { get; set; } = true;
