@@ -6,11 +6,11 @@ namespace Dime.Scheduler.Sdk.Import
 {
     public class Appointment : IImportRequestable, IValidatableImportRequest<Appointment>
     {
-        [ImportParameter(nameof(AppointmentId), TransactionType.Append)]
+        [ImportParameter(nameof(AppointmentId), TransactionType.Append, TransactionType.Delete)]
         [RequiredIf(TransactionType.Delete)]
         public long? AppointmentId { get; set; }
 
-        [ImportParameter(nameof(AppointmentGuid), TransactionType.Append)]
+        [ImportParameter(nameof(AppointmentGuid), TransactionType.Append, TransactionType.Delete)]
         public Guid? AppointmentGuid { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
@@ -35,7 +35,7 @@ namespace Dime.Scheduler.Sdk.Import
         [RequiredIf(TransactionType.Append)]
         public string TaskNo { get; set; }
 
-        [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
+        [ImportParameter(nameof(ResourceNo), TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         [RequiredIf(TransactionType.Append)]
         public string ResourceNo { get; set; }
