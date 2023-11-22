@@ -20,12 +20,12 @@ namespace Dime.Scheduler.Sdk.Models
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [RequiredIf(TransactionType.Append)]
         public string SourceApp { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType), TransactionType.Append, TransactionType.Delete)]
-        [RequiredIf(TransactionType.Append, TransactionType.Delete)]
+        [RequiredIf(TransactionType.Append)]
         [MaxLength(10)]
         public string SourceType { get; set; }
 
