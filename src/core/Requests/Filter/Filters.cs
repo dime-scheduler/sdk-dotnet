@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class Filters<T> : List<Filter<T>>
     {

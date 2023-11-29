@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests.Utils
+namespace Dime.Scheduler.Tests.Utils
 {
     internal enum Department
     {

@@ -1,4 +1,4 @@
-﻿namespace Dime.Scheduler.Sdk.Tests
+﻿namespace Dime.Scheduler.Tests
 {
     internal class Customer
     {

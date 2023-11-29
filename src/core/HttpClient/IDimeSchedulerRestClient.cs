@@ -2,12 +2,20 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public interface IDimeSchedulerRestClient<in TRequest>
     {
-        Task Execute(string endpoint, Method method, TRequest requestParameters);
-        Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters);
-        Task<T> Execute<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters);
+        void Execute(string endpoint, Method method, TRequest requestParameters);
+
+        Task ExecuteAsync(string endpoint, Method method, TRequest requestParameters);
+
+        T Execute<T>(string endpoint, Method method, TRequest requestParameters);
+
+        Task<T> ExecuteAsync<T>(string endpoint, Method method, TRequest requestParameters);
+
+        T Execute<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters);
+
+        Task<T> ExecuteAsync<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters);
     }
 }

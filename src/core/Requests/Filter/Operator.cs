@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public enum Operator
     {

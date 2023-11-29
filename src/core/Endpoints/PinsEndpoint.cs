@@ -1,27 +1,10 @@
-﻿using System.Threading.Tasks;
-using RestSharp;
-
-namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
-    public class PinsEndpoint : Endpoint<IndicatorRequest>, ICrudEndpoint<IndicatorRequest>
+    public class PinsEndpoint : DefaultEndpoint<Indicator>, IPinEndpoint
     {
-        public PinsEndpoint(AuthenticationOptions opts)
-            : base(opts)
+        public PinsEndpoint(EndpointOptions opts)
+            : base(Routes.Pin, opts)
         {
         }
-
-        internal PinsEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient)
-            : base(restClient)
-        {
-        }
-
-        public Task Create(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Create, Method.POST, requestParameters);
-
-        public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Update, Method.PUT, requestParameters);
-
-        public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.Pins.Delete, Method.DELETE, requestParameters);
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Entities;
 using t = System.Threading.Tasks;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public interface IImportEndpoint : IEndpoint
     {

@@ -3,7 +3,7 @@
 	<members name="TrackedEntity">
 		<SourceApp>
 			<summary>
-				Identifies the record's originating system. 
+				Identifies the record's originating system.
 			</summary>
 		</SourceApp>
 		<SourceType>
@@ -34,6 +34,18 @@
 			</summary>
 		</FreeDate>
 	</members>
+	<members name="Appointment">
+		<AppointmentId>
+			<summary>
+				The internal appointment id. Do not rely on its existence. Use AppointmentNo instead.
+			</summary>
+		</AppointmentId>
+		<AppointmentNo>
+			<summary>
+				The external identifier for this appointment.
+			</summary>
+		</AppointmentNo>
+</members>
 	<members name="Work">
 		<JobNo>
 			<summary>

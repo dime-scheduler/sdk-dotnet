@@ -1,30 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using RestSharp;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
-    public abstract class Endpoint<TRequest> where TRequest : class
+    public abstract class Endpoint
     {
-        private readonly IDimeSchedulerRestClient<TRequest> _restClient;
+        private readonly EndpointOptions _opts;
 
-        protected Endpoint(AuthenticationOptions opts)
-            : this(new DefaultDimeSchedulerRestClient<TRequest>(opts))
+        protected Endpoint(EndpointOptions opts)
         {
+            _opts = opts;
         }
 
-        protected Endpoint(IDimeSchedulerRestClient<TRequest> restClient)
+        protected T Execute<T>(string endpoint, Method method, T requestParameters)
         {
-            _restClient = restClient;
+            IDimeSchedulerRestClient<T> restClient = new DimeSchedulerRestClient<T>(_opts);
+            return restClient.Execute<T>(endpoint, method, requestParameters);
         }
 
-        protected Task Execute(string endpoint, Method method, TRequest requestParameters)
-            => _restClient.Execute(endpoint, method, requestParameters);
+        protected Task<T> ExecuteAsync<T>(string endpoint, Method method, T requestParameters)
+        {
+            IDimeSchedulerRestClient<T> restClient = new DimeSchedulerRestClient<T>(_opts);
+            return restClient.ExecuteAsync<T>(endpoint, method, requestParameters);
+        }
 
-        protected Task<T> Execute<T>(string endpoint, Method method, TRequest requestParameters)
-            => _restClient.Execute<T>(endpoint, method, requestParameters);
+        protected T Execute<T, TRequest>(string endpoint, Method method, TRequest requestParameters)
+        {
+            IDimeSchedulerRestClient<TRequest> restClient = new DimeSchedulerRestClient<TRequest>(_opts);
+            return restClient.Execute<T>(endpoint, method, requestParameters);
+        }
 
-        protected Task<T> Execute<T>(string endpoint, Method method, IEnumerable<TRequest> requestParameters)
-            => _restClient.Execute<T>(endpoint, method, requestParameters);
+        protected Task<T> ExecuteAsync<T, TRequest>(string endpoint, Method method, TRequest requestParameters)
+        {
+            IDimeSchedulerRestClient<TRequest> restClient = new DimeSchedulerRestClient<TRequest>(_opts);
+            return restClient.ExecuteAsync<T>(endpoint, method, requestParameters);
+        }
     }
 }

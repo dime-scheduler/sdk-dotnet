@@ -1,8 +1,8 @@
 ﻿using System;
-using Dime.Scheduler.Sdk.Import;
+using Dime.Scheduler.Entities;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests.Import
+namespace Dime.Scheduler.Tests.Import
 {
     public partial class AppointmentPlanningQuantityTests
     {

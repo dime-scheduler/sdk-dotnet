@@ -1,21 +1,22 @@
-﻿using System.Threading.Tasks;
+﻿using Dime.Scheduler.Entities;
 using RestSharp;
+using Task = System.Threading.Tasks.Task;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
-    public class MessagesEndpoint : Endpoint<MessageRequest>, IMessageEndpoint
+    public class MessagesEndpoint : Endpoint<Message>, IMessageEndpoint
     {
-        public MessagesEndpoint(AuthenticationOptions opts)
+        public MessagesEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }
 
-        internal MessagesEndpoint(IDimeSchedulerRestClient<MessageRequest> restClient)
+        internal MessagesEndpoint(IDimeSchedulerRestClient<Message> restClient)
             : base(restClient)
         {
         }
 
-        public async Task PostAsync(MessageRequest request)
-            => await Execute(Routes.Messages.Post, Method.POST, request);
+        public async Task PostAsync(Message request)
+            => await ExecuteAsync(Routes.Message, Method.Post, request);
     }
 }

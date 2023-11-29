@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Dime.Scheduler.Sdk.Requests
+namespace Dime.Scheduler.Requests
 {
     public class Sorters<T> : List<Sorter<T>>
     {

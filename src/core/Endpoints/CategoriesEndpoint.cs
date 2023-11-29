@@ -1,27 +1,10 @@
-﻿using System.Threading.Tasks;
-using RestSharp;
-
-namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
-    public class CategoriesEndpoint : Endpoint<IndicatorRequest>, ICrudEndpoint<IndicatorRequest>
+    public class CategoriesEndpoint : DefaultEndpoint<Indicator>, ICategoryEndpoint
     {
-        public CategoriesEndpoint(AuthenticationOptions opts)
-            : base(opts)
+        public CategoriesEndpoint(EndpointOptions opts)
+            : base(Routes.Category, opts)
         {
         }
-
-        internal CategoriesEndpoint(IDimeSchedulerRestClient<IndicatorRequest> restClient)
-            : base(restClient)
-        {
-        }
-
-        public Task Create(IndicatorRequest requestParameters)
-            => Execute(Routes.Categories.Create, Method.POST, requestParameters);
-
-        public Task Update(IndicatorRequest requestParameters)
-            => Execute(Routes.Categories.Update, Method.PUT, requestParameters);
-
-        public Task Delete(IndicatorRequest requestParameters)
-            => Execute(Routes.Categories.Delete, Method.DELETE, requestParameters);
     }
 }
