@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace Dime.Scheduler.Sdk.Tests
+namespace Dime.Scheduler.Tests
 {
     public partial class MockRestClient<TRequest> : IDimeSchedulerRestClient<TRequest>
     {

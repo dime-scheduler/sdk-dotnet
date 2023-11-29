@@ -1,4 +1,4 @@
-﻿namespace Dime.Scheduler.Sdk.Models.Builder
+﻿namespace Dime.Scheduler.Entities.Builder
 {
     public interface IImportRequestableBuilder<out T> where T : IImportRequestable
     {

@@ -1,7 +1,7 @@
-﻿using Dime.Scheduler.Sdk.Requests;
+﻿using Dime.Scheduler.Requests;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests
+namespace Dime.Scheduler.Tests
 {
     public partial class SorterTests
     {

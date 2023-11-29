@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dime.Scheduler.Sdk.Models.Exchange
+namespace Dime.Scheduler.Entities.Exchange
 {
     public enum ShowAs
     {

@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://cdn.dimescheduler.com/dime-scheduler/Dime.Scheduler-Black.svg" height="75px" />
+<img src="https://cdn.dimescheduler.com/dime-scheduler/v2/logo.png" height="75px" />
 </div>
 
 <h1 align="center">Dime.Scheduler SDK for .NET examples</h1>

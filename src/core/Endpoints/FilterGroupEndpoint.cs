@@ -1,10 +1,10 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class FilterGroupEndpoint : DefaultEndpoint<FilterGroup>, IFilterGroupEndpoint
     {
-        public FilterGroupEndpoint(AuthenticationOptions opts)
+        public FilterGroupEndpoint(EndpointOptions opts)
             : base(Routes.Filter.Group, opts)
         {
         }

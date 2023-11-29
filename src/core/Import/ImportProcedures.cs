@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     [ExcludeFromCodeCoverage]
     internal static class ImportProcedures
@@ -88,6 +88,7 @@ namespace Dime.Scheduler.Sdk.Models
             internal static readonly string Append = $"{_base}add{_entity}";
             internal static readonly string Delete = $"{_base}{_delete}{_entity}";
         }
+
         internal static class Connector
         {
             private static readonly string _entity = "Connector";

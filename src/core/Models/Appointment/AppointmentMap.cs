@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     [ExcludeFromCodeCoverage]
     public class AppointmentMap

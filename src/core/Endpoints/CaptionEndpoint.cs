@@ -1,10 +1,10 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class CaptionEndpoint : DefaultEndpoint<Caption>, ICaptionEndpoint
     {
-        public CaptionEndpoint(AuthenticationOptions opts)
+        public CaptionEndpoint(EndpointOptions opts)
             : base(Routes.Caption, opts)
         {
         }

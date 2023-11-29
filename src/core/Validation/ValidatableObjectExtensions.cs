@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     internal static class ValidatableObjectExtensions
     {

@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public interface IMessageEndpoint : IEndpoint
     {
-        Task PostAsync(Message request);
+        System.Threading.Tasks.Task PostAsync(Message request);
     }
 }

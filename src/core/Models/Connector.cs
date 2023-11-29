@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     public class Connector : IImportRequestable, IValidatableImportRequest<Connector>
     {
@@ -44,7 +44,7 @@ namespace Dime.Scheduler.Sdk.Models
 
         /// <summary>
         /// A comma-separated list that accepts either of these values: "Create", "Update", "Delete"
-        /// </summary>        
+        /// </summary>
         public string CrudTypes { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

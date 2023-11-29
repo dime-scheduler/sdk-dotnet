@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     /// <summary>
     /// A job is a meta entity that holds information such as customer, contact, addresses, and more.

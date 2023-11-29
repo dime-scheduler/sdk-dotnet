@@ -1,8 +1,8 @@
 ﻿using System;
-using Dime.Scheduler.Sdk.Models;
+using Dime.Scheduler.Entities;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests.Import
+namespace Dime.Scheduler.Tests.Import
 {
     public partial class PinTests
     {

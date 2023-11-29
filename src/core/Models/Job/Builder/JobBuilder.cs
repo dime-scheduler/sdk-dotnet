@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Models.Builder
+namespace Dime.Scheduler.Entities.Builder
 {
-    [Obsolete("Will be removed in version 2.x")]
+    [Obsolete("Deprecated. Will be removed in a later major version.")]
     public class JobBuilder : IImportRequestableBuilder<Job>
     {
         private readonly Job _job = new();

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     public interface IValidatableImportRequest<out T> : IValidatableObject
     {

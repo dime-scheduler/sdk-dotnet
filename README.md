@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/azure-devops/build/dimesoftware/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimesoftware/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler.sdk?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />    
+    <img src="https://img.shields.io/azure-devops/build/dimesoftware/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimesoftware/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />    
     <a href="https://github.com/dime-scheduler/sdk-dotnet/discussions">
   <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
 </a>
@@ -27,10 +27,11 @@ This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway
 
 Use the package manager NuGet to install the SDK:
 
-`dotnet add package Dime.Scheduler.Sdk`
+`dotnet add package Dime.Scheduler`
 
 > [!IMPORTANT]  
 > Version 2 and onwards is only forwards compatible with Dime.Scheduler cloud.
+> The `Dime.Scheduler.Sdk` package is maintained for the on-premises version.
 
 ## Prerequisites
 

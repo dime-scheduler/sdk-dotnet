@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Models.Builder
+namespace Dime.Scheduler.Entities.Builder
 {
     [Obsolete("Will be removed in version 2.x")]
     public class TaskBuilder : IImportRequestableBuilder<Task>

@@ -1,6 +1,6 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public interface INotificationEndpoint : ICrudEndpoint<Notification>
     {

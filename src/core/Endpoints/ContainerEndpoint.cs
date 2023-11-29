@@ -1,10 +1,10 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class ContainerEndpoint : DefaultEndpoint<Container>, IContainerEndpoint
     {
-        public ContainerEndpoint(AuthenticationOptions opts)
+        public ContainerEndpoint(EndpointOptions opts)
             : base(Routes.Container, opts)
         {
         }

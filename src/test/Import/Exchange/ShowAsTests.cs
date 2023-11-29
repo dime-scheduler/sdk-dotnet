@@ -1,7 +1,7 @@
-﻿using Dime.Scheduler.Sdk.Models.Exchange;
+﻿using Dime.Scheduler.Entities.Exchange;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests.Models.Exchange
+namespace Dime.Scheduler.Tests.Models.Exchange
 {
     public partial class ShowAsTests
     {

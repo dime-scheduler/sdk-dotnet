@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public interface ICrudEndpoint<in T> : IEndpoint where T : class
     {

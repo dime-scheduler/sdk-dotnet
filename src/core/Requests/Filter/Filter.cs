@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class Filter<T>
     {

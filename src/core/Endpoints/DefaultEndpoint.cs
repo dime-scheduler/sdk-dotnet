@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using RestSharp;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public abstract class DefaultEndpoint<T> : Endpoint<T> where T : class
     {
-        protected DefaultEndpoint(string route, AuthenticationOptions opts) : base(opts)
+        protected DefaultEndpoint(string route, EndpointOptions opts) : base(opts)
         {
             Route = route;
         }

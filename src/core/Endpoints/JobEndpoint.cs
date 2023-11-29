@@ -1,10 +1,10 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class JobEndpoint : DefaultEndpoint<Job>, IJobEndpoint
     {
-        public JobEndpoint(AuthenticationOptions opts)
+        public JobEndpoint(EndpointOptions opts)
             : base(Routes.Job.Entity, opts)
         {
         }

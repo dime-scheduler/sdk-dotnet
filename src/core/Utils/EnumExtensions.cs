@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     internal static class EnumExtensions
     {

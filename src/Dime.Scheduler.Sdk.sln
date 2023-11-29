@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30621.155
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler.Sdk", "core\Dime.Scheduler.Sdk.csproj", "{0AA3DC3F-3CF1-4304-B127-0CB873D9DE3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler", "core\Dime.Scheduler.csproj", "{0AA3DC3F-3CF1-4304-B127-0CB873D9DE3B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler.Sdk.Tests", "test\Dime.Scheduler.Sdk.Tests.csproj", "{148F7BF9-217F-4892-A214-8A3AE4B95752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler.Tests", "test\Dime.Scheduler.Tests.csproj", "{148F7BF9-217F-4892-A214-8A3AE4B95752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

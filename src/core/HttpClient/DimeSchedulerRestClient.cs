@@ -5,14 +5,15 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
+using WebApiException = Dime.Scheduler.Entities.WebApiException;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class DimeSchedulerRestClient<TRequest> : IDimeSchedulerRestClient<TRequest>
     {
-        private readonly AuthenticationOptions _opts;
+        private readonly EndpointOptions _opts;
 
-        public DimeSchedulerRestClient(AuthenticationOptions opts)
+        public DimeSchedulerRestClient(EndpointOptions opts)
         {
             _opts = opts;
         }

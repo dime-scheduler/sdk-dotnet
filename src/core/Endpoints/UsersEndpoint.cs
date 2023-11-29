@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
 using RestSharp;
+using User = Dime.Scheduler.Entities.User;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class UsersEndpoint : Endpoint<User>, ICrudEndpoint<User>, IUserEndpoint
     {
-        public UsersEndpoint(AuthenticationOptions opts)
+        public UsersEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }

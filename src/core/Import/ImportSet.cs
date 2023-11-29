@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler.Entities
 {
     [ExcludeFromCodeCoverage]
     public class ImportSet

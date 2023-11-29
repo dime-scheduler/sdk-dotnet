@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     public class AppointmentContainer : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<AppointmentContainer>
     {

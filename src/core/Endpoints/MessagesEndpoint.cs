@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using Dime.Scheduler.Entities;
 using RestSharp;
+using Task = System.Threading.Tasks.Task;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class MessagesEndpoint : Endpoint<Message>, IMessageEndpoint
     {
-        public MessagesEndpoint(AuthenticationOptions opts)
+        public MessagesEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }

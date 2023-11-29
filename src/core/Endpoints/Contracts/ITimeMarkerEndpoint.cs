@@ -1,4 +1,4 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
     public interface ITimeMarkerEndpoint : ICrudEndpoint<Indicator>
     {

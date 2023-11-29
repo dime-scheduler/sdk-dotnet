@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Models.Builder
+namespace Dime.Scheduler.Entities.Builder
 {
     public class ProjectTask
     {

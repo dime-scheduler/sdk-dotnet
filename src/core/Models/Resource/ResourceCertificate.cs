@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     public class ResourceCertificate : IImportRequestable
     {

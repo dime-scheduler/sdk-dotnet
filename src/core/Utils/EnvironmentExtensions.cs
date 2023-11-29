@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     internal static class EnvironmentExtensions
     {

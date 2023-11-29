@@ -1,4 +1,4 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
     public abstract class EndpointBuilder<T>
     {
@@ -6,6 +6,6 @@
         {
         }
 
-        protected abstract T Create(AuthenticationOptions opts);
+        protected abstract T Create(EndpointOptions opts);
     }
 }

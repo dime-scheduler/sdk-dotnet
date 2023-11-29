@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Dime.Scheduler.Sdk.Models.Exchange
+namespace Dime.Scheduler.Entities.Exchange
 {
     public enum Sensitivity
     {

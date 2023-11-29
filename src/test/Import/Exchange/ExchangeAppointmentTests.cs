@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Models;
-using Dime.Scheduler.Sdk.Models.Exchange;
+using Dime.Scheduler.Entities;
+using Dime.Scheduler.Entities.Exchange;
 using Xunit;
 
-namespace Dime.Scheduler.Sdk.Tests.Import
+namespace Dime.Scheduler.Tests.Import
 {
     public partial class ExchangeAppointmentTests
     {

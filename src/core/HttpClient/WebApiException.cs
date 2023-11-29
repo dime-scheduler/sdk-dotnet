@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler.Entities
 {
     public class WebApiException : Exception
     {

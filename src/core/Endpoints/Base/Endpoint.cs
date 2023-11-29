@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
 using RestSharp;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public abstract class Endpoint
     {
-        private readonly AuthenticationOptions _opts;
+        private readonly EndpointOptions _opts;
 
-        protected Endpoint(AuthenticationOptions opts)
+        protected Endpoint(EndpointOptions opts)
         {
             _opts = opts;
         }

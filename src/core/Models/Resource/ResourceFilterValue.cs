@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     public class ResourceFilterValue : IImportRequestable
     {
@@ -11,15 +11,15 @@ namespace Dime.Scheduler.Sdk.Models
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
         [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
-        
+
         [ImportParameter(nameof(ResourceNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string ResourceNo { get; set; }
-        
+
         [ImportParameter(nameof(FilterGroup))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterGroup { get; set; }
-        
+
         [ImportParameter(nameof(FilterValue))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterValue { get; set; }

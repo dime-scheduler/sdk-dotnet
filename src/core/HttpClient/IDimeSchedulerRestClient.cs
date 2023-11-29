@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public interface IDimeSchedulerRestClient<in TRequest>
     {

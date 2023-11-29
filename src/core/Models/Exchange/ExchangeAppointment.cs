@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Models.Exchange;
+using Dime.Scheduler.Entities.Exchange;
 
-namespace Dime.Scheduler.Sdk.Models
+namespace Dime.Scheduler.Entities
 {
     public class ExchangeAppointment : IImportRequestable
     {

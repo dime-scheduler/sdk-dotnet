@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     [ExcludeFromCodeCoverage]
     internal static class Routes

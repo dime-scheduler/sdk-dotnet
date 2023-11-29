@@ -1,9 +1,9 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
     public enum LoginType
     {
         None = 0,
-        Azure = 1,        
+        Azure = 1,
         Forms = 2
     }
 }

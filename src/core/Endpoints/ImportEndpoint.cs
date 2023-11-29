@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dime.Scheduler.Sdk.Models;
+using Dime.Scheduler.Entities;
 using RestSharp;
 using t = System.Threading.Tasks;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class ImportEndpoint : Endpoint, IImportEndpoint
     {
-        public ImportEndpoint(AuthenticationOptions opts)
+        public ImportEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }

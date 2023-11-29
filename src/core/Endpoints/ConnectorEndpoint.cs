@@ -1,10 +1,10 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class ConnectorEndpoint : DefaultEndpoint<Connector>, IConnectorEndpoint
     {
-        public ConnectorEndpoint(AuthenticationOptions opts)
+        public ConnectorEndpoint(EndpointOptions opts)
             : base(Routes.Connector, opts)
         {
         }

@@ -1,8 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
     public class CategoriesEndpoint : DefaultEndpoint<Indicator>, ICategoryEndpoint
     {
-        public CategoriesEndpoint(AuthenticationOptions opts)
+        public CategoriesEndpoint(EndpointOptions opts)
             : base(Routes.Category, opts)
         {
         }

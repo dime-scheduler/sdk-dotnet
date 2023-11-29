@@ -1,12 +1,12 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 using RestSharp;
 using t = System.Threading.Tasks;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class TaskEndpoint : Endpoint, ITaskEndpoint
     {
-        public TaskEndpoint(AuthenticationOptions opts)
+        public TaskEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }
@@ -14,10 +14,10 @@ namespace Dime.Scheduler.Sdk
         void ICrudEndpoint<Task>.Create(Task requestParameters)
             => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
-        public t.Task CreateAsync(Models.Task requestParameters)
+        public t.Task CreateAsync(Task requestParameters)
             => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
-        public t.Task UpdateAsync(Models.Task requestParameters)
+        public t.Task UpdateAsync(Task requestParameters)
            => ExecuteAsync(Routes.Task.Entity, Method.Post, requestParameters);
 
         void ICrudEndpoint<Task>.Update(Task requestParameters)
@@ -25,8 +25,8 @@ namespace Dime.Scheduler.Sdk
 
         void ICrudEndpoint<Task>.Delete(Task requestParameters)
             => ExecuteAsync(Routes.Task.Entity, Method.Delete, requestParameters);
-               
-        public t.Task DeleteAsync(Models.Task requestParameters)
+
+        public t.Task DeleteAsync(Task requestParameters)
             => ExecuteAsync(Routes.Task.Entity, Method.Delete, requestParameters);
 
         void ICrudEndpoint<TaskLocked>.Create(TaskLocked requestParameters)

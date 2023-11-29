@@ -1,8 +1,8 @@
-﻿namespace Dime.Scheduler.Sdk
+﻿namespace Dime.Scheduler
 {
     public class PinsEndpoint : DefaultEndpoint<Indicator>, IPinEndpoint
     {
-        public PinsEndpoint(AuthenticationOptions opts)
+        public PinsEndpoint(EndpointOptions opts)
             : base(Routes.Pin, opts)
         {
         }

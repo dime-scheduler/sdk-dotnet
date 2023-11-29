@@ -1,12 +1,12 @@
-﻿using Dime.Scheduler.Sdk.Models;
+﻿using Dime.Scheduler.Entities;
 using RestSharp;
 using t = System.Threading.Tasks;
 
-namespace Dime.Scheduler.Sdk
+namespace Dime.Scheduler
 {
     public class ResourcesEndpoint : Endpoint, IResourceEndpoint
     {
-        public ResourcesEndpoint(AuthenticationOptions opts)
+        public ResourcesEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }
