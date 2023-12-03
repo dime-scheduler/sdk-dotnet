@@ -19,11 +19,11 @@ Make sure to comply with the [code of conduct](CODE_OF_CONDUCT.md).
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
-Dime has adopted the [Contributor Covenant](./CODE_OF_CONDUCT.md) as its Code of Conduct, and we expect project participants to adhere to it. Please read the full text so that you can understand what actions will and will not be tolerated.
+Dime Software has adopted the [Contributor Covenant](./CODE_OF_CONDUCT.md) as its Code of Conduct, and we expect project participants to adhere to it. Please read the full text so that you can understand what actions will and will not be tolerated.
 
 ## Semantic Versioning
 
-Dime follows semantic versioning. We release patch versions for critical bugfixes, minor versions for new features or non-essential changes, and major versions for any breaking changes. When we make breaking changes, we also introduce deprecation warnings in a minor version so that our users learn about the upcoming changes and migrate their code in advance. 
+Dime Software follows semantic versioning. We release patch versions for critical bugfixes, minor versions for new features or non-essential changes, and major versions for any breaking changes. When we make breaking changes, we also introduce deprecation warnings in a minor version so that our users learn about the upcoming changes and migrate their code in advance. 
 
 ## Questions, Bugs, Features
 
