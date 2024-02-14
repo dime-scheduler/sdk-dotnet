@@ -29,7 +29,7 @@
 	<ItemGroup>
 		<PackageReference Include="RestSharp" Version="110.2.0" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-		<PackageReference Include="System.Text.Json" Version="8.0.0" />
+		<PackageReference Include="System.Text.Json" Version="8.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
