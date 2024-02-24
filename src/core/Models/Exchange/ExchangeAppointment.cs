@@ -49,6 +49,9 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(Categories))]
         public IEnumerable<string> Categories { get; set; } = new List<string>();
 
+        [ImportParameter(nameof(CreatedByExchange))]
+        public bool CreatedByExchange { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
