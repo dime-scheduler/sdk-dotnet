@@ -29,6 +29,9 @@ namespace Dime.Scheduler.Entities
         [ImportParameter("DefaultUrl")]
         public bool Default { get; set; }
 
+        [ImportParameter(nameof(RequestType))]
+        public HttpRequestType RequestType { get; set; }
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
