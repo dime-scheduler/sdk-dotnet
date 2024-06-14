@@ -103,6 +103,9 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(SentFromBackOffice), TransactionType.Delete)]
         public bool? SentFromBackOffice { get; set; } = true;
 
+        [ImportParameter(nameof(IsManualAppointment), TransactionType.Append)]
+        public bool? IsManualAppointment { get; set; } = false;
+
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
