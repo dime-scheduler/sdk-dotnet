@@ -79,6 +79,14 @@ namespace Dime.Scheduler.Entities
                 internal static readonly string Append = $"{_base}{_append}{_entity}";
                 internal static readonly string Delete = $"{_base}{_delete}{_entity}";
             }
+
+            internal static class FieldValue
+            {
+                private static readonly string _entity = "AppointmentFieldValues";
+
+                internal static readonly string Append = $"{_base}{_update}{_entity}";
+                internal static readonly string Delete = $"{_base}{_delete}{_entity}";
+            }
         }
 
         internal static class Assignment

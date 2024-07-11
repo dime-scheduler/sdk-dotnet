@@ -22,7 +22,7 @@ namespace Dime.Scheduler.Tests.Import
 
             importRequest.AssertStoredProcedureName("mboc_upsertActionUrl");
             importRequest.AssertEqualParameterCollectionCount();
-            importRequest.AssertParameterCount(6);
+            importRequest.AssertParameterCount(7);
         }
 
         [Fact]
