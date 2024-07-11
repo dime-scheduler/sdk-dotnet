@@ -98,8 +98,8 @@ namespace Dime.Scheduler.Tests.Import
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
             importRequest.AssertEqualParameterCollectionCount();
-            Assert.True(importRequest.ParameterNames.Length == 7);
-            Assert.True(importRequest.ParameterValues.Length == 7);
+            Assert.True(importRequest.ParameterNames.Length == 8);
+            Assert.True(importRequest.ParameterValues.Length == 8);
         }
     }
 }

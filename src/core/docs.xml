@@ -45,7 +45,12 @@
 				The external identifier for this appointment.
 			</summary>
 		</AppointmentNo>
-</members>
+		<AppointmentGuid>
+			<summary>
+				The identifier for this appointment.
+			</summary>
+		</AppointmentGuid>
+	</members>
 	<members name="Work">
 		<JobNo>
 			<summary>
