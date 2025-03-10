@@ -2,7 +2,6 @@
 using System;
 using System.Threading.Tasks;
 using RestSharp;
-using Dime.Scheduler.Entities;
 
 namespace Dime.Scheduler
 {
@@ -33,23 +32,7 @@ namespace Dime.Scheduler
                 request.AddBody(requestParameters);
 
                 RestResponse<ImportResult> response = await client.ExecuteAsync<ImportResult>(request);
-                if (response.IsSuccessful)
-                {
-                    if (response.Data.StatusCode == 200)
-                        return Result.Ok(response.StatusDescription);
-
-                    WebApiException ex = response.ContentType switch
-                    {
-                        "text/plain" => SerializePlainTextError(response),
-                        string ct when ct.Contains("application/json") => SerializeJsonError(response),
-                        _ => SerializePlainTextError(response),
-                    };
-
-                    return Result.Fail(ex.Message);
-                }
-
-                WebApiException exception = JsonSerializer.Deserialize<WebApiException>(response.Content);
-                return Result.Fail(exception.Description);
+                return response.IsSuccessful && response.Data?.StatusCode == 200 ? Result.Ok(response.StatusDescription) : Result.Fail(GetError(response));
             }
             catch (Exception ex)
             {
@@ -57,22 +40,21 @@ namespace Dime.Scheduler
             }
         }
 
-        private static WebApiException SerializePlainTextError<T>(RestResponse<T> response)
-            => new()
-            {
-                Description = response.Content ?? response.StatusDescription,
-                StatusCode = response.StatusCode
-            };
-
-        private static WebApiException SerializeJsonError<T>(RestResponse<T> response)
+        private static string GetError(RestResponse response)
         {
-            FailedRequest failedRequest = JsonSerializer.Deserialize<FailedRequest>(response.Content);
-            FailedRequestException ex = JsonSerializer.Deserialize<FailedRequestException>(failedRequest.Content);
-            return new WebApiException
+            try
             {
-                Error = failedRequest.Content,
-                StatusCode = failedRequest.StatusCode
-            };
+                if (string.IsNullOrEmpty(response.Content))
+                    return $"Received an empty response from {response.Request?.Resource ?? "N/A"}: {response.ErrorMessage ?? "N/A"}";
+
+                FailedRequest failedRequest = JsonSerializer.Deserialize<FailedRequest>(response.Content);
+                FailedRequestException ex = JsonSerializer.Deserialize<FailedRequestException>(failedRequest.Content);
+                return ex.Description;
+            }
+            catch (Exception ex)
+            {
+                return $"An unhandled exception occurred when reading the response: {ex.Message}.";
+            }
         }
     }
 }
