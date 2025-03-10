@@ -10,7 +10,7 @@
 
 <p align="center">
 
-  <img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" />
+  <img src="https://img.shields.io/nuget/v/Dime.Scheduler?style=flat-square&color=brightgreen" />
   <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 </a>
 </p>
