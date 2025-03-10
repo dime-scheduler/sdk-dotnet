@@ -11,11 +11,6 @@ namespace Dime.Scheduler
         {
         }
 
-        internal MessagesEndpoint(IDimeSchedulerRestClient<Message> restClient)
-            : base(restClient)
-        {
-        }
-
         public async Task PostAsync(Message request)
             => await ExecuteAsync(Routes.Message, Method.Post, request);
     }

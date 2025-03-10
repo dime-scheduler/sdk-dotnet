@@ -47,7 +47,7 @@ namespace Dime.Scheduler.Entities
         public Sensitivity Sensitivity { get; set; }
 
         [ImportParameter(nameof(Categories))]
-        public IEnumerable<string> Categories { get; set; } = new List<string>();
+        public IEnumerable<string> Categories { get; set; } = [];
 
         [ImportParameter(nameof(CreatedByExchange))]
         public bool CreatedByExchange { get; set; }

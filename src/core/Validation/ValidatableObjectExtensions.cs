@@ -8,7 +8,7 @@ namespace Dime.Scheduler.Entities
     {
         internal static IEnumerable<ValidationResult> Validate<T>(this IImportRequestable request, ValidationContext validationContext)
         {
-            List<ValidationResult> results = new();
+            List<ValidationResult> results = [];
 
             PropertyInfo[] properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (PropertyInfo property in properties)

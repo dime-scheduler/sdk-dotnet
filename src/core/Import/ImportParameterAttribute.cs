@@ -9,7 +9,7 @@ namespace Dime.Scheduler.Entities
         public ImportParameterAttribute(string name, params TransactionType[] transactionTypes)
         {
             Name = name;
-            TransactionTypes = transactionTypes?.ToList() ?? new List<TransactionType>();
+            TransactionTypes = transactionTypes?.ToList() ?? [];
         }
 
         public string Name { get; }

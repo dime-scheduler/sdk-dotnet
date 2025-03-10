@@ -12,22 +12,13 @@ namespace Dime.Scheduler
 
         private string Route { get; }
 
-        public void Create(T requestParameters)
-            => Execute(Route, Method.Post, requestParameters);
-
-        public Task CreateAsync(T requestParameters)
+        public Task<Result> CreateAsync(T requestParameters)
             => ExecuteAsync(Route, Method.Post, requestParameters);
 
-        public void Update(T requestParameters)
-            => Execute(Route, Method.Put, requestParameters);
-
-        public Task UpdateAsync(T requestParameters)
+        public Task<Result> UpdateAsync(T requestParameters)
             => ExecuteAsync(Route, Method.Put, requestParameters);
 
-        public void Delete(T requestParameters)
-            => Execute(Route, Method.Delete, requestParameters);
-
-        public Task DeleteAsync(T requestParameters)
+        public Task<Result> DeleteAsync(T requestParameters)
             => ExecuteAsync(Route, Method.Delete, requestParameters);
     }
 }

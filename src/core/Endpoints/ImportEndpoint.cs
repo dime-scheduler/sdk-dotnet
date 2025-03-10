@@ -8,8 +8,7 @@ namespace Dime.Scheduler
 {
     public class ImportEndpoint : Endpoint, IImportEndpoint
     {
-        public ImportEndpoint(EndpointOptions opts)
-            : base(opts)
+        public ImportEndpoint(EndpointOptions opts) : base(opts)
         {
         }
 
@@ -17,8 +16,8 @@ namespace Dime.Scheduler
         {
             try
             {
-                IEnumerable<ImportRequest> result = await ExecuteAsync(Routes.Import.InsertData, Method.Post, requestParameters.ToImportRequest(transactionType));
-                return new ImportSet() { Status = 200, Success = true };
+                Result response = await ExecuteAsync(Routes.Import.InsertData, Method.Post, requestParameters.ToImportRequest(transactionType));
+                return new ImportSet() { Status = response.IsSuccess ? 200 : 500, Success = response.IsSuccess, Message = response.Error };
             }
             catch (WebApiException ex)
             {
@@ -34,14 +33,8 @@ namespace Dime.Scheduler
         {
             try
             {
-                ImportResult importResult = await ExecuteAsync<ImportResult, IEnumerable<ImportRequest>>(Routes.Import.Insert, Method.Post, new List<ImportRequest> { requestParameters.ToImportRequest(transactionType) });
-
-                return new ImportSet()
-                {
-                    Status = importResult.StatusCode,
-                    Success = importResult.StatusCode == 200,
-                    Message = importResult.Content
-                };
+                Result response = await ExecuteAsync<IEnumerable<ImportRequest>>(Routes.Import.Insert, Method.Post, [requestParameters.ToImportRequest(transactionType)]);
+                return new ImportSet() { Status = response.IsSuccess ? 200 : 500, Success = response.IsSuccess, Message = response.Error };
             }
             catch (WebApiException ex)
             {

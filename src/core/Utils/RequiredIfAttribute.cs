@@ -9,7 +9,7 @@ namespace Dime.Scheduler.Entities
     {
         public RequiredIfAttribute(params TransactionType[] transactionTypes)
         {
-            TransactionTypes = transactionTypes?.ToList() ?? new List<TransactionType>();
+            TransactionTypes = transactionTypes?.ToList() ?? [];
         }
 
         private IEnumerable<TransactionType> TransactionTypes { get; set; }

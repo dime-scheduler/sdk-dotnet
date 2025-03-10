@@ -50,7 +50,7 @@ This example adds or updates a category:
 Category category = new("Category #1", "#6e62b5");
 
 DimeSchedulerClient client = new("my-api-key");
-await client.Categories.CreateAsync(category);
+var response = await client.Categories.CreateAsync(category);
 ```
 
 ## Read more
