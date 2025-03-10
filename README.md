@@ -3,13 +3,15 @@
 </div>
 
 <p align="center">
-    <img src="assets/connect.svg?raw=true" width="350px">
+    <img src="assets/logo.png" width="350px">
 </p>
 
+<h1 align="center">Dime.Scheduler SDK for .NET </h1>
+
 <p align="center">
-    <img src="https://img.shields.io/azure-devops/build/dimesoftware/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimesoftware/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />    
-    <a href="https://github.com/dime-scheduler/sdk-dotnet/discussions">
-  <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
+
+  <img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 </a>
 </p>
 
@@ -18,8 +20,6 @@
   <a href="https://docs.dimescheduler.com/history">Changelog</a> |
   <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
 </p>
-
-<h1 align="center">Dime.Scheduler SDK for .NET </h1>
 
 This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
@@ -52,7 +52,7 @@ Instantiate the object of choice and run it by its corresponding endpoint in the
 
 ```csharp
 Category category = new("Category #1", "#6e62b5");
-await client.Categories.CreateAsync(category);
+var response = await client.Categories.CreateAsync(category);
 ```
 
 ## Read more
