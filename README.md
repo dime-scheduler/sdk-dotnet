@@ -52,7 +52,7 @@ Instantiate the object of choice and run it by its corresponding endpoint in the
 
 ```csharp
 Category category = new("Category #1", "#6e62b5");
-var response = await client.Categories.CreateAsync(category);
+var response = await client.Indicators.Categories.CreateAsync(category);
 ```
 
 ## Read more

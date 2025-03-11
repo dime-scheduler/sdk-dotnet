@@ -26,7 +26,7 @@ Use the package manager NuGet to install the base library of the SDK:
 The example below fetches the resources available in Dime.Scheduler:
 
 ```csharp
-DimeSchedulerClient client = new("http://mydimescheduler.com", "my-api-key");
+DimeSchedulerClient client = new("key");
 IEnumerable<Resource> resources = await client.Resources.GetAsync(new ResourceRequest());
 foreach (Resource resource in resources)
     Console.WriteLine(resource.Email);
@@ -50,7 +50,7 @@ This example adds or updates a category:
 Category category = new("Category #1", "#6e62b5");
 
 DimeSchedulerClient client = new("my-api-key");
-var response = await client.Categories.CreateAsync(category);
+var response = await client.Indicators.Categories.CreateAsync(category);
 ```
 
 ## Read more
