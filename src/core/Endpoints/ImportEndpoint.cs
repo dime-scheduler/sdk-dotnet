@@ -6,9 +6,9 @@ using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler
 {
-    public class ImportEndpoint : Endpoint, IImportEndpoint
+    internal class ImportEndpoint : Endpoint, IImportEndpoint
     {
-        public ImportEndpoint(EndpointOptions opts) : base(opts)
+        internal ImportEndpoint(EndpointOptions opts) : base(opts)
         {
         }
 

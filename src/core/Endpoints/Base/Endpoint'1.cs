@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler
 {
-    public abstract class Endpoint<TRequest> : Endpoint where TRequest : class
+    internal abstract class Endpoint<TRequest> : Endpoint where TRequest : class
     {
         protected Endpoint(EndpointOptions opts) : base(opts)
         {

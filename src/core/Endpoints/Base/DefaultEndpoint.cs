@@ -3,7 +3,7 @@ using RestSharp;
 
 namespace Dime.Scheduler
 {
-    public abstract class DefaultEndpoint<T> : Endpoint<T> where T : class
+    internal abstract class DefaultEndpoint<T> : Endpoint<T> where T : class
     {
         protected DefaultEndpoint(string route, EndpointOptions opts) : base(opts)
         {

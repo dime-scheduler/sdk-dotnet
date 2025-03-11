@@ -5,7 +5,7 @@ using RestSharp;
 
 namespace Dime.Scheduler
 {
-    public abstract class Endpoint
+    internal abstract class Endpoint
     {
         private readonly EndpointOptions _opts;
 

@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Dime.Scheduler.Entities
 {
-    public class ImportParameterAttribute : Attribute
+    internal class ImportParameterAttribute : Attribute
     {
-        public ImportParameterAttribute(string name, params TransactionType[] transactionTypes)
+        internal ImportParameterAttribute(string name, params TransactionType[] transactionTypes)
         {
             Name = name;
             TransactionTypes = transactionTypes?.ToList() ?? [];

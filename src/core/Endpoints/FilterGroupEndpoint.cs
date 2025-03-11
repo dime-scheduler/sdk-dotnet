@@ -2,10 +2,9 @@
 
 namespace Dime.Scheduler
 {
-    public class FilterGroupEndpoint : DefaultEndpoint<FilterGroup>, IFilterGroupEndpoint
+    internal class FilterGroupEndpoint : DefaultEndpoint<FilterGroup>, IFilterGroupEndpoint
     {
-        public FilterGroupEndpoint(EndpointOptions opts)
-            : base(Routes.Filter.Group, opts)
+        internal FilterGroupEndpoint(EndpointOptions opts) : base(Routes.Filter.Group, opts)
         {
         }
     }

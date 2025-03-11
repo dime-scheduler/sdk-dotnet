@@ -2,10 +2,9 @@
 
 namespace Dime.Scheduler
 {
-    public class ActionUriEndpoint : DefaultEndpoint<ActionUri>, IActionUriEndpoint
+    internal class ActionUriEndpoint : DefaultEndpoint<ActionUri>, IActionUriEndpoint
     {
-        public ActionUriEndpoint(EndpointOptions opts)
-            : base(Routes.ActionUri, opts)
+        internal ActionUriEndpoint(EndpointOptions opts) : base(Routes.ActionUri, opts)
         {
         }
     }

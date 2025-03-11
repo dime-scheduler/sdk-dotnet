@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Entities
 {
-    public interface IValidatableImportRequest<out T> : IValidatableObject
+    internal interface IValidatableImportRequest<out T> : IValidatableObject
     {
         T Validate(TransactionType transactionType);
     }

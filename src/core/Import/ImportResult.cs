@@ -1,9 +1,9 @@
 ﻿namespace Dime.Scheduler
 {
-    public class ImportResult
+    internal class ImportResult
     {
-        public string Content { get; set; }
-        public string ContentType { get; set; }
-        public int StatusCode { get; set; }
+        internal string Content { get; set; }
+        internal string ContentType { get; set; }
+        internal int StatusCode { get; set; }
     }
 }

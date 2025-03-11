@@ -4,9 +4,9 @@ using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler
 {
-    public class AppointmentEndpoint : Endpoint, IAppointmentEndpoint
+    internal class AppointmentEndpoint : Endpoint, IAppointmentEndpoint
     {
-        public AppointmentEndpoint(EndpointOptions opts)
+        internal AppointmentEndpoint(EndpointOptions opts)
             : base(opts)
         {
         }

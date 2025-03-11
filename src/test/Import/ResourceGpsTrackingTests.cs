@@ -21,7 +21,7 @@ namespace Dime.Scheduler.Tests.Import
             ResourceGpsTracking model = new()
             {
                 Date = new DateTime(2020, 1, 1),
-                ResourceNo = "LINA1",
+                ResourceNo = "LINA",
                 GpsTrackingResourceNo = "NO",
                 Latitude = rInt == 0 ? lat1 : lat2,
                 Longitude = rInt == 0 ? lng1 : lng2,

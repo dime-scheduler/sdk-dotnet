@@ -4,10 +4,9 @@ using Task = System.Threading.Tasks.Task;
 
 namespace Dime.Scheduler
 {
-    public class MessagesEndpoint : Endpoint<Message>, IMessageEndpoint
+    internal class MessagesEndpoint : Endpoint<Message>, IMessageEndpoint
     {
-        public MessagesEndpoint(EndpointOptions opts)
-            : base(opts)
+        public MessagesEndpoint(EndpointOptions opts) : base(opts)
         {
         }
 

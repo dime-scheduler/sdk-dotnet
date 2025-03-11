@@ -2,10 +2,9 @@
 
 namespace Dime.Scheduler
 {
-    public class ContainerEndpoint : DefaultEndpoint<Container>, IContainerEndpoint
+    internal class ContainerEndpoint : DefaultEndpoint<Container>, IContainerEndpoint
     {
-        public ContainerEndpoint(EndpointOptions opts)
-            : base(Routes.Container, opts)
+        internal ContainerEndpoint(EndpointOptions opts) : base(Routes.Container, opts)
         {
         }
     }

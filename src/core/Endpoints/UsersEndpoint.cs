@@ -4,7 +4,7 @@ using User = Dime.Scheduler.Entities.User;
 
 namespace Dime.Scheduler
 {
-    public class UsersEndpoint : Endpoint<User>, ICrudEndpoint<User>, IUserEndpoint
+    internal class UsersEndpoint : Endpoint<User>, ICrudEndpoint<User>, IUserEndpoint
     {
         public UsersEndpoint(EndpointOptions opts)
             : base(opts)

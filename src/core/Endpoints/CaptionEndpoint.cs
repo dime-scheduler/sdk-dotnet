@@ -2,10 +2,9 @@
 
 namespace Dime.Scheduler
 {
-    public class CaptionEndpoint : DefaultEndpoint<Caption>, ICaptionEndpoint
+    internal class CaptionEndpoint : DefaultEndpoint<Caption>, ICaptionEndpoint
     {
-        public CaptionEndpoint(EndpointOptions opts)
-            : base(Routes.Caption, opts)
+        internal CaptionEndpoint(EndpointOptions opts) : base(Routes.Caption, opts)
         {
         }
     }

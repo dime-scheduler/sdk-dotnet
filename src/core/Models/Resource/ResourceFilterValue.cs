@@ -35,7 +35,7 @@ namespace Dime.Scheduler.Entities
                 _ => throw new ArgumentOutOfRangeException(nameof(transactionType), transactionType, null)
             };
 
-        public ImportRequest ToImportRequest(TransactionType transactionType, bool clear = false)
+        internal ImportRequest ToImportRequest(TransactionType transactionType, bool clear = false)
             => clear ? CreateClearRequest() : ((IImportRequestable)this).ToImportRequest(transactionType);
 
         private ImportRequest CreateAppendRequest()

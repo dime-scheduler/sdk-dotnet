@@ -1,9 +1,8 @@
 ﻿namespace Dime.Scheduler
 {
-    public class PinsEndpoint : DefaultEndpoint<Indicator>, IPinEndpoint
+    internal class PinsEndpoint : DefaultEndpoint<Indicator>, IPinEndpoint
     {
-        public PinsEndpoint(EndpointOptions opts)
-            : base(Routes.Pin, opts)
+        internal PinsEndpoint(EndpointOptions opts) : base(Routes.Pin, opts)
         {
         }
     }

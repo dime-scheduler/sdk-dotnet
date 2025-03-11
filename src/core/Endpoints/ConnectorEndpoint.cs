@@ -2,10 +2,9 @@
 
 namespace Dime.Scheduler
 {
-    public class ConnectorEndpoint : DefaultEndpoint<Connector>, IConnectorEndpoint
+    internal class ConnectorEndpoint : DefaultEndpoint<Connector>, IConnectorEndpoint
     {
-        public ConnectorEndpoint(EndpointOptions opts)
-            : base(Routes.Connector, opts)
+        internal ConnectorEndpoint(EndpointOptions opts) : base(Routes.Connector, opts)
         {
         }
     }

@@ -4,10 +4,9 @@ using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler
 {
-    public class TaskEndpoint : Endpoint, ITaskEndpoint
+    internal class TaskEndpoint : Endpoint, ITaskEndpoint
     {
-        public TaskEndpoint(EndpointOptions opts)
-            : base(opts)
+        internal TaskEndpoint(EndpointOptions opts) : base(opts)
         {
         }
 

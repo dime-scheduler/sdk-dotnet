@@ -26,7 +26,7 @@
         /// </summary>
         /// <param name="key">The API key to authenticate with.</param>
         /// <param name="uri">Connect to instances of Dime.Scheduler cloud other than the production and sandbox environments.</param>
-        public DimeSchedulerClient(string key, string uri) : this(new EndpointOptions(uri, key))
+        internal DimeSchedulerClient(string key, string uri) : this(new EndpointOptions(uri, key))
         {
         }
 
