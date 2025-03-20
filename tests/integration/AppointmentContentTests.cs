@@ -19,7 +19,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
         [Fact]
-        public void AppointmentContent()
+        public async System.Threading.Tasks.Task AppointmentContent()
         {
             AppointmentContent model = CreateModel();
         }

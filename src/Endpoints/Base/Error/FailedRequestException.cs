@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler
 {
-    internal class FailedRequestException
+    public class FailedRequestException
     {
         [JsonPropertyName("Error")]
         public string Error { get; set; }

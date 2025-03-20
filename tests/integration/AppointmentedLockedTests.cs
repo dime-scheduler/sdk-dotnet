@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class AppointmentLockedTests
     {
         [Fact]
-        public void AppointmentLocked()
+        public async System.Threading.Tasks.Task AppointmentLocked()
         {
             AppointmentLocked model = new()
             {

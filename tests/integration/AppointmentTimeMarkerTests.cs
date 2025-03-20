@@ -18,7 +18,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
         [Fact]
-        public void AppointmentTimeMarker()
+        public async System.Threading.Tasks.Task AppointmentTimeMarker()
         {
             AppointmentTimeMarker model = CreateModel();
         }

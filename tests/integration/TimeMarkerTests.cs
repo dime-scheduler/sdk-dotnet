@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class TimeMarkerTests
     {
         [Fact]
-        public void TimeMarker()
+        public async System.Threading.Tasks.Task TimeMarker()
         {
             TimeMarker model = new()
             {

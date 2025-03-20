@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class TaskFilterValueTests
     {
         [Fact]
-        public void TaskFilterValue()
+        public async System.Threading.Tasks.Task TaskFilterValue()
         {
             TaskFilterValue model = new()
             {

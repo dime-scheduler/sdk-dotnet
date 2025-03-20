@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class AppointmentContainerTests
     {
         [Fact]
-        public void AppointmentContainer()
+        public async System.Threading.Tasks.Task AppointmentContainer()
         {
             AppointmentContainer model = new()
             {

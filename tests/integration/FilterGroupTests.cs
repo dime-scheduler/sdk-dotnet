@@ -3,10 +3,17 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class FilterGroupTests
+    public partial class FilterGroupTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public FilterGroupTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
-        public void FilterGroup_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task FilterGroup()
         {
             FilterGroup model = new()
             {
@@ -15,6 +22,9 @@ namespace Dime.Scheduler.IntegrationTests
                 DataFilter = true,
                 Id = 1
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Filters.Groups.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

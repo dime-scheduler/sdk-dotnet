@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class CaptionTests
     {
         [Fact]
-        public void Captions()
+        public async System.Threading.Tasks.Task Captions()
         {
             Caption model = new()
             {

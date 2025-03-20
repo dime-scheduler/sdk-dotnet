@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class ResourceCapacityTests
     {
         [Fact]
-        public void ResourceCapacity_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task ResourceCapacity_ToImportRequest_Append_AllShouldMapParameters()
         {
             ResourceCapacity model = new()
             {

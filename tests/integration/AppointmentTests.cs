@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class AppointmentTests
     {
         [Fact]
-        public void Appointment_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task Appointment_ToImportRequest_Append_AllShouldMapParameters()
         {
             Appointment model = new()
             {

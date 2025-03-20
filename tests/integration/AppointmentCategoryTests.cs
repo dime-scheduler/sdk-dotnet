@@ -4,8 +4,15 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class AppointmentCategoryTests
+    public partial class AppointmentCategoryTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public AppointmentCategoryTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         private static AppointmentCategory CreateModel()
             => new()
             {
@@ -18,7 +25,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
         [Fact]
-        public void AppointmentCategory()
+        public async System.Threading.Tasks.Task AppointmentCategory()
         {
             AppointmentCategory model = CreateModel();
         }

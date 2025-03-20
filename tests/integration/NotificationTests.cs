@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class NotificationTests
     {
         [Fact]
-        public void Notification_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task Notification_ToImportRequest_Append_AllShouldMapParameters()
         {
             Notification model = new()
             {

@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class TaskUriTests
     {
         [Fact]
-        public void TaskUri()
+        public async System.Threading.Tasks.Task TaskUri()
         {
             TaskUri model = new()
             {

@@ -18,7 +18,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
         [Fact]
-        public void AppointmentPlanningQuantity()
+        public async System.Threading.Tasks.Task AppointmentPlanningQuantity()
         {
             AppointmentPlanningQuantity model = CreateModel();
         }

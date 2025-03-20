@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class ResourceCalendarTests
     {
         [Fact]
-        public void ResourceCalendar_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task ResourceCalendar_ToImportRequest_Append_AllShouldMapParameters()
         {
             ResourceCalendar model = new()
             {

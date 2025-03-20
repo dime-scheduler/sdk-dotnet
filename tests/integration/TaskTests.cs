@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class TaskTests
     {
         [Fact]
-        public void Task()
+        public async System.Threading.Tasks.Task Task()
         {
             Task model = new()
             {

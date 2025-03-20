@@ -39,7 +39,9 @@ namespace Dime.Scheduler
                 request.AddBody(expectsArray ? new List<TRequest> { requestParameters } : requestParameters);
 
                 RestResponse<ImportResult> response = await client.ExecuteAsync<ImportResult>(request);
-                return response.IsSuccessful && response.Data?.StatusCode == 200 ? Result.Ok(response.StatusDescription) : Result.Fail(GetError(response));
+                return response.IsSuccessful && (response.Data?.IsSuccess ?? false)
+                    ? Result.Ok(response.StatusDescription)
+                    : Result.Fail(GetError(response));
             }
             catch (Exception ex)
             {
@@ -47,11 +49,11 @@ namespace Dime.Scheduler
             }
         }
 
-        protected static string GetError(RestResponse response)
+        protected static string GetError(RestResponse<ImportResult> response)
         {
             try
             {
-                if (string.IsNullOrEmpty(response.Content))
+                if (!response.IsSuccessful)
                 {
                     if (string.IsNullOrEmpty(response.StatusDescription))
                         return $"Received an empty response from {response.Request?.Resource ?? "N/A"}: {response.ErrorMessage ?? "N/A"}";
@@ -59,9 +61,10 @@ namespace Dime.Scheduler
                     return $"{(int)response.StatusCode} {response.StatusDescription}";
                 }
 
-                FailedRequest failedRequest = JsonSerializer.Deserialize<FailedRequest>(response.Content);
-                FailedRequestException ex = JsonSerializer.Deserialize<FailedRequestException>(failedRequest.Content);
-                return ex.Description;
+                if (!response.Data.IsSuccess)
+                    return response.Data.GetFailedContent();
+
+                return $"Unhandled exception occurred.";
             }
             catch (Exception ex)
             {

@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class AppointmentUriTests
     {
         [Fact]
-        public void AppointmentUri()
+        public async System.Threading.Tasks.Task AppointmentUri()
         {
             AppointmentUri model = new()
             {

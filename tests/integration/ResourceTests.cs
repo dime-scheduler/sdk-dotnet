@@ -4,10 +4,17 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class ResourceTests
+    public partial class ResourceTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public ResourceTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
-        public void Resource()
+        public async System.Threading.Tasks.Task Resource()
         {
             Resource model = new()
             {
@@ -96,6 +103,8 @@ namespace Dime.Scheduler.IntegrationTests
                 TeamType = "TEXT"
             };
 
+            Result response = await _dimeSchedulerClientFixture.Client.Resources.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

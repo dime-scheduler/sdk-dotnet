@@ -7,7 +7,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class ResourceCertificateTests
     {
         [Fact]
-        public void ResourceCertificate_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task ResourceCertificate_ToImportRequest_Append_AllShouldMapParameters()
         {
             ResourceCertificate model = new()
             {

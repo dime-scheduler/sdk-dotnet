@@ -18,7 +18,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
         [Fact]
-        public void AppointmentImportance()
+        public async System.Threading.Tasks.Task AppointmentImportance()
         {
             AppointmentImportance model = CreateModel();
         }

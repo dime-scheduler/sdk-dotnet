@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class TaskLockedTests
     {
         [Fact]
-        public void TaskLocked()
+        public async System.Threading.Tasks.Task TaskLocked()
         {
             TaskLocked model = new()
             {

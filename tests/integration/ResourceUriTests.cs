@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class ResourceUriTests
     {
         [Fact]
-        public void ResourceUri()
+        public async System.Threading.Tasks.Task ResourceUri()
         {
             ResourceUri model = new()
             {

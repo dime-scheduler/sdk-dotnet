@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class ResourceFilterValueTests
     {
         [Fact]
-        public void ResourceFilterValue()
+        public async System.Threading.Tasks.Task ResourceFilterValue()
         {
             ResourceFilterValue model = new()
             {

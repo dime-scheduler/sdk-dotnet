@@ -19,7 +19,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
         [Fact]
-        public void AppointmentFieldValue_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task AppointmentFieldValue_ToImportRequest_Append_AllShouldMapParameters()
         {
             AppointmentFieldValue model = CreateModel();
         }

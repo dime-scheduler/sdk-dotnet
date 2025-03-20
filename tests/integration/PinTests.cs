@@ -6,7 +6,7 @@ namespace Dime.Scheduler.IntegrationTests
     public partial class PinTests
     {
         [Fact]
-        public void Pin_ToImportRequest_Append_AllShouldMapParameters()
+        public async System.Threading.Tasks.Task Pin_ToImportRequest_Append_AllShouldMapParameters()
         {
             Pin model = new()
             {
