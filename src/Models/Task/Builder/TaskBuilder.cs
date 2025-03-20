@@ -11,7 +11,7 @@ namespace Dime.Scheduler.Entities.Builder
         {
             _task.BaseLineEndDate = projectTask.BaseLineEndDate;
             _task.BaseLineStartDate = projectTask.BaseLineStartDate;
-            _task.ConstraintDatetime = projectTask.ConstraintDatetime;
+            _task.ConstraintDate = projectTask.ConstraintDate;
             _task.DeadLine = projectTask.DeadLine;
             _task.EndDate = projectTask.EndDate;
             _task.StartDate = projectTask.StartDate;

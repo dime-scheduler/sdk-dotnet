@@ -14,7 +14,7 @@ namespace Dime.Scheduler.Entities.Builder
         public DateTime? DeadLine { get; set; }
         public int Index { get; set; }
         public int ConstraintType { get; set; }
-        public DateTime? ConstraintDatetime { get; set; }
+        public DateTime? ConstraintDate { get; set; }
         public string ParentTaskNo { get; set; }
         public string CalendarCode { get; set; }
         public string PredecessorTaskNo { get; set; }

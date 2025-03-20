@@ -4,8 +4,15 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class TaskTests
+    public partial class TaskTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public TaskTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task Task()
         {
@@ -31,7 +38,7 @@ namespace Dime.Scheduler.IntegrationTests
                 ActualResponseDateTime = new DateTime(2020, 1, 1),
                 ActualStartDate = new DateTime(2020, 1, 1),
                 AppointmentEarliestAllowed = new DateTime(2020, 1, 1),
-                AppointmentLatestAllowed = new DateTime(2020, 1, 1),
+                AppointmentLatestAllowed = new DateTime(2020, 1, 2),
                 AppointmentTemplate = "TP",
                 BaseLineEndDate = new DateTime(2020, 1, 1, 15, 30, 15),
                 BaseLinePercentDone = 25,
@@ -41,7 +48,7 @@ namespace Dime.Scheduler.IntegrationTests
                 CheckAppointments = true,
                 ConfirmedEndDate = new DateTime(2020, 1, 1),
                 ConfirmedStartDate = new DateTime(2020, 1, 1),
-                ConstraintDatetime = new DateTime(2020, 1, 1, 15, 30, 15),
+                ConstraintDate = new DateTime(2020, 1, 1, 15, 30, 15),
                 ConstraintType = 5,
                 ContainerIndex = 1,
                 ContainerName = "NAME",
@@ -98,7 +105,7 @@ namespace Dime.Scheduler.IntegrationTests
                 IgnoreCalendars = true,
                 Index = 1,
                 InfiniteTask = true,
-                IsComplete = true,
+                IsComplete = false,
                 LaborWarrantyEndDate = new DateTime(2020, 1, 1),
                 LaborWarrantyStartDate = new DateTime(2020, 1, 1),
                 LocationDescription = "DESC",
@@ -115,7 +122,7 @@ namespace Dime.Scheduler.IntegrationTests
                 PlanningUOMConversion = 25,
                 PredecessorLag = 9,
                 PredecessorTaskNo = "TASK",
-                RequestedEndDate = new DateTime(2020, 1, 1),
+                RequestedEndDate = new DateTime(2020, 1, 2),
                 RequestedEndTime = new TimeSpan(1, 1, 1, 0),
                 RequestedStartDate = new DateTime(2020, 1, 1),
                 RequestedStartTime = new TimeSpan(1, 1, 1, 0),
@@ -143,9 +150,12 @@ namespace Dime.Scheduler.IntegrationTests
                 UrlDescription1 = "URL DESC",
                 UrlDescription2 = "URL DESC",
                 UrlDescription3 = "URL DESC",
-                UseFixPlanningQty = true
+                UseFixPlanningQty = true,
+                CreateJob = true
             };
 
-        }      
+            Result response = await _dimeSchedulerClientFixture.Client.Tasks.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
+        }
     }
 }

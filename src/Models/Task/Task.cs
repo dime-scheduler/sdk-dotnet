@@ -463,8 +463,8 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(ConstraintType), TransactionType.Append)]
         public int ConstraintType { get; set; }
 
-        [ImportParameter(nameof(ConstraintDatetime), TransactionType.Append)]
-        public DateTime? ConstraintDatetime { get; set; }
+        [ImportParameter(nameof(ConstraintDate), TransactionType.Append)]
+        public DateTime? ConstraintDate { get; set; }
 
         [ImportParameter(nameof(ParentTaskNo), TransactionType.Append)]
         [MaxLength(50)]
