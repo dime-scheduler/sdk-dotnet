@@ -17,7 +17,7 @@ namespace Dime.Scheduler.IntegrationTests
         {
             FilterGroup model = new()
             {
-                Name = "Name",
+                Name = EntityNos.FilterGroup,
                 ColumnNo = 1,
                 DataFilter = true,
                 Id = 1

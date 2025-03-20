@@ -10,7 +10,10 @@ namespace Dime.Scheduler
         ICrudEndpoint<AppointmentTimeMarker>,
         ICrudEndpoint<AppointmentUri>,
         ICrudEndpoint<AppointmentContainer>,
-        ICrudEndpoint<Assignment>
+        ICrudEndpoint<Assignment>,
+        ICrudEndpoint<AppointmentImportance>,
+        ICrudEndpoint<AppointmentPlanningQuantity>,
+        ICrudEndpoint<AppointmentFieldValue>
     {
     }
 }

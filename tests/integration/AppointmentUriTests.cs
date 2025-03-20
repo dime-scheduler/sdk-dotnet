@@ -4,8 +4,15 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class AppointmentUriTests
+    public partial class AppointmentUriTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public AppointmentUriTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task AppointmentUri()
         {
@@ -18,6 +25,9 @@ namespace Dime.Scheduler.IntegrationTests
                 Description = "DESC",
                 Uri = "URI"
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

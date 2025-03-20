@@ -17,8 +17,8 @@ namespace Dime.Scheduler.IntegrationTests
         {
             ActionUri model = new()
             {
-                SourceApp = "BC001",
-                SourceType = "BC001",
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
                 UriType = UriType.PlanningBoard,
                 Uri = "https://www.google.com",
                 Description = "Hello world",

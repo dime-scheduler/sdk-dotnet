@@ -1,5 +1,7 @@
-﻿using Dime.Scheduler.Entities;
+﻿using System.Threading.Tasks;
+using Dime.Scheduler.Entities;
 using RestSharp;
+
 using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler
@@ -63,5 +65,14 @@ namespace Dime.Scheduler
 
         t.Task<Result> ICrudEndpoint<ResourceCertificate>.DeleteAsync(ResourceCertificate requestParameters)
             => ExecuteAsync(Routes.Resource.Certificate, Method.Delete, requestParameters);
+
+        Task<Result> ICrudEndpoint<ResourceUri>.CreateAsync(ResourceUri requestParameters)
+            => ExecuteAsync(Routes.Resource.Uri, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<ResourceUri>.UpdateAsync(ResourceUri requestParameters)
+            => ExecuteAsync(Routes.Resource.Uri, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<ResourceUri>.DeleteAsync(ResourceUri requestParameters)
+            => ExecuteAsync(Routes.Resource.Uri, Method.Delete, requestParameters);
     }
 }

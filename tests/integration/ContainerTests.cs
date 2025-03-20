@@ -1,18 +1,27 @@
-﻿using System;
-using Dime.Scheduler.Entities;
+﻿using Dime.Scheduler.Entities;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class ContainerTests
+    public partial class ContainerTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public ContainerTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task Container()
         {
             Container model = new()
             {
-                Name = "Container 1"
+                Name = EntityNos.Container
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Containers.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

@@ -18,10 +18,10 @@ namespace Dime.Scheduler.IntegrationTests
         {
             Task model = new()
             {
-                SourceApp = "APP",
-                SourceType = "TYPE",
-                JobNo = "JOB1",
-                TaskNo = "TASK 1",
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                JobNo = EntityNos.Job,
+                TaskNo = EntityNos.Task,
                 SentFromBackOffice = true,
                 Name = "Name",
                 Category = "Cat",

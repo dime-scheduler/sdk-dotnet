@@ -18,7 +18,7 @@ namespace Dime.Scheduler.IntegrationTests
         {
             Resource model = new()
             {
-                ResourceNo = "Resource",
+                ResourceNo = EntityNos.Resource,
                 GpsTrackingResourceNo = "1",
                 BulkCapacity = 1,
                 BulkPlanning = true,

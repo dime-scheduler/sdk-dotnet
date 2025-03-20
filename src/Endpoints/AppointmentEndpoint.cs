@@ -1,4 +1,5 @@
-﻿using Dime.Scheduler.Entities;
+﻿using System.Threading.Tasks;
+using Dime.Scheduler.Entities;
 using RestSharp;
 using t = System.Threading.Tasks;
 
@@ -82,5 +83,33 @@ namespace Dime.Scheduler
 
         t.Task<Result> ICrudEndpoint<AppointmentContainer>.DeleteAsync(AppointmentContainer requestParameters)
             => ExecuteAsync(Routes.Appointment.Container, Method.Delete, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentImportance>.CreateAsync(AppointmentImportance requestParameters)
+              => ExecuteAsync(Routes.Appointment.Importance, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentImportance>.UpdateAsync(AppointmentImportance requestParameters)
+                => ExecuteAsync(Routes.Appointment.Importance, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentImportance>.DeleteAsync(AppointmentImportance requestParameters)
+              => ExecuteAsync(Routes.Appointment.Importance, Method.Delete, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentPlanningQuantity>.CreateAsync(AppointmentPlanningQuantity requestParameters)
+               => ExecuteAsync(Routes.Appointment.PlanningQuantity, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentPlanningQuantity>.UpdateAsync(AppointmentPlanningQuantity requestParameters)
+            => ExecuteAsync(Routes.Appointment.PlanningQuantity, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentPlanningQuantity>.DeleteAsync(AppointmentPlanningQuantity requestParameters)
+            => ExecuteAsync(Routes.Appointment.PlanningQuantity, Method.Delete, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentFieldValue>.CreateAsync(AppointmentFieldValue requestParameters)
+            => ExecuteAsync(Routes.Appointment.FieldValue, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentFieldValue>.UpdateAsync(AppointmentFieldValue requestParameters)
+            => ExecuteAsync(Routes.Appointment.FieldValue, Method.Post, requestParameters);
+
+        Task<Result> ICrudEndpoint<AppointmentFieldValue>.DeleteAsync(AppointmentFieldValue requestParameters)
+            => ExecuteAsync(Routes.Appointment.FieldValue, Method.Delete, requestParameters);
+
     }
 }

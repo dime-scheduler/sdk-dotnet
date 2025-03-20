@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class TimeMarker : IImportRequestable, IValidatableImportRequest<TimeMarker>
+    public class TimeMarker : Indicator, IImportRequestable, IValidatableImportRequest<TimeMarker>
     {
         public TimeMarker()
         {
@@ -20,12 +20,12 @@ namespace Dime.Scheduler.Entities
         [ImportParameter("TimeMarker")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public override string Name { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Color/*'/>
         [ImportParameter("HexColor", TransactionType.Append)]
         [MaxLength(7)]
-        public string Color { get; set; }
+        public override string Color { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch

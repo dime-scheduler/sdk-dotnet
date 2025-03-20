@@ -4,8 +4,15 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class AppointmentLockedTests
+    public partial class AppointmentLockedTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public AppointmentLockedTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task AppointmentLocked()
         {
@@ -18,6 +25,9 @@ namespace Dime.Scheduler.IntegrationTests
                 Locked = true,
                 SentFromBackOffice = true
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

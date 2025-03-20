@@ -8,7 +8,8 @@ namespace Dime.Scheduler
         ICrudEndpoint<ResourceCalendar>,
         ICrudEndpoint<ResourceCapacity>,
         ICrudEndpoint<ResourceGpsTracking>,
-        ICrudEndpoint<ResourceCertificate>
+        ICrudEndpoint<ResourceCertificate>,
+        ICrudEndpoint<ResourceUri>
     {
     }
 }

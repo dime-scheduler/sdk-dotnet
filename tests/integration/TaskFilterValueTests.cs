@@ -3,21 +3,31 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class TaskFilterValueTests
+    public partial class TaskFilterValueTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public TaskFilterValueTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task TaskFilterValue()
         {
             TaskFilterValue model = new()
             {
-                FilterValue = "TEXT",
                 TransferToTemp = true,
-                JobNo = "TEXT",
-                SourceApp = "TEXT",
-                SourceType = "TEXT",
-                TaskNo = "TEXT",
-                FilterGroup = "TEXT"
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                JobNo = EntityNos.Job,
+                TaskNo = EntityNos.Task,
+                FilterGroup = EntityNos.FilterGroup,
+                FilterValue = EntityNos.FilterValue
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Tasks.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

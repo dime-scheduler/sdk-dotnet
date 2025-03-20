@@ -37,13 +37,14 @@ namespace Dime.Scheduler
             internal const string Assignment = "assignment";
             internal const string Category = "appointmentCategory";
             internal const string Container = "appointmentContainer";
-            internal const string AppointementContent = "appointmentContent";
+            internal const string AppointmentContent = "appointmentContent";
             internal const string Importance = "appointmentImportance";
             internal const string Locked = "appointmentLocked";
             internal const string PlanningQuantity = "appointmentPlanningQuantity";
             internal const string TimeMarker = "appointmentTimeMarker";
             internal const string Uri = "appointmentUri";
             internal const string Content = "appointmentcontent";
+            internal const string FieldValue = "appointmentFieldValue";
         }
 
         internal static class Resource

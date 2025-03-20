@@ -17,7 +17,7 @@ namespace Dime.Scheduler.IntegrationTests
         {
             FilterGroup filterGroup = new()
             {
-                Name = "Group #1",
+                Name = EntityNos.FilterGroup,
                 ColumnNo = 1,
                 DataFilter = true,
                 Id = 1
@@ -25,8 +25,8 @@ namespace Dime.Scheduler.IntegrationTests
 
             FilterValue filterValue = new()
             {
-                Group = "Group #1",
-                Value = "Value #1"
+                Group = EntityNos.FilterGroup,
+                Value = EntityNos.FilterValue
             };
 
             Result groupResponse = await _dimeSchedulerClientFixture.Client.Filters.Groups.CreateAsync(filterGroup);

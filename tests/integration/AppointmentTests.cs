@@ -4,8 +4,15 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class AppointmentTests
+    public partial class AppointmentTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public AppointmentTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task Appointment_ToImportRequest_Append_AllShouldMapParameters()
         {
@@ -37,6 +44,9 @@ namespace Dime.Scheduler.IntegrationTests
                 UnitOfMeasureConversion = 14,
                 UseFixedPlanningQuantity = true
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

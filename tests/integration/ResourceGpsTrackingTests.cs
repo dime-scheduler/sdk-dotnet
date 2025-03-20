@@ -27,7 +27,7 @@ namespace Dime.Scheduler.IntegrationTests
 
             ResourceGpsTracking model = new()
             {
-                ResourceNo = "120",
+                ResourceNo = EntityNos.Resource,
                 Latitude = rInt == 0 ? lat1 : lat2,
                 Longitude = rInt == 0 ? lng1 : lng2
             };

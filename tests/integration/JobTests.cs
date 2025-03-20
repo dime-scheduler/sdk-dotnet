@@ -4,16 +4,23 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class JobTests
+    public partial class JobTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public JobTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task Job()
         {
             Job model = new()
             {
-                SourceApp = "APP",
-                SourceType = "TYPE",
-                JobNo = "Job 1",
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                JobNo = EntityNos.Job,                
                 SentFromBackOffice = true,
                 Importance = Importance.Medium,
                 Description = "DESC",
@@ -114,6 +121,9 @@ namespace Dime.Scheduler.IntegrationTests
                 SiteStreet = "SITE",
                 SiteStreetNo = "SITE"
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Jobs.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

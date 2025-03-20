@@ -4,15 +4,27 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class ConnectorTests
+    public partial class ConnectorTests : IClassFixture<DimeSchedulerClientFixture>
     {
+        private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
+
+        public ConnectorTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        {
+            _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
+        }
+
         [Fact]
         public async System.Threading.Tasks.Task Connector()
         {
             Connector model = new()
             {
-                Name = "Connector 1"
+                Name = "Connector 1",
+                SourceApp = EntityNos.SourceApp,
+                Uri = "https://www.dimescheduler.com/"
             };
+
+            Result response = await _dimeSchedulerClientFixture.Client.Connectors.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

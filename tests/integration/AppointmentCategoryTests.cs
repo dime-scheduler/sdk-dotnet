@@ -28,6 +28,9 @@ namespace Dime.Scheduler.IntegrationTests
         public async System.Threading.Tasks.Task AppointmentCategory()
         {
             AppointmentCategory model = CreateModel();
+
+            Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
+            Assert.True(response.IsSuccess, response.Error);
         }
     }
 }

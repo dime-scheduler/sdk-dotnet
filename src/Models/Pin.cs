@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Pin : IImportRequestable, IValidatableImportRequest<Pin>
+    public class Pin : Indicator, IImportRequestable, IValidatableImportRequest<Pin>
     {
         public Pin()
         {
@@ -20,12 +20,12 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(Name))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Color/*'/>
         [ImportParameter("HexColor", TransactionType.Append)]
         [MaxLength(7)]
-        public string Color { get; set; }
+        public virtual string Color { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
             => transactionType switch
