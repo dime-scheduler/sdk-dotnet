@@ -6,6 +6,14 @@ namespace Dime.Scheduler.Entities
 {
     public class FilterGroup : IImportRequestable, IValidatableImportRequest<FilterGroup>
     {
+        public FilterGroup()
+        {
+        }
+        public FilterGroup(string name)
+        {
+            Name = name;
+        }
+
         [ImportParameter(nameof(Id), TransactionType.Append)]
         public int Id { get; set; }
 

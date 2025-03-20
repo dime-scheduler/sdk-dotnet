@@ -15,21 +15,10 @@ namespace Dime.Scheduler.IntegrationTests
         [Fact]
         public async System.Threading.Tasks.Task FilterValue()
         {
-            FilterGroup filterGroup = new()
-            {
-                Name = EntityNos.FilterGroup,
-                ColumnNo = 1,
-                DataFilter = true,
-                Id = 1
-            };
-
-            FilterValue filterValue = new()
-            {
-                Group = EntityNos.FilterGroup,
-                Value = EntityNos.FilterValue
-            };
-
+            FilterGroup filterGroup = new(EntityNos.FilterGroup);
             Result groupResponse = await _dimeSchedulerClientFixture.Client.Filters.Groups.CreateAsync(filterGroup);
+
+            FilterValue filterValue = new(EntityNos.FilterGroup, EntityNos.FilterValue);
             Result valueResponse = await _dimeSchedulerClientFixture.Client.Filters.Values.CreateAsync(filterValue);
         }
     }

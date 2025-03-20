@@ -18,16 +18,13 @@ namespace Dime.Scheduler.IntegrationTests
         {
             Appointment model = new()
             {
-                SourceApp = "APP",
-                SourceType = "TYPE",
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
                 Start = new DateTime(2020, 1, 1),
                 End = new DateTime(2020, 1, 2),
-                ResourceNo = "NO",
-                AppointmentGuid = Guid.NewGuid(),
-                AppointmentId = 1,
-                SentFromBackOffice = true,
-                BackOfficeId = "1",
-                BackOfficeParentId = "2",
+                ResourceNo = EntityNos.Resource,
+                AppointmentGuid = EntityNos.AppointmentGuid,
+                SentFromBackOffice = true,              
                 Body = "Body",
                 Subject = "Subject",
                 Category = "CAT",

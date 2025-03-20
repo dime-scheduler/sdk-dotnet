@@ -1,4 +1,6 @@
-﻿namespace Dime.Scheduler.IntegrationTests
+﻿using System;
+
+namespace Dime.Scheduler.IntegrationTests
 {
     internal static class EntityNos
     {
@@ -11,5 +13,6 @@
         internal const string SourceApp = "APP001";
         internal const string SourceType = "TYPE001";
         internal const string Calendar = "CALENDAR_001";
+        internal static Guid AppointmentGuid = new("f971a8ab-25cb-4165-a3d6-84d52e895a1e");
     }
 }

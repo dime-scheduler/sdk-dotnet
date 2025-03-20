@@ -15,13 +15,7 @@ namespace Dime.Scheduler.IntegrationTests
         [Fact]
         public async System.Threading.Tasks.Task FilterGroup()
         {
-            FilterGroup model = new()
-            {
-                Name = EntityNos.FilterGroup,
-                ColumnNo = 1,
-                DataFilter = true,
-                Id = 1
-            };
+            FilterGroup model = new() { Name = EntityNos.FilterGroup };
 
             Result response = await _dimeSchedulerClientFixture.Client.Filters.Groups.CreateAsync(model);
             Assert.True(response.IsSuccess, response.Error);

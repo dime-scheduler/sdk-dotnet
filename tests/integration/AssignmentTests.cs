@@ -17,12 +17,11 @@ namespace Dime.Scheduler.IntegrationTests
         {
             Assignment model = new()
             {
-                SourceApp = "APP",
-                SourceType = "TYPE",
-                ResourceNo = "LINDA",
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                ResourceNo = EntityNos.Resource,
                 SentFromBackOffice = true,
-                AppointmentGuid = new System.Guid(),
-                AppointmentId = 1
+                AppointmentGuid = EntityNos.AppointmentGuid,
             };
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
