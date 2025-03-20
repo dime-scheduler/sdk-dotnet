@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Dime.Scheduler.Entities
 {
@@ -16,6 +17,7 @@ namespace Dime.Scheduler.Entities
         public string SourceType { get; set; }
 
         [ImportParameter("UrlType")]
+        [JsonConverter(typeof(IntEnumConverter<UriType>))]
         public UriType UriType { get; set; }
 
         [ImportParameter("Url")]
@@ -30,6 +32,7 @@ namespace Dime.Scheduler.Entities
         public bool Default { get; set; }
 
         [ImportParameter(nameof(RequestType))]
+        [JsonConverter(typeof(IntEnumConverter<HttpRequestType>))]
         public HttpRequestType RequestType { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

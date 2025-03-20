@@ -1,20 +1,22 @@
-﻿using System.Text.Json;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
+using RestSharp.Serializers.Json;
 
 namespace Dime.Scheduler
 {
     internal abstract class Endpoint
     {
-        private readonly EndpointOptions _opts;
+        protected readonly EndpointOptions _opts;
 
         protected Endpoint(EndpointOptions opts)
         {
             _opts = opts;
         }
 
-        protected async Task<Result> ExecuteAsync<TRequest>(string endpoint, Method method, TRequest requestParameters)
+        protected virtual async Task<Result> ExecuteAsync<TRequest>(string endpoint, Method method, TRequest requestParameters, bool expectsArray = false)
         {
             try
             {
@@ -23,13 +25,18 @@ namespace Dime.Scheduler
                 Uri baseUri = new(uri);
                 Uri endpointUri = new(baseUri, endpoint);
 
-                RestClient client = new(uri);
+                JsonSerializerOptions options = new()
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                RestClient client = new(uri, configureSerialization: s => s.UseSystemTextJson(options));
                 RestRequest request = new(endpointUri, method);
                 request.AddHeader("accept-encoding", "gzip, deflate");
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("X-API-KEY", key);
-                request.AddBody(requestParameters);
+                request.AddBody(expectsArray ? new List<TRequest> { requestParameters } : requestParameters);
 
                 RestResponse<ImportResult> response = await client.ExecuteAsync<ImportResult>(request);
                 return response.IsSuccessful && response.Data?.StatusCode == 200 ? Result.Ok(response.StatusDescription) : Result.Fail(GetError(response));
@@ -40,12 +47,17 @@ namespace Dime.Scheduler
             }
         }
 
-        private static string GetError(RestResponse response)
+        protected static string GetError(RestResponse response)
         {
             try
             {
                 if (string.IsNullOrEmpty(response.Content))
-                    return $"Received an empty response from {response.Request?.Resource ?? "N/A"}: {response.ErrorMessage ?? "N/A"}";
+                {
+                    if (string.IsNullOrEmpty(response.StatusDescription))
+                        return $"Received an empty response from {response.Request?.Resource ?? "N/A"}: {response.ErrorMessage ?? "N/A"}";
+
+                    return $"{(int)response.StatusCode} {response.StatusDescription}";
+                }
 
                 FailedRequest failedRequest = JsonSerializer.Deserialize<FailedRequest>(response.Content);
                 FailedRequestException ex = JsonSerializer.Deserialize<FailedRequestException>(failedRequest.Content);

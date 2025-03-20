@@ -19,7 +19,7 @@
 		<Description>The official .NET SDK for Dime.Scheduler.</Description>
 		<Summary>A developer toolkit that connects any system to Dime.Scheduler in .NET</Summary>
 		<PackageId>Dime.Scheduler</PackageId>
-		<VersionPrefix>2.0.0-alpha.1</VersionPrefix>
+		<VersionPrefix>2.0.0-alpha.2</VersionPrefix>
 		<AssemblyVersion>2.0.0.0</AssemblyVersion>
 		<FileVersion>2.0.0.0</FileVersion>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -39,5 +39,6 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="Dime.Scheduler.Tests" />
+		<InternalsVisibleTo Include="Dime.Scheduler.IntegrationTests" />
 	</ItemGroup>
 </Project>

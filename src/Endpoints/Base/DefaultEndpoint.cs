@@ -10,15 +10,15 @@ namespace Dime.Scheduler
             Route = route;
         }
 
-        private string Route { get; }
+        protected string Route { get; }
 
-        public Task<Result> CreateAsync(T requestParameters)
+        public virtual Task<Result> CreateAsync(T requestParameters)
             => ExecuteAsync(Route, Method.Post, requestParameters);
 
-        public Task<Result> UpdateAsync(T requestParameters)
+        public virtual Task<Result> UpdateAsync(T requestParameters)
             => ExecuteAsync(Route, Method.Put, requestParameters);
 
-        public Task<Result> DeleteAsync(T requestParameters)
+        public virtual Task<Result> DeleteAsync(T requestParameters)
             => ExecuteAsync(Route, Method.Delete, requestParameters);
     }
 }

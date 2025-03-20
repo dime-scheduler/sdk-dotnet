@@ -12,11 +12,11 @@
         {
         }
 
-        internal bool IsFailure => !IsSuccess;
+        public bool IsFailure => !IsSuccess;
 
-        internal bool IsSuccess { get; }
+        public bool IsSuccess { get; }
 
-        internal string? Error { get; }
+        public string? Error { get; }
 
         internal static Result Fail(string error)
             => new(false, error);
