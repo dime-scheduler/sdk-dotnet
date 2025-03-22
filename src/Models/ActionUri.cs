@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Dime.Scheduler.Entities
 {
-    public class ActionUri : IImportRequestable
+    public class ActionUri : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -35,7 +35,7 @@ namespace Dime.Scheduler.Entities
         [JsonConverter(typeof(IntEnumConverter<HttpRequestType>))]
         public HttpRequestType RequestType { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

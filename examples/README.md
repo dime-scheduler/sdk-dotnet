@@ -2,7 +2,7 @@
 <img src="https://cdn.dimescheduler.com/dime-scheduler/v2/logo.png" height="75px" />
 </div>
 
-<h1 align="center">Dime.Scheduler SDK for .NET examples</h1>
+<h1 align="center">Examples</h1>
 
 > Check out the **[📚 docs »](https://docs.dimescheduler.com/develop)** for more info.
 

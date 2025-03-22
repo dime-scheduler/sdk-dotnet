@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class TaskContainer : IImportRequestable, IValidatableImportRequest<TaskContainer>
+    public class TaskContainer : IImportEntity, IValidatableImportRequest<TaskContainer>
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -36,7 +36,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(Index), TransactionType.Append)]
         public int Index { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<TaskContainer>)this).Validate(transactionType).CreateAppendRequest(),

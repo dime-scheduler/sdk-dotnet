@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class ResourceGpsTracking : IImportRequestable
+    public class ResourceGpsTracking : IImportEntity
     {
         [ImportParameter(nameof(ResourceNo))]
         [MaxLength(50)]
@@ -36,7 +36,7 @@ namespace Dime.Scheduler.Entities
         [MaxLength(50)]
         public string Power { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

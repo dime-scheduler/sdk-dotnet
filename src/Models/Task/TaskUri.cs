@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class TaskUri : IImportRequestable
+    public class TaskUri : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -37,7 +37,7 @@ namespace Dime.Scheduler.Entities
         [MaxLength(255)]
         public string Description { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

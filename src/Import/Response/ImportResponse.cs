@@ -4,19 +4,20 @@ using Dime.Scheduler.Entities;
 
 namespace Dime.Scheduler
 {
-    public class ImportResult
+    public class ImportResponse
     {
         public string Content { get; set; }
 
         public string ContentType { get; set; }
+
         public int StatusCode { get; set; }
 
         [JsonIgnore]
-        public bool IsSuccess => StatusCode == 200;
+        internal bool IsSuccess => StatusCode == 200;
 
-        public ImportSet GetSuccessContent() => JsonSerializer.Deserialize<ImportSet>(Content);
+        internal ImportSet GetSuccessContent() => JsonSerializer.Deserialize<ImportSet>(Content);
 
-        public string GetFailedContent()
+        internal string GetFailedContent()
         {
             FailedRequestException ex = JsonSerializer.Deserialize<FailedRequestException>(Content);
             return ex.Description;

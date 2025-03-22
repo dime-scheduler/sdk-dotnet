@@ -19,7 +19,7 @@
   <a href="https://docs.dimescheduler.com/develop/sdk">📚  <b>Docs</b></a>
 </p>
 
-This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
+This repository contains the .NET SDK for Dime.Scheduler. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
 ## Installation
 

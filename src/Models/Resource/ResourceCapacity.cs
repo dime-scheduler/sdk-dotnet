@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class ResourceCapacity : IImportRequestable, IValidatableImportRequest<ResourceCapacity>
+    public class ResourceCapacity : IImportEntity, IValidatableImportRequest<ResourceCapacity>
     {
         [ImportParameter(nameof(ResourceNo))]
         [Required]
@@ -27,7 +27,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter("CapacityUOMConversion")]
         public decimal? UnitOfMeasureConversion { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<ResourceCapacity>)this).Validate(transactionType).CreateAppendRequest(),

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class AppointmentContainer : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<AppointmentContainer>
+    public class AppointmentContainer : IAppointmentIdentifier, IImportEntity, IValidatableImportRequest<AppointmentContainer>
     {
         [ImportParameter(nameof(Container))]
         [Required]
@@ -18,7 +18,7 @@ namespace Dime.Scheduler.Entities
         [Required]
         public Guid Appointment { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<AppointmentContainer>)this).Validate(transactionType).CreateAppendRequest(),

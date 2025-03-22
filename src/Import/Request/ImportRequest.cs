@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Entities
 {
-    public class ImportRequest : IImportRequestable
+    public class ImportRequest : IImportEntity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ImportRequest"/> class
@@ -47,6 +47,6 @@ namespace Dime.Scheduler.Entities
         /// </summary>
         public string[] ParameterValues { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType) => this;
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType) => this;
     }
 }

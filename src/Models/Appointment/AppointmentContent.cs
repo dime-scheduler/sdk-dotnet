@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class AppointmentContent : IAppointmentIdentifier, IImportRequestable
+    public class AppointmentContent : IAppointmentIdentifier, IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -34,7 +34,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(Body))]
         public string Body { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

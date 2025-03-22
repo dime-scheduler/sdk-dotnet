@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Task : IImportRequestable, IValidatableImportRequest<Task>
+    public class Task : IImportEntity, IValidatableImportRequest<Task>
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
@@ -508,7 +508,7 @@ namespace Dime.Scheduler.Entities
 
         public bool CreateJob { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Task>)this).Validate(transactionType).CreateAppendRequest(),

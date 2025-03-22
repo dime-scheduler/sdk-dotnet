@@ -1,6 +1,4 @@
-﻿![Dime.Scheduler Logo](https://github.com/dime-scheduler/sdk-dotnet/blob/96fad9db0c219ff79bd28ca25caf6adba686261f/assets/ds.png?raw=true)
-
-# SDK
+﻿![Dime.Scheduler logo](https://raw.githubusercontent.com/dime-scheduler/sdk-dotnet/master/assets/ds.png) 
 
 This is the official SDK for Dime.Scheduler. The SDK is a gateway to connect *any* system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
@@ -25,7 +23,9 @@ The example below fetches the resources available in Dime.Scheduler:
 
 ```csharp
 DimeSchedulerClient client = new("key");
+
 IEnumerable<Resource> resources = await client.Resources.GetAsync(new ResourceRequest());
+
 foreach (Resource resource in resources)
     Console.WriteLine(resource.Email);
 ```
@@ -45,9 +45,9 @@ IEnumerable<Resource> resources = await resourceEndpoint.GetAsync(new ResourceRe
 This example adds or updates a category:
 
 ```csharp
-Category category = new("Category #1", "#6e62b5");
-
 DimeSchedulerClient client = new("my-api-key");
+
+Category category = new("Category #1", "#6e62b5");
 var response = await client.Indicators.Categories.CreateAsync(category);
 ```
 

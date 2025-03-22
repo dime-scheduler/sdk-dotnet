@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Resource : IImportRequestable, IValidatableImportRequest<Resource>
+    public class Resource : IImportEntity, IValidatableImportRequest<Resource>
     {
         [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         [Required]
@@ -347,7 +347,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(FreeBit5), TransactionType.Append)]
         public bool FreeBit5 { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
            => transactionType switch
            {
                TransactionType.Append => ((IValidatableImportRequest<Resource>)this).Validate(transactionType).CreateAppendRequest(),

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Container : IImportRequestable, IValidatableImportRequest<Container>
+    public class Container : IImportEntity, IValidatableImportRequest<Container>
     {
         [ImportParameter(nameof(Name))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
@@ -17,7 +17,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(HandleLocked), TransactionType.Append)]
         public bool HandleLocked { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Container>)this).Validate(transactionType).CreateAppendRequest(),

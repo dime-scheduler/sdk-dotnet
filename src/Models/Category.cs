@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Category : Indicator, IImportRequestable, IValidatableImportRequest<Category>
+    public class Category : Indicator, IImportEntity, IValidatableImportRequest<Category>
     {
         public Category()
         {
@@ -35,7 +35,7 @@ namespace Dime.Scheduler.Entities
         [MaxLength(7)]
         public new string Color { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
                 => transactionType switch
                 {
                     TransactionType.Append => ((IValidatableImportRequest<Category>)this).Validate(transactionType).CreateAppendRequest(),

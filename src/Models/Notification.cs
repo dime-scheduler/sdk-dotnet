@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Notification : IImportRequestable, IValidatableImportRequest<Notification>, IAppointmentIdentifier
+    public class Notification : IImportEntity, IValidatableImportRequest<Notification>, IAppointmentIdentifier
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -54,7 +54,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Notification>)this).Validate(transactionType).CreateAppendRequest(),

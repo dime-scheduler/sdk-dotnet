@@ -6,10 +6,10 @@ namespace Dime.Scheduler.Tests.Import
 {
     internal static class ImportRequestableTestHelpers
     {
-        internal static ImportRequest ToImportRequest(this IImportRequestable model, TransactionType transactionType)
+        internal static ImportRequest ToImportRequest(this IImportEntity model, TransactionType transactionType)
             => model.ToImportRequest(transactionType);
 
-        internal static void ShouldNotCreateImportRequest(this IImportRequestable model, TransactionType transactionType)
+        internal static void ShouldNotCreateImportRequest(this IImportEntity model, TransactionType transactionType)
             => Assert.Throws<NotImplementedException>(() => model.ToImportRequest(transactionType));
 
         internal static void AssertStoredProcedureName(this ImportRequest request, string storedProcedureName)

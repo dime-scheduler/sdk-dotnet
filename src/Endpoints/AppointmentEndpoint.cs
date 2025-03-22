@@ -39,7 +39,7 @@ namespace Dime.Scheduler
                 request.AddHeader("X-API-KEY", key);
                 request.AddBody(expectsArray ? new List<TRequest> { requestParameters } : requestParameters);
 
-                RestResponse<ImportResult> response = await client.ExecuteAsync<ImportResult>(request);
+                RestResponse<ImportResponse> response = await client.ExecuteAsync<ImportResponse>(request);
                 return response.IsSuccessful && (response.Data?.IsSuccess ?? false)
                     ? AppointmentResult.Ok(response.Data.GetSuccessContent().Appointments)
                     : AppointmentResult.Fail(GetError(response));

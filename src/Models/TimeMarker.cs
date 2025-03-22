@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class TimeMarker : Indicator, IImportRequestable, IValidatableImportRequest<TimeMarker>
+    public class TimeMarker : Indicator, IImportEntity, IValidatableImportRequest<TimeMarker>
     {
         public TimeMarker()
         {
@@ -27,7 +27,7 @@ namespace Dime.Scheduler.Entities
         [MaxLength(7)]
         public override string Color { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<TimeMarker>)this).Validate(transactionType).CreateAppendRequest(),

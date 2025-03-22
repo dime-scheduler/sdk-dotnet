@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Connector : IImportRequestable, IValidatableImportRequest<Connector>
+    public class Connector : IImportEntity, IValidatableImportRequest<Connector>
     {
         public Connector()
         {
@@ -33,21 +34,24 @@ namespace Dime.Scheduler.Entities
         [ImportParameter("WebServiceAddress")]
         public string Uri { get; set; }
 
-        [ImportParameter(nameof(BackOfficeSystem))]
-        public string BackOfficeSystem { get; set; }
+        public IEnumerable<Crud> CrudTypes { get; set; } = [Crud.Create, Crud.Update, Crud.Delete];
+
+        [ImportParameter(nameof(Type))]
+        public ConnectorType? Type { get; set; } = ConnectorType.None;
+
+        [ImportParameter("AuthType")]
+        public ConnectorAuthType? AuthenticationType { get; set; } = ConnectorAuthType.None;
+
+        [ImportParameter(nameof(ApiType))]
+        public ConnectorApiType? ApiType { get; set; } = ConnectorApiType.SOAP;
 
         [ImportParameter(nameof(Login))]
         public string Login { get; set; }
 
-        [ImportParameter(nameof(BackOfficeSystem))]
+        [ImportParameter(nameof(Password))]
         public string Password { get; set; }
 
-        /// <summary>
-        /// A comma-separated list that accepts either of these values: "Create", "Update", "Delete"
-        /// </summary>
-        public string CrudTypes { get; set; }
-
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Connector>)this).Validate(transactionType).CreateAppendRequest(),

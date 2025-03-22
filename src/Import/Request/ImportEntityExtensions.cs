@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using Dime.Scheduler.Entities;
 
-namespace Dime.Scheduler.Entities
+namespace Dime.Scheduler
 {
-    internal static class ImportRequestExtensions
+    internal static class ImportEntityExtensions
     {
-        internal static ImportParameter[] CreateParameters(this IImportRequestable import, TransactionType type)
+        internal static IEnumerable<ImportRequest> ToImportRequest(this IEnumerable<IImportEntity> requests, TransactionType transactionType)
+            => requests.Select(x => x.ToImportRequest(transactionType));
+
+        internal static ImportParameter[] CreateParameters(this IImportEntity import, TransactionType type)
             => import.CreateParametersCollection(type).ToArray();
 
-        private static IEnumerable<ImportParameter> CreateParametersCollection(this IImportRequestable import, TransactionType type)
+        private static IEnumerable<ImportParameter> CreateParametersCollection(this IImportEntity import, TransactionType type)
         {
             IEnumerable<PropertyInfo> importParameters = import.GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ImportParameterAttribute)));
             foreach (PropertyInfo parameter in importParameters)

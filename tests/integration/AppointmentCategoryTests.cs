@@ -1,4 +1,5 @@
-﻿using Dime.Scheduler.Entities;
+﻿using System;
+using Dime.Scheduler.Entities;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
@@ -12,21 +13,39 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        private static AppointmentCategory CreateModel()
-            => new()
-            {
-                SourceType = EntityNos.SourceType,
-                AppointmentGuid = EntityNos.AppointmentGuid,
-                Category = EntityNos.Category,
-                SourceApp = EntityNos.SourceApp
-            };
-
         [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentCategory()
         {
             Skip.If(_dimeSchedulerClientFixture.Client == null);
 
-            AppointmentCategory model = CreateModel();
+            Guid guid = Guid.NewGuid();
+
+            Appointment appointment = new()
+            {
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                JobNo = EntityNos.Job,
+                TaskNo = EntityNos.Task,
+                AppointmentGuid = guid,
+                AppointmentId = 1,
+                ResourceNo = EntityNos.Resource,
+                Start = DateTime.Now,
+                End = DateTime.Now.AddHours(1),
+            };
+
+            AppointmentResult appointmentResponse = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(appointment) as AppointmentResult;
+
+            if (!appointmentResponse.IsSuccess)
+                Assert.Fail();
+
+            AppointmentCategory model = new Entities.AppointmentCategory
+            {
+                SourceType = EntityNos.SourceType,
+                AppointmentGuid = guid,
+                AppointmentId = appointmentResponse.Appointment,
+                Category = EntityNos.Category,
+                SourceApp = EntityNos.SourceApp
+            };
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
             Assert.True(response.IsSuccess, response.Error);

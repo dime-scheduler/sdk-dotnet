@@ -19,7 +19,7 @@ namespace Dime.Scheduler.IntegrationTests
 
             TimeMarker model = new()
             {
-                Name = "MARKER 1",
+                Name = EntityNos.TimeMarker,
                 Color = "BLUE"
             };
 

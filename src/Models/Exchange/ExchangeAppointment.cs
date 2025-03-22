@@ -4,7 +4,7 @@ using Dime.Scheduler.Entities.Exchange;
 
 namespace Dime.Scheduler.Entities
 {
-    public class ExchangeAppointment : IImportRequestable
+    public class ExchangeAppointment : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentId/*'/>
         [ImportParameter(nameof(AppointmentId))]
@@ -52,7 +52,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(CreatedByExchange))]
         public bool CreatedByExchange { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

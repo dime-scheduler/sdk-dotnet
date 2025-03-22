@@ -38,7 +38,7 @@ namespace Dime.Scheduler
                 request.AddHeader("X-API-KEY", key);
                 request.AddBody(expectsArray ? new List<TRequest> { requestParameters } : requestParameters);
 
-                RestResponse<ImportResult> response = await client.ExecuteAsync<ImportResult>(request);
+                RestResponse<ImportResponse> response = await client.ExecuteAsync<ImportResponse>(request);
                 return response.IsSuccessful && (response.Data?.IsSuccess ?? false)
                     ? Result.Ok(response.StatusDescription)
                     : Result.Fail(GetError(response));
@@ -49,7 +49,7 @@ namespace Dime.Scheduler
             }
         }
 
-        protected static string GetError(RestResponse<ImportResult> response)
+        protected static string GetError(RestResponse<ImportResponse> response)
         {
             try
             {

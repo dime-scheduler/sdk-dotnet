@@ -6,7 +6,7 @@ namespace Dime.Scheduler.Entities
 {
     internal static class ValidatableObjectExtensions
     {
-        internal static IEnumerable<ValidationResult> Validate<T>(this IImportRequestable request, ValidationContext validationContext)
+        internal static IEnumerable<ValidationResult> Validate<T>(this IImportEntity request, ValidationContext validationContext)
         {
             List<ValidationResult> results = [];
 
@@ -19,7 +19,7 @@ namespace Dime.Scheduler.Entities
             return results;
         }
 
-        private static ValidationContext CreateValidationContext(this IImportRequestable request, ValidationContext validationContext, string property)
+        private static ValidationContext CreateValidationContext(this IImportEntity request, ValidationContext validationContext, string property)
         {
             validationContext.Items.TryGetValue("transactionType", out object? transactionType);
             KeyValuePair<object, object?> keyValuePair = new("transactionType", transactionType);

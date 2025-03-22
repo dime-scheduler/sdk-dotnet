@@ -13,23 +13,40 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        private static AppointmentImportance CreateModel()
-            => new()
-            {
-                SourceType = "TYPE",
-                AppointmentGuid = Guid.NewGuid(),
-                AppointmentId = 1,
-                SentFromBackOffice = true,
-                SourceApp = "APP",
-                Importance = Importance.Medium
-            };
-
         [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentImportance()
         {
             Skip.If(_dimeSchedulerClientFixture.Client == null);
 
-            AppointmentImportance model = CreateModel();
+            Guid guid = Guid.NewGuid();
+
+            Appointment appointment = new()
+            {
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                JobNo = EntityNos.Job,
+                TaskNo = EntityNos.Task,
+                AppointmentGuid = guid,
+                AppointmentId = 1,
+                ResourceNo = EntityNos.Resource,
+                Start = DateTime.Now,
+                End = DateTime.Now.AddHours(1),
+            };
+
+            AppointmentResult appointmentResponse = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(appointment) as AppointmentResult;
+
+            if (!appointmentResponse.IsSuccess)
+                Assert.Fail();
+
+            AppointmentImportance model = new()
+            {
+                SourceType = "TYPE",
+                AppointmentGuid = guid,
+                AppointmentId = appointmentResponse.Appointment,
+                SentFromBackOffice = true,
+                SourceApp = "APP",
+                Importance = Importance.Medium
+            };
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
             Assert.True(response.IsSuccess, response.Error);

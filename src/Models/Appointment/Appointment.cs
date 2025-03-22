@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Appointment : IAppointmentIdentifier, IImportRequestable, IValidatableImportRequest<Appointment>
+    public class Appointment : IAppointmentIdentifier, IImportEntity, IValidatableImportRequest<Appointment>
     {
         /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
@@ -106,7 +106,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(IsManualAppointment), TransactionType.Append)]
         public bool? IsManualAppointment { get; set; } = false;
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Appointment>)this).Validate(transactionType).CreateAppendRequest(),

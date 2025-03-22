@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Entities
 {
-    public class ResourceCertificate : IImportRequestable
+    public class ResourceCertificate : IImportEntity
     {
         [ImportParameter(nameof(ResourceNo), TransactionType.Append, TransactionType.Delete)]
         public string ResourceNo { get; set; }
@@ -19,7 +19,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(ValidUntil), TransactionType.Append)]
         public DateTime ValidUntil { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

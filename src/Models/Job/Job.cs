@@ -7,7 +7,7 @@ namespace Dime.Scheduler.Entities
     /// <summary>
     /// A job is a meta entity that holds information such as customer, contact, addresses, and more.
     /// </summary>
-    public class Job : IImportRequestable, IValidatableImportRequest<Job>
+    public class Job : IImportEntity, IValidatableImportRequest<Job>
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp), TransactionType.Append, TransactionType.Delete)]
@@ -460,7 +460,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(ReadOnly), TransactionType.Append)]
         public bool ReadOnly { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Job>)this).Validate(transactionType).CreateAppendRequest(),

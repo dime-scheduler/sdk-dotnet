@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class Pin : Indicator, IImportRequestable, IValidatableImportRequest<Pin>
+    public class Pin : Indicator, IImportEntity, IValidatableImportRequest<Pin>
     {
         public Pin()
         {
@@ -27,7 +27,7 @@ namespace Dime.Scheduler.Entities
         [MaxLength(7)]
         public virtual string Color { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<Pin>)this).Validate(transactionType).CreateAppendRequest(),

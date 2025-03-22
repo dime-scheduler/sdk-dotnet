@@ -12,7 +12,7 @@ namespace Dime.Scheduler
         {
         }
 
-        public async t.Task<ImportSet> ProcessAsync(IEnumerable<IImportRequestable> requestParameters, TransactionType transactionType)
+        public async t.Task<ImportSet> ProcessAsync(IEnumerable<IImportEntity> requestParameters, TransactionType transactionType)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace Dime.Scheduler
             }
         }
 
-        public async t.Task<ImportSet> ProcessAsync(IImportRequestable requestParameters, TransactionType transactionType)
+        public async t.Task<ImportSet> ProcessAsync(IImportEntity requestParameters, TransactionType transactionType)
         {
             try
             {

@@ -15,5 +15,6 @@ namespace Dime.Scheduler.IntegrationTests
         internal const string Calendar = "CALENDAR_001";
         internal static Guid AppointmentGuid = new("f971a8ab-25cb-4165-a3d6-84d52e895a1e");
         internal const string Category = "CATEGORY_001";
+        internal const string TimeMarker = "TIMEMARKER_001";
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class FilterValue : IImportRequestable
+    public class FilterValue : IImportEntity
     {
         public FilterValue()
         {
@@ -25,7 +25,7 @@ namespace Dime.Scheduler.Entities
         [Required]
         public string Value { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class FilterGroup : IImportRequestable, IValidatableImportRequest<FilterGroup>
+    public class FilterGroup : IImportEntity, IValidatableImportRequest<FilterGroup>
     {
         public FilterGroup()
         {
@@ -29,7 +29,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(DataFilter), TransactionType.Append)]
         public bool DataFilter { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => ((IValidatableImportRequest<FilterGroup>)this).Validate(transactionType).CreateAppendRequest(),

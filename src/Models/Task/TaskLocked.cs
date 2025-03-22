@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Entities
 {
-    public class TaskLocked : IImportRequestable
+    public class TaskLocked : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
         [ImportParameter(nameof(SourceApp))]
@@ -32,7 +32,7 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; } = true;
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => new(ImportProcedures.TaskLocked.Append, this.CreateParameters(transactionType));
     }
 }

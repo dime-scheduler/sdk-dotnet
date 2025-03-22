@@ -6,8 +6,8 @@ namespace Dime.Scheduler
 {
     public interface IImportEndpoint : IEndpoint
     {
-        t.Task<ImportSet> ProcessAsync(IEnumerable<IImportRequestable> requestParameters, TransactionType transactionType);
+        t.Task<ImportSet> ProcessAsync(IEnumerable<IImportEntity> requestParameters, TransactionType transactionType);
 
-        t.Task<ImportSet> ProcessAsync(IImportRequestable requestParameters, TransactionType transactionType);
+        t.Task<ImportSet> ProcessAsync(IImportEntity requestParameters, TransactionType transactionType);
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
 {
-    public class ResourceCalendar : IImportRequestable
+    public class ResourceCalendar : IImportEntity
     {
         [ImportParameter("ResourceCalendarCode", TransactionType.Append, TransactionType.Delete)]
         [Required]
@@ -28,7 +28,7 @@ namespace Dime.Scheduler.Entities
         [Required]
         public DateTime EndDate { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => transactionType switch
             {
                 TransactionType.Append => CreateAppendRequest(),

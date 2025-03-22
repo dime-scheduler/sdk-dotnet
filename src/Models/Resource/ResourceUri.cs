@@ -2,7 +2,7 @@
 
 namespace Dime.Scheduler.Entities
 {
-    public class ResourceUri : IImportRequestable
+    public class ResourceUri : IImportEntity
     {
         [ImportParameter(nameof(ResourceNo))]
         [RequiredIf(TransactionType.Append)]
@@ -17,7 +17,7 @@ namespace Dime.Scheduler.Entities
         [MaxLength(255)]
         public string Description { get; set; }
 
-        ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)
+        ImportRequest IImportEntity.ToImportRequest(TransactionType transactionType)
             => new(ImportProcedures.Resource.Uri.Append, this.CreateParameters(TransactionType.Append));
     }
 }

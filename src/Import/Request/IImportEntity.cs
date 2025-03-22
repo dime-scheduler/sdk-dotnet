@@ -1,6 +1,6 @@
 ﻿namespace Dime.Scheduler.Entities
 {
-    public interface IImportRequestable
+    public interface IImportEntity
     {
         ImportRequest ToImportRequest(TransactionType transactionType);
     }
