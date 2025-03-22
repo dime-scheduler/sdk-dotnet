@@ -16,9 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://docs.dimescheduler.com">Documentation</a> |
-  <a href="https://docs.dimescheduler.com/history">Changelog</a> |
-  <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
+  <a href="https://docs.dimescheduler.com/develop/sdk">📚  <b>Docs</b></a>
 </p>
 
 This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
@@ -28,10 +26,6 @@ This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway
 Use the package manager NuGet to install the SDK:
 
 `dotnet add package Dime.Scheduler`
-
-> [!IMPORTANT]  
-> Version 2 and onwards is only forwards compatible with Dime.Scheduler cloud.
-> The `Dime.Scheduler.Sdk` package is maintained for the on-premises version.
 
 ## Prerequisites
 
@@ -57,7 +51,7 @@ var response = await client.Indicators.Categories.CreateAsync(category);
 
 ## Read more
 
-Check out the **[📚 docs »](https://docs.dimescheduler.com)** for more info.
+Check out the **[📚 docs »](https://docs.dimescheduler.com/develop/sdk)** for more info.
 
 ## Contributing
 
