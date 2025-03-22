@@ -22,7 +22,7 @@ namespace Dime.Scheduler.IntegrationTests
             {
                 SourceApp = EntityNos.SourceApp,
                 SourceType = EntityNos.SourceType,
-                JobNo = EntityNos.Job,                
+                JobNo = EntityNos.Job,
                 SentFromBackOffice = true,
                 Importance = Importance.Medium,
                 Description = "DESC",

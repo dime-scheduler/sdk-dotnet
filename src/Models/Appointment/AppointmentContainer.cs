@@ -15,7 +15,7 @@ namespace Dime.Scheduler.Entities
         public string AppointmentNo { get; set; }
 
         [ImportParameter(nameof(Appointment))]
-        [Required]        
+        [Required]
         public Guid Appointment { get; set; }
 
         ImportRequest IImportRequestable.ToImportRequest(TransactionType transactionType)

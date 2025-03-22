@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Dime.Scheduler
+﻿namespace Dime.Scheduler
 {
     public class Result
     {

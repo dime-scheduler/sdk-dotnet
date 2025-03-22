@@ -19,8 +19,6 @@ Use the package manager NuGet to install the base library of the SDK:
 
 `dotnet add package Dime.Scheduler`
 
-⚠️ Versions 2 and up are built for the cloud version of Dime.Scheduler. Use 1.x.x for on-premise versions.
-
 ## Usage
 
 The example below fetches the resources available in Dime.Scheduler:

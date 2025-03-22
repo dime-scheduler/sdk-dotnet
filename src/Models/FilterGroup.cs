@@ -9,6 +9,7 @@ namespace Dime.Scheduler.Entities
         public FilterGroup()
         {
         }
+
         public FilterGroup(string name)
         {
             Name = name;

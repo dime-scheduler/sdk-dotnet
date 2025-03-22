@@ -23,7 +23,7 @@ namespace Dime.Scheduler.IntegrationTests
                 SentFromBackOffice = true,
                 Code = "CODE",
                 Date = new DateTime(2020, 1, 1),
-                SourceApp = "APP",              
+                SourceApp = "APP",
                 SourceType = "TYPE",
                 Text = "TXT",
                 Type = NotificationType.Error

@@ -17,7 +17,7 @@ namespace Dime.Scheduler.IntegrationTests
         public void Dispose()
         {
         }
-        
+
         public DimeSchedulerClient Client { get; private set; }
     }
 }

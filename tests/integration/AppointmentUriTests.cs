@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Dime.Scheduler.Entities;
 using Xunit;
 

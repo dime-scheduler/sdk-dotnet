@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.Json;
-using System;
 using System.Threading.Tasks;
 using Dime.Scheduler.Entities;
 using RestSharp;

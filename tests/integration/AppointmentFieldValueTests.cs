@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class AppointmentFieldValueTests: IClassFixture<DimeSchedulerClientFixture>
+    public partial class AppointmentFieldValueTests : IClassFixture<DimeSchedulerClientFixture>
     {
         private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
 
@@ -12,6 +12,7 @@ namespace Dime.Scheduler.IntegrationTests
         {
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
+
         private static AppointmentFieldValue CreateModel()
             => new()
             {

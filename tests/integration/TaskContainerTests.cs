@@ -1,5 +1,4 @@
-﻿using System;
-using Dime.Scheduler.Entities;
+﻿using Dime.Scheduler.Entities;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
