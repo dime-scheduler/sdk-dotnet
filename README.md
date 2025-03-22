@@ -27,10 +27,6 @@ Use the package manager NuGet to install the SDK:
 
 `dotnet add package Dime.Scheduler`
 
-## Prerequisites
-
-To clone and run this application, you'll need Visual Studio 2022 or higher. It is built on the latest versions of .NET and C#.
-
 ## Usage
 
 The `DimeSchedulerClient` class is the entry point and it is where all endpoints are exposed:
@@ -49,8 +45,6 @@ Category category = new("Category #1", "#6e62b5");
 var response = await client.Indicators.Categories.CreateAsync(category);
 ```
 
-## Read more
-
 Check out the **[📚 docs »](https://docs.dimescheduler.com/develop/sdk)** for more info.
 
 ## Contributing
@@ -64,3 +58,5 @@ To contribute:
 3. Commit your changes (`git commit -m 'Add mynewfeature'`)
 4. Push to the branch (`git push origin feature/mynewfeature`)
 5. Open a pull request
+
+To clone and run this application, you'll need Visual Studio 2022 or higher. It is built on the latest versions of .NET and C#.
