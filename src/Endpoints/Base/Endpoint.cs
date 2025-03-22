@@ -40,7 +40,7 @@ namespace Dime.Scheduler
 
                 RestResponse<ImportResult> response = await client.ExecuteAsync<ImportResult>(request);
                 return response.IsSuccessful && (response.Data?.IsSuccess ?? false)
-                    ? Result.Ok(response.StatusDescription, response.Data.GetSuccessContent().Appointments)
+                    ? Result.Ok(response.StatusDescription)
                     : Result.Fail(GetError(response));
             }
             catch (Exception ex)

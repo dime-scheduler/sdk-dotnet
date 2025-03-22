@@ -12,7 +12,7 @@ namespace Dime.Scheduler.Tests.Import
             AppointmentContainer model = new()
             {
                 Container = "Container 1",
-                Appointment = "Appointment 1"
+                Appointment = Guid.NewGuid()
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
@@ -22,7 +22,7 @@ namespace Dime.Scheduler.Tests.Import
         [Fact]
         public void AppointmentContainer_Append_Validate_HasRequiredAttributes_ShouldSucceed()
         {
-            AppointmentContainer model = new() { Container = "Container 1", Appointment = "Appointment 1" };
+            AppointmentContainer model = new() { Container = "Container 1", Appointment = Guid.NewGuid() };
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Append);
 
             Assert.True(importRequest.ParameterNames[0] == "Container");
@@ -42,7 +42,7 @@ namespace Dime.Scheduler.Tests.Import
             AppointmentContainer model = new()
             {
                 Container = "Container 1",
-                Appointment = "Appointment 1"
+                Appointment = Guid.NewGuid()
             };
 
             ImportRequest importRequest = model.ToImportRequest(TransactionType.Delete);

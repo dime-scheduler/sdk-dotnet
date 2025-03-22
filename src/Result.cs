@@ -14,18 +14,11 @@ namespace Dime.Scheduler
         {
         }
 
-        public Result(bool isSuccess, string error, IEnumerable<AppointmentMap> appointments)
-            : this(isSuccess, error)
-        {
-            Appointments = appointments;
-        }
-
         public bool IsFailure => !IsSuccess;
 
         public bool IsSuccess { get; }
 
         public string? Error { get; }
-        public IEnumerable<AppointmentMap> Appointments { get; }
 
         internal static Result Fail(string error)
             => new(false, error);
@@ -35,9 +28,6 @@ namespace Dime.Scheduler
 
         internal static Result Ok()
             => new(true);
-
-        internal static Result Ok<T>(T value, IEnumerable<AppointmentMap> appointments)
-            => new(true, string.Empty, appointments);
 
         internal static Result<T> Ok<T>(T value)
             => new(value, true);
