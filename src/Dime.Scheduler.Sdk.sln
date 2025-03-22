@@ -3,9 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler", "core\Dime.Scheduler.csproj", "{0AA3DC3F-3CF1-4304-B127-0CB873D9DE3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler", "Dime.Scheduler.csproj", "{0AA3DC3F-3CF1-4304-B127-0CB873D9DE3B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler.Tests", "test\Dime.Scheduler.Tests.csproj", "{148F7BF9-217F-4892-A214-8A3AE4B95752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dime.Scheduler.Tests", "..\tests\unit\Dime.Scheduler.Tests.csproj", "{148F7BF9-217F-4892-A214-8A3AE4B95752}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dime.Scheduler.IntegrationTests", "..\tests\integration\Dime.Scheduler.IntegrationTests.csproj", "{C3785588-CA9D-4F2F-A3C5-C7FBC2D9AC35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F082A99B-AB4F-430B-8B47-0885C88C6713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +30,17 @@ Global
 		{148F7BF9-217F-4892-A214-8A3AE4B95752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{148F7BF9-217F-4892-A214-8A3AE4B95752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{148F7BF9-217F-4892-A214-8A3AE4B95752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3785588-CA9D-4F2F-A3C5-C7FBC2D9AC35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3785588-CA9D-4F2F-A3C5-C7FBC2D9AC35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3785588-CA9D-4F2F-A3C5-C7FBC2D9AC35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3785588-CA9D-4F2F-A3C5-C7FBC2D9AC35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{148F7BF9-217F-4892-A214-8A3AE4B95752} = {F082A99B-AB4F-430B-8B47-0885C88C6713}
+		{C3785588-CA9D-4F2F-A3C5-C7FBC2D9AC35} = {F082A99B-AB4F-430B-8B47-0885C88C6713}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DFB3A45-94C0-44BE-82D7-8B6024793CBB}

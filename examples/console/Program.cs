@@ -9,14 +9,14 @@ do
             .Title("What would you like to try out?")
             .PageSize(10)
             .MoreChoicesText("[grey](Move up and down to show more examples)[/]")
-            .AddChoices(new[] { "Task", "Resource" }));
+            .AddChoices(["Task", "Resource", "Resource Location"]));
 
     // Step 2: environment selection
     string environment = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("What environment should we be running the command on?")
         .PageSize(10)
-        .AddChoices(new[] { "Production", "Sandbox" }));
+        .AddChoices(["Production", "Sandbox"]));
 
     Dime.Scheduler.Environment env = environment == "Production" ? Dime.Scheduler.Environment.Production : Dime.Scheduler.Environment.Sandbox;
 
@@ -33,6 +33,15 @@ do
         case "Resource":
             AppendResource resourceCmd = new(env, key);
             await resourceCmd.Run();
+            break;
+
+        case "Resource Location":
+            SetResourceLocation resourceLocationCmd = new(env, key);
+            await resourceLocationCmd.Run();
+            break;
+
+        default:
+            AnsiConsole.Write("I couldn't find that command.");
             break;
     }
 

@@ -3,23 +3,21 @@
 </div>
 
 <p align="center">
-    <img src="assets/connect.svg?raw=true" width="350px">
+    <img src="assets/logo.png" width="350px">
 </p>
 
+<h1 align="center">Dime.Scheduler SDK for .NET </h1>
+
 <p align="center">
-    <img src="https://img.shields.io/azure-devops/build/dimesoftware/utilities/194?style=flat-square" /> <img src="https://img.shields.io/azure-devops/tests/dimesoftware/utilities/194?compact_message&style=flat-square" /> <img src='https://img.shields.io/nuget/vpre/dime.scheduler?style=flat-square' /> <img src="https://img.shields.io/azure-devops/coverage/dimesoftware/Utilities/194?style=flat-square" /> <img<img src="https://img.shields.io/nuget/v/Dime.Scheduler.Sdk?style=flat-square" /> <img src="https://github.com/dime-scheduler/sdk-dotnet/actions/workflows/codeql-analysis.yml/badge.svg" /> <img src='https://api.codeclimate.com/v1/badges/65852a78e1a9b7633574/maintainability' /> <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />    
-    <a href="https://github.com/dime-scheduler/sdk-dotnet/discussions">
-  <img src="https://img.shields.io/badge/chat-discussions-brightgreen?style=flat-square">
+
+  <img src="https://img.shields.io/nuget/v/Dime.Scheduler?style=flat-square&color=brightgreen" />
+  <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square"/> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" />
 </a>
 </p>
 
 <p align="center">
-  <a href="https://docs.dimescheduler.com">Documentation</a> |
-  <a href="https://docs.dimescheduler.com/history">Changelog</a> |
-  <a href="https://docs.dimescheduler.com/roadmap">Roadmap</a>
+  <a href="https://docs.dimescheduler.com/develop/sdk">📚  <b>Docs</b></a>
 </p>
-
-<h1 align="center">Dime.Scheduler SDK for .NET </h1>
 
 This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway to connect _any_ system to Dime.Scheduler through its extensive import pipeline and large collection of web APIs.
 
@@ -28,14 +26,6 @@ This repository contains the .NET SDK for Dime.Scheduler's. The SDK is a gateway
 Use the package manager NuGet to install the SDK:
 
 `dotnet add package Dime.Scheduler`
-
-> [!IMPORTANT]  
-> Version 2 and onwards is only forwards compatible with Dime.Scheduler cloud.
-> The `Dime.Scheduler.Sdk` package is maintained for the on-premises version.
-
-## Prerequisites
-
-To clone and run this application, you'll need Visual Studio 2022 or higher. It is built on the latest versions of .NET and C#.
 
 ## Usage
 
@@ -52,12 +42,10 @@ Instantiate the object of choice and run it by its corresponding endpoint in the
 
 ```csharp
 Category category = new("Category #1", "#6e62b5");
-await client.Categories.CreateAsync(category);
+var response = await client.Indicators.Categories.CreateAsync(category);
 ```
 
-## Read more
-
-Check out the **[📚 docs »](https://docs.dimescheduler.com)** for more info.
+Check out the **[📚 docs »](https://docs.dimescheduler.com/develop/sdk)** for more info.
 
 ## Contributing
 
@@ -70,3 +58,5 @@ To contribute:
 3. Commit your changes (`git commit -m 'Add mynewfeature'`)
 4. Push to the branch (`git push origin feature/mynewfeature`)
 5. Open a pull request
+
+To clone and run this application, you'll need Visual Studio 2022 or higher. It is built on the latest versions of .NET and C#.

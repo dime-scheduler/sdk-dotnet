@@ -4,3 +4,6 @@
 TestResults
 **/**.DotSettings.user
 src/packages
+
+
+**/.env.development
