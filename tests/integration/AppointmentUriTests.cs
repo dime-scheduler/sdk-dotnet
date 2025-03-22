@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Dime.Scheduler.Entities;
 using Xunit;
 
@@ -13,17 +14,38 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentUri()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+            Guid guid = Guid.NewGuid();
+
+            Appointment appointment = new()
+            {
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
+                JobNo = EntityNos.Job,
+                TaskNo = EntityNos.Task,
+                AppointmentGuid = guid,
+                AppointmentId = 1,
+                ResourceNo = EntityNos.Resource,
+                Start = DateTime.Now,
+                End = DateTime.Now.AddHours(1),
+            };
+
+            Result appointmentResponse = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(appointment);
+
+            if (!appointmentResponse.IsSuccess)
+                Assert.Fail();
+
             AppointmentUri model = new()
             {
-                AppointmentGuid = Guid.NewGuid(),
-                AppointmentId = 1,
-                SourceApp = "APP",
-                SourceType = "TYPE",
+                SourceType = EntityNos.SourceType,
+                AppointmentGuid = guid,
+                AppointmentId = appointmentResponse.Appointments.ElementAt(0)?.Id ?? 0,
+                SourceApp = EntityNos.SourceApp,
                 Description = "DESC",
-                Uri = "URI"
+                Uri = "https://www.dimescheduler.com"
             };
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

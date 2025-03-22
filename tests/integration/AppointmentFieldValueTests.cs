@@ -24,9 +24,11 @@ namespace Dime.Scheduler.IntegrationTests
                 FieldValue = "true"
             };
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentFieldValue_ToImportRequest_Append_AllShouldMapParameters()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentFieldValue model = CreateModel();
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

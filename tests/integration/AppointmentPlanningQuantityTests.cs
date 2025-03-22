@@ -1,5 +1,4 @@
-﻿using System;
-using Dime.Scheduler.Entities;
+﻿using Dime.Scheduler.Entities;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
@@ -16,17 +15,18 @@ namespace Dime.Scheduler.IntegrationTests
         private static AppointmentPlanningQuantity CreateModel()
             => new()
             {
-                AppointmentGuid = Guid.NewGuid(),
+                SourceType = EntityNos.SourceType,
+                AppointmentGuid = EntityNos.AppointmentGuid,
                 AppointmentId = 1,
-                SentFromBackOffice = true,
-                SourceApp = "APP",
-                SourceType = "TYPE",
+                SourceApp = EntityNos.SourceApp,
                 Quantity = 5
             };
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentPlanningQuantity()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentPlanningQuantity model = CreateModel();
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

@@ -12,9 +12,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task Import_ActionUri()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             ActionUri model = new()
             {
                 SourceApp = "BC001",

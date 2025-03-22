@@ -16,17 +16,17 @@ namespace Dime.Scheduler.IntegrationTests
         private static AppointmentCategory CreateModel()
             => new()
             {
-                SourceType = "TYPE",
-                AppointmentGuid = Guid.NewGuid(),
-                AppointmentId = 1,
-                Category = "CAT",
-                SentFromBackOffice = true,
-                SourceApp = "APP"
+                SourceType = EntityNos.SourceType,
+                AppointmentGuid = EntityNos.AppointmentGuid,
+                Category = EntityNos.Category,
+                SourceApp = EntityNos.SourceApp
             };
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentCategory()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentCategory model = CreateModel();
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

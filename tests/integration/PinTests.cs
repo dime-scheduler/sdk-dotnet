@@ -12,9 +12,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task Pin_ToImportRequest_Append_AllShouldMapParameters()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             Pin model = new()
             {
                 Color = "GREEN",

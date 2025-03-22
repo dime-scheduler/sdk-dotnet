@@ -1,5 +1,4 @@
-﻿using System;
-using Dime.Scheduler.Entities;
+﻿using Dime.Scheduler.Entities;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
@@ -13,17 +12,18 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentLocked()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentLocked model = new()
             {
-                SourceApp = "BC001",
-                SourceType = "BC001",
+                SourceType = EntityNos.SourceType,
+                AppointmentGuid = EntityNos.AppointmentGuid,
                 AppointmentId = 1,
-                AppointmentGuid = Guid.NewGuid(),
-                Locked = true,
-                SentFromBackOffice = true
+                SourceApp = EntityNos.SourceApp,
+                Locked = true
             };
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

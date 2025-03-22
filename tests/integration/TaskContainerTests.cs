@@ -13,16 +13,18 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task TaskContainer()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             TaskContainer model = new()
             {
                 Index = 1,
-                JobNo = "TEXT",
+                JobNo = EntityNos.Job,
                 Name = "TEXT",
-                SourceApp = "TEXT",
-                SourceType = "TEXT",
+                SourceApp = EntityNos.SourceApp,
+                SourceType = EntityNos.SourceType,
                 TaskNo = EntityNos.Task
             };
 

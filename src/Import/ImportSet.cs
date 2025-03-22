@@ -14,8 +14,7 @@ namespace Dime.Scheduler.Entities
         public int Status { get; set; }
         
         public string? Phrase { get; set; }
-
-        [JsonIgnore]
+        
         public List<AppointmentMap> Appointments { get; set; }
     }
 }

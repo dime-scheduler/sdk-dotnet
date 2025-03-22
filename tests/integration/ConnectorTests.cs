@@ -13,9 +13,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task Connector()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             Connector model = new()
             {
                 Name = "Connector 1",

@@ -24,9 +24,11 @@ namespace Dime.Scheduler.IntegrationTests
                 Importance = Importance.Medium
             };
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentImportance()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentImportance model = CreateModel();
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

@@ -25,9 +25,11 @@ namespace Dime.Scheduler.IntegrationTests
                 Body = "Body"
             };
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentContent()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentContent model = CreateModel();
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

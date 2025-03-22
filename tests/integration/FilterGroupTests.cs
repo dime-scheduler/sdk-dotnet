@@ -12,9 +12,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task FilterGroup()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             FilterGroup model = new() { Name = EntityNos.FilterGroup };
 
             Result response = await _dimeSchedulerClientFixture.Client.Filters.Groups.CreateAsync(model);

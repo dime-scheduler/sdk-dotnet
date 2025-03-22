@@ -13,9 +13,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task ResourceCapacity_ToImportRequest_Append_AllShouldMapParameters()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             ResourceCapacity model = new()
             {
                 ResourceNo = EntityNos.Resource,

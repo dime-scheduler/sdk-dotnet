@@ -24,9 +24,11 @@ namespace Dime.Scheduler.IntegrationTests
                 TimeMarker = "TM"
             };
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task AppointmentTimeMarker()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             AppointmentTimeMarker model = CreateModel();
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);

@@ -13,9 +13,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
-        public async System.Threading.Tasks.Task Appointment_ToImportRequest_Append_AllShouldMapParameters()
+        [SkippableFact]
+        public async System.Threading.Tasks.Task Appointment()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             Appointment model = new()
             {
                 SourceApp = EntityNos.SourceApp,
@@ -24,7 +26,7 @@ namespace Dime.Scheduler.IntegrationTests
                 End = new DateTime(2020, 1, 2),
                 ResourceNo = EntityNos.Resource,
                 AppointmentGuid = EntityNos.AppointmentGuid,
-                SentFromBackOffice = true,              
+                SentFromBackOffice = true,
                 Body = "Body",
                 Subject = "Subject",
                 Category = "CAT",
@@ -35,7 +37,7 @@ namespace Dime.Scheduler.IntegrationTests
                 PlanningQuantity = 525,
                 ReplaceResource = true,
                 RoundToUnitOfMeasure = true,
-                TaskNo = "TASK",
+                TaskNo = EntityNos.Task,
                 TimeMarker = "TM",
                 UnitOfMeasure = "UOM",
                 UnitOfMeasureConversion = 14,

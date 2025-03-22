@@ -13,9 +13,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task ResourceGpsTracking()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             decimal lat1 = 31.733256M;
             decimal lng1 = -3.698385M;
 

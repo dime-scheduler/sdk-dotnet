@@ -12,9 +12,11 @@ namespace Dime.Scheduler.IntegrationTests
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
-        [Fact]
+        [SkippableFact]
         public async System.Threading.Tasks.Task Category()
         {
+            Skip.If(_dimeSchedulerClientFixture.Client == null);
+
             Category model = new()
             {
                 Name = "CATEGORY_1",
