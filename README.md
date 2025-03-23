@@ -55,14 +55,14 @@ The following endpoints are available in the `DimeSchedulerClient` class:
 - **ActionUri**: invoke HTTP GET or POST requests on tasks and appointments.
 - **Caption**: Override the standard localization
 - **Indicators**
-  - Category: Background color of appointments
-  - TimeMarker: Underscore bar of appointments
-  - Pin: Color of markers on the map
+  - **Category**: Background color of appointments
+  - **TimeMarker**: Underscore bar of appointments
+  - **Pin**: Color of markers on the map
 - **Connector**: Send planning data back to your backoffice system
 - **Container**: Group tasks and appointments
 - **Filters**: Find suitable resources for the task at hand
-  - Filter Groups
-  - Filter Values
+  - **Filter Group**
+  - **Filter Value**
 - **Message**: Send transient messages to the active users
 - **Notification**: Persistent messages for tasks, appointments, jobs, or just a general message for everybody.
 - **Resource**: The entity that can be planned. Can also be set:
@@ -91,9 +91,7 @@ The following endpoints are available in the `DimeSchedulerClient` class:
   - **AppointmentFieldValue**: Add additional data via the open data model of Appointment Templates.
 - **Import**: The raw endpoint that handles all of the above.
 
-It is possible that an endpoint may accept more than one model, such as those that target specific functionalities. 
-
-For instance, in the appointment endpoint, an instance of `AppointmentLocked` can be invoked:
+It is possible that an endpoint may accept more than one model, such as those that target specific functionalities.  For instance, in the appointment endpoint, an instance of `AppointmentLocked` can be invoked:
 
 ```csharp
  AppointmentLocked appointmentLock = new()
@@ -107,8 +105,8 @@ For instance, in the appointment endpoint, an instance of `AppointmentLocked` ca
      Locked = true
  };
 
- await dimeScheduler.Appointments.UpdateAsync(appointmentLock);
- ```
+await dimeScheduler.Appointments.UpdateAsync(appointmentLock);
+```
 
 ## Contributing
 
