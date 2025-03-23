@@ -2,7 +2,7 @@
 {
     public class Result<T> : Result
     {
-        internal Result(T? value, bool isSuccess, string? error = null) : base(isSuccess, error)
+        internal Result(T? value, bool isSuccess, Error? error = null) : base(isSuccess, error)
         {
             Value = value;
         }

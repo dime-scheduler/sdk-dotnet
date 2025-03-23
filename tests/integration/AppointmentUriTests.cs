@@ -1,5 +1,6 @@
 ﻿using System;
 using Dime.Scheduler.Entities;
+using Dime.Scheduler.IntegrationTests.Retry;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
@@ -32,8 +33,7 @@ namespace Dime.Scheduler.IntegrationTests
                 End = DateTime.Now.AddHours(1),
             };
 
-            AppointmentResult appointmentResponse = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(appointment) as AppointmentResult;
-
+            Result appointmentResponse = await TooManyRequestRetryPolicy.ExecuteAsync(async () => await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(appointment));           
             if (!appointmentResponse.IsSuccess)
                 Assert.Fail();
 
@@ -41,14 +41,14 @@ namespace Dime.Scheduler.IntegrationTests
             {
                 SourceType = EntityNos.SourceType,
                 AppointmentGuid = guid,
-                AppointmentId = appointmentResponse.Appointment,
+                AppointmentId = ((AppointmentResult)appointmentResponse).Appointment,
                 SourceApp = EntityNos.SourceApp,
                 Description = "DESC",
                 Uri = "https://www.dimescheduler.com"
             };
 
-            Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
-            Assert.True(response.IsSuccess, response.Error);
+            Result response = await TooManyRequestRetryPolicy.ExecuteAsync(async () => await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model));
+            Assert.True(response.IsSuccess, response.Error?.ToString());
         }
     }
 }

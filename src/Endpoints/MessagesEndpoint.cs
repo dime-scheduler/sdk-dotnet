@@ -1,6 +1,6 @@
 ﻿using Dime.Scheduler.Entities;
 using RestSharp;
-using Task = System.Threading.Tasks.Task;
+using t = System.Threading.Tasks;
 
 namespace Dime.Scheduler
 {
@@ -10,7 +10,7 @@ namespace Dime.Scheduler
         {
         }
 
-        public async Task PostAsync(Message request)
+        public async t.Task<Result> PostAsync(Message request)
             => await ExecuteAsync(Routes.Message, Method.Post, request);
     }
 }

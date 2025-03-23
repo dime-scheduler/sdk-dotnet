@@ -1,4 +1,5 @@
 ﻿using Dime.Scheduler.Entities;
+using Dime.Scheduler.IntegrationTests.Retry;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
@@ -21,7 +22,8 @@ namespace Dime.Scheduler.IntegrationTests
             Result groupResponse = await _dimeSchedulerClientFixture.Client.Filters.Groups.CreateAsync(filterGroup);
 
             FilterValue filterValue = new(EntityNos.FilterGroup, EntityNos.FilterValue);
-            Result valueResponse = await _dimeSchedulerClientFixture.Client.Filters.Values.CreateAsync(filterValue);
+            Result valueResponse = await TooManyRequestRetryPolicy.ExecuteAsync(async () => await _dimeSchedulerClientFixture.Client.Filters.Values.CreateAsync(filterValue));
+            Assert.True(valueResponse.IsSuccess, valueResponse.Error?.Message);
         }
     }
 }

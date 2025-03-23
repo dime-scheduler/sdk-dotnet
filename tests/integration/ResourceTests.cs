@@ -1,5 +1,6 @@
 ﻿using System;
 using Dime.Scheduler.Entities;
+using Dime.Scheduler.IntegrationTests.Retry;
 using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
@@ -105,8 +106,8 @@ namespace Dime.Scheduler.IntegrationTests
                 TeamType = "TEXT"
             };
 
-            Result response = await _dimeSchedulerClientFixture.Client.Resources.CreateAsync(model);
-            Assert.True(response.IsSuccess, response.Error);
+            Result response = await TooManyRequestRetryPolicy.ExecuteAsync(async () => await _dimeSchedulerClientFixture.Client.Resources.CreateAsync(model));
+            Assert.True(response.IsSuccess, response.Error?.ToString());
         }
     }
 }

@@ -4,26 +4,27 @@ using Xunit;
 
 namespace Dime.Scheduler.IntegrationTests
 {
-    public partial class ContainerTests : IClassFixture<DimeSchedulerClientFixture>
+    public partial class MessageTest : IClassFixture<DimeSchedulerClientFixture>
     {
         private readonly DimeSchedulerClientFixture _dimeSchedulerClientFixture;
 
-        public ContainerTests(DimeSchedulerClientFixture dimeSchedulerClientFixture)
+        public MessageTest(DimeSchedulerClientFixture dimeSchedulerClientFixture)
         {
             _dimeSchedulerClientFixture = dimeSchedulerClientFixture;
         }
 
         [SkippableFact]
-        public async System.Threading.Tasks.Task Container()
+        public async System.Threading.Tasks.Task Message()
         {
             Skip.If(_dimeSchedulerClientFixture.Client == null);
 
-            Container model = new()
+            Message model = new()
             {
-                Name = EntityNos.Container
+                Severity = Severity.Warning,
+                Text = "This is a test message",                
             };
 
-            Result response = await TooManyRequestRetryPolicy.ExecuteAsync(async () => await _dimeSchedulerClientFixture.Client.Containers.CreateAsync(model));
+            Result response = await TooManyRequestRetryPolicy.ExecuteAsync(async () => await _dimeSchedulerClientFixture.Client.Messages.PostAsync(model));
             Assert.True(response.IsSuccess, response.Error?.ToString());
         }
     }

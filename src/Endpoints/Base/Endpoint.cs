@@ -45,30 +45,30 @@ namespace Dime.Scheduler
             }
             catch (Exception ex)
             {
-                return Result.Fail(ex.Message);
+                return Result.Fail(new(500, ex.Message));
             }
         }
 
-        protected static string GetError(RestResponse<ImportResponse> response)
+        protected static Error GetError(RestResponse<ImportResponse> response)
         {
             try
             {
                 if (!response.IsSuccessful)
                 {
                     if (string.IsNullOrEmpty(response.StatusDescription))
-                        return $"Received an empty response from {response.Request?.Resource ?? "N/A"}: {response.ErrorMessage ?? "N/A"}";
+                        return new((int)response.StatusCode, $"Received an empty response from {response.Request?.Resource ?? "N /A"}: {response.ErrorMessage ?? "N/A"}");
 
-                    return $"{(int)response.StatusCode} {response.StatusDescription}";
+                    return new((int)response.StatusCode, response.StatusDescription);
                 }
 
                 if (!response.Data.IsSuccess)
-                    return response.Data.GetFailedContent();
+                    return new(response.Data.StatusCode, response.Data.GetFailedContent());
 
-                return $"Unhandled exception occurred.";
+                return new(500, "Unhandled exception occurred.");
             }
             catch (Exception ex)
             {
-                return $"An unhandled exception occurred when reading the response: {ex.Message}.";
+                return new(500, $"An unhandled exception occurred when reading the response: {ex.Message}.");
             }
         }
     }

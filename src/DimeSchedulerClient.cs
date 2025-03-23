@@ -1,4 +1,6 @@
-﻿namespace Dime.Scheduler
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Dime.Scheduler
 {
     public class DimeSchedulerClient
     {
@@ -7,6 +9,7 @@
         /// </summary>
         /// <param name="key">The API key to authenticate with.</param>
         /// <param name="environment">Choose between live and sandbox environment.</param>
+        [ExcludeFromCodeCoverage]
         public DimeSchedulerClient(string key, Environment environment = Environment.Production)
             : this(new EndpointOptions(environment.ToUrl(), key))
         {
@@ -16,6 +19,7 @@
         /// Entry point to Dime.Scheduler.
         /// </summary>
         /// <param name="key">The API key to authenticate with.</param>
+        [ExcludeFromCodeCoverage]
         public DimeSchedulerClient(string key)
             : this(key, Environment.Production)
         {

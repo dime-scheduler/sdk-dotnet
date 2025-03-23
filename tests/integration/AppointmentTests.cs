@@ -45,7 +45,7 @@ namespace Dime.Scheduler.IntegrationTests
             };
 
             Result response = await _dimeSchedulerClientFixture.Client.Appointments.CreateAsync(model);
-            Assert.True(response.IsSuccess, response.Error);
+            Assert.True(response.IsSuccess, response.Error?.ToString());
         }
     }
 }

@@ -4,6 +4,6 @@ namespace Dime.Scheduler
 {
     public interface IMessageEndpoint : IEndpoint
     {
-        System.Threading.Tasks.Task PostAsync(Message request);
+        System.Threading.Tasks.Task<Result> PostAsync(Message request);
     }
 }

@@ -17,7 +17,7 @@ namespace Dime.Scheduler
             try
             {
                 Result response = await ExecuteAsync(Routes.Import.InsertData, Method.Post, requestParameters.ToImportRequest(transactionType));
-                return new ImportSet() { Status = response.IsSuccess ? 200 : 500, Success = response.IsSuccess, Message = response.Error };
+                return new ImportSet() { Status = response.IsSuccess ? 200 : 500, Success = response.IsSuccess, Message = response.Error?.Message };
             }
             catch (WebApiException ex)
             {
@@ -34,7 +34,7 @@ namespace Dime.Scheduler
             try
             {
                 Result response = await ExecuteAsync<IEnumerable<ImportRequest>>(Routes.Import.Insert, Method.Post, [requestParameters.ToImportRequest(transactionType)]);
-                return new ImportSet() { Status = response.IsSuccess ? 200 : 500, Success = response.IsSuccess, Message = response.Error };
+                return new ImportSet() { Status = response.IsSuccess ? 200 : 500, Success = response.IsSuccess, Message = response.Error?.Message };
             }
             catch (WebApiException ex)
             {

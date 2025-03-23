@@ -3,5 +3,12 @@
 namespace Dime.Scheduler.Entities
 {
     [ExcludeFromCodeCoverage]
-    public record Message(string Text, string User, Severity Severity);
+    public class Message
+    {
+        public string Text { get; set; }
+
+        public string User { get; set; }
+
+        public Severity Severity { get; set; }
+    };
 }

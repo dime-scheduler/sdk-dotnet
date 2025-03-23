@@ -2,13 +2,13 @@
 {
     public class Result
     {
-        protected Result(bool isSuccess, string? error)
+        protected Result(bool isSuccess, Error? error)
         {
             IsSuccess = isSuccess;
             Error = error;
         }
 
-        protected Result(bool isSuccess) : this(isSuccess, string.Empty)
+        protected Result(bool isSuccess) : this(isSuccess, null)
         {
         }
 
@@ -16,12 +16,12 @@
 
         public bool IsSuccess { get; }
 
-        public string? Error { get; }
+        public Error Error { get; }
 
-        internal static Result Fail(string error)
+        internal static Result Fail(Error error)
             => new(false, error);
 
-        internal static Result<T> Fail<T>(string error)
+        internal static Result<T> Fail<T>(Error error)
             => new(default, false, error);
 
         internal static Result Ok()

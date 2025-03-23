@@ -46,7 +46,7 @@ namespace Dime.Scheduler
             }
             catch (Exception ex)
             {
-                return Result.Fail(ex.Message);
+                return Result.Fail(new(500, ex.Message));
             }
         }
 
