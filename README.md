@@ -61,8 +61,8 @@ The following endpoints are available in the `DimeSchedulerClient` class:
 - **Connector**: Send planning data back to your backoffice system
 - **Container**: Group tasks and appointments
 - **Filters**: Find suitable resources for the task at hand
-  - **Filter Group**
-  - **Filter Value**
+  - **FilterGroup**
+  - **FilterValue**
 - **Message**: Send transient messages to the active users
 - **Notification**: Persistent messages for tasks, appointments, jobs, or just a general message for everybody.
 - **Resource**: The entity that can be planned. Can also be set:
@@ -72,8 +72,8 @@ The following endpoints are available in the `DimeSchedulerClient` class:
   - **ResourceGpsTracking**: Update the current location of the resource.
   - **ResourceCertificate**: obsolete
   - **ResourceUri**: Add a link to relevant documentation about this resource.
-- **Job**: The parent entity of a task that contains data such as customer and contact info, addresses, etc. 
-- **Task**: The unit of work that needs to be planned. Can also be set:
+- [Job](https://docs.dimescheduler.com/develop/api/job): The parent entity of a task that contains data such as customer and contact info, addresses, etc. 
+- [Task](https://docs.dimescheduler.com/develop/api/task): The unit of work that needs to be planned. Can also be set:
   - **TaskFilterValue**: Set requirements (i.e. filter value) for this task that a resources must contain to successfully execute the task.
   - **TaskLocked**: Lock/unlock appointments for this task.
   - **TaskUri**: Add a link to relevant documentation about this task.
