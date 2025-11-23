@@ -21,18 +21,22 @@ namespace Dime.Scheduler.Entities
         /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentId/*'/>
         [ImportParameter(nameof(AppointmentId))]
         [Required]
         public long AppointmentId { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentGuid/*'/>
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/ResourceNo/*'/>
         [ImportParameter(nameof(ResourceNo))]
         [Required]
         [MaxLength(50)]
         public string ResourceNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/SentFromBackOffice/*'/>
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; } = true;
 

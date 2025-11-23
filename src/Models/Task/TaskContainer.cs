@@ -18,21 +18,29 @@ namespace Dime.Scheduler.Entities
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/JobNo/*'/>
         [ImportParameter(nameof(JobNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string JobNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/Taskno/*'/>
         [ImportParameter(nameof(TaskNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string TaskNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the container name.
+        /// </summary>
         [ImportParameter("ContainerName")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(255)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Gets or sets the container index.
+        /// </summary>
         [ImportParameter(nameof(Index), TransactionType.Append)]
         public int Index { get; set; }
 

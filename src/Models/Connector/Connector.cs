@@ -11,10 +11,14 @@ namespace Dime.Scheduler.Entities
         {
         }
 
+        /// <summary>
+        /// Gets or sets the name of the connector.
+        /// </summary>
         [ImportParameter(nameof(Name))]
         [RequiredIf(TransactionType.Append)]
         public string Name { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Description/*'/>
         [ImportParameter(nameof(Description))]
         public string Description { get; set; }
 
@@ -28,26 +32,50 @@ namespace Dime.Scheduler.Entities
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether appointments should be sent to the web service.
+        /// </summary>
         [ImportParameter(nameof(SendAppointmentToWebService))]
         public bool SendAppointmentToWebService { get; set; } = true;
 
+        /// <summary>
+        /// Gets or sets the web service address URI.
+        /// </summary>
         [ImportParameter("WebServiceAddress")]
         public string Uri { get; set; }
 
+        /// <summary>
+        /// Gets or sets the CRUD operation types supported by this connector.
+        /// </summary>
         public IEnumerable<Crud> CrudTypes { get; set; } = [Crud.Create, Crud.Update, Crud.Delete];
 
+        /// <summary>
+        /// Gets or sets the type of the connector.
+        /// </summary>
         [ImportParameter(nameof(Type))]
         public ConnectorType? Type { get; set; } = ConnectorType.None;
 
+        /// <summary>
+        /// Gets or sets the authentication type for the connector.
+        /// </summary>
         [ImportParameter("AuthType")]
         public ConnectorAuthType? AuthenticationType { get; set; } = ConnectorAuthType.None;
 
+        /// <summary>
+        /// Gets or sets the API type for the connector.
+        /// </summary>
         [ImportParameter(nameof(ApiType))]
         public ConnectorApiType? ApiType { get; set; } = ConnectorApiType.SOAP;
 
+        /// <summary>
+        /// Gets or sets the login credentials for the connector.
+        /// </summary>
         [ImportParameter(nameof(Login))]
         public string Login { get; set; }
 
+        /// <summary>
+        /// Gets or sets the password credentials for the connector.
+        /// </summary>
         [ImportParameter(nameof(Password))]
         public string Password { get; set; }
 

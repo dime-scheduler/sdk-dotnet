@@ -12,18 +12,28 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/ResourceNo/*'/>
         [ImportParameter(nameof(ResourceNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string ResourceNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the filter group name.
+        /// </summary>
         [ImportParameter(nameof(FilterGroup))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterGroup { get; set; }
 
+        /// <summary>
+        /// Gets or sets the filter value.
+        /// </summary>
         [ImportParameter(nameof(FilterValue))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterValue { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether to transfer to temporary storage.
+        /// </summary>
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]
         public bool TransferToTemp { get; set; }
 

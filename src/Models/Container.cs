@@ -6,14 +6,23 @@ namespace Dime.Scheduler.Entities
 {
     public class Container : IImportEntity, IValidatableImportRequest<Container>
     {
+        /// <summary>
+        /// Gets or sets the name of the container.
+        /// </summary>
         [ImportParameter(nameof(Name))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Gets or sets the handle date.
+        /// </summary>
         [ImportParameter(nameof(HandleDate), TransactionType.Append)]
         public DateTime? HandleDate { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the container is locked.
+        /// </summary>
         [ImportParameter(nameof(HandleLocked), TransactionType.Append)]
         public bool HandleLocked { get; set; }
 

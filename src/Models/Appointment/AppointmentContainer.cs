@@ -6,6 +6,9 @@ namespace Dime.Scheduler.Entities
 {
     public class AppointmentContainer : IAppointmentIdentifier, IImportEntity, IValidatableImportRequest<AppointmentContainer>
     {
+        /// <summary>
+        /// Gets or sets the container name.
+        /// </summary>
         [ImportParameter(nameof(Container))]
         [Required]
         [MaxLength(100)]
@@ -14,6 +17,9 @@ namespace Dime.Scheduler.Entities
         /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the appointment GUID.
+        /// </summary>
         [ImportParameter(nameof(Appointment))]
         [Required]
         public Guid Appointment { get; set; }

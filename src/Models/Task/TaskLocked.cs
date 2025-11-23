@@ -16,19 +16,23 @@ namespace Dime.Scheduler.Entities
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/JobNo/*'/>
         [ImportParameter(nameof(JobNo))]
         [Required]
         [MaxLength(50)]
         public string JobNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/Taskno/*'/>
         [ImportParameter(nameof(TaskNo))]
         [Required]
         [MaxLength(50)]
         public string TaskNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Locked/*'/>
         [ImportParameter(nameof(Locked))]
         public bool Locked { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/SentFromBackOffice/*'/>
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; } = true;
 

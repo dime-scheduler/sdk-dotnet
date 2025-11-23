@@ -17,26 +17,37 @@ namespace Dime.Scheduler.Entities
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/JobNo/*'/>
         [ImportParameter(nameof(JobNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string JobNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/Taskno/*'/>
         [ImportParameter(nameof(TaskNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string TaskNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the filter group name.
+        /// </summary>
         [ImportParameter(nameof(FilterGroup))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string FilterGroup { get; set; }
 
+        /// <summary>
+        /// Gets or sets the filter value.
+        /// </summary>
         [ImportParameter(nameof(FilterValue))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public string FilterValue { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether to transfer to temporary storage.
+        /// </summary>
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]
         public bool TransferToTemp { get; set; }
 

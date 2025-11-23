@@ -5,21 +5,36 @@ namespace Dime.Scheduler.Entities
 {
     public class Caption : IImportEntity
     {
+        /// <summary>
+        /// Gets or sets the context identifier.
+        /// </summary>
         [ImportParameter(nameof(Context))]
         public int Context { get; set; } = 6;
 
+        /// <summary>
+        /// Gets or sets the source table name.
+        /// </summary>
         [ImportParameter(nameof(SourceTable))]
         [MaxLength(255)]
         public string SourceTable { get; set; }
 
+        /// <summary>
+        /// Gets or sets the field name.
+        /// </summary>
         [ImportParameter(nameof(FieldName))]
         [MaxLength(255)]
         public string FieldName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the language code.
+        /// </summary>
         [ImportParameter(nameof(Language))]
         [MaxLength(10)]
         public string Language { get; set; }
 
+        /// <summary>
+        /// Gets or sets the caption text.
+        /// </summary>
         [ImportParameter("Caption")]
         [MaxLength(100)]
         public string Text { get; set; }

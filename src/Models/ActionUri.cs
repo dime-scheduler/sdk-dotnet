@@ -16,21 +16,32 @@ namespace Dime.Scheduler.Entities
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the URI type.
+        /// </summary>
         [ImportParameter("UrlType")]
         [JsonConverter(typeof(IntEnumConverter<UriType>))]
         public UriType UriType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Uri/*'/>
         [ImportParameter("Url")]
         [Required]
         public string Uri { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/UriDescription/*'/>
         [ImportParameter("UrlDesc")]
         [MaxLength(255)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this is the default URI.
+        /// </summary>
         [ImportParameter("DefaultUrl")]
         public bool Default { get; set; }
 
+        /// <summary>
+        /// Gets or sets the HTTP request type.
+        /// </summary>
         [ImportParameter(nameof(RequestType))]
         [JsonConverter(typeof(IntEnumConverter<HttpRequestType>))]
         public HttpRequestType RequestType { get; set; }

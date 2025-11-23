@@ -15,11 +15,17 @@ namespace Dime.Scheduler.Entities
             Value = value;
         }
 
+        /// <summary>
+        /// Gets or sets the filter group name.
+        /// </summary>
         [ImportParameter("FilterGroupName")]
         [MaxLength(50)]
         [Required]
         public string Group { get; set; }
 
+        /// <summary>
+        /// Gets or sets the filter value.
+        /// </summary>
         [ImportParameter("FilterValue")]
         [MaxLength(100)]
         [Required]

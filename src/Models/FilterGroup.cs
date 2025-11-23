@@ -15,17 +15,29 @@ namespace Dime.Scheduler.Entities
             Name = name;
         }
 
+        /// <summary>
+        /// Gets or sets the filter group identifier.
+        /// </summary>
         [ImportParameter(nameof(Id), TransactionType.Append)]
         public int Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the filter group.
+        /// </summary>
         [ImportParameter("GroupName", TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         [Required]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Gets or sets the column number.
+        /// </summary>
         [ImportParameter(nameof(ColumnNo), TransactionType.Append)]
         public int ColumnNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this is a data filter.
+        /// </summary>
         [ImportParameter(nameof(DataFilter), TransactionType.Append)]
         public bool DataFilter { get; set; }
 

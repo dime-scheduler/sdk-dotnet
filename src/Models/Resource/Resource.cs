@@ -6,6 +6,7 @@ namespace Dime.Scheduler.Entities
 {
     public class Resource : IImportEntity, IValidatableImportRequest<Resource>
     {
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/ResourceNo/*'/>
         [ImportParameter(nameof(ResourceNo), TransactionType.Append)]
         [Required]
         [MaxLength(50)]
@@ -21,168 +22,289 @@ namespace Dime.Scheduler.Entities
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the resource type.
+        /// </summary>
         [ImportParameter(nameof(ResourceType), TransactionType.Append)]
         [MaxLength(100)]
         public string ResourceType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the resource type identifier.
+        /// </summary>
         [ImportParameter(nameof(ResourceTypeId), TransactionType.Append)]
         public int? ResourceTypeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the resource name.
+        /// </summary>
         [ImportParameter(nameof(ResourceName), TransactionType.Append)]
         [MaxLength(100)]
         public string ResourceName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the display name of the resource.
+        /// </summary>
         [ImportParameter(nameof(DisplayName), TransactionType.Append)]
         [MaxLength(100)]
         public string DisplayName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the department of the resource.
+        /// </summary>
         [ImportParameter(nameof(Department), TransactionType.Append)]
         [MaxLength(50)]
         public string Department { get; set; }
 
+        /// <summary>
+        /// Gets or sets the email address of the resource.
+        /// </summary>
         [ImportParameter(nameof(Email), TransactionType.Append)]
         [MaxLength(100)]
         public string Email { get; set; }
 
+        /// <summary>
+        /// Gets or sets the phone number of the resource.
+        /// </summary>
         [ImportParameter(nameof(Phone), TransactionType.Append)]
         [MaxLength(50)]
         public string Phone { get; set; }
 
+        /// <summary>
+        /// Gets or sets the mobile phone number of the resource.
+        /// </summary>
         [ImportParameter(nameof(MobilePhone), TransactionType.Append)]
         [MaxLength(50)]
         public string MobilePhone { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this is a replacement resource.
+        /// </summary>
         [ImportParameter(nameof(ReplacementResource), TransactionType.Append)]
         public bool ReplacementResource { get; set; }
 
+        /// <summary>
+        /// Gets or sets the field service email address.
+        /// </summary>
         [ImportParameter(nameof(FieldServiceEmail), TransactionType.Append)]
         [MaxLength(100)]
         public string FieldServiceEmail { get; set; }
 
+        /// <summary>
+        /// Gets or sets the personal email address.
+        /// </summary>
         [ImportParameter(nameof(PersonalEmail), TransactionType.Append)]
         [MaxLength(100)]
         public string PersonalEmail { get; set; }
 
+        /// <summary>
+        /// Gets or sets the GPS tracking resource number.
+        /// </summary>
         [ImportParameter(nameof(GpsTrackingResourceNo), TransactionType.Append)]
         [MaxLength(50)]
         public string GpsTrackingResourceNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home address.
+        /// </summary>
         [ImportParameter(nameof(HomeAddress), TransactionType.Append)]
         public string HomeAddress { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home address longitude coordinate.
+        /// </summary>
         [ImportParameter(nameof(HomeAddressGeoLong), TransactionType.Append)]
         public decimal? HomeAddressGeoLong { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home address latitude coordinate.
+        /// </summary>
         [ImportParameter(nameof(HomeAddressGeoLat), TransactionType.Append)]
         public decimal? HomeAddressGeoLat { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home phone number.
+        /// </summary>
         [ImportParameter(nameof(HomePhone), TransactionType.Append)]
         [MaxLength(50)]
         public string HomePhone { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home email address.
+        /// </summary>
         [ImportParameter(nameof(HomeEmail), TransactionType.Append)]
         [MaxLength(50)]
         public string HomeEmail { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home street name.
+        /// </summary>
         [ImportParameter(nameof(HomeStreet), TransactionType.Append)]
         [MaxLength(255)]
         public string HomeStreet { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home street number.
+        /// </summary>
         [ImportParameter(nameof(HomeStreetNo), TransactionType.Append)]
         [MaxLength(20)]
         public string HomeStreetNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home postcode.
+        /// </summary>
         [ImportParameter(nameof(HomePostcode), TransactionType.Append)]
         [MaxLength(20)]
         public string HomePostcode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home city.
+        /// </summary>
         [ImportParameter(nameof(HomeCity), TransactionType.Append)]
         [MaxLength(50)]
         public string HomeCity { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home county.
+        /// </summary>
         [ImportParameter(nameof(HomeCounty), TransactionType.Append)]
         [MaxLength(50)]
         public string HomeCounty { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home state.
+        /// </summary>
         [ImportParameter(nameof(HomeState), TransactionType.Append)]
         [MaxLength(50)]
         public string HomeState { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home country.
+        /// </summary>
         [ImportParameter(nameof(HomeCountry), TransactionType.Append)]
         [MaxLength(50)]
         public string HomeCountry { get; set; }
 
+        /// <summary>
+        /// Gets or sets the home region.
+        /// </summary>
         [ImportParameter(nameof(HomeRegion), TransactionType.Append)]
         [MaxLength(10)]
         public string HomeRegion { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team code.
+        /// </summary>
         [ImportParameter(nameof(TeamCode), TransactionType.Append)]
         [MaxLength(20)]
         public string TeamCode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team name.
+        /// </summary>
         [ImportParameter(nameof(TeamName), TransactionType.Append)]
         [MaxLength(100)]
         public string TeamName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team type.
+        /// </summary>
         [ImportParameter(nameof(TeamType), TransactionType.Append)]
         [MaxLength(20)]
         public string TeamType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team sort order.
+        /// </summary>
         [ImportParameter(nameof(TeamSort), TransactionType.Append)]
         public int TeamSort { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team member type.
+        /// </summary>
         [ImportParameter(nameof(TeamMemberType), TransactionType.Append)]
         [MaxLength(20)]
         public string TeamMemberType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the team member sort order.
+        /// </summary>
         [ImportParameter(nameof(TeamMemberSort), TransactionType.Append)]
         public int TeamMemberSort { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the resource should not be shown.
+        /// </summary>
         [ImportParameter(nameof(DoNotShow), TransactionType.Append)]
         public bool DoNotShow { get; set; }
 
+        /// <summary>
+        /// Gets or sets the date and time when the resource is in service from.
+        /// </summary>
         [ImportParameter(nameof(InServiceFrom), TransactionType.Append)]
         public DateTime? InServiceFrom { get; set; }
 
+        /// <summary>
+        /// Gets or sets the date and time when the resource is in service till.
+        /// </summary>
         [ImportParameter(nameof(InServiceTill), TransactionType.Append)]
         public DateTime? InServiceTill { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether Exchange integration is enabled.
+        /// </summary>
         [ImportParameter(nameof(ExchangeIntegrationEnabled), TransactionType.Append)]
         public bool ExchangeIntegrationEnabled { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Uri/*'/>
         [ImportParameter("url1", TransactionType.Append)]
         [MaxLength(1000)]
         public string Url1 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/UriDescription/*'/>
         [ImportParameter("urldesc1", TransactionType.Append)]
         [MaxLength(255)]
         public string UrlDescription1 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Uri/*'/>
         [ImportParameter("url2", TransactionType.Append)]
         [MaxLength(1000)]
         public string Url2 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/UriDescription/*'/>
         [ImportParameter("urldesc2", TransactionType.Append)]
         [MaxLength(255)]
         public string UrlDescription2 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Uri/*'/>
         [MaxLength(1000)]
         [ImportParameter("url3", TransactionType.Append)]
         public string Url3 { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/UriDescription/*'/>
         [ImportParameter("urldesc3", TransactionType.Append)]
         [MaxLength(255)]
         public string UrlDescription3 { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether bulk planning is enabled.
+        /// </summary>
         [ImportParameter(nameof(BulkPlanning), TransactionType.Append)]
         public bool BulkPlanning { get; set; }
 
+        /// <summary>
+        /// Gets or sets the bulk capacity.
+        /// </summary>
         [ImportParameter(nameof(BulkCapacity), TransactionType.Append)]
         public decimal BulkCapacity { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether GPS tracking is enabled for the resource.
+        /// </summary>
         [ImportParameter(nameof(ResourceGpsTrackingEnabled), TransactionType.Append)]
         public bool ResourceGpsTrackingEnabled { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/Pin/*'/>
         [ImportParameter(nameof(Pin), TransactionType.Append)]
         [MaxLength(100)]
         public string Pin { get; set; }

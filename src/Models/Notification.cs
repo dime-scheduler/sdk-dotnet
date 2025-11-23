@@ -23,34 +23,53 @@ namespace Dime.Scheduler.Entities
         /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentNo/*'/>
         public string AppointmentNo { get; set; }
 
+        /// <summary>
+        /// Gets or sets the connector identifier.
+        /// </summary>
         [MaxLength(50)]
         [ImportParameter("mboc_id")]
         public string ConnectorId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the notification type.
+        /// </summary>
         [ImportParameter("NotificationType", TransactionType.Append)]
         public NotificationType Type { get; set; }
 
+        /// <summary>
+        /// Gets or sets the notification code.
+        /// </summary>
         [MaxLength(20)]
         [ImportParameter("NotificationCode", TransactionType.Append)]
         public string Code { get; set; }
 
+        /// <summary>
+        /// Gets or sets the notification text.
+        /// </summary>
         [ImportParameter("NotificationText", TransactionType.Append)]
         public string Text { get; set; }
 
+        /// <summary>
+        /// Gets or sets the notification date and time.
+        /// </summary>
         [ImportParameter("NotificationDate", TransactionType.Append)]
         public DateTime? Date { get; set; } = DateTime.Now;
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/JobNo/*'/>
         [ImportParameter(nameof(JobNo))]
         [MaxLength(50)]
         public string JobNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/Taskno/*'/>
         [ImportParameter(nameof(TaskNo))]
         [MaxLength(50)]
         public string TaskNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Appointment"]/AppointmentGuid/*'/>
         [ImportParameter(nameof(AppointmentGuid))]
         public Guid? AppointmentGuid { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/SentFromBackOffice/*'/>
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; }
 

@@ -26,15 +26,22 @@ namespace Dime.Scheduler.Entities
         [ImportParameter(nameof(AppointmentId))]
         public long? AppointmentId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the field code.
+        /// </summary>
         [ImportParameter(nameof(FieldCode))]
         [MaxLength(100)]
         [Required]
         public string FieldCode { get; set; }
 
+        /// <summary>
+        /// Gets or sets the field value.
+        /// </summary>
         [ImportParameter(nameof(FieldValue))]
         [Required]
         public string FieldValue { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Common"]/SentFromBackOffice/*'/>
         [ImportParameter(nameof(SentFromBackOffice))]
         public bool SentFromBackOffice { get; set; } = true;
 
