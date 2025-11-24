@@ -1,4 +1,6 @@
-﻿namespace Dime.Scheduler.Entities
+﻿using System.ComponentModel;
+
+namespace Dime.Scheduler.Entities
 {
     /// <summary>
     /// Represents the HTTP request type.
@@ -7,11 +9,13 @@
     {
         /// <summary>
         /// GET request.
-        /// </summary>
+        /// </summary>        
+        [Description("GET request.")]
         Get = 1,
         /// <summary>
         /// POST request.
         /// </summary>
+        [Description("POST request.")]
         Post = 2
     }
 }

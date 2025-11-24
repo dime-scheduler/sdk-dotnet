@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Dime.Scheduler.Entities
 {
@@ -6,18 +7,21 @@ namespace Dime.Scheduler.Entities
     public class Message
     {
         /// <summary>
-        /// Gets or sets the message text.
+        /// the message text.
         /// </summary>
+        [Description("The message text.")]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets the user name.
+        /// the user name.
         /// </summary>
+        [Description("The user name.")]
         public string User { get; set; }
 
         /// <summary>
-        /// Gets or sets the severity level of the message.
+        /// the severity level of the message.
         /// </summary>
+        [Description("The severity level of the message.")]
         public Severity Severity { get; set; }
     };
 }

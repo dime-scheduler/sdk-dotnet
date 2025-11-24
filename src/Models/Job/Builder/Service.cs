@@ -6,23 +6,23 @@
     public class Service
     {
         /// <summary>
-        /// Gets or sets the service number.
+        /// The service number.
         /// </summary>
         public string No { get; set; }
         /// <summary>
-        /// Gets or sets the service serial number.
+        /// The service serial number.
         /// </summary>
         public string SerialNo { get; set; }
         /// <summary>
-        /// Gets or sets the service name.
+        /// The service name.
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Gets or sets the service group.
+        /// The service group.
         /// </summary>
         public string Group { get; set; }
         /// <summary>
-        /// Gets or sets the service class.
+        /// The service class.
         /// </summary>
         public string Class { get; set; }
     }

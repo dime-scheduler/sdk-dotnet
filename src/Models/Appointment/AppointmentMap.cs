@@ -7,12 +7,12 @@ namespace Dime.Scheduler
     public class AppointmentMap
     {
         /// <summary>
-        /// Gets or sets the appointment identifier.
+        /// The appointment identifier.
         /// </summary>
         public long Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the appointment GUID.
+        /// The appointment GUID.
         /// </summary>
         public Guid Guid { get; set; }
     }

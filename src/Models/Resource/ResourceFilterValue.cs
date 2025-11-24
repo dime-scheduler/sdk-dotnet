@@ -1,39 +1,46 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Dime.Scheduler.Entities
 {
     public class ResourceFilterValue : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
+        [Description("Identifies the record's originating system.")]
         [ImportParameter(nameof(SourceApp))]
         public string SourceApp { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
+        [Description("Identifies the record's type in the originating system.")]
         [ImportParameter(nameof(SourceType))]
         public string SourceType { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Common"]/ResourceNo/*'/>
+        [Description("The resource number.")]
         [ImportParameter(nameof(ResourceNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string ResourceNo { get; set; }
 
         /// <summary>
-        /// Gets or sets the filter group name.
+        /// the filter group name.
         /// </summary>
+        [Description("The filter group name.")]
         [ImportParameter(nameof(FilterGroup))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterGroup { get; set; }
 
         /// <summary>
-        /// Gets or sets the filter value.
+        /// the filter value.
         /// </summary>
+        [Description("The filter value.")]
         [ImportParameter(nameof(FilterValue))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         public string FilterValue { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to transfer to temporary storage.
+        /// Indicates whether to transfer to temporary storage.
         /// </summary>
+        [Description("Indicates whether to transfer to temporary storage.")]
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]
         public bool TransferToTemp { get; set; }
 

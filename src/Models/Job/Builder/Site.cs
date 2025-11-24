@@ -6,24 +6,24 @@
     public class Site
     {
         /// <summary>
-        /// Gets or sets the site number.
+        /// The site number.
         /// </summary>
         public string No { get; set; }
         /// <summary>
-        /// Gets or sets the site name.
+        /// The site name.
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Gets or sets the site phone number.
+        /// The site phone number.
         /// </summary>
         public string Phone { get; set; }
         /// <summary>
-        /// Gets or sets the site email address.
+        /// The site email address.
         /// </summary>
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or sets the site address.
+        /// The site address.
         /// </summary>
         public Address Address { get; set; }
     }

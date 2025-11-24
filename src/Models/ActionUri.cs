@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -7,41 +8,48 @@ namespace Dime.Scheduler.Entities
     public class ActionUri : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
+        [Description("Identifies the record's originating system.")]
         [ImportParameter(nameof(SourceApp))]
         [MaxLength(30)]
         public string SourceApp { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
+        [Description("Identifies the record's type in the originating system.")]
         [ImportParameter(nameof(SourceType))]
         [MaxLength(10)]
         public string SourceType { get; set; }
 
         /// <summary>
-        /// Gets or sets the URI type.
+        /// the URI type.
         /// </summary>
+        [Description("The URI type.")]
         [ImportParameter("UrlType")]
         [JsonConverter(typeof(IntEnumConverter<UriType>))]
         public UriType UriType { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Common"]/Uri/*'/>
+        [Description("The URI.")]
         [ImportParameter("Url")]
         [Required]
         public string Uri { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Common"]/UriDescription/*'/>
+        [Description("The description of the URI.")]
         [ImportParameter("UrlDesc")]
         [MaxLength(255)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this is the default URI.
+        /// Indicates whether this is the default URI.
         /// </summary>
+        [Description("Indicates whether this is the default URI.")]
         [ImportParameter("DefaultUrl")]
         public bool Default { get; set; }
 
         /// <summary>
-        /// Gets or sets the HTTP request type.
+        /// the HTTP request type.
         /// </summary>
+        [Description("The HTTP request type.")]
         [ImportParameter(nameof(RequestType))]
         [JsonConverter(typeof(IntEnumConverter<HttpRequestType>))]
         public HttpRequestType RequestType { get; set; }

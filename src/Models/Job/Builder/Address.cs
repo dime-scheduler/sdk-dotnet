@@ -6,39 +6,39 @@
     public class Address
     {
         /// <summary>
-        /// Gets or sets the full address.
+        /// The full address.
         /// </summary>
         public string FullAddress { get; set; }
         /// <summary>
-        /// Gets or sets the region.
+        /// The region.
         /// </summary>
         public string Region { get; set; }
         /// <summary>
-        /// Gets or sets the street name.
+        /// The street name.
         /// </summary>
         public string Street { get; set; }
         /// <summary>
-        /// Gets or sets the street number.
+        /// The street number.
         /// </summary>
         public string StreetNo { get; set; }
         /// <summary>
-        /// Gets or sets the postcode.
+        /// The postcode.
         /// </summary>
         public string Postcode { get; set; }
         /// <summary>
-        /// Gets or sets the city.
+        /// The city.
         /// </summary>
         public string City { get; set; }
         /// <summary>
-        /// Gets or sets the county.
+        /// The county.
         /// </summary>
         public string County { get; set; }
         /// <summary>
-        /// Gets or sets the country.
+        /// The country.
         /// </summary>
         public string Country { get; set; }
         /// <summary>
-        /// Gets or sets the state.
+        /// The state.
         /// </summary>
         public string State { get; set; }
     }

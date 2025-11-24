@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
@@ -6,48 +7,55 @@ namespace Dime.Scheduler.Entities
     public class TaskFilterValue : IImportEntity
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
+        [Description("Identifies the record's originating system.")]
         [ImportParameter(nameof(SourceApp))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
         public string SourceApp { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
+        [Description("Identifies the record's type in the originating system.")]
         [ImportParameter(nameof(SourceType))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(10)]
         public string SourceType { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Work"]/JobNo/*'/>
+        [Description("Identifies the job.")]
         [ImportParameter(nameof(JobNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string JobNo { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Work"]/Taskno/*'/>
+        [Description("Identifies the task.")]
         [ImportParameter(nameof(TaskNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string TaskNo { get; set; }
 
         /// <summary>
-        /// Gets or sets the filter group name.
+        /// the filter group name.
         /// </summary>
+        [Description("The filter group name.")]
         [ImportParameter(nameof(FilterGroup))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string FilterGroup { get; set; }
 
         /// <summary>
-        /// Gets or sets the filter value.
+        /// the filter value.
         /// </summary>
+        [Description("The filter value.")]
         [ImportParameter(nameof(FilterValue))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public string FilterValue { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to transfer to temporary storage.
+        /// Indicates whether to transfer to temporary storage.
         /// </summary>
+        [Description("Indicates whether to transfer to temporary storage.")]
         [ImportParameter(nameof(TransferToTemp), TransactionType.Append)]
         public bool TransferToTemp { get; set; }
 

@@ -78,62 +78,62 @@
 	<members name="Common">
 		<ResourceNo>
 			<summary>
-				Gets or sets the resource number.
+				The resource number.
 			</summary>
 		</ResourceNo>
 		<Category>
 			<summary>
-				Gets or sets the category.
+				The category.
 			</summary>
 		</Category>
 		<Description>
 			<summary>
-				Gets or sets the description.
+				The description.
 			</summary>
 		</Description>
 		<Subject>
 			<summary>
-				Gets or sets the subject.
+				The subject.
 			</summary>
 		</Subject>
 		<Body>
 			<summary>
-				Gets or sets the body content.
+				The body content.
 			</summary>
 		</Body>
 		<Locked>
 			<summary>
-				Gets or sets a value indicating whether the item is locked.
+				Indicates whether the item is locked.
 			</summary>
 		</Locked>
 		<TimeMarker>
 			<summary>
-				Gets or sets the time marker.
+				The time marker.
 			</summary>
 		</TimeMarker>
 		<Pin>
 			<summary>
-				Gets or sets the pin indicator.
+				The pin indicator.
 			</summary>
 		</Pin>
 		<Uri>
 			<summary>
-				Gets or sets the URI.
+				The URI.
 			</summary>
 		</Uri>
 		<UriDescription>
 			<summary>
-				Gets or sets the description of the URI.
+				The description of the URI.
 			</summary>
 		</UriDescription>
 		<SentFromBackOffice>
 			<summary>
-				Gets or sets a value indicating whether the request was sent from back office.
+				Indicates whether the request was sent from back office.
 			</summary>
 		</SentFromBackOffice>
 		<Importance>
 			<summary>
-				Gets or sets the importance level.
+				The importance level.
 			</summary>
 		</Importance>
 	</members>

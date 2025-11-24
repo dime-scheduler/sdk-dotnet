@@ -18,25 +18,25 @@ namespace Dime.Scheduler.Entities
         public string AppointmentNo { get; set; }
 
         /// <summary>
-        /// Gets or sets the Exchange identifier.
+        /// The Exchange identifier.
         /// </summary>
         [ImportParameter(nameof(ExchangeId))]
         public string ExchangeId { get; set; }
 
         /// <summary>
-        /// Gets or sets the iCal UID.
+        /// The iCal UID.
         /// </summary>
         [ImportParameter(nameof(ICalUId))]
         public string ICalUId { get; set; }
 
         /// <summary>
-        /// Gets or sets the start date and time.
+        /// The start date and time.
         /// </summary>
         [ImportParameter(nameof(Start))]
         public DateTime Start { get; set; }
 
         /// <summary>
-        /// Gets or sets the end date and time.
+        /// The end date and time.
         /// </summary>
         [ImportParameter(nameof(End))]
         public DateTime End { get; set; }
@@ -54,31 +54,31 @@ namespace Dime.Scheduler.Entities
         public Importance Importance { get; set; }
 
         /// <summary>
-        /// Gets or sets the resource email address.
+        /// The resource email address.
         /// </summary>
         [ImportParameter(nameof(ResourceEmail))]
         public string ResourceEmail { get; set; }
 
         /// <summary>
-        /// Gets or sets how the appointment should be displayed.
+        /// how the appointment should be displayed.
         /// </summary>
         [ImportParameter(nameof(ShowAs))]
         public ShowAs ShowAs { get; set; }
 
         /// <summary>
-        /// Gets or sets the sensitivity level of the appointment.
+        /// The sensitivity level of the appointment.
         /// </summary>
         [ImportParameter(nameof(Sensitivity))]
         public Sensitivity Sensitivity { get; set; }
 
         /// <summary>
-        /// Gets or sets the categories associated with the appointment.
+        /// The categories associated with the appointment.
         /// </summary>
         [ImportParameter(nameof(Categories))]
         public IEnumerable<string> Categories { get; set; } = [];
 
         /// <summary>
-        /// Gets or sets a value indicating whether the appointment was created by Exchange.
+        /// a value indicating whether the appointment was created by Exchange.
         /// </summary>
         [ImportParameter(nameof(CreatedByExchange))]
         public bool CreatedByExchange { get; set; }
