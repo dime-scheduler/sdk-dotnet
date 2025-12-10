@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
@@ -15,11 +16,19 @@ namespace Dime.Scheduler.Entities
             Value = value;
         }
 
+        /// <summary>
+        /// the filter group name.
+        /// </summary>
+        [Description("The filter group name.")]
         [ImportParameter("FilterGroupName")]
         [MaxLength(50)]
         [Required]
         public string Group { get; set; }
 
+        /// <summary>
+        /// the filter value.
+        /// </summary>
+        [Description("The filter value.")]
         [ImportParameter("FilterValue")]
         [MaxLength(100)]
         [Required]

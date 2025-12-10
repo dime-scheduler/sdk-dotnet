@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".runsettings" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="../tests/integration/Dime.Scheduler.IntegrationTests.csproj" />
+    <Project Path="../tests/unit/Dime.Scheduler.Tests.csproj" />
+  </Folder>
+  <Project Path="Dime.Scheduler.csproj" />
+</Solution>

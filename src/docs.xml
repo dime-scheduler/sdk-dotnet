@@ -75,4 +75,66 @@
 			</summary>
 		</Color>
 	</members>
+	<members name="Common">
+		<ResourceNo>
+			<summary>
+				The resource number.
+			</summary>
+		</ResourceNo>
+		<Category>
+			<summary>
+				The category.
+			</summary>
+		</Category>
+		<Description>
+			<summary>
+				The description.
+			</summary>
+		</Description>
+		<Subject>
+			<summary>
+				The subject.
+			</summary>
+		</Subject>
+		<Body>
+			<summary>
+				The body content.
+			</summary>
+		</Body>
+		<Locked>
+			<summary>
+				Indicates whether the item is locked.
+			</summary>
+		</Locked>
+		<TimeMarker>
+			<summary>
+				The time marker.
+			</summary>
+		</TimeMarker>
+		<Pin>
+			<summary>
+				The pin indicator.
+			</summary>
+		</Pin>
+		<Uri>
+			<summary>
+				The URI.
+			</summary>
+		</Uri>
+		<UriDescription>
+			<summary>
+				The description of the URI.
+			</summary>
+		</UriDescription>
+		<SentFromBackOffice>
+			<summary>
+				Indicates whether the request was sent from back office.
+			</summary>
+		</SentFromBackOffice>
+		<Importance>
+			<summary>
+				The importance level.
+			</summary>
+		</Importance>
+	</members>
 </docs>

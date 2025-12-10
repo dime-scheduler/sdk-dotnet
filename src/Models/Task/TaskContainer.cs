@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
@@ -7,32 +8,46 @@ namespace Dime.Scheduler.Entities
     public class TaskContainer : IImportEntity, IValidatableImportRequest<TaskContainer>
     {
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceApp/*'/>
+        [Description("Identifies the record's originating system.")]
         [ImportParameter(nameof(SourceApp))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(30)]
         public string SourceApp { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="TrackedEntity"]/SourceType/*'/>
+        [Description("Identifies the record's type in the originating system.")]
         [ImportParameter(nameof(SourceType))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(10)]
         public string SourceType { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/JobNo/*'/>
+        [Description("Identifies the job.")]
         [ImportParameter(nameof(JobNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string JobNo { get; set; }
 
+        /// <include file='docs.xml' path='docs/members[@name="Work"]/Taskno/*'/>
+        [Description("Identifies the task.")]
         [ImportParameter(nameof(TaskNo))]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(50)]
         public string TaskNo { get; set; }
 
+        /// <summary>
+        /// the container name.
+        /// </summary>
+        [Description("The container name.")]
         [ImportParameter("ContainerName")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(255)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// the container index.
+        /// </summary>
+        [Description("The container index.")]
         [ImportParameter(nameof(Index), TransactionType.Append)]
         public int Index { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dime.Scheduler.Entities
@@ -17,12 +18,14 @@ namespace Dime.Scheduler.Entities
         }
 
         /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Name/*'/>
+        [Description("Identifies the indicator.")]
         [ImportParameter("TimeMarker")]
         [RequiredIf(TransactionType.Append, TransactionType.Delete)]
         [MaxLength(100)]
         public override string Name { get; set; }
 
         /// <include file='docs.xml' path='docs/members[@name="Indicator"]/Color/*'/>
+        [Description("The hex color.")]
         [ImportParameter("HexColor", TransactionType.Append)]
         [MaxLength(7)]
         public override string Color { get; set; }
