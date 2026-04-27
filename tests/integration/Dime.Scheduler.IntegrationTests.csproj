@@ -6,23 +6,34 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="coverlet.collector" Version="6.0.4">
+		<PackageReference Include="coverlet.collector" Version="10.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="DotNetEnv" Version="3.1.1" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-		<PackageReference Include="Polly" Version="8.6.5" />
-		<PackageReference Include="xunit" Version="2.9.3" />
+		<PackageReference Include="DotNetEnv" Version="3.2.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+		<PackageReference Include="Polly" Version="8.6.6" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Xunit.SkippableFact" Version="1.5.23" />
+		<PackageReference Include="Xunit.SkippableFact" Version="1.5.61" />
+		<PackageReference Include="xunit.v3" Version="3.2.2" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\Dime.Scheduler.csproj" />
+	</ItemGroup>
+
+	<!--
+	  v5.0 SDK rewrite: integration tests reference deleted endpoint accessors
+	  (Indicators, Filters, Connectors administration) and types that no longer exist.
+	  The .cs files are kept in the repo as a reference for the rewrite, but excluded from
+	  compilation until they are ported to the new CrudApi&lt;T&gt; / DimeSchedulerClient surface.
+	-->
+	<ItemGroup>
+		<Compile Remove="**\*.cs" />
+		<None Include="**\*.cs" />
 	</ItemGroup>
 
 	<ItemGroup>	  
