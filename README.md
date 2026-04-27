@@ -1,3 +1,9 @@
+<h1 align="center"> ⚠️ Archived </h1>
+
+<p align="center"> This repository is no longer maintained.  
+👉 Please use: https://github.com/dime-scheduler/sdk
+</p>
+
 <div align="center">
 <img src="https://cdn.dimescheduler.com/dime-scheduler/v2/logo.svg" height="75px" />
 </div>
