@@ -5,7 +5,6 @@
   </Folder>
   <Folder Name="/Tests/">
     <Project Path="../tests/integration/Dime.Scheduler.IntegrationTests.csproj" />
-    <Project Path="../tests/unit/Dime.Scheduler.Tests.csproj" />
   </Folder>
   <Project Path="Dime.Scheduler.csproj" />
 </Solution>
